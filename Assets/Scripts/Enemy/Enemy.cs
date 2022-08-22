@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Fighter
 {
-    private string _name;
-    private int _health;
-    private int _baseDamage;
+    public override void Dead()
+    {
+        Debug.Log("Враг умер! Можешь идти дальше!");
+    }
 }
