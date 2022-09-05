@@ -29,7 +29,7 @@ public class UIController : MonoBehaviour
         _open.gameObject.SetActive(false);
         _continue.gameObject.SetActive(false);
 
-        if (_player.PotionCounter())
+        if (_player.PotionChecker())
             _heal.gameObject.SetActive(true);
         else
             _heal.gameObject.SetActive(false);

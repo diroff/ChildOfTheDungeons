@@ -5,14 +5,24 @@ using UnityEngine;
 public class SceneStates : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private Enemy _enemy;
+    [SerializeField] private GameObject _spawnPoint;
 
+    private Enemy _enemy;
     private UIController _uiController;
 
     private void Start()
     {
         _uiController = GetComponent<UIController>();
+        TakeEnemy();
+
         StartState();
+    }
+
+    public Enemy TakeEnemy()
+    {
+        _enemy = _spawnPoint.transform.GetChild(0).GetComponent<Enemy>();
+
+        return _enemy;
     }
 
     public void StartState()
@@ -32,7 +42,7 @@ public class SceneStates : MonoBehaviour
         else
         {
             _uiController.EnemyAttackStateButtons();
-            _player.ApplyDamage(_enemy.BaseDamage);
+            _player.ApplyDamage(_enemy.baseDamage);
 
             if (!_player.Die())
                 _uiController.PlayerAttackStateButtons();

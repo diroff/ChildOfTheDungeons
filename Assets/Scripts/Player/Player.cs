@@ -6,7 +6,7 @@ public class Player : Fighter
 
     public void TryToHeal()
     {
-        if (PotionCounter())
+        if (PotionChecker())
         {
             if (CurrentHealth >= MaxHealth / 2)
                 CurrentHealth = MaxHealth;
@@ -17,7 +17,7 @@ public class Player : Fighter
         }
     }
 
-    public bool PotionCounter()
+    public bool PotionChecker()
     {
         bool isSomething = _potions > 0;
         return isSomething;

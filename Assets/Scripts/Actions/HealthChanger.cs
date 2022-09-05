@@ -6,11 +6,19 @@ using UnityEngine.Events;
 public class HealthChanger : MonoBehaviour
 {
     [SerializeField] private Fighter _startTarget;
-    [SerializeField] private Fighter _endTarget;
     [SerializeField] private UnityAction _heal;
+    [SerializeField] private SceneStates _sceneStates;
+
+    private Fighter _endTarget;
+
+    private void Start()
+    {
+        _endTarget = _sceneStates.TakeEnemy();
+    }
 
     public void Attack()
     {
+        _endTarget = _sceneStates.TakeEnemy();
         _startTarget.DealDamage(_endTarget);
     }
 

@@ -3,15 +3,17 @@ using UnityEngine.Events;
 
 public class Fighter : MonoBehaviour
 {
-    [SerializeField] private string _name;
+    [SerializeField] protected string Name;
     [SerializeField] protected int MaxHealth;
-    [SerializeField] private int _armor;
-    [SerializeField] private int _baseDamage;
+    [SerializeField] protected int Armor;
+    [SerializeField] protected int BaseDamage;
+    [SerializeField] protected Sprite SpriteImage;
+
     [SerializeField] private UnityEvent _die;
 
     protected int CurrentHealth;
 
-    public int BaseDamage => _baseDamage;
+    public int baseDamage => BaseDamage;
 
     private void Start()
     {
@@ -32,15 +34,15 @@ public class Fighter : MonoBehaviour
 
     public void ApplyDamage(int damage)
     {
-        if (damage >= _armor)
+        if (damage >= Armor)
         {
-            damage -= _armor;
-            _armor = 0;
+            damage -= Armor;
+            Armor = 0;
             CurrentHealth -= damage;
         }
         else
         {
-            _armor -= damage;
+            Armor -= damage;
         }
 
         Info();
@@ -55,6 +57,6 @@ public class Fighter : MonoBehaviour
 
     public void Info()
     {
-        Debug.Log($"” игрока {_name} {CurrentHealth}/{MaxHealth} здоровь€, {_armor} брони и урон в {_baseDamage} единиц!");
+        Debug.Log($"” игрока {Name} {CurrentHealth}/{MaxHealth} здоровь€, {Armor} брони и урон в {BaseDamage} единиц!");
     }
 }
