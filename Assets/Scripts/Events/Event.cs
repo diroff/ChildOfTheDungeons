@@ -5,30 +5,30 @@ public abstract class Event : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
 
-    private Canvas _canvas;
-
-    private void Awake()
-    {
-        _canvas = FindObjectOfType<Canvas>();
-        
-    }
+    [SerializeField] protected Spawner Spawner;
 
     public event UnityAction<bool> Ended;
 
-    public void SetPanel(bool isSpawn)
+    public void SetPanelState(bool enabled)
     {
-        if (isSpawn)
-        {
-            GameObject panel = Instantiate(_panel);
-        }
-        else
-            Destroy(_panel.gameObject);
+        _panel.SetActive(enabled);
     }
 
-    public abstract void DoEventSteps();
+    public virtual void SetEnableEvent(bool enabled)
+    {
+        gameObject.SetActive(enabled);
+    }
+
+    public virtual void DoEventSteps()
+    {
+        SetEnableEvent(true);
+        SetPanelState(true);
+    }
 
     public virtual void EndEvent()
     {
         Ended?.Invoke(true);
+        SetEnableEvent(false);
+        SetPanelState(false);
     }
 }

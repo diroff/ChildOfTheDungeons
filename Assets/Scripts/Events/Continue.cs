@@ -6,12 +6,13 @@ public class Continue : Event
 {
     public override void DoEventSteps()
     {
-        SetPanel(true);
+        base.DoEventSteps();
     }
 
     public override void EndEvent()
     {
-        SetPanel(false);
         base.EndEvent();
+        SetEnableEvent(false);
+        SetPanelState(false);
     }
 }

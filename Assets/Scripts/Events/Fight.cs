@@ -4,30 +4,18 @@ using UnityEngine;
 
 public class Fight : Event
 {
-    private Spawner _spawner;
     private Enemy _enemy;
-
-    private void Awake()
-    {
-        _spawner = FindObjectOfType<Spawner>();
-        Debug.Log(_spawner.name);
-    }
-
-    private void Start()
-    {
-        _enemy = _spawner.GetEnemy();
-        //_enemy.Died += DestroyEnemy; //пр
-    }
 
     public override void DoEventSteps()
     {
-        SetPanel(true);
-        _spawner.SpawnEnemy(); //пр
+        base.DoEventSteps();
+        Spawner.SpawnEnemy();
+        _enemy = Spawner.GetEnemy();
+        _enemy.Died += DestroyEnemy;
     }
 
     public override void EndEvent()
     {
-        SetPanel(false);
         base.EndEvent();
         _enemy.Died -= DestroyEnemy;
     }

@@ -8,19 +8,9 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private GameObject _spawnPoint;
 
-    public int RandomChooseEnemy()
+    public int NumberOfRandomEnemy()
     {
-        int countOfEnemy = 0;
-        int numberOfEnemy;
-
-        for (int i = 0; i <= _enemyTemplates.Count; i++)
-        {
-            countOfEnemy = i;
-        }
-
-        numberOfEnemy = Random.Range(1, countOfEnemy + 1);
-
-        return numberOfEnemy;
+        return Random.Range(0, _enemyTemplates.Count);
     }
 
     public Enemy GetEnemy()
@@ -31,8 +21,7 @@ public class Spawner : MonoBehaviour
     [ContextMenu("Spawn Enemy")]
     public void SpawnEnemy()
     {
-        Enemy enemy = _enemyTemplates[RandomChooseEnemy() - 1];
-
+        Enemy enemy = _enemyTemplates[NumberOfRandomEnemy()];
         Instantiate(enemy, _spawnPoint.transform);
     }
 }
