@@ -1,11 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EventsController : MonoBehaviour
 {
+    [SerializeField] private Player _player;
+
     [SerializeField] private List<Event> _eventTypes;
+
+    [SerializeField] private Event _continue;
+    [SerializeField] private Event _gameOver;
+    [SerializeField] private Event _startEvent;
 
     private Event _currentEvent;
 
@@ -13,13 +17,13 @@ public class EventsController : MonoBehaviour
 
     private void Start()
     {
-        SetEvent(0);
+        _currentEvent = _startEvent;
         StartEvent();
     }
 
     private int ChooseRandomEvent()
     {
-        return Random.Range(0, _eventTypes.Count - 1);
+        return Random.Range(0, _eventTypes.Count);
     }
 
     public void SetEvent(int eventNumber, bool isRandom = false)
@@ -44,8 +48,12 @@ public class EventsController : MonoBehaviour
         {
             _currentEvent.Ended -= EndCurrentEvent;
 
-            SetEvent(_eventTypes.Count - 1);
+            if (_player.Die())
+                _currentEvent = _gameOver;
+            else
+                _currentEvent = _continue;
+
             StartEvent();
-        }
+        }  
     }
 }

@@ -14,17 +14,25 @@ public class Player : Fighter
                 CurrentHealth += MaxHealth / 2;
 
             _potions--;
+
+            Debug.Log($"Потрачена хилка. Теперь их {_potions}");
         }
     }
 
-    public bool PotionChecker()
+    private bool PotionChecker()
     {
         bool isSomething = _potions > 0;
         return isSomething;
     }
 
+    public void AddHeal(int count)
+    {
+        _potions += count;
+        Debug.Log($"Добавлено {count} хилок. Теперь их {_potions}");
+    }
+
     public override void Dead()
     {
-        Debug.Log("Игрок умер. Игра окончена!");
+        base.Dead();
     }
 }
