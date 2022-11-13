@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1797388749512454580}
   - component: {fileID: 1797388749512454538}
   m_Layer: 0
-  m_Name: Mosquito
+  m_Name: Leo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 846760267
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b362241b184fc7a4b93e66fce12997bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9186941b4bb914a4db742599900a6ce1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adbce5b61fd7df4fb67bb165ecdc5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Mosquito
-  MaxHealth: 3
+  Name: Leo
+  MaxHealth: 25
   Armor: 0
-  BaseDamage: 1
+  BaseDamage: 10
   Level: 1
-  SpriteImage: {fileID: 21300000, guid: b362241b184fc7a4b93e66fce12997bd, type: 3}
+  SpriteImage: {fileID: 21300000, guid: 2635075d2a53da549a2b7462d83d8423, type: 3}

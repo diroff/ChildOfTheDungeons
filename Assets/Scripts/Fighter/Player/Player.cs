@@ -1,8 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Fighter
 {
-    [SerializeField] private int _potions;
+    [SerializeField] private List<HealItem> _potions = new List<HealItem>();
 
     public void TryToHeal()
     {
@@ -13,26 +14,38 @@ public class Player : Fighter
             else
                 CurrentHealth += MaxHealth / 2;
 
-            _potions--;
+            _potions.RemoveAt(_potions.Count-1);
 
-            Debug.Log($"Потрачена хилка. Теперь их {_potions}");
+            Debug.Log($"Потрачена хилка. Теперь их {_potions.Count}");
         }
     }
 
     private bool PotionChecker()
     {
-        bool isSomething = _potions > 0;
+        bool isSomething = _potions.Count > 0;
         return isSomething;
     }
 
-    public void AddHeal(int count)
+    public void AddHeal()
     {
-        _potions += count;
-        Debug.Log($"Добавлено {count} хилок. Теперь их {_potions}");
+        _potions.Add(new HealItem());
+        Debug.Log($"Добавлена хилка. Теперь их {_potions.Count}");
     }
 
     public override void Dead()
     {
         base.Dead();
+    }
+
+    public void AddItem(Item additionalItem)
+    {
+        var typeItem = additionalItem.GetItemType();
+
+        switch (typeItem)
+        {
+            case Item.TypeOfItems.heal:
+                AddHeal();
+                break;
+        }
     }
 }

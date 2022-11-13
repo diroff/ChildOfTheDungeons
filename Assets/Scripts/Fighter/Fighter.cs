@@ -7,6 +7,7 @@ public abstract class Fighter : MonoBehaviour
     [SerializeField] protected int MaxHealth;
     [SerializeField] protected int Armor;
     [SerializeField] protected int BaseDamage;
+    [SerializeField] protected int Level;
     [SerializeField] protected Sprite SpriteImage;
 
     protected int CurrentHealth;
