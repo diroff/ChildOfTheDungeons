@@ -1,9 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : Fighter
 {
     [SerializeField] private List<HealItem> _potions = new List<HealItem>();
+
+    [SerializeField] private Helm _helmPlace;
+    [SerializeField] private Breastplate _breastplate;
+    [SerializeField] private Pants _pants;
+    [SerializeField] private Shoes _shoes;
+
+    public event UnityAction Leaved;
 
     public void TryToHeal()
     {
@@ -47,5 +55,15 @@ public class Player : Fighter
                 AddHeal();
                 break;
         }
+    }
+
+    public void TryToLeave()
+    {
+        Leave();
+    }
+
+    public void Leave()
+    {
+        Leaved?.Invoke();
     }
 }

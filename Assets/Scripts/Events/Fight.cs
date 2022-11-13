@@ -13,6 +13,7 @@ public class Fight : Event
         _enemy = Spawner.GetEnemy();
         _enemy.Died += DestroyEnemy;
         _player.Died += PlayerDead;
+        _player.Leaved += PlayerLeaved;
     }
 
     public override void EndEvent()
@@ -20,6 +21,7 @@ public class Fight : Event
         base.EndEvent();
         _enemy.Died -= DestroyEnemy;
         _player.Died -= PlayerDead;
+        _player.Leaved -= PlayerLeaved;
     }
 
     private void DestroyEnemy(bool isDie)
@@ -38,5 +40,11 @@ public class Fight : Event
             Destroy(_player.gameObject);
             EndEvent();
         }
+    }
+
+    private void PlayerLeaved()
+    {
+        Destroy(_enemy.gameObject);
+        EndEvent();
     }
 }

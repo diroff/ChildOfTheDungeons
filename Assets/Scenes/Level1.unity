@@ -508,7 +508,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 176033354}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 176033356}
+        m_TargetAssemblyTypeName: DontTakeButton, Assembly-CSharp
+        m_MethodName: OnClickAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &176033354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1893,6 +1905,7 @@ MonoBehaviour:
   _player: {fileID: 532910443}
   _eventTypes:
   - {fileID: 1622029519}
+  - {fileID: 8148549922209866770}
   _continue: {fileID: 8320838582458532849}
   _gameOver: {fileID: 169853898}
   _startEvent: {fileID: 8148549922209866770}
@@ -1961,6 +1974,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyTemplates:
   - {fileID: 1797388749512454538, guid: 985eddd043f639b4781f85d04016ea9d, type: 3}
+  - {fileID: 1797388749512454538, guid: 7f111dd11777fa441851be27d19f91f4, type: 3}
+  - {fileID: 1797388749512454538, guid: 1906b2738138eba439103a2150048737, type: 3}
+  - {fileID: 1797388749512454538, guid: ef5446df19c4f6b4fb215a743d2cf409, type: 3}
+  - {fileID: 1797388749512454538, guid: 26f3f4e52e42a0b4f90dff1374d70c81, type: 3}
   _itemTemplates:
   - {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
   _spawnPoint: {fileID: 1957994489}
@@ -2296,6 +2313,7 @@ GameObject:
   - component: {fileID: 5218370751210810293}
   - component: {fileID: 5218370751210810292}
   - component: {fileID: 5218370751210810299}
+  - component: {fileID: 5218370751210810300}
   m_Layer: 5
   m_Name: Leave
   m_TagString: Untagged
@@ -2367,18 +2385,32 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 532910443}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: AddHeal
+      - m_Target: {fileID: 5218370751210810300}
+        m_TargetAssemblyTypeName: LeaveButton, Assembly-CSharp
+        m_MethodName: OnClickAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5218370751210810300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5218370751210810297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7d5755659b4a34f9b8e5e3dece11c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 5218370751210810299}
+  _player: {fileID: 532910443}
 --- !u!114 &5218370751276373208
 MonoBehaviour:
   m_ObjectHideFlags: 0
