@@ -6,14 +6,15 @@ public class Player : Fighter
 {
     [SerializeField] private List<HealItem> _potions = new List<HealItem>();
 
-    [SerializeField] private Helm _helmPlace;
-    [SerializeField] private Breastplate _breastplate;
-    [SerializeField] private Pants _pants;
-    [SerializeField] private Shoes _shoes;
+    [SerializeField] private Transform _armorSlot;
+    [SerializeField] private Transform _weaponSlot;
+
+    private Armor _currentArmor;
+    private Weapon _currentWeapon;
 
     public event UnityAction Leaved;
 
-    public void TryToHeal()
+    public void Heal()
     {
         if (PotionChecker())
         {
@@ -28,7 +29,7 @@ public class Player : Fighter
         }
     }
 
-    private bool PotionChecker()
+    public bool PotionChecker()
     {
         bool isSomething = _potions.Count > 0;
         return isSomething;
@@ -40,21 +41,26 @@ public class Player : Fighter
         Debug.Log($"Добавлена хилка. Теперь их {_potions.Count}");
     }
 
+    public void UseArmor(Armor newArmor)
+    {
+        if (_currentArmor != null)
+            Destroy(_armorSlot.GetComponentInChildren<Armor>().gameObject);
+        
+        _currentArmor = Instantiate(newArmor, _armorSlot);
+        CalculateArmor();
+    }
+
+    public void UseWeapon(Weapon newWeapon)
+    {
+        if (_currentWeapon != null)
+            Destroy(_weaponSlot.GetComponentInChildren<Weapon>().gameObject);
+        
+        _currentWeapon = Instantiate(newWeapon, _weaponSlot);
+    }
+
     public override void Dead()
     {
         base.Dead();
-    }
-
-    public void AddItem(Item additionalItem)
-    {
-        var typeItem = additionalItem.GetItemType();
-
-        switch (typeItem)
-        {
-            case Item.TypeOfItems.heal:
-                AddHeal();
-                break;
-        }
     }
 
     public void TryToLeave()
@@ -65,5 +71,21 @@ public class Player : Fighter
     public void Leave()
     {
         Leaved?.Invoke();
+    }
+
+    public int CalculateTotalDamage()
+    {
+        if (_currentWeapon != null)
+            return BaseDamage + _currentWeapon.CalculateDamage();
+        
+        return baseDamage;
+    }
+
+    public void CalculateArmor()
+    {
+        if (_currentArmor != null)
+            Armor = _currentArmor.CalculateProtection();
+
+        Armor = 0;
     }
 }

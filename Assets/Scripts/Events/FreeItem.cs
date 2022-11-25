@@ -20,7 +20,7 @@ public class FreeItem : Event
 
     private void IsTaked(bool isTaked)
     {
-        if (isTaked)
+        if (isTaked) 
             EndEvent();
     }
 }

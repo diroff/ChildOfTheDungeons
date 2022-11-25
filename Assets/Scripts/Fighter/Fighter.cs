@@ -15,9 +15,10 @@ public abstract class Fighter : MonoBehaviour
     public int baseDamage => BaseDamage;
     public event UnityAction<bool> Died;
 
-    private void Start()
+    protected virtual void Start()
     {
         CurrentHealth = MaxHealth;
+        Info();
     }
 
     public bool Die()

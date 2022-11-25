@@ -7,7 +7,7 @@ public class Enemy : Fighter
     {
         if (!Die())
         {
-            player.TakeDamage(baseDamage);
+            player.TakeDamage(BaseDamage);
         }
     }
 }

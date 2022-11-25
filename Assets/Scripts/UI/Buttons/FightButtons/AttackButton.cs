@@ -8,7 +8,8 @@ public class AttackButton : ButtonAction
     public override void OnClickAction()
     {
         var enemy = _spawner.GetEnemy();
-        enemy.TakeDamage(_player.baseDamage);
+        enemy.TakeDamage(_player.CalculateTotalDamage());
+        Debug.Log("Урон игрока:" + _player.CalculateTotalDamage());
         enemy.TryAttack(_player);
     }
 }
