@@ -4,18 +4,19 @@ using UnityEngine.Events;
 
 public class Player : Fighter
 {
-    [SerializeField] private List<HealItem> _potions = new List<HealItem>();
 
     [SerializeField] private Transform _armorSlot;
     [SerializeField] private Transform _weaponSlot;
+
+    private int _potionCount;
 
     private Armor _currentArmor;
     private Weapon _currentWeapon;
 
     public event UnityAction Leaved;
 
-    public void Heal()
-    {
+    public void Heal()                         
+    {                                          
         if (PotionChecker())
         {
             if (CurrentHealth >= MaxHealth / 2)
@@ -23,22 +24,22 @@ public class Player : Fighter
             else
                 CurrentHealth += MaxHealth / 2;
 
-            _potions.RemoveAt(_potions.Count-1);
+            _potionCount--;
 
-            Debug.Log($"Потрачена хилка. Теперь их {_potions.Count}");
+            Debug.Log($"Потрачена хилка. Теперь их {_potionCount}");
         }
     }
 
     public bool PotionChecker()
     {
-        bool isSomething = _potions.Count > 0;
+        bool isSomething = _potionCount > 0;
         return isSomething;
     }
 
     public void AddHeal()
     {
-        _potions.Add(new HealItem());
-        Debug.Log($"Добавлена хилка. Теперь их {_potions.Count}");
+        _potionCount++;
+        Debug.Log($"Добавлена хилка. Теперь их {_potionCount}");
     }
 
     public void UseArmor(Armor newArmor)
