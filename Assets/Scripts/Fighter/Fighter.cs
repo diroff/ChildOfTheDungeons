@@ -13,12 +13,12 @@ public abstract class Fighter : MonoBehaviour
     protected int CurrentHealth;
 
     public int baseDamage => BaseDamage;
+    
     public event UnityAction<bool> Died;
 
     protected virtual void Start()
     {
         CurrentHealth = MaxHealth;
-        Info();
     }
 
     public bool Die()
@@ -32,7 +32,7 @@ public abstract class Fighter : MonoBehaviour
         Died?.Invoke(true);
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         if (damage >= Armor)
         {
@@ -40,12 +40,6 @@ public abstract class Fighter : MonoBehaviour
             CurrentHealth -= damage;
         }
 
-        Info();
         if (Die()) Dead();
-    }
-
-    public void Info()
-    {
-        Debug.Log($"” игрока {Name} {CurrentHealth}/{MaxHealth} здоровь€, {Armor} брони и урон в {BaseDamage} единиц!");
     }
 }

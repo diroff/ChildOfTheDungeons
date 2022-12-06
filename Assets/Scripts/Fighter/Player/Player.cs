@@ -4,7 +4,6 @@ using UnityEngine.Events;
 
 public class Player : Fighter
 {
-
     [SerializeField] private Transform _armorSlot;
     [SerializeField] private Transform _weaponSlot;
 
@@ -13,7 +12,26 @@ public class Player : Fighter
     private Armor _currentArmor;
     private Weapon _currentWeapon;
 
+    public int PotionCount => _potionCount;
+
     public event UnityAction Leaved;
+    public event UnityAction<int> HealthChanged;
+    public event UnityAction<int> DamageChanged;
+    public event UnityAction<int> PotionCountChanged;
+
+    protected override void Start()
+    {
+        base.Start();
+        HealthChanged(CurrentHealth);
+        DamageChanged(CalculateTotalDamage());
+        PotionCountChanged(_potionCount);
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        HealthChanged(CurrentHealth);
+    }
 
     public void Heal()                         
     {                                          
@@ -25,8 +43,8 @@ public class Player : Fighter
                 CurrentHealth += MaxHealth / 2;
 
             _potionCount--;
-
-            Debug.Log($"Потрачена хилка. Теперь их {_potionCount}");
+            HealthChanged(CurrentHealth);
+            PotionCountChanged(_potionCount);
         }
     }
 
@@ -39,7 +57,7 @@ public class Player : Fighter
     public void AddHeal()
     {
         _potionCount++;
-        Debug.Log($"Добавлена хилка. Теперь их {_potionCount}");
+        PotionCountChanged(_potionCount);
     }
 
     public void UseArmor(Armor newArmor)
@@ -57,6 +75,7 @@ public class Player : Fighter
             Destroy(_weaponSlot.GetComponentInChildren<Weapon>().gameObject);
         
         _currentWeapon = Instantiate(newWeapon, _weaponSlot);
+        DamageChanged(CalculateTotalDamage());
     }
 
     public override void Dead()

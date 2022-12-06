@@ -9,7 +9,6 @@ public class AttackButton : ButtonAction
     {
         var enemy = _spawner.GetEnemy();
         enemy.TakeDamage(_player.CalculateTotalDamage());
-        Debug.Log("Урон игрока:" + _player.CalculateTotalDamage());
         enemy.TryAttack(_player);
     }
 }
