@@ -1,7 +1,10 @@
+using UnityEngine;
 using UnityEngine.Events;
 
 public class Enemy : Fighter
 {
+    [SerializeField] private int _baseExperience;
+
     public event UnityAction<int> HealthChanged;
 
     protected override void Start()
@@ -25,5 +28,10 @@ public class Enemy : Fighter
         {
             player.TakeDamage(BaseDamage);
         }
+    }
+
+    public int CalculateExperienceCost()
+    {
+        return (_baseExperience * (Level+2)/3);
     }
 }

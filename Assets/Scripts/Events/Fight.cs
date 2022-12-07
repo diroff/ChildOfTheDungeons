@@ -17,7 +17,7 @@ public class Fight : Event
         _enemy = Spawner.GetEnemy();
         _healthPanel.SetActive(true);
         _enemy.HealthChanged += HealthChanged;
-        _enemy.Died += DestroyEnemy;
+        _enemy.Died += EnemyDead;
         _player.Died += PlayerDead;
         _player.Leaved += PlayerLeaved;
     }
@@ -27,15 +27,16 @@ public class Fight : Event
         base.EndEvent();
         _healthPanel.SetActive(false);
         _enemy.HealthChanged -= HealthChanged;
-        _enemy.Died -= DestroyEnemy;
+        _enemy.Died -= EnemyDead;
         _player.Died -= PlayerDead;
         _player.Leaved -= PlayerLeaved;
     }
 
-    private void DestroyEnemy(bool isDie)
+    private void EnemyDead(bool isDie)
     {
         if (isDie)
         {
+            _player.AddExperience(_enemy.CalculateExperienceCost());
             Destroy(_enemy.gameObject);
             EndEvent();
         }

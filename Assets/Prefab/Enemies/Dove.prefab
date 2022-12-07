@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Dove
-  MaxHealth: 8
+  BaseMaxHealth: 8
   Armor: 0
   BaseDamage: 3
   Level: 1
   SpriteImage: {fileID: 21300000, guid: 2635075d2a53da549a2b7462d83d8423, type: 3}
+  _baseExperience: 5

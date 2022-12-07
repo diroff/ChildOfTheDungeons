@@ -7,7 +7,10 @@ public class Player : Fighter
     [SerializeField] private Transform _armorSlot;
     [SerializeField] private Transform _weaponSlot;
 
+    [SerializeField] private int _experienceToNextLevel = 10;
+
     private int _potionCount;
+    private int _currentExperience = 0;
 
     private Armor _currentArmor;
     private Weapon _currentWeapon;
@@ -18,13 +21,13 @@ public class Player : Fighter
     public event UnityAction<int> HealthChanged;
     public event UnityAction<int> DamageChanged;
     public event UnityAction<int> PotionCountChanged;
+    public event UnityAction<int, int> ExperienceChanged;
+    public event UnityAction<int> LevelChanged;
 
     protected override void Start()
     {
         base.Start();
-        HealthChanged(CurrentHealth);
-        DamageChanged(CalculateTotalDamage());
-        PotionCountChanged(_potionCount);
+        UpdatePlayerStats();
     }
 
     public override void TakeDamage(int damage)
@@ -33,8 +36,8 @@ public class Player : Fighter
         HealthChanged(CurrentHealth);
     }
 
-    public void Heal()                         
-    {                                          
+    public void Heal()
+    {
         if (PotionChecker())
         {
             if (CurrentHealth >= MaxHealth / 2)
@@ -50,8 +53,7 @@ public class Player : Fighter
 
     public bool PotionChecker()
     {
-        bool isSomething = _potionCount > 0;
-        return isSomething;
+        return _potionCount > 0;
     }
 
     public void AddHeal()
@@ -60,11 +62,40 @@ public class Player : Fighter
         PotionCountChanged(_potionCount);
     }
 
+    public void AddExperience(int countExperience)
+    {
+        _currentExperience += countExperience;
+        ExperienceChanged(_currentExperience, _experienceToNextLevel);
+        LevelUp();
+    }
+
+    private bool IsEnoughExperience()
+    {
+        return _currentExperience >= _experienceToNextLevel;
+    }
+
+    public void LevelUp()
+    {
+        if (IsEnoughExperience())
+        {
+            Level++;
+            _experienceToNextLevel *= (Level + 5) / 2;
+            UpdatePlayerStats();
+            FillHealth();
+        }
+    }
+
+    private void FillHealth()
+    {
+        CurrentHealth = MaxHealth;
+        HealthChanged(CurrentHealth);
+    }
+
     public void UseArmor(Armor newArmor)
     {
         if (_currentArmor != null)
             Destroy(_armorSlot.GetComponentInChildren<Armor>().gameObject);
-        
+
         _currentArmor = Instantiate(newArmor, _armorSlot);
         CalculateArmor();
     }
@@ -73,7 +104,7 @@ public class Player : Fighter
     {
         if (_currentWeapon != null)
             Destroy(_weaponSlot.GetComponentInChildren<Weapon>().gameObject);
-        
+
         _currentWeapon = Instantiate(newWeapon, _weaponSlot);
         DamageChanged(CalculateTotalDamage());
     }
@@ -93,12 +124,17 @@ public class Player : Fighter
         Leaved?.Invoke();
     }
 
+    public void CalculateMaxHealth()
+    {
+        MaxHealth = BaseMaxHealth * Level;
+    }
+
     public int CalculateTotalDamage()
     {
         if (_currentWeapon != null)
-            return BaseDamage + _currentWeapon.CalculateDamage();
+            return (BaseDamage * Level) + _currentWeapon.CalculateDamage();
         
-        return baseDamage;
+        return baseDamage * Level;
     }
 
     public void CalculateArmor()
@@ -107,5 +143,17 @@ public class Player : Fighter
             Armor = _currentArmor.CalculateProtection();
 
         Armor = 0;
+    }
+
+    private void UpdatePlayerStats()
+    {
+        CalculateMaxHealth();
+        CalculateTotalDamage();
+        CalculateArmor();
+        HealthChanged(CurrentHealth);
+        DamageChanged(CalculateTotalDamage());
+        PotionCountChanged(_potionCount);
+        ExperienceChanged(_currentExperience, _experienceToNextLevel);
+        LevelChanged(Level);
     }
 }

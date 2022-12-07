@@ -4,12 +4,13 @@ using UnityEngine.Events;
 public abstract class Fighter : MonoBehaviour
 {    
     [SerializeField] protected string Name;
-    [SerializeField] protected int MaxHealth;
+    [SerializeField] protected int BaseMaxHealth;
     [SerializeField] protected int Armor;
     [SerializeField] protected int BaseDamage;
     [SerializeField] protected int Level;
     [SerializeField] protected Sprite SpriteImage;
 
+    protected int MaxHealth;
     protected int CurrentHealth;
 
     public int baseDamage => BaseDamage;
@@ -18,6 +19,7 @@ public abstract class Fighter : MonoBehaviour
 
     protected virtual void Start()
     {
+        MaxHealth = BaseMaxHealth;
         CurrentHealth = MaxHealth;
     }
 
