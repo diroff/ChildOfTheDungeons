@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class FreeItem : Event
 {
+    [SerializeField] private Player _player;
+
     private Item _item;
 
     public override void DoEventSteps()
@@ -9,6 +11,7 @@ public class FreeItem : Event
         base.DoEventSteps();
         Spawner.SpawnItem();
         _item = Spawner.GetItem();
+        SetItemLevel();
         _item.Taked += IsTaked;
     }
 
@@ -22,5 +25,13 @@ public class FreeItem : Event
     {
         if (isTaked) 
             EndEvent();
+    }
+
+    private void SetItemLevel()
+    {
+        if (_item.GetItemType() != Item.TypeOfItems.heal)
+        {
+            _item.SetLevel(Random.Range(_player.GetLevel(), _player.GetLevel() + 2));
+        }
     }
 }

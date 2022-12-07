@@ -124,11 +124,6 @@ public class Player : Fighter
         Leaved?.Invoke();
     }
 
-    public void CalculateMaxHealth()
-    {
-        MaxHealth = BaseMaxHealth * Level;
-    }
-
     public int CalculateTotalDamage()
     {
         if (_currentWeapon != null)

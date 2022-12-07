@@ -15,6 +15,7 @@ public class Fight : Event
         base.DoEventSteps();
         Spawner.SpawnEnemy();
         _enemy = Spawner.GetEnemy();
+        SetEnemyLevel();
         _healthPanel.SetActive(true);
         _enemy.HealthChanged += HealthChanged;
         _enemy.Died += EnemyDead;
@@ -60,5 +61,10 @@ public class Fight : Event
     private void HealthChanged(int health)
     {
         _healthText.text = "x" + health;
+    }
+
+    private void SetEnemyLevel()
+    {
+        _enemy.SetLevel(Random.Range(_player.GetLevel(), _player.GetLevel() + 2));
     }
 }

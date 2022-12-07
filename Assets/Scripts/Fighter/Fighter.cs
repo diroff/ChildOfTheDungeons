@@ -19,7 +19,7 @@ public abstract class Fighter : MonoBehaviour
 
     protected virtual void Start()
     {
-        MaxHealth = BaseMaxHealth;
+        CalculateMaxHealth();
         CurrentHealth = MaxHealth;
     }
 
@@ -43,5 +43,20 @@ public abstract class Fighter : MonoBehaviour
         }
 
         if (Die()) Dead();
+    }
+
+    public void CalculateMaxHealth()
+    {
+        MaxHealth = BaseMaxHealth * Level;
+    }
+
+    public int GetLevel()
+    {
+        return Level;
+    }
+
+    public void SetLevel(int currentLevel)
+    {
+        Level = currentLevel;
     }
 }

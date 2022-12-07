@@ -26,4 +26,9 @@ public abstract class Item : MonoBehaviour
     {
         return ItemType;
     }
+
+    public void SetLevel(int level)
+    {
+        Level = level;
+    }
 }

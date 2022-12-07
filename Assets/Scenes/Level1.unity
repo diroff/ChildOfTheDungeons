@@ -906,7 +906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u0418\u0433\u0440\u043E\u043A"
-  BaseMaxHealth: 10
+  BaseMaxHealth: 100
   Armor: 0
   BaseDamage: 2
   Level: 1
@@ -2865,6 +2865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1719605955}
   Spawner: {fileID: 1957994491}
+  _player: {fileID: 532910443}
 --- !u!1 &1719605955
 GameObject:
   m_ObjectHideFlags: 0

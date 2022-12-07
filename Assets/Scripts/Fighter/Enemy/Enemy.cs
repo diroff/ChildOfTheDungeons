@@ -26,12 +26,17 @@ public class Enemy : Fighter
     {
         if (!Die())
         {
-            player.TakeDamage(BaseDamage);
+            player.TakeDamage(CalculateTotalDamage());
         }
     }
 
     public int CalculateExperienceCost()
     {
         return (_baseExperience * (Level+2)/3);
+    }
+
+    public int CalculateTotalDamage()
+    {
+        return BaseDamage * (Level + 1) / 2;
     }
 }
