@@ -38,7 +38,7 @@ public class EventsController : MonoBehaviour
 
     public void StartEvent()
     {
-        _currentEvent.DoEventSteps();
+        _currentEvent.StartEvent();
         _currentEvent.Ended += EndCurrentEvent;
     }
 

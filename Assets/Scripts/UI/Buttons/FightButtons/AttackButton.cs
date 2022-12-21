@@ -1,14 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class AttackButton : ButtonAction
 {
-    [SerializeField] private Spawner _spawner;
-    [SerializeField] private Player _player;
+    [SerializeField] private Fight _fight;
 
     public override void OnClickAction()
     {
-        var enemy = _spawner.GetEnemy();
-        enemy.TakeDamage(_player.CalculateTotalDamage());
-        enemy.TryAttack(_player);
+        _fight.AttackEnemy();
     }
 }
