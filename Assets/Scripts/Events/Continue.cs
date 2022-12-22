@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Continue : Event
 {
-    public override void StartEvent()
+    public override void DoEventSteps()
     {
-        base.StartEvent();
+        base.DoEventSteps();
     }
 
     public override void EndEvent()
