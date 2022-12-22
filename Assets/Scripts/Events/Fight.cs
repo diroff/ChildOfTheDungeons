@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -10,23 +11,68 @@ public class Fight : Event
 
     private Enemy _enemy;
 
-    public override void DoEventSteps()
+    public override void StartEvent()
     {
-        base.DoEventSteps();
+        base.StartEvent();
         Spawner.SpawnEnemy();
         _enemy = Spawner.GetEnemy();
         SetEnemyLevel();
         _healthPanel.SetActive(true);
-        _enemy.HealthChanged += HealthChanged;
-        _enemy.Died += EnemyDead;
-        _player.Died += PlayerDead;
-        _player.Leaved += PlayerLeaved;
+        SubscribeEvents();
+        PlayerStep();
     }
 
     public override void EndEvent()
     {
         base.EndEvent();
         _healthPanel.SetActive(false);
+        UnsubscribeEvents();
+    }
+
+    public void PlayerStep()
+    {
+        SetPanelState(true);
+    }
+
+    public void EnemyStep()
+    {
+        StartCoroutine(AttackPlayer());
+    }
+
+    public void AttackEnemy()
+    {
+        StartCoroutine(AttackEnemyCoroutine());
+    }
+
+    private IEnumerator AttackEnemyCoroutine()
+    {
+        SetPanelState(false);
+        yield return new WaitForSeconds(1f);
+        _enemy.TakeDamage(_player.CalculateTotalDamage());
+        yield return new WaitForSeconds(0.5f);
+        EnemyStep();
+    }
+
+    private IEnumerator AttackPlayer()
+    {
+        SetPanelState(false);
+        yield return new WaitForSeconds(1f);
+        _enemy.TryAttack(_player);
+        yield return new WaitForSeconds(0.5f);
+        if (!_enemy.Die()) 
+            PlayerStep();
+    }
+
+    private void SubscribeEvents() 
+    {
+        _enemy.HealthChanged += HealthChanged;
+        _enemy.Died += EnemyDead;
+        _player.Died += PlayerDead;
+        _player.Leaved += PlayerLeaved;
+    }
+
+    private void UnsubscribeEvents()
+    {
         _enemy.HealthChanged -= HealthChanged;
         _enemy.Died -= EnemyDead;
         _player.Died -= PlayerDead;
