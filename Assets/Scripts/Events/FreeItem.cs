@@ -6,9 +6,9 @@ public class FreeItem : Event
 
     private Item _item;
 
-    public override void DoEventSteps()
+    public override void StartEvent()
     {
-        base.DoEventSteps();
+        base.StartEvent();
         Spawner.SpawnItem();
         _item = Spawner.GetItem();
         SetItemLevel();

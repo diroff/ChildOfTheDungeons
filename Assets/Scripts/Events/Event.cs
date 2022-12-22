@@ -19,7 +19,7 @@ public abstract class Event : MonoBehaviour
         gameObject.SetActive(enabled);
     }
 
-    public virtual void DoEventSteps()
+    public virtual void StartEvent()
     {
         SetEnableEvent(true);
         SetPanelState(true);

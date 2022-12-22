@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class GameOver : Event
 {
-    public override void DoEventSteps()
+    public override void StartEvent()
     {
         Debug.Log("”ра, конец игры");
-        base.DoEventSteps();
+        base.StartEvent();
     }
 
     public override void EndEvent()
