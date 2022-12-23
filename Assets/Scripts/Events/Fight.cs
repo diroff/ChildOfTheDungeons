@@ -9,6 +9,10 @@ public class Fight : Event
     [SerializeField] private GameObject _healthPanel;
     [SerializeField] private TextMeshProUGUI _healthText;
 
+    [SerializeField] private float _timeBeforeAttack = 0.5f;
+    [SerializeField] private float _timeAfterAttack = 0.5f;
+    [SerializeField] private float _timeFromDead = 1.5f;
+
     private Enemy _enemy;
 
     public override void StartEvent()
@@ -44,22 +48,26 @@ public class Fight : Event
         StartCoroutine(AttackEnemyCoroutine());
     }
 
-    private IEnumerator AttackEnemyCoroutine()
+    protected IEnumerator AttackEnemyCoroutine()
     {
         SetPanelState(false);
-        yield return new WaitForSeconds(1f);
+        _player.Attack();
+        yield return new WaitForSeconds(_timeBeforeAttack);
         _enemy.TakeDamage(_player.CalculateTotalDamage());
-        yield return new WaitForSeconds(0.5f);
-        EnemyStep();
+        yield return new WaitForSeconds(_timeAfterAttack);
+
+        if (!_enemy.Die())
+            EnemyStep();
     }
 
     private IEnumerator AttackPlayer()
     {
         SetPanelState(false);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_timeBeforeAttack);
         _enemy.TryAttack(_player);
-        yield return new WaitForSeconds(0.5f);
-        if (!_enemy.Die()) 
+        yield return new WaitForSeconds(_timeAfterAttack);
+        
+        if (!_player.Die()) 
             PlayerStep();
     }
 
@@ -83,9 +91,7 @@ public class Fight : Event
     {
         if (isDie)
         {
-            _player.AddExperience(_enemy.CalculateExperienceCost());
-            Destroy(_enemy.gameObject);
-            EndEvent();
+            StartCoroutine(EnemyDeadCoroutine());
         }
     }
 
@@ -93,9 +99,22 @@ public class Fight : Event
     {
         if (isDie)
         {
-            Destroy(_player.gameObject);
-            EndEvent();
+            StartCoroutine(PlayerDeadCoroutine());
         }
+    }
+
+    private IEnumerator EnemyDeadCoroutine()
+    {
+        _player.AddExperience(_enemy.CalculateExperienceCost());
+        yield return new WaitForSeconds(_timeFromDead);
+        Destroy(_enemy.gameObject);
+        EndEvent();
+    }
+
+    private IEnumerator PlayerDeadCoroutine()
+    {
+        yield return new WaitForSeconds(_timeFromDead);
+        EndEvent();
     }
 
     private void PlayerLeaved()

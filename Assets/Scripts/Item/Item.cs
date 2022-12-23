@@ -8,6 +8,8 @@ public abstract class Item : MonoBehaviour
     [SerializeField] protected Sprite Sprite;
     [SerializeField] protected int Level;
 
+    [SerializeField] protected Animator ItemAnimator;
+
     public event UnityAction<bool> Taked;
 
     public enum TypeOfItems
@@ -21,6 +23,11 @@ public abstract class Item : MonoBehaviour
     {
         Taked?.Invoke(true);
     }  
+
+    public void TakeAnimation()
+    {
+        ItemAnimator.SetTrigger("Take");
+    }
 
     public TypeOfItems GetItemType()
     {

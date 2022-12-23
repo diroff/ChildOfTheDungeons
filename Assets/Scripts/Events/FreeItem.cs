@@ -1,8 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class FreeItem : Event
 {
     [SerializeField] private Player _player;
+
+    [SerializeField] private float _takeCouldown = 1.0f;
 
     private Item _item;
 
@@ -13,6 +16,40 @@ public class FreeItem : Event
         _item = Spawner.GetItem();
         SetItemLevel();
         _item.Taked += IsTaked;
+    }
+
+    public void AddItem()
+    {
+        StartCoroutine(AddItemCoroutine());
+    }
+
+    private IEnumerator AddItemCoroutine()
+    {
+        SetPanelState(false);
+
+        _item.TakeAnimation();
+        yield return new WaitForSeconds(_takeCouldown);
+        _item.TakeItem();
+
+        if (_item.GetItemType() == Item.TypeOfItems.heal)
+            _player.AddHeal();
+        else
+            UseItem();
+
+        Destroy(_item.gameObject);
+    }
+
+    private void UseItem()
+    {
+        switch (_item.GetItemType())
+        {
+            case Item.TypeOfItems.weapon:
+                _player.UseWeapon(_item.GetComponent<Weapon>());
+                break;
+            case Item.TypeOfItems.armor:
+                _player.UseArmor(_item.GetComponent<Armor>());
+                break;
+        }
     }
 
     public override void EndEvent()

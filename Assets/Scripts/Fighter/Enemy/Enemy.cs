@@ -26,6 +26,7 @@ public class Enemy : Fighter
     {
         if (!Die())
         {
+            Attack();
             player.TakeDamage(CalculateTotalDamage());
         }
     }

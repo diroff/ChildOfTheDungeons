@@ -91,6 +91,7 @@ public class Player : Fighter
         HealthChanged(CurrentHealth);
     }
 
+
     public void UseArmor(Armor newArmor)
     {
         if (_currentArmor != null)

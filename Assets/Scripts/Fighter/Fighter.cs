@@ -10,6 +10,8 @@ public abstract class Fighter : MonoBehaviour
     [SerializeField] protected int Level;
     [SerializeField] protected Sprite SpriteImage;
 
+    [SerializeField] protected Animator FighterAnimator;
+
     protected int MaxHealth;
     protected int CurrentHealth;
 
@@ -31,7 +33,14 @@ public abstract class Fighter : MonoBehaviour
 
     public virtual void Dead()
     {
+        CurrentHealth = 0;
+        FighterAnimator.SetBool("Dead", true);
         Died?.Invoke(true);
+    }
+
+    public virtual void Attack()
+    {
+        FighterAnimator.SetTrigger("Attack");
     }
 
     public virtual void TakeDamage(int damage)
@@ -40,6 +49,7 @@ public abstract class Fighter : MonoBehaviour
         {
             damage -= Armor;
             CurrentHealth -= damage;
+            FighterAnimator.SetTrigger("Hit");
         }
 
         if (Die()) Dead();
