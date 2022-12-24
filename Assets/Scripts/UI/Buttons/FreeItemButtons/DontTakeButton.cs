@@ -2,14 +2,10 @@ using UnityEngine;
 
 public class DontTakeButton : ButtonAction
 {
-    [SerializeField] private Spawner _spawner;
-    [SerializeField] private Player _player;
+    [SerializeField] private FreeItem _freeItem;
 
     public override void OnClickAction()
     {
-        Item item = _spawner.GetItem();
-        item.TakeItem();
-
-        Destroy(item.gameObject);
+        _freeItem.LeaveItem();
     }
 }

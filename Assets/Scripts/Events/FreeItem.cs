@@ -23,6 +23,11 @@ public class FreeItem : Event
         StartCoroutine(AddItemCoroutine());
     }
 
+    public void LeaveItem()
+    {
+        StartCoroutine(LeaveItemCoroutine());
+    }
+
     private IEnumerator AddItemCoroutine()
     {
         SetPanelState(false);
@@ -35,6 +40,17 @@ public class FreeItem : Event
             _player.AddHeal();
         else
             UseItem();
+
+        Destroy(_item.gameObject);
+    }
+
+    private IEnumerator LeaveItemCoroutine()
+    {
+        SetPanelState(false);
+
+        _player.Leave();
+        yield return new WaitForSeconds(_takeCouldown);
+        _item.TakeItem();
 
         Destroy(_item.gameObject);
     }

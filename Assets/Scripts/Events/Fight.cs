@@ -12,6 +12,7 @@ public class Fight : Event
     [SerializeField] private float _timeBeforeAttack = 0.5f;
     [SerializeField] private float _timeAfterAttack = 0.5f;
     [SerializeField] private float _timeFromDead = 1.5f;
+    [SerializeField] private float _timeBeforeLeave = 1.0f;
 
     private Enemy _enemy;
 
@@ -117,10 +118,17 @@ public class Fight : Event
         EndEvent();
     }
 
-    private void PlayerLeaved()
+    private IEnumerator PlayerLeavedCoroutine()
     {
+        SetPanelState(false);
+        yield return new WaitForSeconds(_timeBeforeLeave);
         Destroy(_enemy.gameObject);
         EndEvent();
+    }
+
+    private void PlayerLeaved()
+    {
+        StartCoroutine(PlayerLeavedCoroutine());
     }
 
     private void HealthChanged(int health)

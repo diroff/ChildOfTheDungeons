@@ -91,7 +91,6 @@ public class Player : Fighter
         HealthChanged(CurrentHealth);
     }
 
-
     public void UseArmor(Armor newArmor)
     {
         if (_currentArmor != null)
@@ -110,6 +109,11 @@ public class Player : Fighter
         DamageChanged(CalculateTotalDamage());
     }
 
+    public void Run()
+    {
+        FighterAnimator.SetTrigger("Run");
+    }
+
     public override void Dead()
     {
         base.Dead();
@@ -122,6 +126,7 @@ public class Player : Fighter
 
     public void Leave()
     {
+        FighterAnimator.SetTrigger("Leave");
         Leaved?.Invoke();
     }
 
