@@ -11,6 +11,8 @@ public class Enemy : Fighter
     {
         base.Start();
         HealthChanged(CurrentHealth);
+        GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+        GetComponent<Renderer>().receiveShadows = true;
     }
 
     public override void TakeDamage(int damage)

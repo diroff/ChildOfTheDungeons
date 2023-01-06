@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6f8c48cd580e64f448ff38fdf0760319, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2f9d7b52c8329c443b4ce3bbd435d192, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -167,7 +167,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: _enemy
+  m_Name: _froggy
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack

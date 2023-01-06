@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dead
+  m_Name: MosquitoDead
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -125,7 +125,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: dba91f82e6f05e4408410179d5fc4e75, type: 3}
+      value: {fileID: 21300000, guid: 2635075d2a53da549a2b7462d83d8423, type: 3}
     - time: 0.25
       value: {fileID: 21300000, guid: 6b3a3caab5ba2514e880b2389f742ad5, type: 3}
     attribute: m_Sprite
@@ -168,7 +168,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: dba91f82e6f05e4408410179d5fc4e75, type: 3}
+    - {fileID: 21300000, guid: 2635075d2a53da549a2b7462d83d8423, type: 3}
     - {fileID: 21300000, guid: 6b3a3caab5ba2514e880b2389f742ad5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
