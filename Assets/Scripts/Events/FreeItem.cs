@@ -5,6 +5,8 @@ public class FreeItem : Event
 {
     [SerializeField] private Player _player;
 
+    [SerializeField] private ProgressionController _progression;
+
     [SerializeField] private float _takeCouldown = 1.0f;
 
     private Item _item;
@@ -99,8 +101,6 @@ public class FreeItem : Event
     private void SetItemLevel()
     {
         if (_item.GetItemType() != Item.TypeOfItems.heal)
-        {
-            _item.SetLevel(Random.Range(_player.GetLevel(), _player.GetLevel() + 2));
-        }
+            _item.SetLevel(_progression.SetLevel());
     }
 }

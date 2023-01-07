@@ -6,6 +6,8 @@ public class Fight : Event
 {
     [SerializeField] private Player _player;
 
+    [SerializeField] private ProgressionController _progression;
+
     [SerializeField] private GameObject _healthPanel;
     [SerializeField] private TextMeshProUGUI _healthText;
 
@@ -137,6 +139,6 @@ public class Fight : Event
 
     private void SetEnemyLevel()
     {
-        _enemy.SetLevel(Random.Range(_player.GetLevel(), _player.GetLevel() + 2));
+        _enemy.SetLevel(_progression.SetLevel());
     }
 }
