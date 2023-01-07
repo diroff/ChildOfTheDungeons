@@ -24,7 +24,6 @@ public class Fight : Event
         SetEnemyLevel();
         _healthPanel.SetActive(true);
         SubscribeEvents();
-        PlayerStep();
     }
 
     public override void EndEvent()
@@ -108,7 +107,6 @@ public class Fight : Event
     {
         _player.AddExperience(_enemy.CalculateExperienceCost());
         yield return new WaitForSeconds(_timeFromDead);
-        Destroy(_enemy.gameObject);
         EndEvent();
     }
 

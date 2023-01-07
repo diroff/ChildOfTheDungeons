@@ -18,7 +18,6 @@ public class Spawner : MonoBehaviour
         return GetComponentInChildren<Enemy>();
     }
 
-    [ContextMenu("Spawn Enemy")]
     public void SpawnEnemy()
     {
         Enemy enemy = _enemyTemplates[NumberOfRandomEnemy()];
@@ -35,7 +34,6 @@ public class Spawner : MonoBehaviour
         return GetComponentInChildren<Item>();
     }
 
-    [ContextMenu("Spawn Item")]
     public void SpawnItem()
     {
         Item item = _itemTemplates[NumberOfRandomItem()];

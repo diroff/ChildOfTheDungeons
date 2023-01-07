@@ -10,14 +10,15 @@ public class Enemy : Fighter
     protected override void Start()
     {
         base.Start();
-        HealthChanged(CurrentHealth);
         GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         GetComponent<Renderer>().receiveShadows = true;
+        HealthChanged(CurrentHealth);
     }
 
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
+        
         if (!Die())
         {
             HealthChanged(CurrentHealth);

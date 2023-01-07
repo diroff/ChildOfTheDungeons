@@ -6,7 +6,8 @@ public class Continue : Event
     [SerializeField] private EventsController _controller;
     [SerializeField] private Player _player;
 
-    [SerializeField] private float _runCouldown = 2.0f;
+    [SerializeField] private float _runCouldown = 1.5f;
+    [SerializeField] private float _destroyCouldown = 0.5f;
 
     public override void StartEvent()
     {
@@ -20,12 +21,12 @@ public class Continue : Event
 
     private IEnumerator ContinueCoroutine()
     {
-        SetPanelState(false);
-        _player.Run();
+        PlayerRun();
         yield return new WaitForSeconds(_runCouldown);
-        _controller.CurrentEvent.EndEvent();
-        _controller.SetEvent(0, true);
-        _controller.StartEvent();
+
+        DestroyEnemy();
+        yield return new WaitForSeconds(_destroyCouldown);
+        EnableNewEvent();
     }
 
     public override void EndEvent()
@@ -33,5 +34,25 @@ public class Continue : Event
         base.EndEvent();
         SetEnableEvent(false);
         SetPanelState(false);
+    }
+
+    private void DestroyEnemy()
+    {
+        var enemy = Spawner.GetComponentInChildren<Enemy>();
+        if (enemy != null)
+            Destroy(enemy.gameObject);
+    }
+
+    private void EnableNewEvent()
+    {
+        _controller.CurrentEvent.EndEvent();
+        _controller.SetEvent(0, true);
+        _controller.StartEvent();
+    }
+
+    private void PlayerRun()
+    {
+        SetPanelState(false);
+        _player.Run();
     }
 }

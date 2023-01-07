@@ -734,9 +734,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1403963333}
   Spawner: {fileID: 0}
+  _panelEnableCouldown: 0.1
   _controller: {fileID: 0}
   _player: {fileID: 0}
   _runCouldown: 2
+  _destroyCouldown: 0.2
 --- !u!1 &176033351
 GameObject:
   m_ObjectHideFlags: 0
@@ -4032,6 +4034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1719605955}
   Spawner: {fileID: 1957994491}
+  _panelEnableCouldown: 1
   _player: {fileID: 532910443}
   _takeCouldown: 1
 --- !u!1 &1719605955
@@ -5939,6 +5942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 5218370751606671310}
   Spawner: {fileID: 1957994491}
+  _panelEnableCouldown: 1
   _player: {fileID: 532910443}
   _healthPanel: {fileID: 951008191}
   _healthText: {fileID: 2082547539}
@@ -5976,7 +5980,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panel: {fileID: 775393113034063495}
-  Spawner: {fileID: 0}
+  Spawner: {fileID: 1957994491}
+  _panelEnableCouldown: 0
   _controller: {fileID: 1886117191}
   _player: {fileID: 532910443}
-  _runCouldown: 2.3
+  _runCouldown: 1.5
+  _destroyCouldown: 0.5
