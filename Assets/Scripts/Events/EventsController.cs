@@ -11,6 +11,8 @@ public class EventsController : MonoBehaviour
     [SerializeField] private Event _gameOver;
     [SerializeField] private Event _startEvent;
 
+    [SerializeField] private ProgressionController _progression;
+
     private Event _currentEvent;
 
     public Event CurrentEvent => _currentEvent;
@@ -28,12 +30,20 @@ public class EventsController : MonoBehaviour
 
     public void SetEvent(int eventNumber, bool isRandom = false)
     {
-        int number;
+        int number = 0;
 
-        if (!isRandom) number = eventNumber;
-        else number = ChooseRandomEvent();
+        if (!isRandom) 
+            number = eventNumber;
+        else
+        {
+            while (number == _progression.LastEvent)
+            {
+                number = ChooseRandomEvent();
+            }
+        }
 
         _currentEvent = _eventTypes[number];
+        _progression.SetLastEvent(number);
     }
 
     public void StartEvent()
