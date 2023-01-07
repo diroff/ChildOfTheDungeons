@@ -19,11 +19,7 @@ public class Fight : Event
     public override void StartEvent()
     {
         base.StartEvent();
-        Spawner.SpawnEnemy();
-        _enemy = Spawner.GetEnemy();
-        SetEnemyLevel();
-        _healthPanel.SetActive(true);
-        SubscribeEvents();
+        CreatingEnemy();
     }
 
     public override void EndEvent()
@@ -48,7 +44,7 @@ public class Fight : Event
         StartCoroutine(AttackEnemyCoroutine());
     }
 
-    protected IEnumerator AttackEnemyCoroutine()
+    private IEnumerator AttackEnemyCoroutine()
     {
         SetPanelState(false);
         _player.Attack();
@@ -87,20 +83,25 @@ public class Fight : Event
         _player.Leaved -= PlayerLeaved;
     }
 
+    private void CreatingEnemy()
+    {
+        Spawner.SpawnEnemy();
+        _enemy = Spawner.GetEnemy();
+        SetEnemyLevel();
+        _healthPanel.SetActive(true);
+        SubscribeEvents();
+    }
+
     private void EnemyDead(bool isDie)
     {
         if (isDie)
-        {
             StartCoroutine(EnemyDeadCoroutine());
-        }
     }
 
     private void PlayerDead(bool isDie)
     {
         if (isDie)
-        {
             StartCoroutine(PlayerDeadCoroutine());
-        }
     }
 
     private IEnumerator EnemyDeadCoroutine()

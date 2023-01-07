@@ -10,8 +10,7 @@ public class Enemy : Fighter
     protected override void Start()
     {
         base.Start();
-        GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-        GetComponent<Renderer>().receiveShadows = true;
+        EnableShadowShader();
         HealthChanged(CurrentHealth);
     }
 
@@ -20,9 +19,7 @@ public class Enemy : Fighter
         base.TakeDamage(damage);
         
         if (!Die())
-        {
             HealthChanged(CurrentHealth);
-        }
     }
 
     public void TryAttack(Player player)
@@ -36,11 +33,17 @@ public class Enemy : Fighter
 
     public int CalculateExperienceCost()
     {
-        return (_baseExperience * (Level+2)/3);
+        return (_baseExperience * (Level + 2) / 3);
     }
 
     public int CalculateTotalDamage()
     {
         return BaseDamage * (Level + 1) / 2;
+    }
+
+    private void EnableShadowShader()
+    {
+        GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+        GetComponent<Renderer>().receiveShadows = true;
     }
 }

@@ -12,10 +12,7 @@ public class FreeItem : Event
     public override void StartEvent()
     {
         base.StartEvent();
-        Spawner.SpawnItem();
-        _item = Spawner.GetItem();
-        SetItemLevel();
-        _item.Taked += IsTaked;
+        SpawnItem();
     }
 
     public void AddItem()
@@ -34,25 +31,17 @@ public class FreeItem : Event
 
         _item.TakeAnimation();
         yield return new WaitForSeconds(_takeCouldown);
-        _item.TakeItem();
 
-        if (_item.GetItemType() == Item.TypeOfItems.heal)
-            _player.AddHeal();
-        else
-            UseItem();
-
-        Destroy(_item.gameObject);
+        TakeItem();
     }
 
     private IEnumerator LeaveItemCoroutine()
     {
         SetPanelState(false);
-
         _player.Leave();
         yield return new WaitForSeconds(_takeCouldown);
-        _item.TakeItem();
-
-        Destroy(_item.gameObject);
+        
+        NotTakeItem();
     }
 
     private void UseItem()
@@ -68,6 +57,25 @@ public class FreeItem : Event
         }
     }
 
+    private void TakeItem()
+    {
+        _item.TakeItem();
+
+        if (_item.GetItemType() == Item.TypeOfItems.heal)
+            _player.AddHeal();
+        else
+            UseItem();
+
+        Destroy(_item.gameObject);
+    }
+
+    private void NotTakeItem()
+    {
+        _item.TakeItem();
+
+        Destroy(_item.gameObject);
+    }
+
     public override void EndEvent()
     {
         base.EndEvent();
@@ -78,6 +86,14 @@ public class FreeItem : Event
     {
         if (isTaked) 
             EndEvent();
+    }
+
+    private void SpawnItem()
+    {
+        Spawner.SpawnItem();
+        _item = Spawner.GetItem();
+        SetItemLevel();
+        _item.Taked += IsTaked;
     }
 
     private void SetItemLevel()

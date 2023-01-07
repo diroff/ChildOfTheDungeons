@@ -52,7 +52,8 @@ public abstract class Fighter : MonoBehaviour
             FighterAnimator.SetTrigger("Hit");
         }
 
-        if (Die()) Dead();
+        if (Die()) 
+            Dead();
     }
 
     public void CalculateMaxHealth()
