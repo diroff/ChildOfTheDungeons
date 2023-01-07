@@ -15,7 +15,7 @@ public class ProgressionController : MonoBehaviour
         if (playerLevel > 1)
             return Random.Range(playerLevel - 1, playerLevel + 2);
         else
-            return Random.Range(playerLevel, playerLevel + 2);
+            return playerLevel;
     }
 
     public void SetLastEvent(int previousEventNumber)

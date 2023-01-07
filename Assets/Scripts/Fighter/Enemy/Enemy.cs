@@ -5,13 +5,29 @@ public class Enemy : Fighter
 {
     [SerializeField] private int _baseExperience;
 
+    [SerializeField] private OppositeParameters _parameters;
+
     public event UnityAction<int> HealthChanged;
+    public event UnityAction<int> LevelChanged;
+    public event UnityAction<int> DamageChanged;
+    public event UnityAction<int> CostChanged;
+
+
+    private void OnEnable()
+    {
+        _parameters.DisplayParameters(true);
+    }
+
+    private void OnDisable()
+    {
+        _parameters.DisplayParameters(false);
+    }
 
     protected override void Start()
     {
         base.Start();
         EnableShadowShader();
-        HealthChanged(CurrentHealth);
+        UpdateParameters();
     }
 
     public override void TakeDamage(int damage)
@@ -39,6 +55,26 @@ public class Enemy : Fighter
     public int CalculateTotalDamage()
     {
         return BaseDamage * (Level + 1) / 2;
+    }
+    
+    private void UpdateParameters()
+    {
+        HealthChanged(CurrentHealth);
+        LevelChanged(Level);
+        DamageChanged(CalculateTotalDamage());
+        CostChanged(CalculateExperienceCost());
+    }
+
+    public override void SetLevel(int currentLevel)
+    {
+        base.SetLevel(currentLevel);
+        UpdateParameters();
+    }
+
+    public override void Dead()
+    {
+        _parameters.DisplayParameters(false);
+        base.Dead();
     }
 
     private void EnableShadowShader()

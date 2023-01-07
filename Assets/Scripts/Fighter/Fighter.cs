@@ -66,7 +66,7 @@ public abstract class Fighter : MonoBehaviour
         return Level;
     }
 
-    public void SetLevel(int currentLevel)
+    public virtual void SetLevel(int currentLevel)
     {
         Level = currentLevel;
     }

@@ -8,9 +8,6 @@ public class Fight : Event
 
     [SerializeField] private ProgressionController _progression;
 
-    [SerializeField] private GameObject _healthPanel;
-    [SerializeField] private TextMeshProUGUI _healthText;
-
     [SerializeField] private float _timeBeforeAttack = 0.5f;
     [SerializeField] private float _timeAfterAttack = 0.5f;
     [SerializeField] private float _timeFromDead = 1.5f;
@@ -27,7 +24,6 @@ public class Fight : Event
     public override void EndEvent()
     {
         base.EndEvent();
-        _healthPanel.SetActive(false);
         UnsubscribeEvents();
     }
 
@@ -71,7 +67,6 @@ public class Fight : Event
 
     private void SubscribeEvents() 
     {
-        _enemy.HealthChanged += HealthChanged;
         _enemy.Died += EnemyDead;
         _player.Died += PlayerDead;
         _player.Leaved += PlayerLeaved;
@@ -79,7 +74,6 @@ public class Fight : Event
 
     private void UnsubscribeEvents()
     {
-        _enemy.HealthChanged -= HealthChanged;
         _enemy.Died -= EnemyDead;
         _player.Died -= PlayerDead;
         _player.Leaved -= PlayerLeaved;
@@ -90,7 +84,6 @@ public class Fight : Event
         Spawner.SpawnEnemy();
         _enemy = Spawner.GetEnemy();
         SetEnemyLevel();
-        _healthPanel.SetActive(true);
         SubscribeEvents();
     }
 
@@ -130,11 +123,6 @@ public class Fight : Event
     private void PlayerLeaved()
     {
         StartCoroutine(PlayerLeavedCoroutine());
-    }
-
-    private void HealthChanged(int health)
-    {
-        _healthText.text = "x" + health;
     }
 
     private void SetEnemyLevel()
