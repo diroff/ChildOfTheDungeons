@@ -9,8 +9,20 @@ public abstract class Item : MonoBehaviour
     [SerializeField] protected int Level;
 
     [SerializeField] protected Animator ItemAnimator;
+    
+    [SerializeField] private OppositeParameters _parameters;
 
     public event UnityAction<bool> Taked;
+
+    private void OnEnable()
+    {
+        _parameters.DisplayParameters(true);
+    }
+
+    private void OnDisable()
+    {
+        _parameters.DisplayParameters(false);
+    }
 
     public enum TypeOfItems
     {
@@ -21,11 +33,13 @@ public abstract class Item : MonoBehaviour
 
     public void TakeItem()
     {
+        _parameters.DisplayParameters(false);
         Taked?.Invoke(true);
     }  
 
     public void TakeAnimation()
     {
+        _parameters.DisplayParameters(false);
         ItemAnimator.SetTrigger("Take");
     }
 
@@ -37,5 +51,10 @@ public abstract class Item : MonoBehaviour
     public void SetLevel(int level)
     {
         Level = level;
+    }
+
+    public int GetLevel()
+    {
+        return Level;
     }
 }
