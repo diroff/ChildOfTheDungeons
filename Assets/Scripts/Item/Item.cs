@@ -40,7 +40,6 @@ public abstract class Item : MonoBehaviour
 
     public void TakeItem()
     {
-        _parameters.DisplayParameters(false);
         Taked?.Invoke(true);
     }  
 
@@ -48,6 +47,11 @@ public abstract class Item : MonoBehaviour
     {
         _parameters.DisplayParameters(false);
         ItemAnimator.SetTrigger("Take");
+    }
+
+    public void HideUI()
+    {
+        _parameters.DisplayParameters(false);
     }
 
     public TypeOfItems GetItemType()

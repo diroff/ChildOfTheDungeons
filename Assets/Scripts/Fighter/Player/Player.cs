@@ -97,6 +97,7 @@ public class Player : Fighter
             Destroy(_armorSlot.GetComponentInChildren<Armor>().gameObject);
 
         _currentArmor = Instantiate(newArmor, _armorSlot);
+        _currentArmor.HideUI();
         CalculateArmor();
     }
 
@@ -106,6 +107,7 @@ public class Player : Fighter
             Destroy(_weaponSlot.GetComponentInChildren<Weapon>().gameObject);
 
         _currentWeapon = Instantiate(newWeapon, _weaponSlot);
+        _currentWeapon.HideUI();
         DamageChanged(CalculateTotalDamage());
     }
 
