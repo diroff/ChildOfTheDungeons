@@ -13,15 +13,22 @@ public abstract class Item : MonoBehaviour
     [SerializeField] private OppositeParameters _parameters;
 
     public event UnityAction<bool> Taked;
+    public event UnityAction<int> LevelChanged;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _parameters.DisplayParameters(true);
+        LevelChanged?.Invoke(Level);
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         _parameters.DisplayParameters(false);
+    }
+
+    protected virtual void UpdateParameters()
+    {
+        LevelChanged?.Invoke(Level);
     }
 
     public enum TypeOfItems
@@ -51,6 +58,7 @@ public abstract class Item : MonoBehaviour
     public void SetLevel(int level)
     {
         Level = level;
+        UpdateParameters();
     }
 
     public int GetLevel()

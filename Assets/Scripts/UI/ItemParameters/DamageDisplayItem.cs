@@ -8,11 +8,16 @@ public class DamageDisplayItem : MonoBehaviour
 
     private void OnEnable()
     {
-        DisplayDamage();
+        _item.GetComponent<Weapon>().DamageChanged += DisplayDamage;
     }
 
-    public void DisplayDamage()
+    private void OnDisable()
     {
-        _damageText.text = "" + _item.GetComponent<Weapon>().CalculateDamage();
+        _item.GetComponent<Weapon>().DamageChanged -= DisplayDamage;
+    }
+
+    public void DisplayDamage(int damage)
+    {
+        _damageText.text = $"{damage}";
     }
 }

@@ -8,11 +8,16 @@ public class ArmorDisplayItem : MonoBehaviour
 
     private void OnEnable()
     {
-        DisplayArmor();
+        _item.GetComponent<Armor>().ProtectionChanged += DisplayArmor;
     }
 
-    public void DisplayArmor()
+    private void OnDisable()
     {
-        _armorText.text = "" + _item.GetComponent<Armor>().CalculateProtection();
+        _item.GetComponent<Armor>().ProtectionChanged -= DisplayArmor;
+    }
+
+    public void DisplayArmor(int protection)
+    {
+        _armorText.text = $"{protection}";
     }
 }

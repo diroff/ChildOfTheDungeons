@@ -13,15 +13,16 @@ public class Spawner : MonoBehaviour
         return Random.Range(0, _enemyTemplates.Count);
     }
 
-    public Enemy GetEnemy()
-    {
-        return GetComponentInChildren<Enemy>();
-    }
-
     public void SpawnEnemy()
     {
         Enemy enemy = _enemyTemplates[NumberOfRandomEnemy()];
         Instantiate(enemy, _spawnPoint.transform);
+    }
+
+    public void SpawnItem()
+    {
+        Item item = _itemTemplates[NumberOfRandomItem()];
+        Instantiate(item, _spawnPoint.transform);
     }
 
     private int NumberOfRandomItem()
@@ -34,9 +35,8 @@ public class Spawner : MonoBehaviour
         return GetComponentInChildren<Item>();
     }
 
-    public void SpawnItem()
+    public Enemy GetEnemy()
     {
-        Item item = _itemTemplates[NumberOfRandomItem()];
-        Instantiate(item, _spawnPoint.transform);
+        return GetComponentInChildren<Enemy>();
     }
 }

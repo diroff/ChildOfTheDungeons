@@ -8,11 +8,16 @@ public class LevelDisplayItem : MonoBehaviour
 
     private void OnEnable()
     {
-        DisplayLevel();
+        _item.LevelChanged += DisplayLevel;
     }
 
-    public void DisplayLevel()
+    private void OnDisable()
     {
-        _levelText.text = "" + _item.GetLevel();
+        _item.LevelChanged -= DisplayLevel;
+    }
+
+    public void DisplayLevel(int level)
+    {
+        _levelText.text = $"{level}";
     }
 }
