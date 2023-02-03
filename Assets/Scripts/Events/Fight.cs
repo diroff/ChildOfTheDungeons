@@ -15,6 +15,8 @@ public class Fight : Event
 
     private Enemy _enemy;
 
+    private bool _isPlayerStep = true;
+
     public override void StartEvent()
     {
         base.StartEvent();
@@ -25,6 +27,7 @@ public class Fight : Event
     {
         base.EndEvent();
         UnsubscribeEvents();
+        _isPlayerStep = true;
     }
 
     public void PlayerStep()
@@ -50,8 +53,8 @@ public class Fight : Event
         _enemy.TakeDamage(_player.CalculateTotalDamage());
         yield return new WaitForSeconds(_timeAfterAttack);
 
-        if (!_enemy.Die())
-            EnemyStep();
+        _isPlayerStep = false;
+        StepChecker();
     }
 
     private IEnumerator AttackPlayer()
@@ -60,9 +63,23 @@ public class Fight : Event
         yield return new WaitForSeconds(_timeBeforeAttack);
         _enemy.TryAttack(_player);
         yield return new WaitForSeconds(_timeAfterAttack);
-        
-        if (!_player.Die()) 
-            PlayerStep();
+
+        _isPlayerStep = true;
+        StepChecker();
+    }
+
+    private void StepChecker()
+    {
+        if (_isPlayerStep)
+        {
+            if (!_player.Die())
+                PlayerStep();
+        }
+        else
+        {
+            if (!_enemy.Die())
+                EnemyStep();
+        }
     }
 
     private void SubscribeEvents() 
