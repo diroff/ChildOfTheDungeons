@@ -4807,6 +4807,7 @@ MonoBehaviour:
   - {fileID: 5564898964059130534, guid: 01a7d5eed5f72344d92fe38b81ec4b97, type: 3}
   - {fileID: 5564898964059130534, guid: c280f6f6f5ef1434c9a479d4a6d62b11, type: 3}
   - {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
+  _progression: {fileID: 1104878590}
   _spawnPoint: {fileID: 1957994489}
 --- !u!1 &2010362539
 GameObject:
@@ -5741,7 +5742,6 @@ MonoBehaviour:
   Spawner: {fileID: 1957994491}
   _panelEnableCouldown: 1
   _player: {fileID: 532910443}
-  _progression: {fileID: 1104878590}
   _timeBeforeAttack: 0
   _timeAfterAttack: 0.5
   _timeFromDead: 1.5

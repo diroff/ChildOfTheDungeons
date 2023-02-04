@@ -6,8 +6,6 @@ public class Fight : Event
 {
     [SerializeField] private Player _player;
 
-    [SerializeField] private ProgressionController _progression;
-
     [SerializeField] private float _timeBeforeAttack = 0.5f;
     [SerializeField] private float _timeAfterAttack = 0.5f;
     [SerializeField] private float _timeFromDead = 1.5f;
@@ -100,7 +98,6 @@ public class Fight : Event
     {
         Spawner.SpawnEnemy();
         _enemy = Spawner.GetEnemy();
-        SetEnemyLevel();
         SubscribeEvents();
     }
 
@@ -140,10 +137,5 @@ public class Fight : Event
     private void PlayerLeaved()
     {
         StartCoroutine(PlayerLeavedCoroutine());
-    }
-
-    private void SetEnemyLevel()
-    {
-        _enemy.SetLevel(_progression.SetLevel());
     }
 }

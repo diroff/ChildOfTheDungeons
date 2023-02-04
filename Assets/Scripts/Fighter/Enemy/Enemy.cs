@@ -12,7 +12,6 @@ public class Enemy : Fighter
     public event UnityAction<int> DamageChanged;
     public event UnityAction<int> CostChanged;
 
-
     private void OnEnable()
     {
         _parameters.DisplayParameters(true);
@@ -68,7 +67,6 @@ public class Enemy : Fighter
     public override void SetLevel(int currentLevel)
     {
         base.SetLevel(currentLevel);
-        UpdateParameters();
     }
 
     public override void Dead()
