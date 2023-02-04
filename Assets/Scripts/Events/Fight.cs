@@ -7,12 +7,14 @@ public class Fight : Event
 {
     [SerializeField] private Player _player;
 
+    [Header("Events time")]
     [SerializeField] private float _timeBeforeAttack = 0.5f;
     [SerializeField] private float _timeAfterAttack = 0.5f;
     [SerializeField] private float _timeFromDead = 1.5f;
     [SerializeField] private float _timeBeforeLeave = 1.0f;
     [SerializeField] private float _healingTime = 1.0f;
 
+    [Header("Buttons")]
     [SerializeField] private Button _attackButton;
     [SerializeField] private Button _healButton;
     [SerializeField] private Button _leaveButton;
