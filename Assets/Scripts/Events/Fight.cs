@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fight : Event
 {
@@ -10,6 +11,11 @@ public class Fight : Event
     [SerializeField] private float _timeAfterAttack = 0.5f;
     [SerializeField] private float _timeFromDead = 1.5f;
     [SerializeField] private float _timeBeforeLeave = 1.0f;
+    [SerializeField] private float _healingTime = 1.0f;
+
+    [SerializeField] private Button _attackButton;
+    [SerializeField] private Button _healButton;
+    [SerializeField] private Button _leaveButton;
 
     private Enemy _enemy;
 
@@ -17,6 +23,7 @@ public class Fight : Event
     {
         base.StartEvent();
         CreatingEnemy();
+        PotionSlotChecker();
     }
 
     public override void EndEvent()
@@ -28,6 +35,7 @@ public class Fight : Event
     public void PlayerStep()
     {
         SetPanelState(true);
+        PotionSlotChecker();
     }
 
     public void EnemyStep()
@@ -38,6 +46,19 @@ public class Fight : Event
     public void AttackEnemy()
     {
         StartCoroutine(AttackEnemyCoroutine());
+    }
+
+    public void Heal()
+    {
+        StartCoroutine(HealCoroutine());
+    }
+
+    private void PotionSlotChecker()
+    {
+        if (_player.PotionChecker())
+            _healButton.gameObject.SetActive(true);
+        else
+            _healButton.gameObject.SetActive(false);
     }
 
     private void SubscribeEvents() 
@@ -107,6 +128,15 @@ public class Fight : Event
     {
         yield return new WaitForSeconds(_timeFromDead);
         EndEvent();
+    }
+
+    private IEnumerator HealCoroutine()
+    {
+        SetPanelState(false);
+        yield return new WaitForSeconds(_healingTime);
+        _player.Heal();
+        PotionSlotChecker();
+        EnemyStep();
     }
 
     private IEnumerator PlayerLeavedCoroutine()
