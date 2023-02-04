@@ -243,7 +243,6 @@ GameObject:
   - component: {fileID: 65404709}
   - component: {fileID: 65404708}
   - component: {fileID: 65404707}
-  - component: {fileID: 65404710}
   m_Layer: 5
   m_Name: Take
   m_TagString: Untagged
@@ -316,9 +315,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65404710}
-        m_TargetAssemblyTypeName: TakeButton, Assembly-CSharp
-        m_MethodName: OnClickAction
+      - m_Target: {fileID: 1622029519}
+        m_TargetAssemblyTypeName: FreeItem, Assembly-CSharp
+        m_MethodName: AddItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -366,20 +365,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65404704}
   m_CullTransparentMesh: 1
---- !u!114 &65404710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65404704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5890ecc6a40ce624ba623e8670ed4ad5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 0}
-  _freeItem: {fileID: 1622029519}
 --- !u!1 &68695155
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,7 +735,6 @@ GameObject:
   - component: {fileID: 176033355}
   - component: {fileID: 176033354}
   - component: {fileID: 176033353}
-  - component: {fileID: 176033356}
   m_Layer: 5
   m_Name: DontTake
   m_TagString: Untagged
@@ -823,9 +807,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 176033356}
-        m_TargetAssemblyTypeName: DontTakeButton, Assembly-CSharp
-        m_MethodName: OnClickAction
+      - m_Target: {fileID: 1622029519}
+        m_TargetAssemblyTypeName: FreeItem, Assembly-CSharp
+        m_MethodName: LeaveItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -873,20 +857,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176033351}
   m_CullTransparentMesh: 1
---- !u!114 &176033356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 176033351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e023c99e76483464bbed205ff764db0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 0}
-  _freeItem: {fileID: 1622029519}
 --- !u!1 &222098525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,7 +1388,6 @@ GameObject:
   - component: {fileID: 599531203}
   - component: {fileID: 599531202}
   - component: {fileID: 599531201}
-  - component: {fileID: 599531200}
   m_Layer: 5
   m_Name: Attack
   m_TagString: Untagged
@@ -1447,20 +1416,6 @@ RectTransform:
   m_AnchoredPosition: {x: 210.30005, y: -84.41553}
   m_SizeDelta: {x: 200, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &599531200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599531198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eb8d0efeaa24b7488fffaf700270b45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 599531201}
-  _fight: {fileID: 8148549922209866770}
 --- !u!114 &599531201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,9 +1460,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 599531200}
-        m_TargetAssemblyTypeName: AttackButton, Assembly-CSharp
-        m_MethodName: OnClickAction
+      - m_Target: {fileID: 8148549922209866770}
+        m_TargetAssemblyTypeName: Fight, Assembly-CSharp
+        m_MethodName: AttackEnemy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5180,9 +5135,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4809599938141679054}
-        m_TargetAssemblyTypeName: ContinueButton, Assembly-CSharp
-        m_MethodName: OnClickAction
+      - m_Target: {fileID: 8320838582458532849}
+        m_TargetAssemblyTypeName: Continue, Assembly-CSharp
+        m_MethodName: ContinueWay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5204,7 +5159,6 @@ GameObject:
   - component: {fileID: 775393114659039809}
   - component: {fileID: 775393114659039808}
   - component: {fileID: 775393114659039811}
-  - component: {fileID: 4809599938141679054}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -5212,20 +5166,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4809599938141679054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 775393114659039821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ad7751c42ff6704a80769bf0a5c2506, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 0}
-  _continueEvent: {fileID: 8320838582458532849}
 --- !u!114 &5218370751210810292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5276,7 +5216,6 @@ GameObject:
   - component: {fileID: 5218370751210810293}
   - component: {fileID: 5218370751210810292}
   - component: {fileID: 5218370751210810299}
-  - component: {fileID: 5218370751210810300}
   m_Layer: 5
   m_Name: Leave
   m_TagString: Untagged
@@ -5348,9 +5287,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5218370751210810300}
-        m_TargetAssemblyTypeName: LeaveButton, Assembly-CSharp
-        m_MethodName: OnClickAction
+      - m_Target: {fileID: 532910443}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: TryToLeave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5360,20 +5299,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5218370751210810300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5218370751210810297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab7d5755659b4a34f9b8e5e3dece11c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 5218370751210810299}
-  _player: {fileID: 532910443}
 --- !u!114 &5218370751276373208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5418,9 +5343,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5218370751276373216}
-        m_TargetAssemblyTypeName: HealButton, Assembly-CSharp
-        m_MethodName: OnClickAction
+      - m_Target: {fileID: 532910443}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5480,7 +5405,6 @@ GameObject:
   - component: {fileID: 5218370751276373210}
   - component: {fileID: 5218370751276373209}
   - component: {fileID: 5218370751276373208}
-  - component: {fileID: 5218370751276373216}
   m_Layer: 5
   m_Name: Heal
   m_TagString: Untagged
@@ -5509,20 +5433,6 @@ RectTransform:
   m_AnchoredPosition: {x: 460.30005, y: -84.41553}
   m_SizeDelta: {x: 200, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5218370751276373216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5218370751276373214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67df91d2673992d4babc0d760e12550c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Button: {fileID: 5218370751276373208}
-  _player: {fileID: 532910443}
 --- !u!114 &5218370751606671305
 MonoBehaviour:
   m_ObjectHideFlags: 0
