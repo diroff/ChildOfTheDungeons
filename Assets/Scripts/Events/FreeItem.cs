@@ -54,7 +54,7 @@ public class FreeItem : Event
                 _player.UseWeapon(_item.GetComponent<Weapon>());
                 break;
             case Item.TypeOfItems.armor:
-                _player.UseArmor(_item.GetComponent<Armor>());
+                _player.AddArmor(_item.GetComponent<Armor>());
                 break;
         }
     }

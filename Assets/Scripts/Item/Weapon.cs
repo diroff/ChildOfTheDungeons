@@ -11,6 +11,7 @@ public class Weapon : Item
     protected override void OnEnable()
     {
         base.OnEnable();
+        ItemType = TypeOfItems.weapon;
         CalculateDamage();
     }
 

@@ -107,6 +107,7 @@ MonoBehaviour:
   _parameters: {fileID: 6191341600442990010}
   _health: 100
   _protection: 2
+  _typeArmor: 1
 --- !u!95 &7209744020205144440
 Animator:
   serializedVersion: 5

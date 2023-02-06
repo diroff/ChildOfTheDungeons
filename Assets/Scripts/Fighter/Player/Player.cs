@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class Player : Fighter
 {
-    [SerializeField] private Transform _armorSlot;
+    [SerializeField] private ArmorSlots _armor;
     [SerializeField] private Transform _weaponSlot;
 
     [SerializeField] private int _experienceToNextLevel = 10;
@@ -12,7 +12,6 @@ public class Player : Fighter
     private int _potionCount;
     private int _currentExperience = 0;
 
-    private Armor _currentArmor;
     private Weapon _currentWeapon;
 
     public int PotionCount => _potionCount;
@@ -91,14 +90,10 @@ public class Player : Fighter
         HealthChanged(CurrentHealth);
     }
 
-    public void UseArmor(Armor newArmor)
+    public void AddArmor(Armor armor)
     {
-        if (_currentArmor != null)
-            Destroy(_armorSlot.GetComponentInChildren<Armor>().gameObject);
-
-        _currentArmor = Instantiate(newArmor, _armorSlot);
-        _currentArmor.HideUI();
-        CalculateArmor();
+        _armor.AddItem(armor);
+        UpdatePlayerStats();
     }
 
     public void UseWeapon(Weapon newWeapon)
@@ -140,23 +135,17 @@ public class Player : Fighter
         return baseDamage * Level;
     }
 
-    public void CalculateArmor()
-    {
-        if (_currentArmor != null)
-            Armor = _currentArmor.CalculateProtection();
-
-        Armor = 0;
-    }
-
     private void UpdatePlayerStats()
     {
         CalculateMaxHealth();
         CalculateTotalDamage();
-        CalculateArmor();
+        Armor = _armor.CalculateArmor();
         HealthChanged(CurrentHealth);
         DamageChanged(CalculateTotalDamage());
         PotionCountChanged(_potionCount);
         ExperienceChanged(_currentExperience, _experienceToNextLevel);
         LevelChanged(Level);
+
+        Debug.Log($"Броня: {Armor}");
     }
 }
