@@ -4,12 +4,15 @@ using UnityEngine.Events;
 public abstract class Item : MonoBehaviour
 {
     [SerializeField] protected string Name;
-    
+    [TextArea(1, 2)]
+    [SerializeField] protected string Description;
+
     [SerializeField] protected Animator ItemAnimator;
     
     [SerializeField] private OppositeParameters _parameters;
 
     public Sprite ItemSprite => Sprite;
+    public string ItemDescription => Description;
 
     protected TypeOfItems ItemType = TypeOfItems.heal;
     protected int Level = 1;

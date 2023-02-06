@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Galoshes
-  Level: 1
+  Description: "\u041E\u0431\u044B\u0447\u043D\u044B\u0435 \u0433\u0430\u043B\u043E\u0448\u0438.
+    \u0411\u0435\u0441\u043F\u043E\u043B\u0435\u0437\u043D\u044B\u0435."
   ItemAnimator: {fileID: 7209744020205144440}
   _parameters: {fileID: 6191341600442990010}
   _health: 100

@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Panama
-  Level: 1
+  Description: "\u041A\u0440\u0430\u0441\u0438\u0432\u0430\u044F \u043F\u0430\u043D\u0430\u043C\u043A\u0430
+    \u0441 \u0446\u0432\u0435\u0442\u043E\u0447\u043A\u043E\u043C."
   ItemAnimator: {fileID: 7209744020205144440}
   _parameters: {fileID: 6191341600442990010}
   _health: 100
