@@ -4,15 +4,13 @@ using UnityEngine.Events;
 
 public class Player : Fighter
 {
-    [SerializeField] private ArmorSlots _armor;
-    [SerializeField] private Transform _weaponSlot;
+    [SerializeField] private ArmorSlots _armorSlots;
+    [SerializeField] private WeaponSlot _weaponSlot;
 
     [SerializeField] private int _experienceToNextLevel = 10;
 
     private int _potionCount;
     private int _currentExperience = 0;
-
-    private Weapon _currentWeapon;
 
     public int PotionCount => _potionCount;
 
@@ -92,17 +90,13 @@ public class Player : Fighter
 
     public void AddArmor(Armor armor)
     {
-        _armor.AddItem(armor);
+        _armorSlots.AddItem(armor);
         UpdatePlayerStats();
     }
 
-    public void UseWeapon(Weapon newWeapon)
+    public void UseWeapon(Weapon weapon)
     {
-        if (_currentWeapon != null)
-            Destroy(_weaponSlot.GetComponentInChildren<Weapon>().gameObject);
-
-        _currentWeapon = Instantiate(newWeapon, _weaponSlot);
-        _currentWeapon.HideUI();
+        _weaponSlot.AddItem(weapon);
         DamageChanged(CalculateTotalDamage());
     }
 
@@ -129,8 +123,8 @@ public class Player : Fighter
 
     public int CalculateTotalDamage()
     {
-        if (_currentWeapon != null)
-            return (BaseDamage * Level) + _currentWeapon.CalculateDamage();
+        if (_weaponSlot.IsSomeWeapon())
+            return (BaseDamage * Level) + _weaponSlot.Weapon.CalculateDamage();
         
         return baseDamage * Level;
     }
@@ -139,7 +133,7 @@ public class Player : Fighter
     {
         CalculateMaxHealth();
         CalculateTotalDamage();
-        Armor = _armor.CalculateArmor();
+        Armor = _armorSlots.CalculateArmor();
         HealthChanged(CurrentHealth);
         DamageChanged(CalculateTotalDamage());
         PotionCountChanged(_potionCount);

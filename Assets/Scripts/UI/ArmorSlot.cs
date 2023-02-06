@@ -1,37 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
-public class ArmorSlot : MonoBehaviour
+public class ArmorSlot : Slot
 {
-    [SerializeField] private SpriteRenderer _itemSprite;
-    [SerializeField] private InfoPanel _infoPanel;
-
     private Armor _armor;
-    private bool _isFilled;
 
-    private void UpdateSprite(Sprite sprite)
+    public override void AddItem(Item item)
     {
-        _itemSprite.sprite = sprite;
+        base.AddItem(item);
+        _armor = Item as Armor;
     }
 
-    public void AddItem(Armor armor)
+    public override void ShowDescription()
     {
-        _armor = armor;
-        _isFilled = true;
-        _infoPanel.ShowInfo(false);
-        UpdateSprite(_armor.ItemSprite);
-    }
+        base.ShowDescription();
 
-    public void ShowDescription()
-    {
-        if(!_isFilled)
-            return;
-
-        if(_infoPanel.gameObject.activeSelf)
-            _infoPanel.gameObject.SetActive(false);
-
-        _infoPanel.ShowInfo(true);
-        _infoPanel.SetInfo(_armor.ItemDescription, _armor.CalculateProtection(), _armor.GetLevel());
+        if(SlotIsFilled())
+            InfoPanel.SetInfo(_armor.ItemDescription, _armor.CalculateProtection(), _armor.GetLevel());
     }
 }
