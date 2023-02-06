@@ -19,7 +19,6 @@ public class Player : Fighter
     public event UnityAction Leaved;
     public event UnityAction<int> HealthChanged;
     public event UnityAction<int> DamageChanged;
-    public event UnityAction<int> PotionCountChanged;
     public event UnityAction<int, int> ExperienceChanged;
     public event UnityAction<int> LevelChanged;
 
@@ -46,7 +45,6 @@ public class Player : Fighter
 
             _potionCount--;
             HealthChanged(CurrentHealth);
-            PotionCountChanged(_potionCount);
         }
     }
 
@@ -58,7 +56,6 @@ public class Player : Fighter
     public void AddHeal()
     {
         _potionCount++;
-        PotionCountChanged(_potionCount);
     }
 
     public void AddExperience(int countExperience)
@@ -99,7 +96,6 @@ public class Player : Fighter
     public void UseWeapon(Weapon weapon)
     {
         _weaponSlot.AddItem(weapon);
-        DamageChanged(BaseDamage * Level);
     }
 
     public void Run()
@@ -138,7 +134,6 @@ public class Player : Fighter
         Armor = _armorSlots.CalculateArmor();
         HealthChanged(CurrentHealth);
         DamageChanged(BaseDamage * Level);
-        PotionCountChanged(_potionCount);
         ExperienceChanged(_currentExperience, _experienceToNextLevel);
         LevelChanged(Level);
 

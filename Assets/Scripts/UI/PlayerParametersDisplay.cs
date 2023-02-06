@@ -5,14 +5,12 @@ public class PlayerParametersDisplay : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private TextMeshProUGUI _damageField;
-    [SerializeField] private TextMeshProUGUI _potionField;
     [SerializeField] private TextMeshProUGUI _experienceField;
     [SerializeField] private TextMeshProUGUI _levelField;
 
     private void OnEnable()
     {
         _player.DamageChanged += DisplayPlayerDamage;
-        _player.PotionCountChanged += DisplayPlayerPotionCount;
         _player.ExperienceChanged += DisplayPlayerExperience;
         _player.LevelChanged += DisplayPlayerLevel;
     }
@@ -20,7 +18,6 @@ public class PlayerParametersDisplay : MonoBehaviour
     private void OnDisable()
     {
         _player.DamageChanged -= DisplayPlayerDamage;
-        _player.PotionCountChanged -= DisplayPlayerPotionCount;
         _player.ExperienceChanged -= DisplayPlayerExperience;
         _player.LevelChanged -= DisplayPlayerLevel;
     }
@@ -28,11 +25,6 @@ public class PlayerParametersDisplay : MonoBehaviour
     private void DisplayPlayerDamage(int damage)
     {
         _damageField.text = "x" + damage;
-    }
-
-    private void DisplayPlayerPotionCount(int potion)
-    {
-        _potionField.text = "x" + potion;
     }
 
     private void DisplayPlayerExperience(int currentExperience, int experienceToNextLevel)

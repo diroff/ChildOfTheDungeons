@@ -16,8 +16,8 @@ public class Fight : Event
 
     [Header("Buttons")]
     [SerializeField] private Button _attackButton;
-    [SerializeField] private Button _healButton;
     [SerializeField] private Button _leaveButton;
+    [SerializeField] private HealSlot _healButton;
 
     private Enemy _enemy;
 
@@ -25,7 +25,7 @@ public class Fight : Event
     {
         base.StartEvent();
         CreatingEnemy();
-        PotionSlotChecker();
+        _healButton.SetButtonState();
     }
 
     public override void EndEvent()
@@ -37,7 +37,7 @@ public class Fight : Event
     public void PlayerStep()
     {
         SetPanelState(true);
-        PotionSlotChecker();
+        _healButton.SetButtonState();
     }
 
     public void EnemyStep()
@@ -53,14 +53,6 @@ public class Fight : Event
     public void Heal()
     {
         StartCoroutine(HealCoroutine());
-    }
-
-    private void PotionSlotChecker()
-    {
-        if (_player.PotionChecker())
-            _healButton.gameObject.SetActive(true);
-        else
-            _healButton.gameObject.SetActive(false);
     }
 
     private void SubscribeEvents() 
@@ -137,7 +129,7 @@ public class Fight : Event
         SetPanelState(false);
         yield return new WaitForSeconds(_healingTime);
         _player.Heal();
-        PotionSlotChecker();
+        _healButton.SetButtonState();
         EnemyStep();
     }
 
