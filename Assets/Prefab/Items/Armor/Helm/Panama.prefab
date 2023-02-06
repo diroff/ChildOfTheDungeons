@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6766192260602316794}
   - component: {fileID: 7209744020205144440}
   m_Layer: 0
-  m_Name: DefaultArmor
+  m_Name: Panama
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: -2119346257
   m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ad6e6fe5bf820ae4d98f441c6287b9b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a88d8f9fd32ba646b6d88a3370d10a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.125, y: 3.125}
+  m_Size: {x: 0.14, y: 0.19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -99,15 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75283e9776ba88429bbd4d31ff12876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemType: 2
-  Name: Default Armor
-  Sprite: {fileID: 21300000, guid: ad6e6fe5bf820ae4d98f441c6287b9b9, type: 3}
+  Name: Panama
   Level: 1
   ItemAnimator: {fileID: 7209744020205144440}
   _parameters: {fileID: 6191341600442990010}
   _health: 100
-  _protection: 2
-  _typeArmor: 1
+  _protection: 0
+  _typeArmor: 0
 --- !u!95 &7209744020205144440
 Animator:
   serializedVersion: 5

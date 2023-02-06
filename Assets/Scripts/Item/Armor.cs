@@ -14,6 +14,7 @@ public class Armor : Item
     {
         base.OnEnable();
         ItemType = TypeOfItems.armor;
+        Sprite = GetComponent<SpriteRenderer>().sprite;
         CalculateProtection();
     }
 

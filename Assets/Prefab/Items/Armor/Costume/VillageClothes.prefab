@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 6766192260602316794}
   - component: {fileID: 2635707637509580201}
   m_Layer: 0
-  m_Name: GreenArmor
+  m_Name: VillageClothes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,7 +802,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.125, y: 3.125}
+  m_Size: {x: 0.14, y: 0.19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -820,14 +820,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75283e9776ba88429bbd4d31ff12876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemType: 2
-  Name: Default Armor
+  Name: VillageClothes
   Sprite: {fileID: 21300000, guid: 55ec10c0609eba749ab3986e58405e1e, type: 3}
   Level: 1
   ItemAnimator: {fileID: 2635707637509580201}
   _parameters: {fileID: 271820440}
   _health: 100
-  _protection: 4
+  _protection: 1
   _typeArmor: 1
 --- !u!95 &2635707637509580201
 Animator:

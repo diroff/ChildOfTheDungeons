@@ -4,9 +4,7 @@ using UnityEngine.Events;
 public abstract class Item : MonoBehaviour
 {
     [SerializeField] protected string Name;
-    [SerializeField] protected Sprite Sprite;
-    [SerializeField] protected int Level;
-
+    
     [SerializeField] protected Animator ItemAnimator;
     
     [SerializeField] private OppositeParameters _parameters;
@@ -14,6 +12,8 @@ public abstract class Item : MonoBehaviour
     public Sprite ItemSprite => Sprite;
 
     protected TypeOfItems ItemType = TypeOfItems.heal;
+    protected int Level = 1;
+    protected Sprite Sprite;
 
     public event UnityAction<bool> Taked;
     public event UnityAction<int> LevelChanged;
