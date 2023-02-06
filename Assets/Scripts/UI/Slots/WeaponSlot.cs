@@ -18,8 +18,7 @@ public class WeaponSlot : Slot
         base.AddItem(item);
         _weapon = item as Weapon;
 
-        _weapon = Instantiate(_weapon, _weaponHand);
-        _weapon.HideUI();
+        AddWeaponInHand();
     }
 
     public override void ShowDescription()
@@ -31,6 +30,11 @@ public class WeaponSlot : Slot
 
     public bool IsSomeWeapon()
     {
-        return _weapon != null;
+        return IsFilled;
+    }
+
+    private void AddWeaponInHand()
+    {
+        Instantiate(_weapon, _weaponHand).HideUI();
     }
 }
