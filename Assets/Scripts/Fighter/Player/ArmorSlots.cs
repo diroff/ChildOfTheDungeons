@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class ArmorSlots : MonoBehaviour
 {
-    [SerializeField] private Slot _helmSlot;
-    [SerializeField] private Slot _costumeSlot;
-    [SerializeField] private Slot _shoesSlot;
+    [SerializeField] private ArmorSlot _helmSlot;
+    [SerializeField] private ArmorSlot _costumeSlot;
+    [SerializeField] private ArmorSlot _shoesSlot;
 
     private Armor _helm;
     private Armor _costume;
@@ -38,18 +38,18 @@ public class ArmorSlots : MonoBehaviour
     private void AddHelm(Armor armor)
     {
         _helm = armor;
-        _helmSlot.UpdateSprite(_helm.ItemSprite);
+        _helmSlot.AddItem(_helm);
     }
 
     private void AddCostume(Armor armor)
     {
         _costume = armor;
-        _costumeSlot.UpdateSprite(_costume.ItemSprite);
+        _costumeSlot.AddItem(_costume);
     }
 
     private void AddShoes(Armor armor)
     {
         _shoes = armor;
-        _shoesSlot.UpdateSprite(_shoes.ItemSprite);
+        _shoesSlot.AddItem(_shoes);
     }
 }
