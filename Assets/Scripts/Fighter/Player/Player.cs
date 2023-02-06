@@ -4,9 +4,11 @@ using UnityEngine.Events;
 
 public class Player : Fighter
 {
+    [Header("Items")]
     [SerializeField] private ArmorSlots _armorSlots;
     [SerializeField] private WeaponSlot _weaponSlot;
 
+    [Space]
     [SerializeField] private int _experienceToNextLevel = 10;
 
     private int _potionCount;
@@ -97,7 +99,7 @@ public class Player : Fighter
     public void UseWeapon(Weapon weapon)
     {
         _weaponSlot.AddItem(weapon);
-        DamageChanged(CalculateTotalDamage());
+        DamageChanged(BaseDamage * Level);
     }
 
     public void Run()
@@ -126,7 +128,7 @@ public class Player : Fighter
         if (_weaponSlot.IsSomeWeapon())
             return (BaseDamage * Level) + _weaponSlot.Weapon.CalculateDamage();
         
-        return baseDamage * Level;
+        return BaseDamage * Level;
     }
 
     private void UpdatePlayerStats()
@@ -135,7 +137,7 @@ public class Player : Fighter
         CalculateTotalDamage();
         Armor = _armorSlots.CalculateArmor();
         HealthChanged(CurrentHealth);
-        DamageChanged(CalculateTotalDamage());
+        DamageChanged(BaseDamage * Level);
         PotionCountChanged(_potionCount);
         ExperienceChanged(_currentExperience, _experienceToNextLevel);
         LevelChanged(Level);
