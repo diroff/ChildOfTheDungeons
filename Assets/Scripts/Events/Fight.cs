@@ -13,19 +13,27 @@ public class Fight : Event
     [SerializeField] private float _timeFromDead = 1.5f;
     [SerializeField] private float _timeBeforeLeave = 1.0f;
     [SerializeField] private float _healingTime = 1.0f;
+    [SerializeField] private float _coinFlipTime = 3.0f;
 
     [Header("Buttons")]
     [SerializeField] private Button _attackButton;
     [SerializeField] private Button _leaveButton;
     [SerializeField] private HealSlot _healButton;
 
+    [Header("Panels")]
+    [SerializeField] private GameObject _coinFlipPanel;
+    [SerializeField] private GameObject _coinImage;
+    [SerializeField] private Button _coinFlipButton;
+    [SerializeField] private Animator _coinAnimator;
+    [SerializeField] private GameObject _attackPanel;
+
     private Enemy _enemy;
 
     public override void StartEvent()
     {
         base.StartEvent();
-        _healButton.SetButtonState();
-        StartCoroutine(StartEventCoroutine());
+        CreatingEnemy();
+        StartCoinFlip();
     }
 
     public override void EndEvent()
@@ -36,7 +44,7 @@ public class Fight : Event
 
     public void PlayerStep()
     {
-        SetPanelState(true);
+        _attackPanel.SetActive(true);
         _healButton.SetButtonState();
     }
 
@@ -88,21 +96,19 @@ public class Fight : Event
             StartCoroutine(PlayerDeadCoroutine());
     }
 
-    private void CoinFlip()
+    public void CoinFlip()
     {
-        int randomNumber = Random.Range(0, 100);
+        StartCoroutine(FlipCoinCoroutine());
+    }
 
-        if (randomNumber < 50)
-            PlayerStep();
-        else
-            EnemyStep();
-
-        Debug.Log(randomNumber);
+    private void StartCoinFlip()
+    {
+        _coinFlipPanel.SetActive(true);
     }
 
     private IEnumerator AttackEnemyCoroutine()
     {
-        SetPanelState(false);
+        _attackPanel.SetActive(false);
         _player.Attack();
         yield return new WaitForSeconds(_timeBeforeAttack);
         _enemy.TakeDamage(_player.CalculateTotalDamage());
@@ -114,7 +120,7 @@ public class Fight : Event
 
     private IEnumerator AttackPlayer()
     {
-        SetPanelState(false);
+        _attackPanel.SetActive(false);
         yield return new WaitForSeconds(_timeBeforeAttack);
         _enemy.TryAttack(_player);
         yield return new WaitForSeconds(_timeAfterAttack);
@@ -138,7 +144,7 @@ public class Fight : Event
 
     private IEnumerator HealCoroutine()
     {
-        SetPanelState(false);
+        _attackPanel.SetActive(false);
         yield return new WaitForSeconds(_healingTime);
         _player.Heal();
         _healButton.SetButtonState();
@@ -153,12 +159,28 @@ public class Fight : Event
         EndEvent();
     }
 
-    private IEnumerator StartEventCoroutine()
+    private IEnumerator FlipCoinCoroutine()
     {
-        SetPanelState(false);
-        CreatingEnemy();
-        yield return new WaitForSeconds(_timeBeforeLeave);
-        CoinFlip();
+        _coinFlipButton.gameObject.SetActive(false);
+        _coinImage.SetActive(true);
+
+        int randomNumber = Random.Range(0, 100);
+
+        bool isWin = randomNumber < 50;
+
+        if(isWin)
+            _coinAnimator.SetTrigger("Win");
+        else
+            _coinAnimator.SetTrigger("Lose");
+
+        yield return new WaitForSeconds(_coinFlipTime);
+
+        _coinFlipPanel.SetActive(false);
+
+        if (isWin)
+            PlayerStep();
+        else
+            EnemyStep();
     }
 
     private void PlayerLeaved()
