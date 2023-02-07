@@ -24,8 +24,8 @@ public class Fight : Event
     public override void StartEvent()
     {
         base.StartEvent();
-        CreatingEnemy();
         _healButton.SetButtonState();
+        StartCoroutine(StartEventCoroutine());
     }
 
     public override void EndEvent()
@@ -88,6 +88,18 @@ public class Fight : Event
             StartCoroutine(PlayerDeadCoroutine());
     }
 
+    private void CoinFlip()
+    {
+        int randomNumber = Random.Range(0, 100);
+
+        if (randomNumber < 50)
+            PlayerStep();
+        else
+            EnemyStep();
+
+        Debug.Log(randomNumber);
+    }
+
     private IEnumerator AttackEnemyCoroutine()
     {
         SetPanelState(false);
@@ -139,6 +151,14 @@ public class Fight : Event
         yield return new WaitForSeconds(_timeBeforeLeave);
         Destroy(_enemy.gameObject);
         EndEvent();
+    }
+
+    private IEnumerator StartEventCoroutine()
+    {
+        SetPanelState(false);
+        CreatingEnemy();
+        yield return new WaitForSeconds(_timeBeforeLeave);
+        CoinFlip();
     }
 
     private void PlayerLeaved()

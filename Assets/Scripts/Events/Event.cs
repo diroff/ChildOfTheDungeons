@@ -25,14 +25,6 @@ public abstract class Event : MonoBehaviour
     public virtual void StartEvent()
     {
         SetEnableEvent(true);
-        StartCoroutine(EnableEvent());
-    }
-
-    private IEnumerator EnableEvent()
-    {
-        SetPanelState(false);
-        yield return new WaitForSeconds(_panelEnableCouldown);
-        SetPanelState(true);
     }
 
     public virtual void EndEvent()
