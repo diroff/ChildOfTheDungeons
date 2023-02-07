@@ -20,14 +20,6 @@ public abstract class Event : MonoBehaviour
     public virtual void SetEnableEvent(bool enabled)
     {
         gameObject.SetActive(enabled);
-        StartCoroutine(EnableEvent());
-    }
-
-    private IEnumerator EnableEvent()
-    {
-        SetPanelState(false);
-        yield return new WaitForSeconds(_panelEnableCouldown);
-        SetPanelState(true);
     }
 
     private IEnumerator EnableEvent()
@@ -46,7 +38,7 @@ public abstract class Event : MonoBehaviour
     public virtual void EndEvent()
     {
         Ended?.Invoke(true);
-        SetPanelState(false);
         SetEnableEvent(false);
+        SetPanelState(false);
     }
 }
