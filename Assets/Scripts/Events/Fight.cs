@@ -103,7 +103,10 @@ public class Fight : Event
 
     private void StartCoinFlip()
     {
+        _attackPanel.SetActive(false);
+        _coinImage.SetActive(false);
         _coinFlipPanel.SetActive(true);
+        _coinFlipButton.gameObject.SetActive(true);
     }
 
     private IEnumerator AttackEnemyCoroutine()
