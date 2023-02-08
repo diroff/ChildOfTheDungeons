@@ -14,6 +14,9 @@ public class EventsController : MonoBehaviour
     [SerializeField] private ProgressionController _progression;
 
     private Event _currentEvent;
+    private Event _nextEvent;
+
+    private bool _nextEventSetted = false;
 
     public Event CurrentEvent => _currentEvent;
 
@@ -32,6 +35,13 @@ public class EventsController : MonoBehaviour
     {
         int number = 0;
 
+        if (_nextEventSetted)
+        {
+            _currentEvent = _nextEvent;
+            _nextEventSetted = false;
+            return;
+        }
+
         if (!isRandom) 
             number = eventNumber;
         else
@@ -44,6 +54,12 @@ public class EventsController : MonoBehaviour
 
         _currentEvent = _eventTypes[number];
         _progression.SetLastEvent(number);
+    }
+
+    public void SetNextEvent(Event nextEvent)
+    {
+        _nextEvent = nextEvent;
+        _nextEventSetted = true;
     }
 
     public void StartEvent()
