@@ -17,6 +17,7 @@ public class EventsController : MonoBehaviour
     private Event _nextEvent;
 
     private bool _nextEventSetted = false;
+    private bool _needContinue = true;
 
     public Event CurrentEvent => _currentEvent;
 
@@ -56,6 +57,16 @@ public class EventsController : MonoBehaviour
         _progression.SetLastEvent(number);
     }
 
+    public void SetEvent(Event newEvent)
+    {
+        _currentEvent = newEvent;
+    }
+
+    public void SetContinue(bool enabled)
+    {
+        _needContinue = enabled;
+    }
+
     public void SetNextEvent(Event nextEvent)
     {
         _nextEvent = nextEvent;
@@ -76,9 +87,12 @@ public class EventsController : MonoBehaviour
 
             if (_player.Die())
                 _currentEvent = _gameOver;
-            else
+            else if (_needContinue)
                 _currentEvent = _continue;
+            else
+                return;
 
+            _needContinue = true;
             StartEvent();
         }  
     }

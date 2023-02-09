@@ -14,7 +14,8 @@ public class FreeItem : Event
     public override void StartEvent()
     {
         base.StartEvent();
-        SpawnItem();
+        if(_item == null)
+            SpawnItem();
     }
 
     public void AddItem()
@@ -90,9 +91,9 @@ public class FreeItem : Event
             EndEvent();
     }
 
-    private void SpawnItem()
+    public void SpawnItem(Item item = null)
     {
-        Spawner.SpawnItem();
+        Spawner.SpawnItem(item);
         _item = Spawner.GetItem();
         SetItemLevel();
         _item.Taked += IsTaked;

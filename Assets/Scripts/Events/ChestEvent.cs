@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ChestEvent : Event
 {
-    [SerializeField] private Player _player;
-    [SerializeField] private GameObject _takePanel;
+    [SerializeField] private FreeItem _freeItemEvent;
+    [SerializeField] private EventsController _eventsController;
 
-    private Item _item;
     private Chest _chest;
+    private Item _item;
 
     public override void StartEvent()
     {
@@ -19,58 +19,28 @@ public class ChestEvent : Event
 
     public void OpenChest()
     {
-        PrepareItem();
-    }
-
-    public void PrepareItem()
-    {
-        _chest.TryOpen();
-        _item = _chest.PullItem();
-        Spawner.SpawnChestItem(_item);
-        SetPanelState(false);
-        Destroy(_chest.gameObject);
-        _takePanel.SetActive(true);
-    }
-
-    public void TakeItem()
-    {
-        if (_item.GetItemType() == Item.TypeOfItems.heal)
-            _player.AddHeal();
-        else
-            UseItem();
+        _item = PrepareItem();
+        _eventsController.SetContinue(false);
+        _eventsController.SetEvent(_freeItemEvent);
 
         EndEvent();
-        Destroy(_item.gameObject);
-    }
-
-    public void NotTakeItem()
-    {
-        Destroy(_item.gameObject);
-        EndEvent();
-    }
-
-    private void UseItem()
-    {
-        switch (_item.GetItemType())
-        {
-            case Item.TypeOfItems.weapon:
-                _player.UseWeapon(_item.GetComponent<Weapon>());
-                break;
-            case Item.TypeOfItems.armor:
-                _player.AddArmor(_item.GetComponent<Armor>());
-                break;
-        }
+        _eventsController.StartEvent();
     }
 
     public void IgnoreChest()
     {
-        Destroy(_chest.gameObject);
         EndEvent();
+    }
+
+    public Item PrepareItem()
+    {
+        _chest.TryOpen();
+        return _chest.PullItem();
     }
 
     public override void EndEvent()
     {
-        _takePanel.SetActive(false);
+        Destroy(_chest.gameObject);
         base.EndEvent();
     }
 }

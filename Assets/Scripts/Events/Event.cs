@@ -41,6 +41,7 @@ public abstract class Event : MonoBehaviour
     public virtual void EndEvent()
     {
         Ended?.Invoke(true);
+        Debug.Log("Event end");
         SetEnableEvent(false);
         SetPanelState(false);
     }

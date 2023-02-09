@@ -23,9 +23,11 @@ public class Spawner : MonoBehaviour
         Instantiate(enemy, _spawnPoint.transform);
     }
 
-    public void SpawnItem()
+    public void SpawnItem(Item item = null)
     {
-        Item item = _itemTemplates[NumberOfRandomItem()];
+        if(item == null)
+            item = _itemTemplates[NumberOfRandomItem()];
+
         item.SetLevel(_progression.SetLevel());
         Instantiate(item, _spawnPoint.transform);
     }
@@ -33,12 +35,6 @@ public class Spawner : MonoBehaviour
     public void SpawnChest()
     {
         Instantiate (_chestTemplates[NumberOfRandomChest()], _spawnPoint.transform);
-    }
-
-    public void SpawnChestItem(Item item)
-    {
-        item.SetLevel(_progression.SetLevel());
-        Instantiate(item, _spawnPoint.transform);
     }
 
     private int NumberOfRandomItem()
