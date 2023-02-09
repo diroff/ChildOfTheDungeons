@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Key : Item
 {
-    [SerializeField] private KeyType _key;
+    [SerializeField] private KeyType _typeOfKey;
+
+    public KeyType TypeOfKey => _typeOfKey;
 
     private void Awake()
     {

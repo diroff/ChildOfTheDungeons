@@ -8,6 +8,8 @@ public class Player : Fighter
     [SerializeField] private ArmorSlots _armorSlots;
     [SerializeField] private WeaponSlot _weaponSlot;
 
+    [SerializeField] private Inventory _inventory;
+
     [Space]
     [SerializeField] private int _experienceToNextLevel = 10;
 
@@ -15,6 +17,8 @@ public class Player : Fighter
     private int _currentExperience = 0;
 
     public int PotionCount => _potionCount;
+
+    public Inventory Inventory => _inventory;
 
     public event UnityAction Leaved;
     public event UnityAction<int> HealthChanged;
