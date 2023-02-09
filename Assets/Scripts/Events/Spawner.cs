@@ -5,6 +5,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private List<Enemy> _enemyTemplates = new List<Enemy>();
     [SerializeField] private List<Item> _itemTemplates = new List<Item>();
+    [SerializeField] private List<Chest> _chestTemplates = new List<Chest>();
 
     [SerializeField] private ProgressionController _progression;
 
@@ -29,9 +30,25 @@ public class Spawner : MonoBehaviour
         Instantiate(item, _spawnPoint.transform);
     }
 
+    public void SpawnChest()
+    {
+        Instantiate (_chestTemplates[NumberOfRandomChest()], _spawnPoint.transform);
+    }
+
+    public void SpawnChestItem(Item item)
+    {
+        item.SetLevel(_progression.SetLevel());
+        Instantiate(item, _spawnPoint.transform);
+    }
+
     private int NumberOfRandomItem()
     {
         return Random.Range(0, _itemTemplates.Count);
+    }
+
+    public int NumberOfRandomChest()
+    {
+        return Random.Range(0, _chestTemplates.Count);
     }
 
     public Item GetItem()
@@ -42,5 +59,10 @@ public class Spawner : MonoBehaviour
     public Enemy GetEnemy()
     {
         return GetComponentInChildren<Enemy>();
+    }
+
+    public Chest GetChest()
+    {
+        return GetComponentInChildren<Chest>();
     }
 }

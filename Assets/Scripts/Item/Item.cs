@@ -42,6 +42,7 @@ public abstract class Item : MonoBehaviour
         heal,
         weapon,
         armor,
+        key
     }
 
     public void TakeItem()
