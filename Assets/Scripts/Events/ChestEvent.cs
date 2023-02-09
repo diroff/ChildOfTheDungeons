@@ -22,6 +22,7 @@ public class ChestEvent : Event
         _item = PrepareItem();
         _eventsController.SetContinue(false);
         _eventsController.SetEvent(_freeItemEvent);
+        _freeItemEvent.SpawnItem(_item);
 
         EndEvent();
         _eventsController.StartEvent();
