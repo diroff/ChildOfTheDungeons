@@ -13,11 +13,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _itemPlace;
     [SerializeField] private GameObject _enemyPlace;
 
-    private int NumberOfRandomEnemy()
-    {
-        return Random.Range(0, _enemyTemplates.Count);
-    }
-
     public void SpawnEnemy()
     {
         Enemy enemy = _enemyTemplates[NumberOfRandomEnemy()];
@@ -39,6 +34,11 @@ public class Spawner : MonoBehaviour
         Instantiate (_chestTemplates[NumberOfRandomChest()], _enemyPlace.transform);
     }
 
+    private int NumberOfRandomEnemy()
+    {
+        return Random.Range(0, _enemyTemplates.Count);
+    }
+
     private int NumberOfRandomItem()
     {
         return Random.Range(0, _itemTemplates.Count);
@@ -49,14 +49,14 @@ public class Spawner : MonoBehaviour
         return Random.Range(0, _chestTemplates.Count);
     }
 
-    public Item GetItem()
-    {
-        return _itemPlace.GetComponentInChildren<Item>();
-    }
-
     public Enemy GetEnemy()
     {
         return _enemyPlace.GetComponentInChildren<Enemy>();
+    }
+
+    public Item GetItem()
+    {
+        return _itemPlace.GetComponentInChildren<Item>();
     }
 
     public Chest GetChest()

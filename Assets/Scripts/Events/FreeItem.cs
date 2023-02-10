@@ -57,6 +57,9 @@ public class FreeItem : Event
             case Item.TypeOfItems.armor:
                 _player.AddArmor(_item.GetComponent<Armor>());
                 break;
+            case Item.TypeOfItems.key:
+                _player.Inventory.AddKey(_item.GetComponent<Key>().TypeOfKey);
+                break;
         }
     }
 

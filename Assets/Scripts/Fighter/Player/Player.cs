@@ -13,10 +13,7 @@ public class Player : Fighter
     [Space]
     [SerializeField] private int _experienceToNextLevel = 10;
 
-    private int _potionCount;
     private int _currentExperience = 0;
-
-    public int PotionCount => _potionCount;
 
     public Inventory Inventory => _inventory;
 
@@ -47,19 +44,19 @@ public class Player : Fighter
             else
                 CurrentHealth += MaxHealth / 2;
 
-            _potionCount--;
+            _inventory.SpendPotion();
             HealthChanged(CurrentHealth);
         }
     }
 
     public bool PotionChecker()
     {
-        return _potionCount > 0;
+        return _inventory.IsEnoughPotion();
     }
 
     public void AddHeal()
     {
-        _potionCount++;
+        _inventory.AddPotion();
     }
 
     public void AddExperience(int countExperience)

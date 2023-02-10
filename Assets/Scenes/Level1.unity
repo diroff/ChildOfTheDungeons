@@ -2011,7 +2011,7 @@ MonoBehaviour:
   Name: "\u0418\u0433\u0440\u043E\u043A"
   BaseMaxHealth: 10
   Armor: 0
-  BaseDamage: 2
+  BaseDamage: 20
   Level: 1
   SpriteImage: {fileID: 21300000, guid: 8927bb2be128aa2469b90d9214fe2781, type: 3}
   FighterAnimator: {fileID: 532910447}
@@ -7551,7 +7551,6 @@ MonoBehaviour:
   _eventTypes:
   - {fileID: 1035679086}
   - {fileID: 8148549922209866770}
-  - {fileID: 1622029519}
   - {fileID: 65925127}
   _continue: {fileID: 8320838582458532849}
   _gameOver: {fileID: 169853898}

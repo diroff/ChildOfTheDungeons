@@ -25,7 +25,7 @@ public class HealSlot : MonoBehaviour
     private void UpdateHealCount()
     {
         _text.gameObject.SetActive(true);
-        _text.text = "x" + _player.PotionCount;
+        _text.text = "x" + _player.Inventory.PotionCount;
     }
 
     private void DisableCountText()
