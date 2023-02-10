@@ -2,10 +2,13 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class Fight : Event
 {
     [SerializeField] private Player _player;
+    [SerializeField] private EventsController _eventsController;
+    [SerializeField] private FreeItem _freeItemEvent;
 
     [Header("Events time")]
     [SerializeField] private float _timeBeforeAttack = 0.5f;
@@ -136,7 +139,13 @@ public class Fight : Event
     {
         _player.AddExperience(_enemy.CalculateExperienceCost());
         yield return new WaitForSeconds(_timeFromDead);
+
+        _eventsController.SetContinue(false);
+        _eventsController.SetEvent(_freeItemEvent);
+        _freeItemEvent.SpawnItem(_enemy.LootItem);
+
         EndEvent();
+        _eventsController.StartEvent();
     }
 
     private IEnumerator PlayerDeadCoroutine()

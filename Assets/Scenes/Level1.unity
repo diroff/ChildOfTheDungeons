@@ -8816,6 +8816,8 @@ MonoBehaviour:
   Spawner: {fileID: 1957994491}
   _panelEnableCouldown: 1
   _player: {fileID: 532910443}
+  _eventsController: {fileID: 1886117191}
+  _freeItemEvent: {fileID: 1622029519}
   _timeBeforeAttack: 0
   _timeAfterAttack: 0.5
   _timeFromDead: 1.5

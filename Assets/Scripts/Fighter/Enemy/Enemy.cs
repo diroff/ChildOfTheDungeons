@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,10 +8,16 @@ public class Enemy : Fighter
 
     [SerializeField] private OppositeParameters _parameters;
 
+    [SerializeField] private List<Item> _lootList;
+
+    private Item _lootItem;
+
     public event UnityAction<int> HealthChanged;
     public event UnityAction<int> LevelChanged;
     public event UnityAction<int> DamageChanged;
     public event UnityAction<int> CostChanged;
+
+    public Item LootItem => _lootItem;
 
     private void OnEnable()
     {
@@ -27,6 +34,7 @@ public class Enemy : Fighter
         base.Start();
         EnableShadowShader();
         UpdateParameters();
+        SetLootItem();
     }
 
     public override void TakeDamage(int damage)
@@ -73,6 +81,11 @@ public class Enemy : Fighter
     {
         _parameters.DisplayParameters(false);
         base.Dead();
+    }
+
+    private void SetLootItem()
+    {
+        _lootItem = _lootList[Random.Range(0, _lootList.Count)];
     }
 
     private void EnableShadowShader()

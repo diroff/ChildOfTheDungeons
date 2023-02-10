@@ -350,6 +350,8 @@ MonoBehaviour:
   FighterAnimator: {fileID: -2713313733961894701}
   _baseExperience: 1
   _parameters: {fileID: -8668063089605935029}
+  _lootList:
+  - {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
 --- !u!95 &-2713313733961894701
 Animator:
   serializedVersion: 5
