@@ -2009,16 +2009,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u0418\u0433\u0440\u043E\u043A"
-  BaseMaxHealth: 10
+  BaseMaxHealth: 8
   Armor: 0
-  BaseDamage: 20
+  BaseDamage: 2
   Level: 1
   SpriteImage: {fileID: 21300000, guid: 8927bb2be128aa2469b90d9214fe2781, type: 3}
   FighterAnimator: {fileID: 532910447}
   _armorSlots: {fileID: 532910448}
   _weaponSlot: {fileID: 4291863}
   _inventory: {fileID: 1294703872}
-  _experienceToNextLevel: 10
+  _experienceToNextLevel: 15
 --- !u!4 &532910444
 Transform:
   m_ObjectHideFlags: 0
@@ -4760,8 +4760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7102c2b8925b1bf4fbfdc1dc9c9329ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _silverKeyCount: 1
-  _goldKeyCount: 1
+  _silverKeyCount: 0
+  _goldKeyCount: 0
 --- !u!4 &1294703873
 Transform:
   m_ObjectHideFlags: 0
@@ -7959,15 +7959,9 @@ MonoBehaviour:
   - {fileID: 1797388749512454538, guid: 26f3f4e52e42a0b4f90dff1374d70c81, type: 3}
   - {fileID: 1797388749512454538, guid: 7f111dd11777fa441851be27d19f91f4, type: 3}
   _itemTemplates:
-  - {fileID: 5564898964059130534, guid: 01a7d5eed5f72344d92fe38b81ec4b97, type: 3}
-  - {fileID: 5564898964059130534, guid: c280f6f6f5ef1434c9a479d4a6d62b11, type: 3}
-  - {fileID: 6766192260602316794, guid: d5ec0cfe4f755404ea2e93775c94634b, type: 3}
-  - {fileID: 6766192260602316794, guid: 157691132c5f3b948819afe52a90e751, type: 3}
-  - {fileID: 6766192260602316794, guid: b4f79118a1bb22b41ad5ed14779cc1f0, type: 3}
-  - {fileID: 6766192260602316794, guid: 15dfef2a370407143bbe3ecf113e29ee, type: 3}
-  - {fileID: 6766192260602316794, guid: a285b950d0271f7488ebcd5eb7a49e77, type: 3}
-  - {fileID: 6766192260602316794, guid: 6f9bbbd6af5ea6a4695ccd529c107af9, type: 3}
   - {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
+  - {fileID: 8001527148783395447, guid: 4da005d92086cb84ea6d0fba28e9511b, type: 3}
+  - {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
   _chestTemplates:
   - {fileID: 5169373742871476358, guid: e5aa0d8688711904f947a4b981a13db7, type: 3}
   - {fileID: 5169373742871476358, guid: 81f00b7abe72d954393266fb35233993, type: 3}

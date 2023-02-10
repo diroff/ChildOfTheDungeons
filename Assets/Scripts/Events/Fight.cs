@@ -140,12 +140,17 @@ public class Fight : Event
         _player.AddExperience(_enemy.CalculateExperienceCost());
         yield return new WaitForSeconds(_timeFromDead);
 
-        _eventsController.SetContinue(false);
-        _eventsController.SetEvent(_freeItemEvent);
-        _freeItemEvent.SpawnItem(_enemy.LootItem);
+        if (_enemy.IsLoot())
+        {
+            _eventsController.SetContinue(false);
+            _eventsController.SetEvent(_freeItemEvent);
+            _freeItemEvent.SpawnItem(_enemy.LootItem);
 
-        EndEvent();
-        _eventsController.StartEvent();
+            EndEvent();
+            _eventsController.StartEvent();
+        }
+        else
+            EndEvent();
     }
 
     private IEnumerator PlayerDeadCoroutine()

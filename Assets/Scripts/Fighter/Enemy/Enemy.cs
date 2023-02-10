@@ -10,6 +10,9 @@ public class Enemy : Fighter
 
     [SerializeField] private List<Item> _lootList;
 
+    [SerializeField] private int _additionalLootChange = 0;
+
+    private int lootChange;
     private Item _lootItem;
 
     public event UnityAction<int> HealthChanged;
@@ -34,7 +37,10 @@ public class Enemy : Fighter
         base.Start();
         EnableShadowShader();
         UpdateParameters();
-        SetLootItem();
+        SetLootChange();
+
+        if (IsLoot())
+            SetLootItem();
     }
 
     public override void TakeDamage(int damage)
@@ -86,6 +92,16 @@ public class Enemy : Fighter
     private void SetLootItem()
     {
         _lootItem = _lootList[Random.Range(0, _lootList.Count)];
+    }
+
+    public bool IsLoot()
+    {
+        return lootChange > 35;
+    }
+
+    private void SetLootChange()
+    {
+        lootChange = Random.Range(0, 100) + _additionalLootChange;
     }
 
     private void EnableShadowShader()
