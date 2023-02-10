@@ -10,6 +10,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private ProgressionController _progression;
 
     [SerializeField] private GameObject _spawnPoint;
+    [SerializeField] private GameObject _itemPlace;
+    [SerializeField] private GameObject _enemyPlace;
 
     private int NumberOfRandomEnemy()
     {
@@ -20,7 +22,7 @@ public class Spawner : MonoBehaviour
     {
         Enemy enemy = _enemyTemplates[NumberOfRandomEnemy()];
         enemy.SetLevel(_progression.SetLevel());
-        Instantiate(enemy, _spawnPoint.transform);
+        Instantiate(enemy, _enemyPlace.transform);
     }
 
     public void SpawnItem(Item item = null)
@@ -29,12 +31,12 @@ public class Spawner : MonoBehaviour
             item = _itemTemplates[NumberOfRandomItem()];
 
         item.SetLevel(_progression.SetLevel());
-        Instantiate(item, _spawnPoint.transform);
+        Instantiate(item, _itemPlace.transform);
     }
 
     public void SpawnChest()
     {
-        Instantiate (_chestTemplates[NumberOfRandomChest()], _spawnPoint.transform);
+        Instantiate (_chestTemplates[NumberOfRandomChest()], _enemyPlace.transform);
     }
 
     private int NumberOfRandomItem()
@@ -49,16 +51,16 @@ public class Spawner : MonoBehaviour
 
     public Item GetItem()
     {
-        return GetComponentInChildren<Item>();
+        return _itemPlace.GetComponentInChildren<Item>();
     }
 
     public Enemy GetEnemy()
     {
-        return GetComponentInChildren<Enemy>();
+        return _enemyPlace.GetComponentInChildren<Enemy>();
     }
 
     public Chest GetChest()
     {
-        return GetComponentInChildren<Chest>();
+        return _enemyPlace.GetComponentInChildren<Chest>();
     }
 }
