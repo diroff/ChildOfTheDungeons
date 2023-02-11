@@ -4,13 +4,14 @@ using UnityEngine.Events;
 
 public class Enemy : Fighter
 {
+    [SerializeField] private OppositeParameters _parametersPanel;
+
+    [Header("Additional parameters")]
     [SerializeField] private int _baseExperience;
-
-    [SerializeField] private OppositeParameters _parameters;
-
     [SerializeField] private List<Item> _lootList;
-
     [SerializeField] private int _additionalLootChange = 0;
+    [SerializeField] private int _minimalLevel = 1;
+    [SerializeField] private bool _isBoss = false;
 
     private int lootChange;
     private Item _lootItem;
@@ -21,15 +22,16 @@ public class Enemy : Fighter
     public event UnityAction<int> CostChanged;
 
     public Item LootItem => _lootItem;
+    public int MinimalLevel => _minimalLevel;
 
     private void OnEnable()
     {
-        _parameters.DisplayParameters(true);
+        _parametersPanel.DisplayParameters(true);
     }
 
     private void OnDisable()
     {
-        _parameters.DisplayParameters(false);
+        _parametersPanel.DisplayParameters(false);
     }
 
     protected override void Start()
@@ -85,7 +87,7 @@ public class Enemy : Fighter
 
     public override void Dead()
     {
-        _parameters.DisplayParameters(false);
+        _parametersPanel.DisplayParameters(false);
         base.Dead();
     }
 

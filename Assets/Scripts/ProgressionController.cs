@@ -4,6 +4,8 @@ public class ProgressionController : MonoBehaviour
 {
     [SerializeField] private Player _player;
 
+    public Player Player => _player;
+
     private int _lastEvent;
 
     public int LastEvent => _lastEvent;

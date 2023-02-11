@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -13,9 +14,18 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _itemPlace;
     [SerializeField] private GameObject _enemyPlace;
 
+    private int _enemyNumber;
+
     public void SpawnEnemy()
     {
-        Enemy enemy = _enemyTemplates[NumberOfRandomEnemy()];
+        SerNumberEnemy();
+
+        while (_enemyTemplates[_enemyNumber].MinimalLevel > _progression.Player.GetLevel())
+        {
+            SerNumberEnemy();
+        }
+
+        Enemy enemy = _enemyTemplates[_enemyNumber];
         enemy.SetLevel(_progression.SetLevel());
         Instantiate(enemy, _enemyPlace.transform);
     }
@@ -34,9 +44,9 @@ public class Spawner : MonoBehaviour
         Instantiate (_chestTemplates[NumberOfRandomChest()], _enemyPlace.transform);
     }
 
-    private int NumberOfRandomEnemy()
+    private void SerNumberEnemy()
     {
-        return Random.Range(0, _enemyTemplates.Count);
+        _enemyNumber = Random.Range(0, _enemyTemplates.Count);
     }
 
     private int NumberOfRandomItem()
