@@ -18,12 +18,7 @@ public class Spawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        SerNumberEnemy();
-
-        while (_enemyTemplates[_enemyNumber].MinimalLevel > _progression.Player.GetLevel())
-        {
-            SerNumberEnemy();
-        }
+        SetNumberEnemy();
 
         Enemy enemy = _enemyTemplates[_enemyNumber];
         enemy.SetLevel(_progression.SetLevel());
@@ -44,9 +39,14 @@ public class Spawner : MonoBehaviour
         Instantiate (_chestTemplates[NumberOfRandomChest()], _enemyPlace.transform);
     }
 
-    private void SerNumberEnemy()
+    private void SetNumberEnemy()
     {
         _enemyNumber = Random.Range(0, _enemyTemplates.Count);
+
+        while (_enemyTemplates[_enemyNumber].MinimalLevel > _progression.Player.GetLevel())
+        {
+            SetNumberEnemy();
+        }
     }
 
     private int NumberOfRandomItem()
