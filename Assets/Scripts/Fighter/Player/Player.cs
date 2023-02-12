@@ -12,10 +12,12 @@ public class Player : Fighter
 
     [Space]
     [SerializeField] private int _experienceToNextLevel = 10;
+    [SerializeField] private Skills _skills;
 
     private int _currentExperience = 0;
 
     public Inventory Inventory => _inventory;
+    public Skills Skills => _skills;
 
     public event UnityAction Leaved;
     public event UnityAction<int> HealthChanged;
@@ -32,6 +34,7 @@ public class Player : Fighter
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
+        
         HealthChanged(CurrentHealth);
     }
 
@@ -42,7 +45,7 @@ public class Player : Fighter
             if (CurrentHealth >= MaxHealth / 2)
                 CurrentHealth = MaxHealth;
             else
-                CurrentHealth += MaxHealth / 2;
+                CurrentHealth += (MaxHealth / 2);
 
             _inventory.SpendPotion();
             HealthChanged(CurrentHealth);
@@ -64,6 +67,11 @@ public class Player : Fighter
         _currentExperience += countExperience;
         ExperienceChanged(_currentExperience, _experienceToNextLevel);
         LevelUp();
+    }
+
+    public override void CalculateMaxHealth()
+    {
+        MaxHealth = (BaseMaxHealth + _skills.Endurance.CurrentLevel) * Level;
     }
 
     private bool IsEnoughExperience()
@@ -123,9 +131,14 @@ public class Player : Fighter
     public int CalculateTotalDamage()
     {
         if (_weaponSlot.IsSomeWeapon())
-            return (BaseDamage * Level) + _weaponSlot.Weapon.CalculateDamage();
+            return (_skills.Power.CurrentLevel * Level) + _weaponSlot.Weapon.CalculateDamage();
         
-        return BaseDamage * Level;
+        return _skills.Power.CurrentLevel * Level;
+    }
+
+    public bool EnoughChance()
+    {
+        return (Random.Range(0, 15) + _skills.Luck.CurrentLevel) >= 15;
     }
 
     private void UpdatePlayerStats()
@@ -134,7 +147,7 @@ public class Player : Fighter
         CalculateTotalDamage();
         Armor = _armorSlots.CalculateArmor();
         HealthChanged(CurrentHealth);
-        DamageChanged(BaseDamage * Level);
+        DamageChanged(_skills.Power.CurrentLevel * Level);
         ExperienceChanged(_currentExperience, _experienceToNextLevel);
         LevelChanged(Level);
 

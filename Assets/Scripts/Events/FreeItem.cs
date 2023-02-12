@@ -105,6 +105,13 @@ public class FreeItem : Event
     private void SetItemLevel()
     {
         if (_item.GetItemType() != Item.TypeOfItems.heal)
-            _item.SetLevel(_progression.SetLevel());
+        {
+            int additionalLevel = 0;
+
+            if (_player.EnoughChance())
+                additionalLevel += 1;
+            
+            _item.SetLevel(_progression.SetLevel() + additionalLevel);
+        }
     }
 }

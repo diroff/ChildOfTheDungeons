@@ -181,9 +181,14 @@ public class Fight : Event
         _coinFlipButton.gameObject.SetActive(false);
         _coinImage.SetActive(true);
 
-        int randomNumber = Random.Range(0, 100);
+        int additionalChance = 0;
 
-        bool isWin = randomNumber < 50;
+        if (_player.EnoughChance())
+            additionalChance = 25;
+
+        int randomNumber = Random.Range(0, 125);
+
+        bool isWin = randomNumber + additionalChance >= 75;
 
         if(isWin)
             _coinAnimator.SetTrigger("Win");
