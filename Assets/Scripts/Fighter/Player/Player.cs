@@ -20,6 +20,7 @@ public class Player : Fighter
     public Skills Skills => _skills;
 
     public event UnityAction Leaved;
+    public event UnityAction NotLeaved;
     public event UnityAction<int> HealthChanged;
     public event UnityAction<int> DamageChanged;
     public event UnityAction<int, int> ExperienceChanged;
@@ -119,13 +120,21 @@ public class Player : Fighter
 
     public void TryToLeave()
     {
-        Leave();
+        if (IsLeaved())
+            Leave();
+        else
+            NotLeave();
     }
 
     public void Leave()
     {
         FighterAnimator.SetTrigger("Leave");
         Leaved?.Invoke();
+    }
+
+    public void NotLeave()
+    {
+        NotLeaved?.Invoke();
     }
 
     public int CalculateTotalDamage()
@@ -136,9 +145,14 @@ public class Player : Fighter
         return _skills.Power.CurrentLevel * Level;
     }
 
-    public bool EnoughChance()
+    public bool AdditionalChance()
     {
         return (Random.Range(0, 15) + _skills.Luck.CurrentLevel) >= 15;
+    }
+
+    public bool IsLeaved()
+    {
+        return (Random.Range(0, 10) + _skills.Luck.CurrentLevel) >= 7;
     }
 
     private void UpdatePlayerStats()

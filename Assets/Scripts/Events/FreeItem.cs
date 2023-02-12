@@ -108,7 +108,7 @@ public class FreeItem : Event
         {
             int additionalLevel = 0;
 
-            if (_player.EnoughChance())
+            if (_player.AdditionalChance())
                 additionalLevel += 1;
             
             _item.SetLevel(_progression.SetLevel() + additionalLevel);

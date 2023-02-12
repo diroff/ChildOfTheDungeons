@@ -71,6 +71,7 @@ public class Fight : Event
         _enemy.Died += EnemyDead;
         _player.Died += PlayerDead;
         _player.Leaved += PlayerLeaved;
+        _player.NotLeaved += PlayerNotLeaved;
     }
 
     private void UnsubscribeEvents()
@@ -78,6 +79,7 @@ public class Fight : Event
         _enemy.Died -= EnemyDead;
         _player.Died -= PlayerDead;
         _player.Leaved -= PlayerLeaved;
+        _player.NotLeaved -= PlayerNotLeaved;
     }
 
     private void CreatingEnemy()
@@ -176,6 +178,12 @@ public class Fight : Event
         EndEvent();
     }
 
+    private IEnumerator PlayerNotLeavedCoroutine()
+    {
+        EnemyStep();
+        yield return new WaitForSeconds(_timeFromDead);
+    }
+
     private IEnumerator FlipCoinCoroutine()
     {
         _coinFlipButton.gameObject.SetActive(false);
@@ -183,7 +191,7 @@ public class Fight : Event
 
         int additionalChance = 0;
 
-        if (_player.EnoughChance())
+        if (_player.AdditionalChance())
             additionalChance = 25;
 
         int randomNumber = Random.Range(0, 125);
@@ -208,5 +216,10 @@ public class Fight : Event
     private void PlayerLeaved()
     {
         StartCoroutine(PlayerLeavedCoroutine());
+    }
+
+    private void PlayerNotLeaved()
+    {
+        StartCoroutine(PlayerNotLeavedCoroutine());
     }
 }
