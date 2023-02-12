@@ -147,7 +147,7 @@ public class Player : Fighter
 
     public bool AdditionalChance()
     {
-        return (Random.Range(0, 15) + _skills.Luck.CurrentLevel) >= 15;
+        return (Random.Range(0, 15) + _skills.Agility.CurrentLevel) >= 15;
     }
 
     public bool IsLeaved()
