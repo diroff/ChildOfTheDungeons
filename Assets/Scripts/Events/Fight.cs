@@ -180,8 +180,9 @@ public class Fight : Event
 
     private IEnumerator PlayerNotLeavedCoroutine()
     {
+        _attackPanel.SetActive(false);
+        yield return new WaitForSeconds(_timeBeforeLeave);
         EnemyStep();
-        yield return new WaitForSeconds(_timeFromDead);
     }
 
     private IEnumerator FlipCoinCoroutine()

@@ -134,6 +134,7 @@ public class Player : Fighter
 
     public void NotLeave()
     {
+        FighterAnimator.SetTrigger("NotLeave");
         NotLeaved?.Invoke();
     }
 
