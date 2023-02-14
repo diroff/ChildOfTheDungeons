@@ -44,14 +44,8 @@ public class ChestEvent : Event
 
     public void OpenChest()
     {
-        _player.Inventory.UseKey(_keyType);
-        _item = PrepareItem();
-        _eventsController.SetContinue(false);
-        _eventsController.SetEvent(_freeItemEvent);
-        _freeItemEvent.SpawnItem(_item);
-
-        EndEvent();
-        _eventsController.StartEvent();
+        StartCoroutine(OpenChestCoroutine());
+        
     }
 
     public void IgnoreChest()
@@ -63,6 +57,21 @@ public class ChestEvent : Event
     {
         _chest.TryOpen();
         return _chest.PullItem();
+    }
+
+    private IEnumerator OpenChestCoroutine()
+    {
+        SetPanelState(false);
+        _chest.Animator.SetTrigger("Open");
+        yield return new WaitForSeconds(1f);
+        _player.Inventory.UseKey(_keyType);
+        _item = PrepareItem();
+        _eventsController.SetContinue(false);
+        _eventsController.SetEvent(_freeItemEvent);
+        _freeItemEvent.SpawnItem(_item);
+
+        EndEvent();
+        _eventsController.StartEvent();
     }
 
     public override void EndEvent()

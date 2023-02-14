@@ -2086,8 +2086,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7102c2b8925b1bf4fbfdc1dc9c9329ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _silverKeyCount: 0
-  _goldKeyCount: 0
+  _silverKeyCount: 1
+  _goldKeyCount: 1
 --- !u!1 &536989303
 GameObject:
   m_ObjectHideFlags: 0
@@ -4280,7 +4280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 1
+  _startLevel: 9
   _maxLevel: 9
 --- !u!1 &1090467330
 GameObject:
@@ -5718,7 +5718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 1
+  _startLevel: 9
   _maxLevel: 9
 --- !u!1 &1403963333
 GameObject:
@@ -7768,7 +7768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 3
+  _startLevel: 9
   _maxLevel: 9
 --- !u!1 &1901432935
 GameObject:
