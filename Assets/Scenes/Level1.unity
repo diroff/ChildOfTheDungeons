@@ -2174,7 +2174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u0418\u0433\u0440\u043E\u043A"
-  BaseMaxHealth: 8
+  BaseMaxHealth: 5
   Armor: 0
   BaseDamage: 2
   Level: 1
@@ -2200,6 +2200,7 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 618181067}
   - {fileID: 68695156}
+  - {fileID: 2115490696}
   - {fileID: 972732175}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2253,6 +2254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _silverKeyCount: 1
   _goldKeyCount: 1
+  _potionCount: 5
 --- !u!1 &536989303
 GameObject:
   m_ObjectHideFlags: 0
@@ -4125,7 +4127,7 @@ Transform:
   - {fileID: 1077729785}
   - {fileID: 1888423608}
   m_Father: {fileID: 532910444}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &987243377
 GameObject:
@@ -4504,7 +4506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 9
+  _startLevel: 1
   _maxLevel: 9
 --- !u!1 &1072904999
 GameObject:
@@ -4581,7 +4583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 9
+  _startLevel: 1
   _maxLevel: 9
 --- !u!1 &1090467330
 GameObject:
@@ -6019,7 +6021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 9
+  _startLevel: 1
   _maxLevel: 9
 --- !u!1 &1403963333
 GameObject:
@@ -8069,7 +8071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 9
+  _startLevel: 1
   _maxLevel: 9
 --- !u!1 &1901432935
 GameObject:
@@ -8598,6 +8600,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010362539}
   m_CullTransparentMesh: 1
+--- !u!1 &2115490695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2115490696}
+  - component: {fileID: 2115490697}
+  m_Layer: 0
+  m_Name: Item
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2115490696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115490695}
+  m_LocalRotation: {x: -0.15729629, y: 0, z: 0, w: 0.98755145}
+  m_LocalPosition: {x: 0, y: 1.4, z: 3.33}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 532910444}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -18.1, y: 0, z: 0}
+--- !u!212 &2115490697
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115490695}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -2119346257
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 8381fc215277a284a93a213d0d1b5e59, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.125, y: 3.125}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &174787584695185585
 GameObject:
   m_ObjectHideFlags: 0
@@ -9375,7 +9461,7 @@ MonoBehaviour:
   _timeAfterAttack: 0.5
   _timeFromDead: 1.5
   _timeBeforeLeave: 1.5
-  _healingTime: 1
+  _healingTime: 2
   _coinFlipTime: 3
   _attackButton: {fileID: 599531201}
   _leaveButton: {fileID: 5218370751210810299}

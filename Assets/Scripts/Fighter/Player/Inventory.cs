@@ -6,8 +6,7 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] private int _silverKeyCount = 1;
     [SerializeField] private int _goldKeyCount = 1;
-
-    private int _potionCount;
+    [SerializeField] private int _potionCount = 1;
 
     public int PotionCount => _potionCount;
 

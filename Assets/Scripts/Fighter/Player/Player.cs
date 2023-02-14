@@ -50,6 +50,7 @@ public class Player : Fighter
 
             _inventory.SpendPotion();
             HealthChanged(CurrentHealth);
+            FighterAnimator.SetTrigger("Heal");
         }
     }
 

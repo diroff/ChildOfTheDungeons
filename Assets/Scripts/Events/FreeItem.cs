@@ -43,7 +43,7 @@ public class FreeItem : Event
         SetPanelState(false);
         _player.Leave();
         yield return new WaitForSeconds(_takeCouldown);
-
+        DestroySpawnerObjects();
         NotTakeItem();
     }
 
@@ -113,5 +113,14 @@ public class FreeItem : Event
             
             _item.SetLevel(_progression.SetLevel() + additionalLevel);
         }
+    }
+
+    private void DestroySpawnerObjects()
+    {
+        if (Spawner.GetEnemy() != null)
+            Destroy(Spawner.GetEnemy().gameObject);
+
+        if (Spawner.GetChest() != null)
+            Destroy(Spawner.GetChest().gameObject);
     }
 }

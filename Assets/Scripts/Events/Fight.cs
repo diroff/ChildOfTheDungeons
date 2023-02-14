@@ -164,8 +164,8 @@ public class Fight : Event
     private IEnumerator HealCoroutine()
     {
         _attackPanel.SetActive(false);
-        yield return new WaitForSeconds(_healingTime);
         _player.Heal();
+        yield return new WaitForSeconds(_healingTime);
         _healButton.SetButtonState();
         EnemyStep();
     }
