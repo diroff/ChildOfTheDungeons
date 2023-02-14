@@ -76,7 +76,6 @@ public class ChestEvent : Event
 
     public override void EndEvent()
     {
-        Destroy(_chest.gameObject);
         base.EndEvent();
     }
 }

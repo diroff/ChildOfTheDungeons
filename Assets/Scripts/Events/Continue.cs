@@ -24,7 +24,7 @@ public class Continue : Event
         PlayerRun();
         yield return new WaitForSeconds(_runCouldown);
 
-        DestroyEnemy();
+        DestroySpawnerObjects();
         yield return new WaitForSeconds(_destroyCouldown);
         EnableNewEvent();
     }
@@ -34,13 +34,6 @@ public class Continue : Event
         base.EndEvent();
         SetEnableEvent(false);
         SetPanelState(false);
-    }
-
-    private void DestroyEnemy()
-    {
-        var enemy = Spawner.GetComponentInChildren<Enemy>();
-        if (enemy != null)
-            Destroy(enemy.gameObject);
     }
 
     private void EnableNewEvent()
@@ -54,5 +47,14 @@ public class Continue : Event
     {
         SetPanelState(false);
         _player.Run();
+    }
+
+    private void DestroySpawnerObjects()
+    {
+        if (Spawner.GetEnemy() != null)
+            Destroy(Spawner.GetEnemy().gameObject);
+
+        if (Spawner.GetChest() != null)
+            Destroy(Spawner.GetChest().gameObject);
     }
 }

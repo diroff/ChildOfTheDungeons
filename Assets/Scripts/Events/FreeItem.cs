@@ -34,7 +34,7 @@ public class FreeItem : Event
 
         _item.TakeAnimation();
         yield return new WaitForSeconds(_takeCouldown);
-
+        
         TakeItem();
     }
 
@@ -43,9 +43,6 @@ public class FreeItem : Event
         SetPanelState(false);
         _player.Leave();
         yield return new WaitForSeconds(_takeCouldown);
-
-        if (Spawner.GetEnemy() != null)
-            Destroy(Spawner.GetEnemy().gameObject);
 
         NotTakeItem();
     }
