@@ -11,6 +11,9 @@ public class ChestEvent : Event
     [SerializeField] private Button _openButton;
     [SerializeField] private Player _player;
 
+    [SerializeField] private float _timeBeforeLeave;
+    [SerializeField] private float _timeBeforeOpen;
+
     private Chest _chest;
     private Item _item;
     private Key.KeyType _keyType;
@@ -45,12 +48,11 @@ public class ChestEvent : Event
     public void OpenChest()
     {
         StartCoroutine(OpenChestCoroutine());
-        
     }
 
     public void IgnoreChest()
     {
-        EndEvent();
+        StartCoroutine(IgnoreChestCoroutine());
     }
 
     public Item PrepareItem()
@@ -63,7 +65,7 @@ public class ChestEvent : Event
     {
         SetPanelState(false);
         _chest.Animator.SetTrigger("Open");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_timeBeforeOpen);
         _player.Inventory.UseKey(_keyType);
         _item = PrepareItem();
         _eventsController.SetContinue(false);
@@ -72,6 +74,15 @@ public class ChestEvent : Event
 
         EndEvent();
         _eventsController.StartEvent();
+    }
+
+    private IEnumerator IgnoreChestCoroutine()
+    {
+        SetPanelState(false);
+        _player.Leave();
+        yield return new WaitForSeconds(_timeBeforeLeave);
+        Destroy(_chest.gameObject);
+        EndEvent();
     }
 
     public override void EndEvent()

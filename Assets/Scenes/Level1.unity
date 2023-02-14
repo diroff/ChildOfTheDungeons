@@ -854,6 +854,8 @@ MonoBehaviour:
   _eventsController: {fileID: 1886117191}
   _openButton: {fileID: 22734858}
   _player: {fileID: 532910443}
+  _timeBeforeLeave: 1.5
+  _timeBeforeOpen: 1
 --- !u!1 &68695155
 GameObject:
   m_ObjectHideFlags: 0
