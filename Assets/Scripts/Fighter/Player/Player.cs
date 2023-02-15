@@ -22,7 +22,6 @@ public class Player : Fighter
     public event UnityAction Leaved;
     public event UnityAction NotLeaved;
     public event UnityAction<int> HealthChanged;
-    public event UnityAction<int> DamageChanged;
     public event UnityAction<int, int> ExperienceChanged;
     public event UnityAction<int> LevelChanged;
 
@@ -163,10 +162,7 @@ public class Player : Fighter
         CalculateTotalDamage();
         Armor = _armorSlots.CalculateArmor();
         HealthChanged(CurrentHealth);
-        DamageChanged(_skills.Power.CurrentLevel * Level);
         ExperienceChanged(_currentExperience, _experienceToNextLevel);
         LevelChanged(Level);
-
-        Debug.Log($"Броня: {Armor}");
     }
 }

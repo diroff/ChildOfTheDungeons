@@ -15,6 +15,7 @@ public class Skill : MonoBehaviour
     private void Awake()
     {
         _currentLevel = _startLevel;
+        ValueChanged?.Invoke(_currentLevel);
     }
 
     public void AddLevel(int count)
