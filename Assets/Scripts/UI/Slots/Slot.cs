@@ -32,7 +32,9 @@ public class Slot : MonoBehaviour
         if(InfoPanel.gameObject.activeSelf)
             InfoPanel.gameObject.SetActive(false);
 
-        InfoPanel.SetInfo(Item.ItemDescription);
+        if (Item != null)
+            InfoPanel.SetInfo(Item.ItemDescription);
+
         InfoPanel.ShowInfo(true);
     }
 

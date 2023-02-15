@@ -5,10 +5,13 @@ public class Skill : MonoBehaviour
 {
     [SerializeField] private int _startLevel;
     [SerializeField] private int _maxLevel;
+    [TextArea(1, 2)]
+    [SerializeField] private string _description;
 
     private int _currentLevel;
 
     public int CurrentLevel => _currentLevel;
+    public string Description => _description;
 
     public event UnityAction<int> ValueChanged;
 
