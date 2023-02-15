@@ -8488,6 +8488,7 @@ MonoBehaviour:
   TextField: {fileID: 300575375}
   _nextLevelText: {fileID: 1499343791}
   _currentExperience: {fileID: 353407161}
+  _experienceSlider: {fileID: 564629554}
 --- !u!1 &1810066125
 GameObject:
   m_ObjectHideFlags: 0

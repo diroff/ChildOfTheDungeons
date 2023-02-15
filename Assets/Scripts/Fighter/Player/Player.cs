@@ -86,6 +86,7 @@ public class Player : Fighter
         {
             Level++;
             _experienceToNextLevel *= (Level + 5) / 2;
+            _currentExperience = 0;
             UpdatePlayerStats();
             FillHealth();
         }
