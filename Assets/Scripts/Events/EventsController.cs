@@ -6,11 +6,11 @@ public class EventsController : MonoBehaviour
     [SerializeField] private Player _player;
 
     [SerializeField] private List<Event> _eventTypes;
-
+    [Header("Events")]
     [SerializeField] private Event _continue;
     [SerializeField] private Event _gameOver;
     [SerializeField] private Event _startEvent;
-
+    [Space]
     [SerializeField] private ProgressionController _progression;
 
     private Event _currentEvent;
