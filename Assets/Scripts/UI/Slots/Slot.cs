@@ -10,9 +10,10 @@ public class Slot : MonoBehaviour
     protected Item Item;
     protected bool IsFilled = false;
 
-    private void UpdateSprite(Sprite sprite)
+    [ContextMenu("Update sprite")]
+    public void UpdateSprite()
     {
-        ItemSprite.sprite = sprite;
+        ItemSprite.sprite = Item.ItemSprite;
     }
 
     public virtual void AddItem(Item item)
@@ -20,7 +21,7 @@ public class Slot : MonoBehaviour
         Item = item;
         IsFilled = true;
         InfoPanel.ShowInfo(false);
-        UpdateSprite(Item.ItemSprite);
+        UpdateSprite();
     }
 
     public virtual void ShowDescription()
@@ -31,6 +32,7 @@ public class Slot : MonoBehaviour
         if(InfoPanel.gameObject.activeSelf)
             InfoPanel.gameObject.SetActive(false);
 
+        InfoPanel.SetInfo(Item.ItemDescription);
         InfoPanel.ShowInfo(true);
     }
 

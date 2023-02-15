@@ -8,8 +8,9 @@ public class Key : Item
 
     public KeyType TypeOfKey => _typeOfKey;
 
-    private void Awake()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         ItemType = TypeOfItems.key;
     }
 

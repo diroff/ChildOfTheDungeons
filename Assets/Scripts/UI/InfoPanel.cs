@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,5 +17,10 @@ public class InfoPanel : MonoBehaviour
     public void SetInfo(string info, int value, int level)
     {
         _info.text = $"{info} \nDmg:{value}\nLvl:{level}";
+    }
+
+    public void SetInfo(string info)
+    {
+        _info.text = info;
     }
 }

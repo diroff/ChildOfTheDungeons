@@ -12,7 +12,6 @@ public class Weapon : Item
     {
         base.OnEnable();
         ItemType = TypeOfItems.weapon;
-        Sprite = GetComponent<SpriteRenderer>().sprite;
         CalculateDamage();
     }
 

@@ -25,6 +25,7 @@ public abstract class Item : MonoBehaviour
     {
         _parameters.DisplayParameters(true);
         LevelChanged?.Invoke(Level);
+        Sprite = GetComponent<SpriteRenderer>().sprite;
     }
 
     protected virtual void OnDisable()
