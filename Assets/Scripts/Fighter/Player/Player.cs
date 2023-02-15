@@ -21,7 +21,7 @@ public class Player : Fighter
 
     public event UnityAction Leaved;
     public event UnityAction NotLeaved;
-    public event UnityAction<int> HealthChanged;
+    public event UnityAction<int, int> HealthChanged;
     public event UnityAction<int, int> ExperienceChanged;
     public event UnityAction<int> LevelChanged;
 
@@ -35,7 +35,7 @@ public class Player : Fighter
     {
         base.TakeDamage(damage);
         
-        HealthChanged(CurrentHealth);
+        HealthChanged(CurrentHealth, MaxHealth);
     }
 
     public void Heal()
@@ -48,7 +48,7 @@ public class Player : Fighter
                 CurrentHealth += (MaxHealth / 2);
 
             _inventory.SpendPotion();
-            HealthChanged(CurrentHealth);
+            HealthChanged(CurrentHealth, MaxHealth);
             FighterAnimator.SetTrigger("Heal");
         }
     }
@@ -95,7 +95,7 @@ public class Player : Fighter
     private void FillHealth()
     {
         CurrentHealth = MaxHealth;
-        HealthChanged(CurrentHealth);
+        HealthChanged(CurrentHealth, MaxHealth);
     }
 
     public void AddArmor(Armor armor)
@@ -162,7 +162,7 @@ public class Player : Fighter
         CalculateMaxHealth();
         CalculateTotalDamage();
         Armor = _armorSlots.CalculateArmor();
-        HealthChanged(CurrentHealth);
+        HealthChanged(CurrentHealth, MaxHealth);
         ExperienceChanged(_currentExperience, _experienceToNextLevel);
         LevelChanged(Level);
     }
