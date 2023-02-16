@@ -9,6 +9,7 @@ public class ChestEvent : Event
     [SerializeField] private FreeItem _freeItemEvent;
     [SerializeField] private EventsController _eventsController;
     [SerializeField] private Button _openButton;
+    [SerializeField] private SpriteRenderer _keySprite;
     [SerializeField] private Player _player;
 
     [SerializeField] private float _timeBeforeLeave;
@@ -43,6 +44,8 @@ public class ChestEvent : Event
             else
                 _openButton.interactable = false;
         }
+
+        _keySprite.sprite = _chest.KeyHole.RequriedKey.ItemSprite;
     }
 
     public void OpenChest()
