@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public abstract class Item : MonoBehaviour
 {
     [SerializeField] protected string Name;
@@ -8,24 +9,26 @@ public abstract class Item : MonoBehaviour
     [SerializeField] protected string Description;
 
     [SerializeField] protected Animator ItemAnimator;
-    
+    [SerializeField] protected Sprite Sprite;
+
     [SerializeField] private OppositeParameters _parameters;
 
     public Sprite ItemSprite => Sprite;
     public string ItemDescription => Description;
 
+    protected SpriteRenderer SpriteRenderer;
     protected TypeOfItems ItemType = TypeOfItems.heal;
     protected int Level = 1;
-    protected Sprite Sprite;
 
     public event UnityAction<bool> Taked;
     public event UnityAction<int> LevelChanged;
 
     protected virtual void OnEnable()
     {
+        SpriteRenderer = GetComponent<SpriteRenderer>();
         _parameters.DisplayParameters(true);
         LevelChanged?.Invoke(Level);
-        Sprite = GetComponent<SpriteRenderer>().sprite;
+        SpriteRenderer.sprite = Sprite;
     }
 
     protected virtual void OnDisable()

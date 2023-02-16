@@ -992,6 +992,7 @@ MonoBehaviour:
   _freeItemEvent: {fileID: 1622029519}
   _eventsController: {fileID: 1886117191}
   _openButton: {fileID: 22734858}
+  _keySprite: {fileID: 595248921}
   _player: {fileID: 532910443}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
@@ -3376,11 +3377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3919094443381514711, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 460.34915
+      value: 460.32306
       objectReference: {fileID: 0}
     - target: {fileID: 3919094443381514711, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -279.3898
+      value: -279.40567
       objectReference: {fileID: 0}
     - target: {fileID: 3919094443381514711, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3411,6 +3412,14 @@ PrefabInstance:
       value: 1234169085
       objectReference: {fileID: 0}
     - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_SortingLayer
       value: 6
       objectReference: {fileID: 0}
@@ -3422,17 +3431,25 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1234169085
       objectReference: {fileID: 0}
+    - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8081293473701407379, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_Color.a
@@ -7753,11 +7770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3919094443381514711, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 760.3491
+      value: 760.32306
       objectReference: {fileID: 0}
     - target: {fileID: 3919094443381514711, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -279.3898
+      value: -279.40567
       objectReference: {fileID: 0}
     - target: {fileID: 3919094443381514711, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7788,6 +7805,14 @@ PrefabInstance:
       value: 1234169085
       objectReference: {fileID: 0}
     - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_SortingLayer
       value: 6
       objectReference: {fileID: 0}
@@ -7799,17 +7824,25 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1234169085
       objectReference: {fileID: 0}
+    - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8081293473701407379, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_Color.a
@@ -9032,7 +9065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panel: {fileID: 1719605955}
-  _eventIcon: {fileID: 21300000, guid: 410f2ac39332a2249b207a95f7f47b73, type: 3}
+  _eventIcon: {fileID: 21300000, guid: 03086eea522dee341888295c0153b149, type: 3}
   Spawner: {fileID: 1957994491}
   _panelEnableCouldown: 1
   _player: {fileID: 532910443}
@@ -10357,11 +10390,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3919094443381514711, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 160.34915
+      value: 160.32306
       objectReference: {fileID: 0}
     - target: {fileID: 3919094443381514711, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -279.3898
+      value: -279.40567
       objectReference: {fileID: 0}
     - target: {fileID: 3919094443381514711, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10392,6 +10425,14 @@ PrefabInstance:
       value: 1234169085
       objectReference: {fileID: 0}
     - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_SortingLayer
       value: 6
       objectReference: {fileID: 0}
@@ -10403,17 +10444,25 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1234169085
       objectReference: {fileID: 0}
+    - target: {fileID: 6036424341466882456, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536447749432555875, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8081293473701407379, guid: 359030d97b34bae4ab09a7e9627f1b6f, type: 3}
       propertyPath: m_Color.a

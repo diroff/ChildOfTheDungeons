@@ -103,6 +103,8 @@ MonoBehaviour:
   Description: "\u041A\u0440\u0430\u0441\u0438\u0432\u0430\u044F \u043F\u0430\u043D\u0430\u043C\u043A\u0430
     \u0441 \u0446\u0432\u0435\u0442\u043E\u0447\u043A\u043E\u043C."
   ItemAnimator: {fileID: 7209744020205144440}
+  SpriteRenderer: {fileID: 2822114677933556597}
+  Sprite: {fileID: 21300000, guid: 8a88d8f9fd32ba646b6d88a3370d10a6, type: 3}
   _parameters: {fileID: 6191341600442990010}
   _health: 100
   _protection: 0

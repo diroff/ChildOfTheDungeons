@@ -824,6 +824,8 @@ MonoBehaviour:
   Description: "\u041E\u0434\u0435\u0436\u0434\u0430 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u0433\u043E
     \u0434\u0435\u0440\u0435\u0432\u0435\u043D\u0441\u043A\u043E\u0433\u043E \u043C\u0443\u0436\u0438\u043A\u0430."
   ItemAnimator: {fileID: 2635707637509580201}
+  SpriteRenderer: {fileID: 2822114677933556597}
+  Sprite: {fileID: 21300000, guid: 55ec10c0609eba749ab3986e58405e1e, type: 3}
   _parameters: {fileID: 271820440}
   _health: 100
   _protection: 1

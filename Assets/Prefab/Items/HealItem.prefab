@@ -104,6 +104,8 @@ MonoBehaviour:
     \u041B\u0435\u0447\u0438\u0442 \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0443
     \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F."
   ItemAnimator: {fileID: -8285349703678693363}
+  SpriteRenderer: {fileID: 1797388749512454580}
+  Sprite: {fileID: 21300000, guid: 8381fc215277a284a93a213d0d1b5e59, type: 3}
   _parameters: {fileID: 7464399439722276056}
 --- !u!95 &-8285349703678693363
 Animator:

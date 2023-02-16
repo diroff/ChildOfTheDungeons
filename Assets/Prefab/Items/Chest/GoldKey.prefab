@@ -295,6 +295,8 @@ MonoBehaviour:
     - \u043E\u0442\u043A\u0440\u043E\u0435\u0442 \u043B\u044E\u0431\u043E\u0439 \u0441\u0443\u043D\u0434\u0443\u043A
     \u0441 \u043E\u0440\u0443\u0436\u0438\u0435\u043C"
   ItemAnimator: {fileID: -7274429141475017069}
+  SpriteRenderer: {fileID: 8814559912385459927}
+  Sprite: {fileID: 21300000, guid: 647edaa631a502849a16ef0509de9a8d, type: 3}
   _parameters: {fileID: 6721252417937145602}
   _typeOfKey: 1
 --- !u!95 &-7274429141475017069
