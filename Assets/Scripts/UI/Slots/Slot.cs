@@ -4,24 +4,14 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    [SerializeField] protected SpriteRenderer ItemSprite;
+    [SerializeField] protected SpriteRenderer SlotSprite;
     [SerializeField] protected InfoPanel InfoPanel;
 
-    protected Item Item;
     protected bool IsFilled = false;
 
-    [ContextMenu("Update sprite")]
-    public void UpdateSprite()
+    public void UpdateSprite(Sprite sprite)
     {
-        ItemSprite.sprite = Item.ItemSprite;
-    }
-
-    public virtual void AddItem(Item item)
-    {
-        Item = item;
-        IsFilled = true;
-        InfoPanel.ShowInfo(false);
-        UpdateSprite();
+        SlotSprite.sprite = sprite;
     }
 
     public virtual void ShowDescription()
@@ -31,9 +21,6 @@ public class Slot : MonoBehaviour
 
         if(InfoPanel.gameObject.activeSelf)
             InfoPanel.gameObject.SetActive(false);
-
-        if (Item != null)
-            InfoPanel.SetInfo(Item.ItemDescription);
 
         InfoPanel.ShowInfo(true);
     }

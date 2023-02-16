@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArmorSlot : Slot
+public class ArmorSlot : ItemDescriptionSlot
 {
     private Armor _armor;
 

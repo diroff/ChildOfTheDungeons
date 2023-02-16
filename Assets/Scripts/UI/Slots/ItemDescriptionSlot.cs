@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class ItemDescriptionSlot : Slot
 {
-    [SerializeField] private Item _slotItem;
+    protected Item Item;
 
-    private void OnEnable()
+    public virtual void AddItem(Item item)
     {
-        AddItem();
-    }
-
-    private void AddItem()
-    {
-        Item = _slotItem;
+        Item = item;
         IsFilled = true;
         InfoPanel.ShowInfo(false);
+        UpdateSprite(Item.ItemSprite);
     }
+
+    public override void ShowDescription()
+    {
+        base.ShowDescription();
+
+        if (Item != null)
+            InfoPanel.SetInfo(Item.ItemDescription);
+    }     
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponSlot : Slot
+public class WeaponSlot : ItemDescriptionSlot
 {
     [SerializeField] private Transform _weaponHand;
 

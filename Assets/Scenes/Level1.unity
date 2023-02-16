@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59be7c1e5ab93ff49b224676140bacc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 497876821}
+  SlotSprite: {fileID: 497876821}
   InfoPanel: {fileID: 180263403}
   _weaponHand: {fileID: 68695156}
 --- !u!1 &22734856
@@ -1814,7 +1814,7 @@ GameObject:
   - component: {fileID: 267734348}
   - component: {fileID: 267734350}
   - component: {fileID: 267734352}
-  - component: {fileID: 267734351}
+  - component: {fileID: 267734353}
   m_Layer: 0
   m_Name: KeyGold
   m_TagString: Untagged
@@ -1896,21 +1896,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 532910443}
   TextField: {fileID: 2047223260}
---- !u!114 &267734351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267734345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ae750afa674754283ab98a761d8b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 2000194476}
-  InfoPanel: {fileID: 1937293547}
-  _slotItem: {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
 --- !u!114 &267734352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1955,8 +1940,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 267734351}
-        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+      - m_Target: {fileID: 267734353}
+        m_TargetAssemblyTypeName: ItemDescriptionSlot, Assembly-CSharp
         m_MethodName: ShowDescription
         m_Mode: 1
         m_Arguments:
@@ -1967,6 +1952,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &267734353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267734345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae9480c6f1f6db4d8ec4064b41451de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SlotSprite: {fileID: 2000194476}
+  InfoPanel: {fileID: 1937293547}
+  SlotItem: {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
 --- !u!1 &300575373
 GameObject:
   m_ObjectHideFlags: 0
@@ -2354,7 +2354,7 @@ GameObject:
   - component: {fileID: 356793726}
   - component: {fileID: 356793728}
   - component: {fileID: 356793730}
-  - component: {fileID: 356793729}
+  - component: {fileID: 356793731}
   m_Layer: 0
   m_Name: KeySilver
   m_TagString: Untagged
@@ -2436,21 +2436,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 532910443}
   TextField: {fileID: 1844533067}
---- !u!114 &356793729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356793723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ae750afa674754283ab98a761d8b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 647137242}
-  InfoPanel: {fileID: 1937293547}
-  _slotItem: {fileID: 8001527148783395447, guid: 4da005d92086cb84ea6d0fba28e9511b, type: 3}
 --- !u!114 &356793730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2495,8 +2480,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 356793729}
-        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+      - m_Target: {fileID: 356793731}
+        m_TargetAssemblyTypeName: ItemDescriptionSlot, Assembly-CSharp
         m_MethodName: ShowDescription
         m_Mode: 1
         m_Arguments:
@@ -2507,6 +2492,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &356793731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356793723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae9480c6f1f6db4d8ec4064b41451de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SlotSprite: {fileID: 647137242}
+  InfoPanel: {fileID: 1937293547}
+  SlotItem: {fileID: 8001527148783395447, guid: 4da005d92086cb84ea6d0fba28e9511b, type: 3}
 --- !u!1 &398918336
 GameObject:
   m_ObjectHideFlags: 0
@@ -4915,7 +4915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6604f582ab789419932d2e744ae20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 0}
+  SlotSprite: {fileID: 0}
   InfoPanel: {fileID: 1098473314}
   _skill: {fileID: 1077729786}
 --- !u!1 &761103252
@@ -5467,7 +5467,7 @@ GameObject:
   - component: {fileID: 826959238}
   - component: {fileID: 826959240}
   - component: {fileID: 826959242}
-  - component: {fileID: 826959241}
+  - component: {fileID: 826959243}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Untagged
@@ -5549,21 +5549,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 532910443}
   TextField: {fileID: 958825124}
---- !u!114 &826959241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826959235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ae750afa674754283ab98a761d8b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 220116347}
-  InfoPanel: {fileID: 1937293547}
-  _slotItem: {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
 --- !u!114 &826959242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5608,8 +5593,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 826959241}
-        m_TargetAssemblyTypeName: Slot, Assembly-CSharp
+      - m_Target: {fileID: 826959243}
+        m_TargetAssemblyTypeName: ItemDescriptionSlot, Assembly-CSharp
         m_MethodName: ShowDescription
         m_Mode: 1
         m_Arguments:
@@ -5620,6 +5605,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &826959243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826959235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae9480c6f1f6db4d8ec4064b41451de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SlotSprite: {fileID: 220116347}
+  InfoPanel: {fileID: 1937293547}
+  SlotItem: {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
 --- !u!1 &865698986
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,7 +6994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6604f582ab789419932d2e744ae20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 0}
+  SlotSprite: {fileID: 0}
   InfoPanel: {fileID: 1098473314}
   _skill: {fileID: 1036183361}
 --- !u!1 &1154457003
@@ -7526,7 +7526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea590b6f4bd234545a2d41fab10e5f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 1035237455}
+  SlotSprite: {fileID: 1035237455}
   InfoPanel: {fileID: 707620930}
 --- !u!1 &1343221153
 GameObject:
@@ -8753,7 +8753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea590b6f4bd234545a2d41fab10e5f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 674628645}
+  SlotSprite: {fileID: 674628645}
   InfoPanel: {fileID: 707620930}
 --- !u!1 &1592290757
 GameObject:
@@ -9596,7 +9596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6604f582ab789419932d2e744ae20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 0}
+  SlotSprite: {fileID: 0}
   InfoPanel: {fileID: 1098473314}
   _skill: {fileID: 1374453079}
 --- !u!1 &1791232790
@@ -10613,6 +10613,8 @@ MonoBehaviour:
   _eventTypes:
   - {fileID: 1035679086}
   - {fileID: 8148549922209866770}
+  - {fileID: 65925127}
+  - {fileID: 65925127}
   _continue: {fileID: 8320838582458532849}
   _gameOver: {fileID: 169853898}
   _startEvent: {fileID: 8148549922209866770}
@@ -10682,7 +10684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 3
+  _startLevel: 5
   _maxLevel: 9
   _description: "\u0412\u044B\u043D\u043E\u0441\u043B\u0438\u0432\u043E\u0441\u0442\u044C.
     \u0412\u043B\u0438\u044F\u0435\u0442 \u043D\u0430 \u0431\u0430\u0437\u043E\u0432\u044B\u0439
@@ -11014,7 +11016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea590b6f4bd234545a2d41fab10e5f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 120465246}
+  SlotSprite: {fileID: 120465246}
   InfoPanel: {fileID: 707620930}
 --- !u!1 &1937293543
 GameObject:
@@ -11481,7 +11483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6604f582ab789419932d2e744ae20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemSprite: {fileID: 0}
+  SlotSprite: {fileID: 0}
   InfoPanel: {fileID: 1098473314}
   _skill: {fileID: 1888423609}
 --- !u!1 &2000194474

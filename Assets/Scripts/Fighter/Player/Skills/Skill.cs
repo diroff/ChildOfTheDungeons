@@ -15,9 +15,13 @@ public class Skill : MonoBehaviour
 
     public event UnityAction<int> ValueChanged;
 
-    private void Start()
+    private void Awake()
     {
         _currentLevel = _startLevel;
+    }
+
+    private void Start()
+    {
         ValueChanged?.Invoke(_currentLevel);
     }
 
