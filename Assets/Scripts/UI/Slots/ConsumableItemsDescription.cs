@@ -8,15 +8,6 @@ public class ConsumableItemsDescription : ItemDescriptionSlot
 
     private void OnEnable()
     {
-        AddItem();
-    }
-
-    private void AddItem()
-    {
-        Item item = Instantiate(SlotItem);
-        Item = SlotItem;
-        IsFilled = true;
-        InfoPanel.ShowInfo(false);
-        Destroy(item.gameObject);
+        AddItem(SlotItem);
     }
 }
