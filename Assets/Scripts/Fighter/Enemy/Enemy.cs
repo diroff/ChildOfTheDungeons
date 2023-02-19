@@ -4,8 +4,6 @@ using UnityEngine.Events;
 
 public class Enemy : Fighter
 {
-    [SerializeField] private OppositeParameters _parametersPanel;
-
     [Header("Additional parameters")]
     [SerializeField] private int _baseExperience;
     [SerializeField] private List<Item> _lootList;
@@ -16,23 +14,12 @@ public class Enemy : Fighter
     private int lootChange;
     private Item _lootItem;
 
-    public event UnityAction<int> HealthChanged;
-    public event UnityAction<int> LevelChanged;
-    public event UnityAction<int> DamageChanged;
-    public event UnityAction<int> CostChanged;
+    public UnityEvent<int> HealthChanged;
+    public UnityEvent<int> LevelChanged;
+    public UnityEvent<int> DamageChanged;
 
     public Item LootItem => _lootItem;
     public int MinimalLevel => _minimalLevel;
-
-    private void OnEnable()
-    {
-        _parametersPanel.DisplayParameters(true);
-    }
-
-    private void OnDisable()
-    {
-        _parametersPanel.DisplayParameters(false);
-    }
 
     protected override void Start()
     {
@@ -50,7 +37,7 @@ public class Enemy : Fighter
         base.TakeDamage(damage);
         
         if (!Die())
-            HealthChanged(CurrentHealth);
+            HealthChanged.Invoke(CurrentHealth);
     }
 
     public void TryAttack(Player player)
@@ -72,12 +59,11 @@ public class Enemy : Fighter
         return BaseDamage * (Level + 1) / 2;
     }
     
-    private void UpdateParameters()
+    public void UpdateParameters()
     {
-        HealthChanged(CurrentHealth);
-        LevelChanged(Level);
-        DamageChanged(CalculateTotalDamage());
-        CostChanged(CalculateExperienceCost());
+        HealthChanged.Invoke(CurrentHealth);
+        LevelChanged.Invoke(Level);
+        DamageChanged.Invoke(CalculateTotalDamage());
     }
 
     public override void SetLevel(int currentLevel)
@@ -87,7 +73,6 @@ public class Enemy : Fighter
 
     public override void Dead()
     {
-        _parametersPanel.DisplayParameters(false);
         base.Dead();
     }
 

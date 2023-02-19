@@ -25,9 +25,11 @@ public class Fight : Event
     [Header("Panels")]
     [SerializeField] private GameObject _coinFlipPanel;
     [SerializeField] private GameObject _coinImage;
+    [SerializeField] private GameObject _attackPanel;
+    [SerializeField] private GameObject _enemyInfoButton;
+    [SerializeField] private GameObject _enemyInfoPanel;
     [SerializeField] private Button _coinFlipButton;
     [SerializeField] private Animator _coinAnimator;
-    [SerializeField] private GameObject _attackPanel;
 
     private Enemy _enemy;
 
@@ -107,6 +109,7 @@ public class Fight : Event
 
     private void StartCoinFlip()
     {
+        _enemyInfoButton.SetActive(true);
         _attackPanel.SetActive(false);
         _coinImage.SetActive(false);
         _coinFlipPanel.SetActive(true);
@@ -139,6 +142,8 @@ public class Fight : Event
     private IEnumerator EnemyDeadCoroutine()
     {
         _player.AddExperience(_enemy.CalculateExperienceCost());
+        _enemyInfoButton.SetActive(false);
+        _enemyInfoPanel.SetActive(false);
         yield return new WaitForSeconds(_timeFromDead);
 
         if (_enemy.IsLoot())
