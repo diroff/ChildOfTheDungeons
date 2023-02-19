@@ -14,7 +14,7 @@ public class Enemy : Fighter
     private int lootChange;
     private Item _lootItem;
 
-    public UnityEvent<int> HealthChanged;
+    public UnityEvent<int, int> HealthChanged;
     public UnityEvent<int> LevelChanged;
     public UnityEvent<int> DamageChanged;
 
@@ -37,7 +37,7 @@ public class Enemy : Fighter
         base.TakeDamage(damage);
         
         if (!Die())
-            HealthChanged.Invoke(CurrentHealth);
+            HealthChanged.Invoke(CurrentHealth, MaxHealth);
     }
 
     public void TryAttack(Player player)
@@ -61,7 +61,7 @@ public class Enemy : Fighter
     
     public void UpdateParameters()
     {
-        HealthChanged.Invoke(CurrentHealth);
+        HealthChanged.Invoke(CurrentHealth, MaxHealth);
         LevelChanged.Invoke(Level);
         DamageChanged.Invoke(CalculateTotalDamage());
     }
