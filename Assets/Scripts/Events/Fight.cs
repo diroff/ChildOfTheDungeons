@@ -43,6 +43,8 @@ public class Fight : Event
     public override void EndEvent()
     {
         base.EndEvent();
+        _enemyInfoButton.SetActive(false);
+        _enemyInfoPanel.SetActive(false);
         UnsubscribeEvents();
     }
 
