@@ -16,29 +16,23 @@ public class Enemy : Fighter
     private int lootChange;
     private Item _lootItem;
 
-    public event UnityAction<int> HealthChanged;
-    public event UnityAction<int> LevelChanged;
-    public event UnityAction<int> DamageChanged;
-    public event UnityAction<int> CostChanged;
-
     public Item LootItem => _lootItem;
     public int MinimalLevel => _minimalLevel;
 
     private void OnEnable()
     {
-        _parametersPanel.DisplayParameters(true);
+        //_parametersPanel.DisplayParameters(true);
     }
 
     private void OnDisable()
     {
-        _parametersPanel.DisplayParameters(false);
+       // _parametersPanel.DisplayParameters(false);
     }
 
     protected override void Start()
     {
         base.Start();
         EnableShadowShader();
-        UpdateParameters();
         SetLootChange();
 
         if (IsLoot())
@@ -48,9 +42,6 @@ public class Enemy : Fighter
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        
-        if (!Die())
-            HealthChanged(CurrentHealth);
     }
 
     public void TryAttack(Player player)
@@ -70,14 +61,6 @@ public class Enemy : Fighter
     public int CalculateTotalDamage()
     {
         return BaseDamage * (Level + 1) / 2;
-    }
-    
-    private void UpdateParameters()
-    {
-        HealthChanged(CurrentHealth);
-        LevelChanged(Level);
-        DamageChanged(CalculateTotalDamage());
-        CostChanged(CalculateExperienceCost());
     }
 
     public override void SetLevel(int currentLevel)
