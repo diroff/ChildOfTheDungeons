@@ -20,14 +20,14 @@ public abstract class Item : MonoBehaviour
     protected TypeOfItems ItemType = TypeOfItems.heal;
     protected int Level = 1;
 
-    public event UnityAction<bool> Taked;
-    public event UnityAction<int> LevelChanged;
+    public UnityEvent<bool> Taked;
+    public UnityEvent<int> LevelChanged;
 
     protected virtual void OnEnable()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
         _parameters.DisplayParameters(true);
-        LevelChanged?.Invoke(Level);
+        LevelChanged.Invoke(Level);
         SpriteRenderer.sprite = Sprite;
     }
 
@@ -51,7 +51,7 @@ public abstract class Item : MonoBehaviour
 
     public void TakeItem()
     {
-        Taked?.Invoke(true);
+        Taked.Invoke(true);
     }  
 
     public void TakeAnimation()

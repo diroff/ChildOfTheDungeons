@@ -82,12 +82,6 @@ public class FreeItem : Event
         Destroy(_item.gameObject);
     }
 
-    public override void EndEvent()
-    {
-        base.EndEvent();
-        _item.Taked -= IsTaked;
-    }
-
     private void IsTaked(bool isTaked)
     {
         if (isTaked) 
@@ -99,7 +93,7 @@ public class FreeItem : Event
         Spawner.SpawnItem(item);
         _item = Spawner.GetItem();
         SetItemLevel();
-        _item.Taked += IsTaked;
+        _item.Taked.AddListener(IsTaked);
     }
 
     private void SetItemLevel()
