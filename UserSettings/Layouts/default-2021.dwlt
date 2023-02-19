@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 40
+  controlID: 134
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 119
+  controlID: 94
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 41
+  controlID: 105
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.4572787, y: -12.2644615, z: 19.586042}
+    m_Target: {x: 7.789158, y: 3.4896681, z: 10.187954}
     speed: 2
     m_Value: {x: -2.4572787, y: -12.2644615, z: 19.586042}
   m_RenderMode: 0
@@ -692,13 +692,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.27537176, y: 0.04608214, z: -0.013230988, w: -0.9601443}
+    m_Target: {x: -0.1926353, y: 0.68444455, z: -0.1952001, w: -0.67552084}
     speed: 2
-    m_Value: {x: -0.27681094, y: 0.046062123, z: -0.013300062, w: -0.95972764}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 11.991694
+    m_Target: 5.705672
     speed: 2
-    m_Value: 11.475306
+    m_Value: 11.991694
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -973,7 +973,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1efbffffea600000f0610000f86100007c630000866300007e640000
+      m_ExpandedIDs: 14fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1038,22 +1038,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Projects\ChildOfTheDungeons
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 966c0000
-    m_LastClickedID: 27798
-    m_ExpandedIDs: 000000006e6c0000726c0000746c0000766c0000786c00007c6c00007e6c0000806c0000826c0000c06c000000ca9a3b
+    m_SelectedIDs: 706c0000
+    m_LastClickedID: 27760
+    m_ExpandedIDs: 00000000706c0000726c0000746c0000766c0000786c00007a6c00007c6c00007e6c0000806c0000826c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1081,7 +1081,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006e6c0000706c0000726c0000746c0000766c0000786c00007a6c00007c6c00007e6c0000806c0000826c0000
+    m_ExpandedIDs: 00000000706c0000726c0000746c0000766c0000786c00007a6c00007c6c00007e6c0000806c0000826c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
