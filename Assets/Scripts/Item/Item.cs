@@ -45,6 +45,11 @@ public abstract class Item : MonoBehaviour
         key
     }
 
+    public int CalculateValue()
+    {
+        return Value + (Level / 2);
+    }
+
     public void TakeItem()
     {
         Taked.Invoke(true);

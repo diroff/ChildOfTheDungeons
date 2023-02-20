@@ -24,7 +24,7 @@ public class Armor : Item
 
     public int CalculateProtection()
     {
-        int protection = Value + (Level / 2);
+        int protection = CalculateValue();
         ProtectionChanged?.Invoke(protection);
         return protection;
     }

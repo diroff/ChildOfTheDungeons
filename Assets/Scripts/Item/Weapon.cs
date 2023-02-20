@@ -22,7 +22,7 @@ public class Weapon : Item
 
     public int CalculateDamage()
     {
-        int damage = Value + (Level / 2);
+        int damage = CalculateValue();
         DamageChanged?.Invoke(damage);
         return damage;
     }

@@ -9,6 +9,8 @@ public class Slot : MonoBehaviour
 
     protected bool IsFilled = false;
 
+    public bool IsItemFilled => IsFilled;
+
     public void UpdateSprite(Sprite sprite)
     {
         SlotSprite.sprite = sprite;

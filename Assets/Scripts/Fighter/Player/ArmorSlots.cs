@@ -11,6 +11,14 @@ public class ArmorSlots : MonoBehaviour
     private Armor _costume;
     private Armor _shoes;
 
+    public ArmorSlot HelmSlot => _helmSlot;
+    public ArmorSlot CostumeSlot => _costumeSlot;
+    public ArmorSlot ShoesSlot => _shoesSlot;
+
+    public Armor Helm => _helm;
+    public Armor Costume => _costume;
+    public Armor Shoes => _shoes;
+
     public int CalculateArmor()
     {
         int armor = 0;

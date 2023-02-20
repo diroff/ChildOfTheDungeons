@@ -3635,6 +3635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawner: {fileID: 1957994491}
+  _player: {fileID: 532910443}
   _description: {fileID: 4488961}
   _value: {fileID: 859545259}
   _level: {fileID: 1601341820}
@@ -4129,7 +4130,7 @@ MonoBehaviour:
   Armor: 0
   BaseDamage: 2
   Level: 1
-  SpriteImage: {fileID: 21300000, guid: 8927bb2be128aa2469b90d9214fe2781, type: 3}
+  SpriteImage: {fileID: 0}
   FighterAnimator: {fileID: 532910447}
   _armorSlots: {fileID: 532910448}
   _weaponSlot: {fileID: 4291863}
@@ -4203,8 +4204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7102c2b8925b1bf4fbfdc1dc9c9329ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _silverKeyCount: 1
-  _goldKeyCount: 1
+  _silverKeyCount: 10
+  _goldKeyCount: 5
   _potionCount: 5
 --- !u!1 &535995721
 GameObject:
@@ -13831,7 +13832,6 @@ MonoBehaviour:
   - {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
   _chestTemplates:
   - {fileID: 5169373742871476358, guid: e5aa0d8688711904f947a4b981a13db7, type: 3}
-  - {fileID: 5169373742871476358, guid: 81f00b7abe72d954393266fb35233993, type: 3}
   _progression: {fileID: 1104878590}
   _spawnPoint: {fileID: 1957994489}
   _itemPlace: {fileID: 516872042}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponSlot : ItemDescriptionSlot
 {
     [SerializeField] private Transform _weaponHand;
-
+    
     private Weapon _weapon;
 
     public Weapon Weapon => _weapon;

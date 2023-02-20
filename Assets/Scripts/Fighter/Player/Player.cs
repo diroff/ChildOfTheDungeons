@@ -7,7 +7,6 @@ public class Player : Fighter
     [Header("Items")]
     [SerializeField] private ArmorSlots _armorSlots;
     [SerializeField] private WeaponSlot _weaponSlot;
-
     [SerializeField] private Inventory _inventory;
 
     [Space]
@@ -17,6 +16,8 @@ public class Player : Fighter
     private int _currentExperience = 0;
 
     public Inventory Inventory => _inventory;
+    public WeaponSlot WeaponSlot => _weaponSlot;
+    public ArmorSlots ArmorSlots => _armorSlots;
     public Skills Skills => _skills;
 
     public event UnityAction Leaved;
