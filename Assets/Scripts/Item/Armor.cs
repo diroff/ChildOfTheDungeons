@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class Armor : Item
 {
     [SerializeField] private int _health;
-    [SerializeField] private int _protection;
 
     [SerializeField] private TypeArmor _typeArmor;
 
@@ -25,7 +24,7 @@ public class Armor : Item
 
     public int CalculateProtection()
     {
-        int protection = _protection + (Level / 2);
+        int protection = Value + (Level / 2);
         ProtectionChanged?.Invoke(protection);
         return protection;
     }

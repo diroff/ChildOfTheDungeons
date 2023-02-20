@@ -8,17 +8,19 @@ public abstract class Item : MonoBehaviour
     [TextArea(1, 2)]
     [SerializeField] protected string Description;
 
+    [SerializeField] protected int Value;
+    [SerializeField] protected bool Consumable = false;
     [SerializeField] protected Animator ItemAnimator;
     [SerializeField] protected Sprite Sprite;
-
-    [SerializeField] private OppositeParameters _parameters;
-
-    public Sprite ItemSprite => Sprite;
-    public string ItemDescription => Description;
 
     protected SpriteRenderer SpriteRenderer;
     protected TypeOfItems ItemType = TypeOfItems.heal;
     protected int Level = 1;
+
+    public int ItemValue => Value;
+    public bool IsConsumable => Consumable;
+    public Sprite ItemSprite => Sprite;
+    public string ItemDescription => Description;
 
     public UnityEvent<bool> Taked;
     public UnityEvent<int> LevelChanged;
@@ -26,14 +28,8 @@ public abstract class Item : MonoBehaviour
     protected virtual void OnEnable()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
-        _parameters.DisplayParameters(true);
         LevelChanged.Invoke(Level);
         SpriteRenderer.sprite = Sprite;
-    }
-
-    protected virtual void OnDisable()
-    {
-        _parameters.DisplayParameters(false);
     }
 
     protected virtual void UpdateParameters()
@@ -56,13 +52,7 @@ public abstract class Item : MonoBehaviour
 
     public void TakeAnimation()
     {
-        _parameters.DisplayParameters(false);
         ItemAnimator.SetTrigger("Take");
-    }
-
-    public void HideUI()
-    {
-        _parameters.DisplayParameters(false);
     }
 
     public TypeOfItems GetItemType()

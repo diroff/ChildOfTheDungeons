@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class Weapon : Item
 {
     [SerializeField] private int _health;
-    [SerializeField] private int _damage;
 
     public event UnityAction<int> DamageChanged;
 
@@ -23,7 +22,7 @@ public class Weapon : Item
 
     public int CalculateDamage()
     {
-        int damage = _damage + (Level / 2);
+        int damage = Value + (Level / 2);
         DamageChanged?.Invoke(damage);
         return damage;
     }
