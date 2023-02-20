@@ -7,7 +7,10 @@ using UnityEngine;
 public class InfoPanel : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
+
     [SerializeField] private TextMeshProUGUI _info;
+    [SerializeField] private TextMeshProUGUI _value;
+    [SerializeField] private TextMeshProUGUI _level;
 
     public void ShowInfo(bool enabled)
     {
@@ -16,7 +19,9 @@ public class InfoPanel : MonoBehaviour
 
     public void SetInfo(string info, int value, int level)
     {
-        _info.text = $"{info} \nDmg:{value}\nLvl:{level}";
+        _info.text = info;
+        _value.text = value.ToString();
+        _level.text = level.ToString();
     }
 
     public void SetInfo(string info)
