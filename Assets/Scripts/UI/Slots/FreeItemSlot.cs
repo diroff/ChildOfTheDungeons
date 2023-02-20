@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FreeItemSlot : ItemDescriptionSlot
+{
+    [SerializeField] private Spawner _spawner;
+
+    public override void ShowDescription()
+    {
+        base.ShowDescription();
+        AddItem(_spawner.GetItem());
+    }
+}

@@ -4,10 +4,12 @@ using UnityEngine;
 public class FreeItem : Event
 {
     [SerializeField] private Player _player;
-
     [SerializeField] private ProgressionController _progression;
-
     [SerializeField] private float _takeCouldown = 1.0f;
+
+    [Header("Info Panels")]
+    [SerializeField] private GameObject _infoPanel;
+    [SerializeField] private GameObject _infoButton;
 
     private Item _item;
 
@@ -16,6 +18,8 @@ public class FreeItem : Event
         base.StartEvent();
         if(_item == null)
             SpawnItem();
+
+        _infoButton.SetActive(true);
     }
 
     public void AddItem()
@@ -31,6 +35,7 @@ public class FreeItem : Event
     private IEnumerator AddItemCoroutine()
     {
         SetPanelState(false);
+        SetInfoPanelState(false);
 
         _item.TakeAnimation();
         yield return new WaitForSeconds(_takeCouldown);
@@ -41,8 +46,10 @@ public class FreeItem : Event
     private IEnumerator LeaveItemCoroutine()
     {
         SetPanelState(false);
+        SetInfoPanelState(false);
         _player.Leave();
         yield return new WaitForSeconds(_takeCouldown);
+
         DestroySpawnerObjects();
         NotTakeItem();
     }
@@ -116,5 +123,11 @@ public class FreeItem : Event
 
         if (Spawner.GetChest() != null)
             Destroy(Spawner.GetChest().gameObject);
+    }
+
+    private void SetInfoPanelState(bool isEnable)
+    {
+        _infoPanel.SetActive(isEnable);
+        _infoButton.SetActive(isEnable);
     }
 }

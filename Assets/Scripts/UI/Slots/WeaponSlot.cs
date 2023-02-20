@@ -35,6 +35,6 @@ public class WeaponSlot : ItemDescriptionSlot
 
     private void AddWeaponInHand()
     {
-        Instantiate(_weapon, _weaponHand).HideUI();
+        Instantiate(_weapon, _weaponHand);
     }
 }
