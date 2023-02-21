@@ -1,21 +1,22 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public abstract class Fighter : MonoBehaviour
 {    
     [SerializeField] protected string Name;
-    [SerializeField] protected int BaseMaxHealth;
-    [SerializeField] protected int Armor;
-    [SerializeField] protected int BaseDamage;
+    [SerializeField] protected float BaseMaxHealth;
+    [SerializeField] protected float Armor;
+    [SerializeField] protected float BaseDamage;
     [SerializeField] protected int Level;
     [SerializeField] protected Sprite SpriteImage;
 
     [SerializeField] protected Animator FighterAnimator;
 
-    protected int MaxHealth;
-    protected int CurrentHealth;
+    protected float MaxHealth;
+    protected float CurrentHealth;
 
-    public int BaseFighterDamage => BaseDamage;
+    public float BaseFighterDamage => BaseDamage;
     
     public event UnityAction<bool> Died;
 
@@ -43,14 +44,20 @@ public abstract class Fighter : MonoBehaviour
         FighterAnimator.SetTrigger("Attack");
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(float damage)
     {
-        if (damage >= Armor)
-        {
-            damage -= Armor;
-            CurrentHealth -= damage;
-            FighterAnimator.SetTrigger("Hit");
-        }
+        float armor;
+        if (Armor >= 80)
+            armor = 80;
+        else
+            armor = Armor;
+
+        float totalDamage = damage * (1- armor / 100);
+        CurrentHealth -= totalDamage;
+
+        FighterAnimator.SetTrigger("Hit");
+
+        Debug.Log(totalDamage);
 
         if (Die()) 
             Dead();

@@ -22,7 +22,7 @@ public class Player : Fighter
 
     public event UnityAction Leaved;
     public event UnityAction NotLeaved;
-    public event UnityAction<int, int> HealthChanged;
+    public event UnityAction<float, float> HealthChanged;
     public event UnityAction<int, int> ExperienceChanged;
     public event UnityAction<int> LevelChanged;
 
@@ -32,7 +32,7 @@ public class Player : Fighter
         UpdatePlayerStats();
     }
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
         
@@ -140,7 +140,7 @@ public class Player : Fighter
         NotLeaved?.Invoke();
     }
 
-    public int CalculateTotalDamage()
+    public float CalculateTotalDamage()
     {
         if (_weaponSlot.IsSomeWeapon())
             return (_skills.Power.CurrentLevel * Level) + _weaponSlot.Weapon.CalculateDamage();

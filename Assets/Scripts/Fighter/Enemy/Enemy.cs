@@ -14,9 +14,9 @@ public class Enemy : Fighter
     private int lootChange;
     private Item _lootItem;
 
-    public UnityEvent<int, int> HealthChanged;
+    public UnityEvent<float, float> HealthChanged;
     public UnityEvent<int> LevelChanged;
-    public UnityEvent<int> DamageChanged;
+    public UnityEvent<float> DamageChanged;
 
     public Item LootItem => _lootItem;
     public int MinimalLevel => _minimalLevel;
@@ -32,7 +32,7 @@ public class Enemy : Fighter
             SetLootItem();
     }
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
         
@@ -54,7 +54,7 @@ public class Enemy : Fighter
         return (_baseExperience * (Level + 2) / 3);
     }
 
-    public int CalculateTotalDamage()
+    public float CalculateTotalDamage()
     {
         return BaseDamage * (Level + 1) / 2;
     }

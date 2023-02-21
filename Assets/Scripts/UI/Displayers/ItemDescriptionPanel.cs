@@ -42,7 +42,10 @@ public class ItemDescriptionPanel : MonoBehaviour
         _level.text = _item.GetLevel().ToString();
 
         if (_item.GetType() == typeof(Armor))
+        {
+            _value.text += "%";
             ArmorPreparing();
+        }
         else if (_item.GetType() == typeof(Weapon))
             WeaponPreparing();
     }

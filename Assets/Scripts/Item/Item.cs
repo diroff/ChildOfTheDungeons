@@ -8,7 +8,7 @@ public abstract class Item : MonoBehaviour
     [TextArea(1, 2)]
     [SerializeField] protected string Description;
 
-    [SerializeField] protected int Value;
+    [SerializeField] protected float Value;
     [SerializeField] protected bool Consumable = false;
     [SerializeField] protected Animator ItemAnimator;
     [SerializeField] protected Sprite Sprite;
@@ -17,7 +17,7 @@ public abstract class Item : MonoBehaviour
     protected TypeOfItems ItemType = TypeOfItems.heal;
     protected int Level = 1;
 
-    public int ItemValue => Value;
+    public float ItemValue => Value;
     public bool IsConsumable => Consumable;
     public Sprite ItemSprite => Sprite;
     public string ItemDescription => Description;
@@ -45,7 +45,7 @@ public abstract class Item : MonoBehaviour
         key
     }
 
-    public int CalculateValue()
+    public float CalculateValue()
     {
         return Value + (Level / 2);
     }

@@ -7,7 +7,7 @@ public class Armor : Item
 
     [SerializeField] private TypeArmor _typeArmor;
 
-    public event UnityAction<int> ProtectionChanged;
+    public event UnityAction<float> ProtectionChanged;
 
     protected override void OnEnable()
     {
@@ -22,9 +22,9 @@ public class Armor : Item
         CalculateProtection();
     }
 
-    public int CalculateProtection()
+    public float CalculateProtection()
     {
-        int protection = CalculateValue();
+        float protection = CalculateValue();
         ProtectionChanged?.Invoke(protection);
         return protection;
     }

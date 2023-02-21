@@ -16,7 +16,7 @@ public class DamageDisplayItem : MonoBehaviour
         _item.GetComponent<Weapon>().DamageChanged -= DisplayDamage;
     }
 
-    public void DisplayDamage(int damage)
+    public void DisplayDamage(float damage)
     {
         _damageText.text = $"{damage}";
     }

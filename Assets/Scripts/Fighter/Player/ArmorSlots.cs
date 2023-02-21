@@ -19,9 +19,9 @@ public class ArmorSlots : MonoBehaviour
     public Armor Costume => _costume;
     public Armor Shoes => _shoes;
 
-    public int CalculateArmor()
+    public float CalculateArmor()
     {
-        int armor = 0;
+        float armor = 0;
 
         if (_helm != null)
             armor += _helm.CalculateProtection();

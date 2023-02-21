@@ -17,7 +17,7 @@ public class InfoPanel : MonoBehaviour
         _panel.SetActive(enabled);
     }
 
-    public void SetInfo(string info, int value, int level)
+    public void SetInfo(string info, float value, float level)
     {
         _info.text = info;
         _value.text = value.ToString();

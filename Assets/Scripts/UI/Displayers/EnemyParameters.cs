@@ -25,7 +25,7 @@ public class EnemyParameters : MonoBehaviour
         _enemy.UpdateParameters();
     }
 
-    private void HealthDisplay(int currentHealth, int maxHealth)
+    private void HealthDisplay(float currentHealth, float maxHealth)
     {
         _healthText.text = currentHealth.ToString();
         _healthSlider.value = (float)currentHealth / maxHealth;

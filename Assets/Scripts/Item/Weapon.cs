@@ -5,7 +5,7 @@ public class Weapon : Item
 {
     [SerializeField] private int _health;
 
-    public event UnityAction<int> DamageChanged;
+    public event UnityAction<float> DamageChanged;
 
     protected override void OnEnable()
     {
@@ -20,9 +20,9 @@ public class Weapon : Item
         CalculateDamage();
     }
 
-    public int CalculateDamage()
+    public float CalculateDamage()
     {
-        int damage = CalculateValue();
+        float damage = CalculateValue();
         DamageChanged?.Invoke(damage);
         return damage;
     }

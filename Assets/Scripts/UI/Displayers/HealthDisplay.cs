@@ -18,9 +18,9 @@ public class HealthDisplay : Displayer
         Player.HealthChanged -= DisplayParameter;
     }
 
-    private void DisplayParameter(int currentValue, int maxValue)
+    private void DisplayParameter(float currentValue, float maxValue)
     {
-        TextField.text = $"{currentValue}";
+        TextField.text = string.Format("{0:f0}", currentValue);
         _healthSlider.value = (float)currentValue / maxValue;
     }
 }

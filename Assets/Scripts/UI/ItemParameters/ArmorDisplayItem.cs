@@ -16,7 +16,7 @@ public class ArmorDisplayItem : MonoBehaviour
         _item.GetComponent<Armor>().ProtectionChanged -= DisplayArmor;
     }
 
-    public void DisplayArmor(int protection)
+    public void DisplayArmor(float protection)
     {
         _armorText.text = $"{protection}";
     }

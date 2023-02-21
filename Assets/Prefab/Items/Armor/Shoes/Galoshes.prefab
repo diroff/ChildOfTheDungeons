@@ -101,9 +101,10 @@ MonoBehaviour:
   Name: Galoshes
   Description: "\u041E\u0431\u044B\u0447\u043D\u044B\u0435 \u0433\u0430\u043B\u043E\u0448\u0438.
     \u0411\u0435\u0441\u043F\u043E\u043B\u0435\u0437\u043D\u044B\u0435."
+  Value: 5
+  Consumable: 0
   ItemAnimator: {fileID: 7209744020205144440}
   Sprite: {fileID: 21300000, guid: 96409c832b0ac554493a364beed1baac, type: 3}
-  _parameters: {fileID: 0}
   Taked:
     m_PersistentCalls:
       m_Calls: []
@@ -111,7 +112,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _health: 100
-  _protection: 0
   _typeArmor: 2
 --- !u!95 &7209744020205144440
 Animator:
