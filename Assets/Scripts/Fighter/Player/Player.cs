@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -43,10 +42,7 @@ public class Player : Fighter
     {
         if (PotionChecker())
         {
-            if (CurrentHealth >= MaxHealth / 2)
-                CurrentHealth = MaxHealth;
-            else
-                CurrentHealth += (MaxHealth / 2);
+            CurrentHealth = MaxHealth;
 
             _inventory.SpendPotion();
             HealthChanged(CurrentHealth, MaxHealth);
@@ -86,10 +82,11 @@ public class Player : Fighter
         if (IsEnoughExperience())
         {
             Level++;
-            _experienceToNextLevel *= (Level + 5) / 2;
+            _experienceToNextLevel *= (Level + 5);
             _currentExperience = 0;
             UpdatePlayerStats();
             FillHealth();
+            _skills.AddSkillPoint(1);
         }
     }
 
