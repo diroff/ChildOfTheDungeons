@@ -54,6 +54,9 @@ public class Continue : Event
         if (Spawner.GetEnemy() != null)
             Destroy(Spawner.GetEnemy().gameObject);
 
+        if (Spawner.GetSign() != null)
+            Destroy(Spawner.GetSign().gameObject);
+
         if (Spawner.GetChest() != null)
             Destroy(Spawner.GetChest().gameObject);
     }

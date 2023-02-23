@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [Header("Templates")]
     [SerializeField] private List<Enemy> _enemyTemplates = new List<Enemy>();
     [SerializeField] private List<Item> _itemTemplates = new List<Item>();
     [SerializeField] private List<Chest> _chestTemplates = new List<Chest>();
 
+    [Space]
     [SerializeField] private ProgressionController _progression;
 
+    [Header("Places")]
     [SerializeField] private GameObject _spawnPoint;
     [SerializeField] private GameObject _itemPlace;
     [SerializeField] private GameObject _enemyPlace;
@@ -37,6 +40,11 @@ public class Spawner : MonoBehaviour
     public void SpawnChest()
     {
         Instantiate (_chestTemplates[NumberOfRandomChest()], _enemyPlace.transform);
+    }
+
+    public void SpawnSign(Sign sign)
+    {
+        Instantiate(sign, _enemyPlace.transform);
     }
 
     private void SetNumberEnemy()
@@ -72,5 +80,10 @@ public class Spawner : MonoBehaviour
     public Chest GetChest()
     {
         return _enemyPlace.GetComponentInChildren<Chest>();
+    }
+
+    public Sign GetSign()
+    {
+        return _enemyPlace.GetComponentInChildren<Sign>();
     }
 }

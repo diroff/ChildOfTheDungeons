@@ -11,6 +11,7 @@ public abstract class Event : MonoBehaviour
 
     [SerializeField] private float _panelEnableCouldown = 1.0f;
 
+    public GameObject Panel => _panel;
     public Sprite EventIcon => _eventIcon;
 
     public event UnityAction<bool> Ended;

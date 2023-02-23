@@ -46,13 +46,10 @@ public abstract class Fighter : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        float armor;
         if (Armor >= 80)
-            armor = 80;
-        else
-            armor = Armor;
+            Armor = 80;
 
-        float totalDamage = damage * (1- armor / 100);
+        float totalDamage = damage * (1 - Armor / 100);
         CurrentHealth -= totalDamage;
 
         FighterAnimator.SetTrigger("Hit");
