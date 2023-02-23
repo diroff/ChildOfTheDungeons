@@ -16,6 +16,7 @@ public class DirectionEvent : Event
 
     public override void StartEvent()
     {
+        _currentEvents.Clear();
         base.StartEvent();
         Spawner.SpawnSign(_signTemplate);
         _sign = Spawner.GetSign();
