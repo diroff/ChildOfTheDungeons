@@ -6,11 +6,6 @@ public class LuckDisplayer : Displayer
 {
     private void OnEnable()
     {
-        Player.Skills.Luck.ValueChanged += DisplayParameter;
-    }
-
-    private void OnDisable()
-    {
-        Player.Skills.Luck.ValueChanged -= DisplayParameter;
+        Player.Skills.Luck.ValueChanged.AddListener(DisplayParameter);
     }
 }

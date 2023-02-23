@@ -6,11 +6,6 @@ public class PowerDisplayer : Displayer
 {
     private void OnEnable()
     {
-        Player.Skills.Power.ValueChanged += DisplayParameter;
-    }
-
-    private void OnDisable()
-    {
-        Player.Skills.Power.ValueChanged -= DisplayParameter;
+        Player.Skills.Power.ValueChanged.AddListener(DisplayParameter);
     }
 }

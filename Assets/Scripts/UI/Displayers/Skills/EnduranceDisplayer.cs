@@ -6,11 +6,6 @@ public class EnduranceDisplayer : Displayer
 {
     private void OnEnable()
     {
-        Player.Skills.Endurance.ValueChanged += DisplayParameter;
-    }
-
-    private void OnDisable()
-    {
-        Player.Skills.Endurance.ValueChanged -= DisplayParameter;
+        Player.Skills.Endurance.ValueChanged.AddListener(DisplayParameter);
     }
 }

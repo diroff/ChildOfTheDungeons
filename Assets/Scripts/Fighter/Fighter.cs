@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -53,8 +52,6 @@ public abstract class Fighter : MonoBehaviour
         CurrentHealth -= totalDamage;
 
         FighterAnimator.SetTrigger("Hit");
-
-        Debug.Log(totalDamage);
 
         if (Die()) 
             Dead();

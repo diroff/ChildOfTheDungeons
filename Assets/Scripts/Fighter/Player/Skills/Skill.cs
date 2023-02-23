@@ -13,7 +13,7 @@ public class Skill : MonoBehaviour
     public int CurrentLevel => _currentLevel;
     public string Description => _description;
 
-    public event UnityAction<int> ValueChanged;
+    public UnityEvent<int> ValueChanged;
 
     private void Awake()
     {
