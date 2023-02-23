@@ -25,7 +25,7 @@ public class WeaponSlot : ItemDescriptionSlot
     {
         base.ShowDescription();
         if(SlotIsFilled())
-            InfoPanel.SetInfo(_weapon.ItemDescription, _weapon.CalculateDamage(), _weapon.GetLevel());
+            InfoPanel.SetInfo(_weapon.ItemDescription, _weapon.CalculateDamage(), _weapon.GetLevel(), false);
     }
 
     public bool IsSomeWeapon()
