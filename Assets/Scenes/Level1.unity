@@ -1298,17 +1298,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 169853896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29dbc0611f8661748acfd5a6a5df2c70, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b105c67b946d864293b469bef38894e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _panel: {fileID: 1403963333}
   _eventIcon: {fileID: 0}
-  Spawner: {fileID: 0}
-  _panelEnableCouldown: 0.1
-  _controller: {fileID: 0}
-  _player: {fileID: 0}
-  _runCouldown: 2
-  _destroyCouldown: 0.2
+  Spawner: {fileID: 1957994491}
+  _panelEnableCouldown: 1
 --- !u!1 &176033351
 GameObject:
   m_ObjectHideFlags: 0
