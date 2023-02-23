@@ -20,7 +20,7 @@ public class InfoPanel : MonoBehaviour
     public void SetInfo(string info, float value, float level)
     {
         _info.text = info;
-        _value.text = value.ToString();
+        _value.text = value + "%";
         _level.text = level.ToString();
     }
 
