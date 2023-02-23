@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DirectionEvent : Event
@@ -12,6 +10,8 @@ public class DirectionEvent : Event
     private int _directionCount;
     private Sign _sign;
 
+    private Event _previousEvent;
+
     private List<Event> _currentEvents = new List<Event>();
 
     public override void StartEvent()
@@ -22,30 +22,32 @@ public class DirectionEvent : Event
 
         DisableDirection(_sign.MaximumDirectionCount);
 
-        DirectionCount();
+        SetDirectionCount();
         AddRandomEvents(_directionCount);
     }
 
     public void AddRandomEvents(int directionCount)
     {
-        Debug.Log("Будет направлений заспавнено:" + directionCount);
-
         for (int i = 0; i < directionCount; i++)
         {
-            Event randomEvent = _availableEvents[Random.Range(0, _availableEvents.Count)];
+            Event randomEvent;
+            randomEvent = _availableEvents[Random.Range(0, _availableEvents.Count)];
+
+            if(_previousEvent != null)
+                while(randomEvent == _previousEvent)
+                    randomEvent = _availableEvents[Random.Range(0, _availableEvents.Count)];
 
             _sign.Directions[i].gameObject.SetActive(true);
             _sign.Directions[i].SetIcon(randomEvent.EventIcon);
 
             _currentEvents.Add(randomEvent);
-            Debug.Log($"заспавнил эвент {randomEvent}");
+            _previousEvent = randomEvent;
         }
     }
 
-    private void DirectionCount()
+    private void SetDirectionCount()
     {
         _directionCount = Random.Range(_sign.MinimumDirectionCount, _sign.MaximumDirectionCount + 1);
-        Debug.Log("Будет эвентов" + _directionCount);
     }
 
     private void DisableDirection(int directionCount)

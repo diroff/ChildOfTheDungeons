@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Direction : MonoBehaviour
@@ -15,15 +13,19 @@ public class Direction : MonoBehaviour
         _directionEvent = FindObjectOfType<DirectionEvent>();
     }
 
+    private void OnMouseDown()
+    {
+        Select();
+    }
+
+    public void SetOutlineState(bool enabled)
+    {
+        _outline.SetActive(enabled);
+    }
+
     public void SetIcon(Sprite sprite)
     {
         _doorIcon.sprite = sprite;
-    }
-
-    private void OnMouseDown()
-    {
-        Debug.Log($"Путь: {_directionNumber}");
-        Select();
     }
 
     private void Select()
@@ -31,10 +33,5 @@ public class Direction : MonoBehaviour
         _directionEvent.ClearOutliners();
         _directionEvent.SetDirection(_directionNumber);
         SetOutlineState(true);
-    }
-
-    public void SetOutlineState(bool enabled)
-    {
-        _outline.SetActive(enabled);
     }
 }
