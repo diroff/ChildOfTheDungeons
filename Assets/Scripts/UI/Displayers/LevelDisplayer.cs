@@ -12,14 +12,8 @@ public class LevelDisplayer : Displayer
 
     private void OnEnable()
     {
-        Player.LevelChanged += DisplayParameter;
-        Player.ExperienceChanged += DisplayExperience;
-    }
-
-    private void OnDisable()
-    {
-        Player.LevelChanged -= DisplayParameter;
-        Player.ExperienceChanged -= DisplayExperience;
+        Player.LevelChanged.AddListener(DisplayParameter);
+        Player.ExperienceChanged.AddListener(DisplayExperience);
     }
 
     protected override void DisplayParameter(int value)
