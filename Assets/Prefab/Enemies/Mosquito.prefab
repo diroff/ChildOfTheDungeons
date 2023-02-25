@@ -108,8 +108,6 @@ MonoBehaviour:
   _baseExperience: 2
   _lootList:
   - {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
-  - {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
-  - {fileID: 8001527148783395447, guid: 4da005d92086cb84ea6d0fba28e9511b, type: 3}
   _additionalLootChange: 0
   _minimalLevel: 1
   _isBoss: 0
