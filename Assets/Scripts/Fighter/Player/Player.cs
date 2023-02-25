@@ -22,13 +22,17 @@ public class Player : Fighter
     public event UnityAction Leaved;
     public event UnityAction NotLeaved;
     public event UnityAction<float, float> HealthChanged;
-    public event UnityAction<int, int> ExperienceChanged;
-    public event UnityAction<int> LevelChanged;
+    public UnityEvent<int, int> ExperienceChanged;
+    public UnityEvent<int> LevelChanged;
 
     protected override void Start()
     {
         base.Start();
-        UpdatePlayerStats();
+        CalculateMaxHealth();
+        CalculateTotalDamage();
+        Armor = _armorSlots.CalculateArmor();
+        HealthChanged(CurrentHealth, MaxHealth);
+        ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
     }
 
     public override void TakeDamage(float damage)
@@ -63,7 +67,7 @@ public class Player : Fighter
     public void AddExperience(int countExperience)
     {
         _currentExperience += countExperience;
-        ExperienceChanged(_currentExperience, _experienceToNextLevel);
+        ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
         LevelUp();
     }
 
@@ -84,9 +88,13 @@ public class Player : Fighter
             Level++;
             _experienceToNextLevel *= (Level + 5);
             _currentExperience = 0;
-            UpdatePlayerStats();
+            CalculateMaxHealth();
+            CalculateTotalDamage();
+            HealthChanged(CurrentHealth, MaxHealth);
             FillHealth();
             _skills.AddSkillPoint(1);
+            ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
+            LevelChanged?.Invoke(Level);
         }
     }
 
@@ -99,7 +107,7 @@ public class Player : Fighter
     public void AddArmor(Armor armor)
     {
         _armorSlots.AddItem(armor);
-        UpdatePlayerStats();
+        Armor = _armorSlots.CalculateArmor();
     }
 
     public void UseWeapon(Weapon weapon)
@@ -155,13 +163,11 @@ public class Player : Fighter
         return (Random.Range(0, 10) + _skills.Luck.CurrentLevel) >= 7;
     }
 
-    private void UpdatePlayerStats()
+    public void UpdateParameters()
     {
         CalculateMaxHealth();
         CalculateTotalDamage();
-        Armor = _armorSlots.CalculateArmor();
+        FillHealth();
         HealthChanged(CurrentHealth, MaxHealth);
-        ExperienceChanged(_currentExperience, _experienceToNextLevel);
-        LevelChanged(Level);
     }
 }
