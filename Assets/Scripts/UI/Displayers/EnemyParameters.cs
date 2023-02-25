@@ -20,14 +20,14 @@ public class EnemyParameters : MonoBehaviour
     {
         _enemy = _spawner.GetEnemy();
         _enemy.HealthChanged.AddListener(HealthDisplay);
-        _enemy.DamageChanged.AddListener(damage => { _damageText.text = $"x{damage}"; });
+        _enemy.DamageChanged.AddListener(damage => { _damageText.text = string.Format("{0:f0}", damage); });
         _enemy.LevelChanged.AddListener(level => { _levelText.text = $"x{level}"; });
         _enemy.UpdateParameters();
     }
 
     private void HealthDisplay(float currentHealth, float maxHealth)
     {
-        _healthText.text = currentHealth.ToString();
+        _healthText.text = string.Format("{0:f0}", currentHealth);
         _healthSlider.value = (float)currentHealth / maxHealth;
     }
 }
