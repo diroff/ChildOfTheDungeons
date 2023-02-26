@@ -38,7 +38,7 @@ public class Player : Fighter
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
-        
+
         HealthChanged(CurrentHealth, MaxHealth);
     }
 
@@ -83,19 +83,18 @@ public class Player : Fighter
 
     public void LevelUp()
     {
-        if (IsEnoughExperience())
-        {
-            Level++;
-            _experienceToNextLevel *= (Level + 5);
-            _currentExperience = 0;
-            CalculateMaxHealth();
-            CalculateTotalDamage();
-            HealthChanged(CurrentHealth, MaxHealth);
-            FillHealth();
-            _skills.AddSkillPoint(1);
-            ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
-            LevelChanged?.Invoke(Level);
-        }
+        if (!IsEnoughExperience())
+            return;
+        Level++;
+        _experienceToNextLevel *= (Level + 5);
+        _currentExperience = 0;
+        CalculateMaxHealth();
+        CalculateTotalDamage();
+        HealthChanged(CurrentHealth, MaxHealth);
+        FillHealth();
+        _skills.AddSkillPoint(1);
+        ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
+        LevelChanged?.Invoke(Level);
     }
 
     private void FillHealth()
@@ -149,7 +148,7 @@ public class Player : Fighter
     {
         if (_weaponSlot.IsSomeWeapon())
             return (_skills.Power.CurrentLevel * Level) + _weaponSlot.Weapon.CalculateDamage();
-        
+
         return _skills.Power.CurrentLevel * Level;
     }
 
