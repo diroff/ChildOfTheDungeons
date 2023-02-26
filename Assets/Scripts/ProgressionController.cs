@@ -14,10 +14,10 @@ public class ProgressionController : MonoBehaviour
     {
         int playerLevel = _player.GetLevel();
 
-        if (playerLevel > 1)
-            return Random.Range(playerLevel - 1, playerLevel + 2);
-        else
+        if (playerLevel <= 1)
             return playerLevel;
+
+        return Random.Range(playerLevel - 1, playerLevel + 1);
     }
 
     public void SetLastEvent(int previousEventNumber)
