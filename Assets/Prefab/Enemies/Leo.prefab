@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Leo
-  BaseMaxHealth: 15
+  BaseMaxHealth: 12
   Armor: 0
-  BaseDamage: 5
+  BaseDamage: 4
   Level: 1
   SpriteImage: {fileID: 21300000, guid: 2635075d2a53da549a2b7462d83d8423, type: 3}
   FighterAnimator: {fileID: -2936939981061309367}
@@ -111,9 +111,8 @@ MonoBehaviour:
   - {fileID: 6766192260602316794, guid: d5ec0cfe4f755404ea2e93775c94634b, type: 3}
   - {fileID: 6766192260602316794, guid: 15dfef2a370407143bbe3ecf113e29ee, type: 3}
   - {fileID: 6766192260602316794, guid: 6f9bbbd6af5ea6a4695ccd529c107af9, type: 3}
-  _additionalLootChange: 15
+  _additionalLootChange: 30
   _minimalLevel: 1
-  _isBoss: 1
   HealthChanged:
     m_PersistentCalls:
       m_Calls: []
