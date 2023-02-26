@@ -87,9 +87,14 @@ public class Fight : Event
 
     private void CreatingEnemy()
     {
-        Spawner.SpawnEnemy();
+        SpawnEnemy();
         _enemy = Spawner.GetEnemy();
         SubscribeEvents();
+    }
+
+    protected virtual void SpawnEnemy()
+    {
+        Spawner.SpawnEnemy(false);
     }
 
     private void EnemyDead(bool isDie)
@@ -163,6 +168,8 @@ public class Fight : Event
 
     private IEnumerator PlayerDeadCoroutine()
     {
+        _enemyInfoButton.SetActive(false);
+        _enemyInfoPanel.SetActive(false);
         yield return new WaitForSeconds(_timeFromDead);
         EndEvent();
     }
@@ -178,6 +185,8 @@ public class Fight : Event
 
     private IEnumerator PlayerLeavedCoroutine()
     {
+        _enemyInfoButton.SetActive(false);
+        _enemyInfoPanel.SetActive(false);
         SetPanelState(false);
         yield return new WaitForSeconds(_timeBeforeLeave);
         Destroy(_enemy.gameObject);
@@ -186,6 +195,8 @@ public class Fight : Event
 
     private IEnumerator PlayerNotLeavedCoroutine()
     {
+        _enemyInfoButton.SetActive(false);
+        _enemyInfoPanel.SetActive(false);
         _attackPanel.SetActive(false);
         yield return new WaitForSeconds(_timeBeforeLeave);
         EnemyStep();
@@ -203,7 +214,7 @@ public class Fight : Event
 
         int randomNumber = Random.Range(0, 125);
 
-        bool isWin = randomNumber + additionalChance >= 75;
+        bool isWin = randomNumber + additionalChance >= 65;
 
         if(isWin)
             _coinAnimator.SetTrigger("Win");

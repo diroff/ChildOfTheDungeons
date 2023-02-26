@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     [Header("Templates")]
-    [SerializeField] private List<Enemy> _enemyTemplates = new List<Enemy>();
-    [SerializeField] private List<Item> _itemTemplates = new List<Item>();
-    [SerializeField] private List<Chest> _chestTemplates = new List<Chest>();
+    [SerializeField] private List<Enemy> _enemyTemplates;
+    [SerializeField] private List<Enemy> _bossTemplates;
+    [SerializeField] private List<Item> _itemTemplates;
+    [SerializeField] private List<Chest> _chestTemplates;
 
     [Space]
     [SerializeField] private ProgressionController _progression;
@@ -19,18 +19,28 @@ public class Spawner : MonoBehaviour
 
     private int _enemyNumber;
 
-    public void SpawnEnemy()
+    public void SpawnEnemy(bool isBoss)
     {
-        SetNumberEnemy();
+        Enemy enemy;
 
-        Enemy enemy = _enemyTemplates[_enemyNumber];
+        if (isBoss)
+        {
+            SetNumberBoss();
+            enemy = _bossTemplates[_enemyNumber];
+        }
+        else
+        {
+            SetNumberEnemy();
+            enemy = _enemyTemplates[_enemyNumber];
+        }
+
         enemy.SetLevel(_progression.SetLevel());
         Instantiate(enemy, _enemyPlace.transform);
     }
 
     public void SpawnItem(Item item = null)
     {
-        if(item == null)
+        if (item == null)
             item = _itemTemplates[NumberOfRandomItem()];
 
         item.SetLevel(_progression.SetLevel());
@@ -39,7 +49,7 @@ public class Spawner : MonoBehaviour
 
     public void SpawnChest()
     {
-        Instantiate (_chestTemplates[NumberOfRandomChest()], _enemyPlace.transform);
+        Instantiate(_chestTemplates[NumberOfRandomChest()], _enemyPlace.transform);
     }
 
     public void SpawnSign(Sign sign)
@@ -52,6 +62,16 @@ public class Spawner : MonoBehaviour
         _enemyNumber = Random.Range(0, _enemyTemplates.Count);
 
         while (_enemyTemplates[_enemyNumber].MinimalLevel > _progression.Player.GetLevel())
+        {
+            SetNumberEnemy();
+        }
+    }
+
+    private void SetNumberBoss()
+    {
+        _enemyNumber = Random.Range(0, _bossTemplates.Count);
+
+        while (_bossTemplates[_enemyNumber].MinimalLevel > _progression.Player.GetLevel())
         {
             SetNumberEnemy();
         }
