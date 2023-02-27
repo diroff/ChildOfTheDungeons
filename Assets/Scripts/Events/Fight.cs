@@ -116,7 +116,6 @@ public class Fight : Event
 
     private void StartCoinFlip()
     {
-        _enemyInfoButton.SetActive(true);
         _attackPanel.SetActive(false);
         _coinImage.SetActive(false);
         _coinFlipPanel.SetActive(true);
@@ -222,6 +221,7 @@ public class Fight : Event
             _coinAnimator.SetTrigger("Lose");
 
         yield return new WaitForSeconds(_coinFlipTime);
+        _enemyInfoPanel.SetActive(true);
 
         _coinFlipPanel.SetActive(false);
 
