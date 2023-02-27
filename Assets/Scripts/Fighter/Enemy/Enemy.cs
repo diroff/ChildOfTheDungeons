@@ -23,7 +23,6 @@ public class Enemy : Fighter
     protected override void Start()
     {
         base.Start();
-        EnableShadowShader();
         UpdateParameters();
         SetLootChange();
 
@@ -88,11 +87,5 @@ public class Enemy : Fighter
     private void SetLootChange()
     {
         lootChange = Random.Range(0, 100) + _additionalLootChange;
-    }
-
-    private void EnableShadowShader()
-    {
-        GetComponent<Renderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-        GetComponent<Renderer>().receiveShadows = true;
     }
 }
