@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Leo
-  BaseMaxHealth: 12
+  BaseMaxHealth: 10
   Armor: 0
   BaseDamage: 4
   Level: 1

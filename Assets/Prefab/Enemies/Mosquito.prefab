@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Mosquito
-  BaseMaxHealth: 3
+  BaseMaxHealth: 2
   Armor: 0
   BaseDamage: 1
   Level: 1
@@ -110,7 +110,6 @@ MonoBehaviour:
   - {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
   _additionalLootChange: 0
   _minimalLevel: 1
-  _isBoss: 0
   HealthChanged:
     m_PersistentCalls:
       m_Calls: []
