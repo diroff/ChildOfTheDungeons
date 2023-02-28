@@ -1268,10 +1268,11 @@ MonoBehaviour:
   Spawner: {fileID: 1957994491}
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
-  _eventsController: {fileID: 1886117191}
   _openButton: {fileID: 22734858}
   _keySprite: {fileID: 595248921}
   _player: {fileID: 532910443}
+  SpecialChest: {fileID: 0}
+  EventsController: {fileID: 1886117191}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
 --- !u!1 &68695155
@@ -9476,8 +9477,9 @@ MonoBehaviour:
   _panelEnableCouldown: 1
   _availableEvents:
   - {fileID: 8148549922209866770}
+  - {fileID: 1352651860}
+  - {fileID: 2113490854}
   - {fileID: 1622029519}
-  - {fileID: 65925127}
   - {fileID: 152349598}
   _eventController: {fileID: 1886117191}
   _signTemplate: {fileID: 4789677265668197340, guid: 4a7cd9634f8cee345905f4ed9bf858d6, type: 3}
@@ -11763,6 +11765,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1352651858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1352651859}
+  - component: {fileID: 1352651860}
+  m_Layer: 0
+  m_Name: SilverChestEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1352651859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352651858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1886117192}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1352651860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352651858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8901bc880b3bae449b4eb6ef73e03117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panel: {fileID: 1636331849}
+  _eventIcon: {fileID: 21300000, guid: 4bd9ee77b6ebcaf4b8749c6dd2ef6aca, type: 3}
+  Spawner: {fileID: 1957994491}
+  _panelEnableCouldown: 1
+  _freeItemEvent: {fileID: 1622029519}
+  _openButton: {fileID: 22734858}
+  _keySprite: {fileID: 595248921}
+  _player: {fileID: 532910443}
+  SpecialChest: {fileID: 5169373742871476358, guid: e5aa0d8688711904f947a4b981a13db7, type: 3}
+  EventsController: {fileID: 1886117191}
+  _timeBeforeLeave: 1.5
+  _timeBeforeOpen: 1
+  ChestEvent: {fileID: 65925127}
 --- !u!1 &1359954988
 GameObject:
   m_ObjectHideFlags: 0
@@ -12065,7 +12124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 2
+  _startLevel: 20
   _maxLevel: 99
   _description: "\u0421\u0438\u043B\u0430. \u0412\u043B\u0438\u044F\u0435\u0442 \u043D\u0430
     \u0431\u0430\u0437\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u043D \u0438\u0433\u0440\u043E\u043A\u0430."
@@ -16253,6 +16312,8 @@ Transform:
   - {fileID: 1622029518}
   - {fileID: 1035679085}
   - {fileID: 65925126}
+  - {fileID: 1352651859}
+  - {fileID: 2113490853}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16300,7 +16361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 4
+  _startLevel: 40
   _maxLevel: 99
   _description: "\u0412\u044B\u043D\u043E\u0441\u043B\u0438\u0432\u043E\u0441\u0442\u044C.
     \u0412\u043B\u0438\u044F\u0435\u0442 \u043D\u0430 \u0431\u0430\u0437\u043E\u0432\u044B\u0439
@@ -16746,7 +16807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09128959, y: 0.248368}
   m_AnchorMax: {x: 0.44745967, y: 0.62933475}
-  m_AnchoredPosition: {x: 875.43005, y: -248.03021}
+  m_AnchoredPosition: {x: 875.43005, y: -248.03027}
   m_SizeDelta: {x: -14.799988, y: -11.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937293545
@@ -18170,6 +18231,63 @@ RectTransform:
   m_AnchoredPosition: {x: 1.019989, y: 1.2999992}
   m_SizeDelta: {x: -1.8000002, y: -2.3700008}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2113490852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113490853}
+  - component: {fileID: 2113490854}
+  m_Layer: 0
+  m_Name: GoldChestEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2113490853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113490852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1886117192}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2113490854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113490852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8901bc880b3bae449b4eb6ef73e03117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panel: {fileID: 1636331849}
+  _eventIcon: {fileID: 21300000, guid: c1d559b30406d364cae6447e0282f66c, type: 3}
+  Spawner: {fileID: 1957994491}
+  _panelEnableCouldown: 1
+  _freeItemEvent: {fileID: 1622029519}
+  _openButton: {fileID: 22734858}
+  _keySprite: {fileID: 595248921}
+  _player: {fileID: 532910443}
+  SpecialChest: {fileID: 5169373742871476358, guid: 81f00b7abe72d954393266fb35233993, type: 3}
+  EventsController: {fileID: 1886117191}
+  _timeBeforeLeave: 1.5
+  _timeBeforeOpen: 1
+  ChestEvent: {fileID: 65925127}
 --- !u!1 &2115490695
 GameObject:
   m_ObjectHideFlags: 0

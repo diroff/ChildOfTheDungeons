@@ -47,9 +47,12 @@ public class Spawner : MonoBehaviour
         Instantiate(item, _itemPlace.transform);
     }
 
-    public void SpawnChest()
+    public void SpawnChest(Chest chest = null)
     {
-        Instantiate(_chestTemplates[NumberOfRandomChest()], _enemyPlace.transform);
+        if (chest == null)
+            chest = _chestTemplates[NumberOfRandomChest()];
+            
+        Instantiate(chest, _enemyPlace.transform);
     }
 
     public void SpawnSign(Sign sign)

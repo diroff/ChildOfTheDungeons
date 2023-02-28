@@ -1,16 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static Key;
 
 public class ChestEvent : Event
 {
     [SerializeField] private FreeItem _freeItemEvent;
-    [SerializeField] private EventsController _eventsController;
     [SerializeField] private Button _openButton;
     [SerializeField] private SpriteRenderer _keySprite;
     [SerializeField] private Player _player;
+    [SerializeField] protected Chest SpecialChest;
+    [SerializeField] protected EventsController EventsController;
 
     [SerializeField] private float _timeBeforeLeave;
     [SerializeField] private float _timeBeforeOpen;
@@ -22,10 +21,23 @@ public class ChestEvent : Event
     public override void StartEvent()
     {
         base.StartEvent();
-        Spawner.SpawnChest();
+        SpawnChest(_chest);
         _chest = Spawner.GetChest();
         _keyType = _chest.KeyHole.RequriedKey.TypeOfKey;
         SetOpenButtonState();
+    }
+
+    protected virtual void SpawnChest(Chest chest = null)
+    {
+        if (chest == null)
+            Spawner.SpawnChest();
+        else
+            Spawner.SpawnChest(chest);
+    }
+
+    public void SetChest(Chest newChest)
+    {
+        _chest = newChest;
     }
 
     private void SetOpenButtonState()
@@ -71,12 +83,12 @@ public class ChestEvent : Event
         yield return new WaitForSeconds(_timeBeforeOpen);
         _player.Inventory.UseKey(_keyType);
         _item = PrepareItem();
-        _eventsController.SetContinue(false);
-        _eventsController.SetEvent(_freeItemEvent);
+        EventsController.SetContinue(false);
+        EventsController.SetEvent(_freeItemEvent);
         _freeItemEvent.SpawnItem(_item);
 
         EndEvent();
-        _eventsController.StartEvent();
+        EventsController.StartEvent();
     }
 
     private IEnumerator IgnoreChestCoroutine()
@@ -85,6 +97,7 @@ public class ChestEvent : Event
         _player.Leave();
         yield return new WaitForSeconds(_timeBeforeLeave);
         Destroy(_chest.gameObject);
+        EventsController.SetContinue(true);
         EndEvent();
     }
 
