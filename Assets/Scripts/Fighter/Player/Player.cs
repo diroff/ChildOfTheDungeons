@@ -73,7 +73,7 @@ public class Player : Fighter
 
     public override void CalculateMaxHealth()
     {
-        MaxHealth = (BaseMaxHealth + _skills.Endurance.CurrentLevel) * Level;
+        MaxHealth = BaseMaxHealth + _skills.Endurance.CurrentLevel;
     }
 
     private bool IsEnoughExperience()
@@ -147,9 +147,9 @@ public class Player : Fighter
     public float CalculateTotalDamage()
     {
         if (_weaponSlot.IsSomeWeapon())
-            return (_skills.Power.CurrentLevel * Level) + _weaponSlot.Weapon.CalculateDamage();
+            return _skills.Power.CurrentLevel + _weaponSlot.Weapon.CalculateDamage();
 
-        return _skills.Power.CurrentLevel * Level;
+        return _skills.Power.CurrentLevel;
     }
 
     public bool AdditionalChance()

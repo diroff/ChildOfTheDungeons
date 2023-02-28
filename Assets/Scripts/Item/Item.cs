@@ -47,10 +47,7 @@ public abstract class Item : MonoBehaviour
 
     public float CalculateValue()
     {
-        if (Level == 1)
-            return Value;
-
-        return Value * Level;
+        return Value;
     }
 
     public void TakeItem()

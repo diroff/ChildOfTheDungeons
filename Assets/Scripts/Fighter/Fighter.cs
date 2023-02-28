@@ -59,7 +59,7 @@ public abstract class Fighter : MonoBehaviour
 
     public virtual void CalculateMaxHealth()
     {
-        MaxHealth = BaseMaxHealth * Level;
+        MaxHealth = BaseMaxHealth;
     }
 
     public int GetLevel()

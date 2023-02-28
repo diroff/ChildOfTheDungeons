@@ -49,12 +49,12 @@ public class Enemy : Fighter
 
     public int CalculateExperienceCost()
     {
-        return (_baseExperience * (Level + 2) / 3);
+        return _baseExperience;
     }
 
     public float CalculateTotalDamage()
     {
-        return BaseDamage * (Level + 1) / 2;
+        return BaseDamage;
     }
     
     public void UpdateParameters()
