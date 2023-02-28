@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5564898964059130532}
   - component: {fileID: 5564898964059130535}
   - component: {fileID: 5564898964059130534}
-  - component: {fileID: -4216626285549202667}
-  - component: {fileID: -3651359217338055042}
+  - component: {fileID: 6728290732639051481}
+  - component: {fileID: -1370588798217967732}
   m_Layer: 0
-  m_Name: BlodySword
+  m_Name: StoneStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -2119346257
   m_SortingLayer: 4
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 5afab211de4c24b47be1a49b6920a344, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3793aee46a28d8e41aeb9ddfbe3de8d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,15 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2a40f2dda90d34ba90c66b02772c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: DefaulSword
-  Description: "\u041A\u0440\u043E\u0432\u0430\u0432\u044B\u0439 \u043C\u0435\u0447.
-    \u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0438\u0437\u043C\u0430\u0437\u0430\u043D
-    \u043A\u0435\u0442\u0447\u0443\u043F\u043E\u043C \u0438\u043B\u0438 \u0447\u0435\u043C
-    \u0445\u0443\u0436\u0435."
-  Value: 7
+  Name: StoneStick
+  Description: "\u041F\u0430\u043B\u043A\u0430 \u0438\u0437 \u043A\u0430\u043C\u043D\u044F.
+    \u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u043A\u043E\u0433\u0434\u0430-\u0442\u043E
+    \u0431\u044B\u043B\u0430 \u0441\u0442\u043E\u043B\u0431\u0438\u043A\u043E\u043C."
+  Value: 2
   Consumable: 0
-  ItemAnimator: {fileID: -4216626285549202667}
-  Sprite: {fileID: 21300000, guid: 5afab211de4c24b47be1a49b6920a344, type: 3}
+  ItemAnimator: {fileID: 6728290732639051481}
+  Sprite: {fileID: 21300000, guid: 3793aee46a28d8e41aeb9ddfbe3de8d9, type: 3}
   Taked:
     m_PersistentCalls:
       m_Calls: []
@@ -115,7 +114,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _health: 100
---- !u!95 &-4216626285549202667
+--- !u!95 &6728290732639051481
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -135,7 +134,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &-3651359217338055042
+--- !u!114 &-1370588798217967732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
