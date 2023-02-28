@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +10,6 @@ public class ItemDescriptionPanel : MonoBehaviour
     [Header("Text Fields")]
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private TextMeshProUGUI _value;
-    [SerializeField] private TextMeshProUGUI _level;
 
     [Header("Sprites")]
     [SerializeField] private Image _valueSprite;
@@ -21,7 +18,6 @@ public class ItemDescriptionPanel : MonoBehaviour
 
     [Header("Item Values")]
     [SerializeField] private GameObject _valueObject;
-    [SerializeField] private GameObject _levelObject;
 
     private Item _item;
 
@@ -32,14 +28,13 @@ public class ItemDescriptionPanel : MonoBehaviour
 
         if (_item.IsConsumable)
         {
-            SetValuesState(false);
+            SetValueState(false);
             return;
         }
 
-        SetValuesState(true);
+        SetValueState(true);
 
         _value.text = _item.CalculateValue().ToString();
-        _level.text = _item.GetLevel().ToString();
 
         if (_item.GetType() == typeof(Armor))
         {
@@ -50,10 +45,9 @@ public class ItemDescriptionPanel : MonoBehaviour
             WeaponPreparing();
     }
 
-    private void SetValuesState(bool isEnable)
+    private void SetValueState(bool isEnable)
     {
         _valueObject.SetActive(isEnable);
-        _levelObject.SetActive(isEnable);
     }
 
     private void WeaponPreparing()

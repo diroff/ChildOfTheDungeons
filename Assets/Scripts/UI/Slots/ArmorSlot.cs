@@ -15,6 +15,6 @@ public class ArmorSlot : ItemDescriptionSlot
         base.ShowDescription();
 
         if(SlotIsFilled())
-            InfoPanel.SetInfo(_armor.ItemDescription, _armor.CalculateProtection(), _armor.GetLevel(), true);
+            InfoPanel.SetInfo(_armor.ItemDescription, _armor.CalculateProtection(), true);
     }
 }

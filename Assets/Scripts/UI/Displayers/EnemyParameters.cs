@@ -10,7 +10,6 @@ public class EnemyParameters : MonoBehaviour
     [Header("Text Fields")]
     [SerializeField] private TextMeshProUGUI _healthText;
     [SerializeField] private TextMeshProUGUI _damageText;
-    [SerializeField] private TextMeshProUGUI _levelText;
     [Space]
     [SerializeField] private Slider _healthSlider;
 
@@ -21,7 +20,6 @@ public class EnemyParameters : MonoBehaviour
         _enemy = _spawner.GetEnemy();
         _enemy.HealthChanged.AddListener(HealthDisplay);
         _enemy.DamageChanged.AddListener(damage => { _damageText.text = string.Format("{0:f0}", damage); });
-        _enemy.LevelChanged.AddListener(level => { _levelText.text = $"x{level}"; });
         _enemy.UpdateParameters();
     }
 
