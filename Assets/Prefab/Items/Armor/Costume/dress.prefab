@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7209744020205144440}
   - component: {fileID: 4559350264032327771}
   m_Layer: 0
-  m_Name: Pajamas
+  m_Name: dress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: -2119346257
   m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0afc968832310554794debef2c9dad81, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58547cf655710a244a7703c4696f5388, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.14, y: 0.19}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -99,14 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75283e9776ba88429bbd4d31ff12876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Pajamas
-  Description: "\u041E\u0431\u044B\u0447\u043D\u0430\u044F \u0441\u043F\u0430\u043B\u044C\u043D\u0430\u044F
-    \u043F\u0438\u0436\u0430\u043C\u0430. \u041D\u0435 \u0438\u043C\u0435\u0435\u0442
-    \u0437\u0430\u0449\u0438\u0442\u044B."
-  Value: 3
+  Name: Dress
+  Description: "\u0417\u0435\u043B\u0435\u043D\u043E\u0435 \u043F\u043B\u0430\u0442\u044C\u0435.
+    \u0414\u043B\u044F \u0434\u0430\u043C \u0441 \u0441\u0435\u043A\u0440\u0435\u0442\u0438\u043A\u043E\u043C."
+  Value: 10
   Consumable: 0
   ItemAnimator: {fileID: 7209744020205144440}
-  Sprite: {fileID: 21300000, guid: 0afc968832310554794debef2c9dad81, type: 3}
+  Sprite: {fileID: 21300000, guid: 58547cf655710a244a7703c4696f5388, type: 3}
   Taked:
     m_PersistentCalls:
       m_Calls: []
