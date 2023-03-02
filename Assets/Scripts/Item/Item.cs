@@ -12,29 +12,23 @@ public abstract class Item : MonoBehaviour
     [SerializeField] protected bool Consumable = false;
     [SerializeField] protected Animator ItemAnimator;
     [SerializeField] protected Sprite Sprite;
+    [SerializeField] protected int MinimalLevel = 1;
 
     protected SpriteRenderer SpriteRenderer;
     protected TypeOfItems ItemType = TypeOfItems.heal;
-    protected int Level = 1;
 
     public float ItemValue => Value;
     public bool IsConsumable => Consumable;
     public Sprite ItemSprite => Sprite;
     public string ItemDescription => Description;
+    public int MinimalItemLevel => MinimalLevel;
 
     public UnityEvent<bool> Taked;
-    public UnityEvent<int> LevelChanged;
 
     protected virtual void OnEnable()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
-        LevelChanged.Invoke(Level);
         SpriteRenderer.sprite = Sprite;
-    }
-
-    protected virtual void UpdateParameters()
-    {
-        LevelChanged?.Invoke(Level);
     }
 
     public enum TypeOfItems
@@ -63,16 +57,5 @@ public abstract class Item : MonoBehaviour
     public TypeOfItems GetItemType()
     {
         return ItemType;
-    }
-
-    public void SetLevel(int level)
-    {
-        Level = level;
-        UpdateParameters();
-    }
-
-    public int GetLevel()
-    {
-        return Level;
     }
 }

@@ -16,12 +16,6 @@ public class Armor : Item
         CalculateProtection();
     }
 
-    protected override void UpdateParameters()
-    {
-        base.UpdateParameters();
-        CalculateProtection();
-    }
-
     public float CalculateProtection()
     {
         float protection = CalculateValue();

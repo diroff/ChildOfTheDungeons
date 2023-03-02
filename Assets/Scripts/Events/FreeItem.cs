@@ -99,21 +99,7 @@ public class FreeItem : Event
     {
         Spawner.SpawnItem(item);
         _item = Spawner.GetItem();
-        SetItemLevel();
         _item.Taked.AddListener(IsTaked);
-    }
-
-    private void SetItemLevel()
-    {
-        if (_item.GetItemType() != Item.TypeOfItems.heal)
-        {
-            int additionalLevel = 0;
-
-            if (_player.AdditionalChance())
-                additionalLevel += 1;
-            
-            _item.SetLevel(_progression.SetLevel() + additionalLevel);
-        }
     }
 
     private void DestroySpawnerObjects()

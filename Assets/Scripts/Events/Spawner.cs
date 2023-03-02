@@ -5,11 +5,8 @@ public class Spawner : MonoBehaviour
 {
     [Header("Templates")]
     [SerializeField] private EnemyTemplates _enemyTemplates;
-    [SerializeField] private List<Item> _itemTemplates;
+    [SerializeField] private ItemList _itemList;
     [SerializeField] private List<Chest> _chestTemplates;
-
-    [Space]
-    [SerializeField] private ProgressionController _progression;
 
     [Header("Places")]
     [SerializeField] private GameObject _spawnPoint;
@@ -31,9 +28,8 @@ public class Spawner : MonoBehaviour
     public void SpawnItem(Item item = null)
     {
         if (item == null)
-            item = _itemTemplates[NumberOfRandomItem()];
+            item = _itemList.TakeItem();
 
-        item.SetLevel(_progression.SetLevel());
         Instantiate(item, _itemPlace.transform);
     }
 
@@ -48,11 +44,6 @@ public class Spawner : MonoBehaviour
     public void SpawnSign(Sign sign)
     {
         Instantiate(sign, _enemyPlace.transform);
-    }
-
-    private int NumberOfRandomItem()
-    {
-        return Random.Range(0, _itemTemplates.Count);
     }
 
     public int NumberOfRandomChest()

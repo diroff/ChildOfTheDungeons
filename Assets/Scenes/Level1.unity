@@ -9275,11 +9275,10 @@ MonoBehaviour:
   Spawner: {fileID: 1957994491}
   _panelEnableCouldown: 1
   _availableEvents:
-  - {fileID: 8148549922209866770}
-  - {fileID: 1352651860}
-  - {fileID: 2113490854}
-  - {fileID: 152349598}
   - {fileID: 1622029519}
+  - {fileID: 1622029519}
+  - {fileID: 1622029519}
+  - {fileID: 1352651860}
   _eventController: {fileID: 1886117191}
   _signTemplate: {fileID: 4789677265668197340, guid: 4a7cd9634f8cee345905f4ed9bf858d6, type: 3}
 --- !u!1 &1036183359
@@ -16358,6 +16357,7 @@ GameObject:
   - component: {fileID: 1957994490}
   - component: {fileID: 1957994491}
   - component: {fileID: 1957994492}
+  - component: {fileID: 1957994493}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -16395,14 +16395,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyTemplates: {fileID: 1957994492}
-  _itemTemplates:
-  - {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
-  - {fileID: 8001527148783395447, guid: 4da005d92086cb84ea6d0fba28e9511b, type: 3}
-  - {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
+  _itemList: {fileID: 1957994493}
   _chestTemplates:
   - {fileID: 5169373742871476358, guid: e5aa0d8688711904f947a4b981a13db7, type: 3}
   - {fileID: 5169373742871476358, guid: 81f00b7abe72d954393266fb35233993, type: 3}
-  _progression: {fileID: 1104878590}
   _spawnPoint: {fileID: 1957994489}
   _itemPlace: {fileID: 516872042}
   _enemyPlace: {fileID: 1072904999}
@@ -16424,6 +16420,23 @@ MonoBehaviour:
   - {fileID: 1797388749512454538, guid: ef5446df19c4f6b4fb215a743d2cf409, type: 3}
   - {fileID: 1797388749512454538, guid: 1906b2738138eba439103a2150048737, type: 3}
   - {fileID: 1797388749512454538, guid: 26f3f4e52e42a0b4f90dff1374d70c81, type: 3}
+  _progression: {fileID: 1104878590}
+--- !u!114 &1957994493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957994489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a6e340aed67e48b845d8af1a8bfab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemTemplates:
+  - {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
+  - {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
+  - {fileID: 8001527148783395447, guid: 4da005d92086cb84ea6d0fba28e9511b, type: 3}
   _progression: {fileID: 1104878590}
 --- !u!1 &1969395860
 GameObject:

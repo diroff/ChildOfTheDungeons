@@ -14,12 +14,6 @@ public class Weapon : Item
         CalculateDamage();
     }
 
-    protected override void UpdateParameters()
-    {
-        base.UpdateParameters();
-        CalculateDamage();
-    }
-
     public float CalculateDamage()
     {
         float damage = CalculateValue();
