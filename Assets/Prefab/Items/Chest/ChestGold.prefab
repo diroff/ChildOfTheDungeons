@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4970068108294473402}
   - component: {fileID: 4970068108294473403}
   - component: {fileID: 5172698211961042316}
+  - component: {fileID: 458834764268822514}
   m_Layer: 0
   m_Name: LockerPlace
   m_TagString: Untagged
@@ -97,7 +98,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3169fd51cc60bba4db48d4919a044e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items:
+  _items: {fileID: 458834764268822514}
+  _requriedKey: {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
+--- !u!114 &458834764268822514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4970068108294473405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a6e340aed67e48b845d8af1a8bfab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemTemplates:
   - {fileID: 5564898964059130534, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
   - {fileID: 5564898964059130534, guid: 01a7d5eed5f72344d92fe38b81ec4b97, type: 3}
   - {fileID: 5564898964059130534, guid: 14664bb8ab0faf348942cd51ae78ea5f, type: 3}
@@ -107,7 +122,7 @@ MonoBehaviour:
   - {fileID: 5564898964059130534, guid: d7ae501dc79f15248ad04ba7eff42549, type: 3}
   - {fileID: 5564898964059130534, guid: a58de24384915fc4fb1090875c7d804a, type: 3}
   - {fileID: 5564898964059130534, guid: a7ab7f0a938896d46ba66a52d47aa89e, type: 3}
-  _requriedKey: {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
+  _progression: {fileID: 0}
 --- !u!1 &4970068108430658034
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Keyhole : MonoBehaviour
 {
-    [SerializeField] private List<Item> _items;
-
+    [SerializeField] private ItemList _items;
     [SerializeField] private Key _requriedKey;
 
     private bool _isOpen = false;
@@ -14,12 +12,11 @@ public class Keyhole : MonoBehaviour
 
     public Item ChooseRandomItem()
     {
-        return _items[Random.Range(0, _items.Count)];
+        return _items.TakeItem();
     }
 
     public void Open()
     {
         _isOpen = true;
     }
-
 }
