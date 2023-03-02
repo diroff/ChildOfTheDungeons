@@ -6,7 +6,7 @@ public class Enemy : Fighter
 {
     [Header("Additional parameters")]
     [SerializeField] private int _baseExperience;
-    [SerializeField] private List<Item> _lootList;
+    [SerializeField] private ItemList _lootList;
     [SerializeField] private int _additionalLootChange = 0;
     [SerializeField] private int _minimalLevel = 1;
     [SerializeField] private bool _isBoss = false;
@@ -78,7 +78,7 @@ public class Enemy : Fighter
 
     private void SetLootItem()
     {
-        _lootItem = _lootList[Random.Range(0, _lootList.Count)];
+        _lootItem = _lootList.TakeItem();
     }
 
     public bool IsLoot()

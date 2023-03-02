@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1797388749512454538}
   - component: {fileID: 5087902727824073896}
   - component: {fileID: -3555958589435317003}
+  - component: {fileID: 741446314766206054}
   m_Layer: 0
   m_Name: Froggy
   m_TagString: Untagged
@@ -107,11 +108,10 @@ MonoBehaviour:
   SpriteImage: {fileID: 21300000, guid: 0891ef8c6abafed449d5fdefc751d5ee, type: 3}
   FighterAnimator: {fileID: 5087902727824073896}
   _baseExperience: 3
-  _lootList:
-  - {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
-  - {fileID: 8001527148783395447, guid: 4da005d92086cb84ea6d0fba28e9511b, type: 3}
+  _lootList: {fileID: 741446314766206054}
   _additionalLootChange: 1
   _minimalLevel: 1
+  _isBoss: 0
   HealthChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -153,3 +153,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9cb2f39c734fa42b35feba949e991a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &741446314766206054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797388749512454581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20a6e340aed67e48b845d8af1a8bfab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemTemplates:
+  - {fileID: 8001527148783395447, guid: 4da005d92086cb84ea6d0fba28e9511b, type: 3}
+  - {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
+  - {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
+  _progression: {fileID: 0}

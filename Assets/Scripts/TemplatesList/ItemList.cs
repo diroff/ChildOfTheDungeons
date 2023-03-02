@@ -9,15 +9,20 @@ public class ItemList : MonoBehaviour
     private List<Item> _availableItems = new List<Item>();
 
     private Item _lastItem;
+    private int _lastLevel = 0;
 
     private void Awake()
     {
+        if (_progression == null)
+            _progression = FindObjectOfType<ProgressionController>();
+
         UpdateItemList(0);
     }
 
     private void OnEnable()
     {
         _progression.Player.LevelChanged.AddListener(UpdateItemList);
+        UpdateItemList(_progression.Player.GetLevel());
     }
 
     public Item TakeItem()
@@ -26,7 +31,12 @@ public class ItemList : MonoBehaviour
         item = _availableItems[ItemNumber()];
 
         while(_lastItem == item)
+        {
+            if (_availableItems.Count == 1)
+                break;
+
             item = _availableItems[ItemNumber()];
+        }
 
         _lastItem = item;
         return item;
@@ -34,11 +44,16 @@ public class ItemList : MonoBehaviour
 
     private void UpdateItemList(int level)
     {
+        if (_lastLevel == level)
+            return;
+
         foreach (Item item in _itemTemplates)
         {
-            if(item.MinimalItemLevel == _progression.Player.GetLevel())
+            if(item.MinimalItemLevel == _progression.Player.GetLevel() || item.IsConsumable)
                 _availableItems.Add(item);
         }
+
+        _lastLevel = level;
     }
 
     private int ItemNumber()

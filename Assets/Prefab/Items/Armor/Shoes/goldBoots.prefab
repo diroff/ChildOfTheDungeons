@@ -106,10 +106,8 @@ MonoBehaviour:
   Consumable: 0
   ItemAnimator: {fileID: 7209744020205144440}
   Sprite: {fileID: 21300000, guid: 6255dc50dcfadab44a2a67c778801934, type: 3}
+  MinimalLevel: 8
   Taked:
-    m_PersistentCalls:
-      m_Calls: []
-  LevelChanged:
     m_PersistentCalls:
       m_Calls: []
   _health: 100
