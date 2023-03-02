@@ -114,6 +114,7 @@ MonoBehaviour:
   - {fileID: 6766192260602316794, guid: 6f9bbbd6af5ea6a4695ccd529c107af9, type: 3}
   _additionalLootChange: 30
   _minimalLevel: 1
+  _isBoss: 1
   HealthChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -4,8 +4,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [Header("Templates")]
-    [SerializeField] private List<Enemy> _enemyTemplates;
-    [SerializeField] private List<Enemy> _bossTemplates;
+    [SerializeField] private EnemyTemplates _enemyTemplates;
     [SerializeField] private List<Item> _itemTemplates;
     [SerializeField] private List<Chest> _chestTemplates;
 
@@ -17,24 +16,15 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _itemPlace;
     [SerializeField] private GameObject _enemyPlace;
 
-    private int _enemyNumber;
-
     public void SpawnEnemy(bool isBoss)
     {
         Enemy enemy;
 
         if (isBoss)
-        {
-            SetNumberBoss();
-            enemy = _bossTemplates[_enemyNumber];
-        }
+            enemy = _enemyTemplates.TakeEnemy(true);
         else
-        {
-            SetNumberEnemy();
-            enemy = _enemyTemplates[_enemyNumber];
-        }
+            enemy = _enemyTemplates.TakeEnemy(false);
 
-        enemy.SetLevel(_progression.SetLevel());
         Instantiate(enemy, _enemyPlace.transform);
     }
 
@@ -58,26 +48,6 @@ public class Spawner : MonoBehaviour
     public void SpawnSign(Sign sign)
     {
         Instantiate(sign, _enemyPlace.transform);
-    }
-
-    private void SetNumberEnemy()
-    {
-        _enemyNumber = Random.Range(0, _enemyTemplates.Count);
-
-        while (_enemyTemplates[_enemyNumber].MinimalLevel > _progression.Player.GetLevel())
-        {
-            SetNumberEnemy();
-        }
-    }
-
-    private void SetNumberBoss()
-    {
-        _enemyNumber = Random.Range(0, _bossTemplates.Count);
-
-        while (_bossTemplates[_enemyNumber].MinimalLevel > _progression.Player.GetLevel())
-        {
-            SetNumberEnemy();
-        }
     }
 
     private int NumberOfRandomItem()

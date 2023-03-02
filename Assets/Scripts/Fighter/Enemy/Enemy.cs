@@ -9,6 +9,7 @@ public class Enemy : Fighter
     [SerializeField] private List<Item> _lootList;
     [SerializeField] private int _additionalLootChange = 0;
     [SerializeField] private int _minimalLevel = 1;
+    [SerializeField] private bool _isBoss = false;
 
     private int lootChange;
     private Item _lootItem;
@@ -19,6 +20,7 @@ public class Enemy : Fighter
 
     public Item LootItem => _lootItem;
     public int MinimalLevel => _minimalLevel;
+    public bool IsBoss => _isBoss;
 
     protected override void Start()
     {
