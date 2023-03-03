@@ -48,6 +48,9 @@ public class ItemList : MonoBehaviour
         if (_lastLevel == level)
             return;
 
+        if (_availableItems.Count > 0)
+            _availableItems.Clear();
+
         foreach (Item item in _itemTemplates)
         {
             if(item.MinimalItemLevel == _progression.Player.GetLevel() + _additionalItemLevel || item.IsConsumable)
