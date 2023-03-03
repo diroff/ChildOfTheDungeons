@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class ItemList : MonoBehaviour
@@ -31,15 +32,17 @@ public class ItemList : MonoBehaviour
         Item item;
         item = _availableItems[ItemNumber()];
 
-        while(_lastItem == item)
+        while (_progression.LastItem == item || _lastItem == item) 
         {
-            if (_availableItems.Count == 1)
+            if (_availableItems.Count <= 1)
                 break;
 
             item = _availableItems[ItemNumber()];
         }
 
         _lastItem = item;
+        _progression.SetLastItem(item);
+
         return item;
     }
 

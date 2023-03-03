@@ -4,11 +4,12 @@ public class ProgressionController : MonoBehaviour
 {
     [SerializeField] private Player _player;
 
-    public Player Player => _player;
-
     private int _lastEvent;
+    private Item _lastItem;
 
+    public Player Player => _player;
     public int LastEvent => _lastEvent;
+    public Item LastItem => _lastItem;
 
     public int SetLevel()
     {
@@ -23,5 +24,10 @@ public class ProgressionController : MonoBehaviour
     public void SetLastEvent(int previousEventNumber)
     {
         _lastEvent = previousEventNumber;
+    }
+
+    public void SetLastItem(Item item)
+    {
+        _lastItem = item;
     }
 }
