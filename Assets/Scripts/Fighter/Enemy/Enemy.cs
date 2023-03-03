@@ -28,7 +28,7 @@ public class Enemy : Fighter
         UpdateParameters();
         SetLootChange();
 
-        if (IsLoot())
+        if (IsLoot() || _isBoss)
             SetLootItem();
     }
 
