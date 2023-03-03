@@ -5,6 +5,7 @@ public class ItemList : MonoBehaviour
 {
     [SerializeField] private List<Item> _itemTemplates;
     [SerializeField] private ProgressionController _progression;
+    [SerializeField] private int _additionalItemLevel = 0;
 
     private List<Item> _availableItems = new List<Item>();
 
@@ -49,7 +50,7 @@ public class ItemList : MonoBehaviour
 
         foreach (Item item in _itemTemplates)
         {
-            if(item.MinimalItemLevel == _progression.Player.GetLevel() || item.IsConsumable)
+            if(item.MinimalItemLevel == _progression.Player.GetLevel() + _additionalItemLevel || item.IsConsumable)
                 _availableItems.Add(item);
         }
 

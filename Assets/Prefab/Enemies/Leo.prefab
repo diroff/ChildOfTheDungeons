@@ -203,3 +203,4 @@ MonoBehaviour:
   - {fileID: 6766192260602316794, guid: d5ec0cfe4f755404ea2e93775c94634b, type: 3}
   - {fileID: 6766192260602316794, guid: 6bc4f17d5d7155f439dbe61af14de111, type: 3}
   _progression: {fileID: 0}
+  _additionalItemLevel: 1
