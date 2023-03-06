@@ -109,7 +109,7 @@ MonoBehaviour:
   FighterAnimator: {fileID: 5087902727824073896}
   _baseExperience: 3
   _lootList: {fileID: 741446314766206054}
-  _additionalLootChange: 1
+  _additionalLootChange: 50
   _minimalLevel: 1
   _isBoss: 0
   HealthChanged:
@@ -170,3 +170,4 @@ MonoBehaviour:
   - {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
   - {fileID: 4936389033545221804, guid: 788d280c67fbf2a448bc4ef179b0c80d, type: 3}
   _progression: {fileID: 0}
+  _additionalItemLevel: 0

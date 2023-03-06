@@ -12,6 +12,7 @@ public class Player : Fighter
     [SerializeField] private int _experienceToNextLevel = 10;
     [SerializeField] private Skills _skills;
 
+    private int _baseExperience;
     private int _currentExperience = 0;
 
     public Inventory Inventory => _inventory;
@@ -27,6 +28,7 @@ public class Player : Fighter
 
     protected override void Start()
     {
+        _baseExperience = _experienceToNextLevel;
         base.Start();
         CalculateMaxHealth();
         CalculateTotalDamage();
@@ -85,8 +87,9 @@ public class Player : Fighter
     {
         if (!IsEnoughExperience())
             return;
+
         Level++;
-        _experienceToNextLevel *= (Level + 5);
+        _experienceToNextLevel = (int)((_baseExperience * Level) * (Mathf.Pow(2, Level)));
         _currentExperience = 0;
         CalculateMaxHealth();
         CalculateTotalDamage();
