@@ -28,6 +28,8 @@ public class EnemyTemplates : MonoBehaviour
 
     public void UpdateEnemyList(int level)
     {
+        _availableEnemies.Clear();
+
         foreach (Enemy enemy in _enemyTemplates)
         {
             if (_progression.Player.GetLevel() == enemy.MinimalLevel)

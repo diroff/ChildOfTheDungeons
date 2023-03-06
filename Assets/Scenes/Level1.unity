@@ -4891,7 +4891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u0418\u0433\u0440\u043E\u043A"
-  BaseMaxHealth: 2
+  BaseMaxHealth: 8
   Armor: 0
   BaseDamage: 0
   Level: 1
@@ -4975,9 +4975,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7102c2b8925b1bf4fbfdc1dc9c9329ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _silverKeyCount: 100
-  _goldKeyCount: 1
-  _potionCount: 1
+  _silverKeyCount: 0
+  _goldKeyCount: 0
+  _potionCount: 0
 --- !u!1 &535995721
 GameObject:
   m_ObjectHideFlags: 0
@@ -9326,7 +9326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 5
+  _startLevel: 1
   _maxLevel: 99
   _description: "\u041B\u043E\u0432\u043A\u043E\u0441\u0442\u044C. \u0412\u043B\u0438\u044F\u0435\u0442
     \u043D\u0430 \u0448\u0430\u043D\u0441 \u043F\u043E\u0431\u0435\u0433\u0430."
@@ -9594,7 +9594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 3
+  _startLevel: 1
   _maxLevel: 99
   _description: "\u0423\u0434\u0430\u0447\u0430. \u0412\u043B\u0438\u044F\u0435\u0442
     \u043D\u0430 \u0448\u0430\u043D\u0441 \u043D\u0430\u0439\u0442\u0438 \u0431\u043E\u043B\u0435\u0435
@@ -11884,7 +11884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 2
+  _startLevel: 1
   _maxLevel: 99
   _description: "\u0421\u0438\u043B\u0430. \u0412\u043B\u0438\u044F\u0435\u0442 \u043D\u0430
     \u0431\u0430\u0437\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u043D \u0438\u0433\u0440\u043E\u043A\u0430."
@@ -15661,7 +15661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 99
+  _startLevel: 1
   _maxLevel: 99
   _description: "\u0412\u044B\u043D\u043E\u0441\u043B\u0438\u0432\u043E\u0441\u0442\u044C.
     \u0412\u043B\u0438\u044F\u0435\u0442 \u043D\u0430 \u0431\u0430\u0437\u043E\u0432\u044B\u0439
@@ -16439,6 +16439,7 @@ MonoBehaviour:
   - {fileID: 6443516790131426406, guid: 820f995ab309be7408d5f136e6488142, type: 3}
   - {fileID: 8001527148783395447, guid: 4da005d92086cb84ea6d0fba28e9511b, type: 3}
   _progression: {fileID: 1104878590}
+  _additionalItemLevel: 0
 --- !u!1 &1969395860
 GameObject:
   m_ObjectHideFlags: 0
