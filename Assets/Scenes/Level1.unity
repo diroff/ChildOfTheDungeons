@@ -1631,6 +1631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 152349597}
   - component: {fileID: 152349598}
+  - component: {fileID: 152349599}
   m_Layer: 0
   m_Name: BossEvent
   m_TagString: Untagged
@@ -1673,6 +1674,7 @@ MonoBehaviour:
   _player: {fileID: 532910443}
   _eventsController: {fileID: 1886117191}
   _freeItemEvent: {fileID: 1622029519}
+  EnemyTemplates: {fileID: 152349599}
   _timeBeforeAttack: 0
   _timeAfterAttack: 0.5
   _timeFromDead: 1.5
@@ -1689,6 +1691,30 @@ MonoBehaviour:
   _enemyInfoPanel: {fileID: 356515405}
   _coinFlipButton: {fileID: 692596956}
   _coinAnimator: {fileID: 708387435}
+--- !u!114 &152349599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152349596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872e41e2c1006d745b8090d2e14add58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyTemplates:
+  - {fileID: 1797388749512454538, guid: 17c5a4c4444a881469a05a2e9b35b70d, type: 3}
+  - {fileID: 1797388749512454538, guid: ea6b3e8cc5dfd1f4aacdd1c8eb15774f, type: 3}
+  - {fileID: 1797388749512454538, guid: 79f2fa5c3e00b7e4daf5f930993479da, type: 3}
+  - {fileID: 1797388749512454538, guid: dcfa5c9e616f3774494b37590d393790, type: 3}
+  - {fileID: 1797388749512454538, guid: 26f3f4e52e42a0b4f90dff1374d70c81, type: 3}
+  - {fileID: 1797388749512454538, guid: 4f965598bf458004796827e977b3f6d4, type: 3}
+  - {fileID: 1797388749512454538, guid: bd7e1a924f4c13a4d85e2b6ffade0c51, type: 3}
+  - {fileID: 1797388749512454538, guid: 8d8a8f80dab184e4eb35edd7f7aac2eb, type: 3}
+  - {fileID: 1797388749512454538, guid: 4978d825a05a08e459d340d2fbd9252f, type: 3}
+  _progression: {fileID: 1104878590}
+  _additionalLevel: 0
 --- !u!1 &155817406
 GameObject:
   m_ObjectHideFlags: 0
@@ -11890,7 +11916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 1
+  _startLevel: 9
   _maxLevel: 99
   _description: "\u0421\u0438\u043B\u0430. \u0412\u043B\u0438\u044F\u0435\u0442 \u043D\u0430
     \u0431\u0430\u0437\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u043D \u0438\u0433\u0440\u043E\u043A\u0430."
@@ -16364,7 +16390,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1957994490}
   - component: {fileID: 1957994491}
-  - component: {fileID: 1957994492}
   - component: {fileID: 1957994493}
   m_Layer: 0
   m_Name: SpawnPoint
@@ -16402,7 +16427,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99438e731dac6824185d5d64b11f2b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyTemplates: {fileID: 1957994492}
   _itemList: {fileID: 1957994493}
   _chestTemplates:
   - {fileID: 5169373742871476358, guid: e5aa0d8688711904f947a4b981a13db7, type: 3}
@@ -16410,44 +16434,6 @@ MonoBehaviour:
   _spawnPoint: {fileID: 1957994489}
   _itemPlace: {fileID: 516872042}
   _enemyPlace: {fileID: 1072904999}
---- !u!114 &1957994492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957994489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 872e41e2c1006d745b8090d2e14add58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyTemplates:
-  - {fileID: 1797388749512454538, guid: 45bd1e322c5cc5d47a343192586303a2, type: 3}
-  - {fileID: 1797388749512454538, guid: 61de5b0ebfabd0d418a646c16df7e038, type: 3}
-  - {fileID: 1797388749512454538, guid: 17c5a4c4444a881469a05a2e9b35b70d, type: 3}
-  - {fileID: 1797388749512454538, guid: 79f2fa5c3e00b7e4daf5f930993479da, type: 3}
-  - {fileID: 1797388749512454538, guid: 1906b2738138eba439103a2150048737, type: 3}
-  - {fileID: 1797388749512454538, guid: 029e864558692f74c873f7675816e02b, type: 3}
-  - {fileID: 1797388749512454538, guid: ef5446df19c4f6b4fb215a743d2cf409, type: 3}
-  - {fileID: 1797388749512454538, guid: e3b7b2544fd5b7c4d8e42ebe92571b14, type: 3}
-  - {fileID: 1797388749512454538, guid: 9a36cd812a222ce4393af8b5890545cb, type: 3}
-  - {fileID: 1797388749512454538, guid: b3c3bc44d1e3781449dfd1ab68109cac, type: 3}
-  - {fileID: 1797388749512454538, guid: 64754ca7f299288499771b4e1ed8c5c1, type: 3}
-  - {fileID: 1797388749512454538, guid: 26f3f4e52e42a0b4f90dff1374d70c81, type: 3}
-  - {fileID: 1797388749512454538, guid: aa8c1be103f5d594a8c8409bf1621a8a, type: 3}
-  - {fileID: 1797388749512454538, guid: 389e8dffaf324274f92a180865faa544, type: 3}
-  - {fileID: 1797388749512454538, guid: 8d8a8f80dab184e4eb35edd7f7aac2eb, type: 3}
-  - {fileID: 1797388749512454538, guid: 985eddd043f639b4781f85d04016ea9d, type: 3}
-  - {fileID: 1797388749512454538, guid: 7618e85cbd1c3c04a94de7339aaa6d4a, type: 3}
-  - {fileID: 1797388749512454538, guid: 7520d67c2025a834b9b26d1e6990b23d, type: 3}
-  - {fileID: 1797388749512454538, guid: 8f2660016a61bab4389ede73a6eb27f6, type: 3}
-  - {fileID: 1797388749512454538, guid: 5750812a5a30d454699d17fc1301b310, type: 3}
-  - {fileID: 1797388749512454538, guid: 47232ca467a04754cb6c6e47dd688035, type: 3}
-  - {fileID: 1797388749512454538, guid: 7f111dd11777fa441851be27d19f91f4, type: 3}
-  - {fileID: 1797388749512454538, guid: 358528425db06954fa36f6b0a92a2f3c, type: 3}
-  - {fileID: 1797388749512454538, guid: a35c48a2a2a65f243a8a18bc86100d96, type: 3}
-  _progression: {fileID: 1104878590}
 --- !u!114 &1957994493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18330,6 +18316,7 @@ MonoBehaviour:
   _player: {fileID: 532910443}
   _eventsController: {fileID: 1886117191}
   _freeItemEvent: {fileID: 1622029519}
+  EnemyTemplates: {fileID: 8148549922209866772}
   _timeBeforeAttack: 0
   _timeAfterAttack: 0.5
   _timeFromDead: 1.5
@@ -18356,6 +18343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8148549922209866769}
   - component: {fileID: 8148549922209866770}
+  - component: {fileID: 8148549922209866772}
   m_Layer: 0
   m_Name: FightEvent
   m_TagString: Untagged
@@ -18363,6 +18351,41 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &8148549922209866772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148549922209866771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872e41e2c1006d745b8090d2e14add58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyTemplates:
+  - {fileID: 1797388749512454538, guid: 45bd1e322c5cc5d47a343192586303a2, type: 3}
+  - {fileID: 1797388749512454538, guid: 61de5b0ebfabd0d418a646c16df7e038, type: 3}
+  - {fileID: 1797388749512454538, guid: 1906b2738138eba439103a2150048737, type: 3}
+  - {fileID: 1797388749512454538, guid: 029e864558692f74c873f7675816e02b, type: 3}
+  - {fileID: 1797388749512454538, guid: ef5446df19c4f6b4fb215a743d2cf409, type: 3}
+  - {fileID: 1797388749512454538, guid: e3b7b2544fd5b7c4d8e42ebe92571b14, type: 3}
+  - {fileID: 1797388749512454538, guid: 9a36cd812a222ce4393af8b5890545cb, type: 3}
+  - {fileID: 1797388749512454538, guid: b3c3bc44d1e3781449dfd1ab68109cac, type: 3}
+  - {fileID: 1797388749512454538, guid: 64754ca7f299288499771b4e1ed8c5c1, type: 3}
+  - {fileID: 1797388749512454538, guid: aa8c1be103f5d594a8c8409bf1621a8a, type: 3}
+  - {fileID: 1797388749512454538, guid: 389e8dffaf324274f92a180865faa544, type: 3}
+  - {fileID: 1797388749512454538, guid: 985eddd043f639b4781f85d04016ea9d, type: 3}
+  - {fileID: 1797388749512454538, guid: 7618e85cbd1c3c04a94de7339aaa6d4a, type: 3}
+  - {fileID: 1797388749512454538, guid: 7520d67c2025a834b9b26d1e6990b23d, type: 3}
+  - {fileID: 1797388749512454538, guid: 8f2660016a61bab4389ede73a6eb27f6, type: 3}
+  - {fileID: 1797388749512454538, guid: 5750812a5a30d454699d17fc1301b310, type: 3}
+  - {fileID: 1797388749512454538, guid: 47232ca467a04754cb6c6e47dd688035, type: 3}
+  - {fileID: 1797388749512454538, guid: 7f111dd11777fa441851be27d19f91f4, type: 3}
+  - {fileID: 1797388749512454538, guid: 358528425db06954fa36f6b0a92a2f3c, type: 3}
+  - {fileID: 1797388749512454538, guid: a35c48a2a2a65f243a8a18bc86100d96, type: 3}
+  _progression: {fileID: 1104878590}
+  _additionalLevel: 0
 --- !u!114 &8320838582458532849
 MonoBehaviour:
   m_ObjectHideFlags: 0

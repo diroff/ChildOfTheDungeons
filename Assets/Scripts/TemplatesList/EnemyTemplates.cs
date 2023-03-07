@@ -5,16 +5,13 @@ public class EnemyTemplates : MonoBehaviour
 {
     [SerializeField] private List<Enemy> _enemyTemplates;
     [SerializeField] private ProgressionController _progression;
+    [SerializeField] private int _additionalLevel = 0;
 
     private Enemy _lastEnemy;
-    private Enemy _lastBoss;
     private List<Enemy> _availableEnemies = new List<Enemy>();
-    private List<Enemy> _availableBosses = new List<Enemy>();
 
     public Enemy LastEnemy => _lastEnemy;
-    public Enemy LastBoss => _lastBoss;
     public List<Enemy> AvailableEnemies => _availableEnemies;
-    public List<Enemy> AvailableBosses => _availableBosses;
 
     private void Awake()
     {
@@ -32,60 +29,31 @@ public class EnemyTemplates : MonoBehaviour
 
         foreach (Enemy enemy in _enemyTemplates)
         {
-            if (_progression.Player.GetLevel() == enemy.MinimalLevel)
-            {
-                if (enemy.IsBoss)
-                    _availableBosses.Add(enemy);
-                else
-                    _availableEnemies.Add(enemy);
-            }
+            if (_progression.Player.GetLevel() == enemy.MinimalLevel + _additionalLevel)
+                _availableEnemies.Add(enemy);
         }
     }
 
-    public Enemy TakeEnemy(bool isBoss)
+    public Enemy TakeEnemy()
     {
         Enemy enemy;
+        enemy = _availableEnemies[GetEnemyNumber()];
 
-        if (isBoss)
+        while (enemy == _lastEnemy)
         {
-            enemy = _availableBosses[GetEnemyNumber(true)];
-
-            while (enemy == _lastEnemy)
-            {
-                if (_availableBosses.Count == 1)
-                    break;
-
-                enemy = _availableBosses[GetEnemyNumber(true)];
-            }
-
-            _lastBoss = enemy;
-            return enemy;
+            if (_availableEnemies.Count == 1)
+                break;
+            enemy = _availableEnemies[GetEnemyNumber()];
         }
-        else
-        {
-            enemy = _availableEnemies[GetEnemyNumber(false)];
-
-            while (enemy == _lastEnemy)
-            {
-                if (_availableEnemies.Count == 1)
-                    break;
-                enemy = _availableEnemies[GetEnemyNumber(false)];
-            }
-
-            _lastEnemy = enemy;
-            return enemy;
-        }
+        
+        _lastEnemy = enemy;
+        return enemy;
     }
 
-    private int GetEnemyNumber(bool isBoss)
+    private int GetEnemyNumber()
     {
         int enemyNumber;
-
-        if (isBoss)
-            enemyNumber = Random.Range(0, _availableBosses.Count);
-        else
-            enemyNumber = Random.Range(0, _availableEnemies.Count);
-
+        enemyNumber = Random.Range(0, _availableEnemies.Count);
         return enemyNumber;
     }
 }
