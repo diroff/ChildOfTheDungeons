@@ -8,16 +8,16 @@ public class DirectionEvent : Event
     [SerializeField] private Sign _signTemplate;
     [SerializeField] private ProgressionController _progressionController;
 
+    private List<Event> _events = new List<Event>();
     private int _directionCount;
     private Sign _sign;
-
-    private Event _previousEvent;
 
     private List<Event> _currentEvents = new List<Event>();
 
     public override void StartEvent()
     {
         _currentEvents.Clear();
+        UpdateEventList();
         base.StartEvent();
         Spawner.SpawnSign(_signTemplate);
         _sign = Spawner.GetSign();
@@ -33,19 +33,13 @@ public class DirectionEvent : Event
         for (int i = 0; i < directionCount; i++)
         {
             Event randomEvent;
-            randomEvent = _availableEvents[Random.Range(0, _availableEvents.Count)];
-
-            if(_previousEvent != null)
-            {
-                while(randomEvent == _previousEvent || _progressionController.Player.GetLevel() < randomEvent.MinimalLevel)
-                    randomEvent = _availableEvents[Random.Range(0, _availableEvents.Count)];
-            }
+            randomEvent = _events[Random.Range(0, _events.Count)];
 
             _sign.Directions[i].gameObject.SetActive(true);
             _sign.Directions[i].SetIcon(randomEvent.EventIcon);
 
             _currentEvents.Add(randomEvent);
-            _previousEvent = randomEvent;
+            _events.Remove(randomEvent);
         }
     }
 
@@ -66,6 +60,17 @@ public class DirectionEvent : Event
     {
         _eventController.SetNextEvent(_currentEvents[directionNumber]);
         EndEvent();
+    }
+
+    private void UpdateEventList()
+    {
+        _events.Clear();
+
+        for (int i = 0; i < _availableEvents.Count; i++)
+        {
+            if (_progressionController.Player.GetLevel() >= _availableEvents[i].MinimalLevel)
+                _events.Add(_availableEvents[i]);
+        }
     }
 
     public void ClearOutliners()
