@@ -155,15 +155,16 @@ public class Player : Fighter
         return _skills.Power.CurrentLevel;
     }
 
-    public bool AdditionalChance()
+    public bool HasAdditionalChance(int additionalChance)
     {
-        return (Random.Range(0, 15 + Level) + _skills.Luck.CurrentLevel) >= 15 + Level;
+        int totalChance = (Random.Range(0, 101) + additionalChance);
+        return totalChance  >= 100;
     }
 
-    public bool IsLeaved(int change)
+    public bool IsLeaved(int additionalChance)
     {
-        int totalChange = Random.Range(0, 101 + change);
-        return (totalChange >= 100);
+        int totalChance = (Random.Range(0, 101) + additionalChance);
+        return totalChance >= 100;
     }
 
     public void UpdateParameters()

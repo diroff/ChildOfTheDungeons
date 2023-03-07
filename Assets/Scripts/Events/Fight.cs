@@ -42,8 +42,8 @@ public class Fight : Event
     [SerializeField] private Animator _coinAnimator;
 
     private Enemy _enemy;
-    private int _leaveChange;
-    private int _coinWinChange;
+    private int _leaveChance;
+    private int _coinWinChance;
 
     public override void StartEvent()
     {
@@ -68,8 +68,8 @@ public class Fight : Event
         _enemyInfoButton.SetActive(false);
         _attackPanel.SetActive(true);
         _healButton.SetButtonState();
-        CalculateLeaveChange();
-        _leaveChangeText.text = _leaveChange + "%";
+        CalculateLeaveChance();
+        _leaveChangeText.text = _leaveChance + "%";
         _damageText.text = "x" + _player.CalculateTotalDamage();
     }
 
@@ -90,7 +90,7 @@ public class Fight : Event
 
     public void Leave()
     {
-        _player.TryToLeave(_leaveChange);
+        _player.TryToLeave(_leaveChance);
     }
 
     private void SubscribeEvents() 
@@ -135,15 +135,26 @@ public class Fight : Event
             StartCoroutine(PlayerDeadCoroutine());
     }
 
-    private void CalculateLeaveChange()
+    private void CalculateLeaveChance()
     {
-        _leaveChange = _player.Skills.Agility.CurrentLevel * 10;
+        _leaveChance = _player.Skills.Agility.CurrentLevel * 10;
 
         if (_player.CurrentFighterHealth <= _player.MaxFighterHealth / 4)
-            _leaveChange += 30;
+            _leaveChance += 30;
 
-        if (_leaveChange > 100)
-            _leaveChange = 100;
+        if (_leaveChance > 100)
+            _leaveChance = 100;
+    }
+
+    private void CalculateCoinWinChance()
+    {
+        _coinWinChance = _player.Skills.Luck.CurrentLevel * 10;
+
+        if (_player.CurrentFighterHealth <= _player.MaxFighterHealth / 4)
+            _coinWinChance += 30;
+
+        if (_coinWinChance > 100)
+            _coinWinChance = 100;
     }
 
     public void CoinFlip()
@@ -156,8 +167,12 @@ public class Fight : Event
         _attackPanel.SetActive(false);
         _coinImage.SetActive(false);
         _startPanel.SetActive(true);
-        CalculateLeaveChange();
-        _leaveChangeStartText.text = _leaveChange + "%";
+
+        CalculateLeaveChance();
+        CalculateCoinWinChance();
+
+        _leaveChangeStartText.text = _leaveChance + "%";
+        _coinWinChangeText.text = _coinWinChance + "%";
     }
 
     private IEnumerator AttackEnemyCoroutine()
@@ -250,16 +265,9 @@ public class Fight : Event
         _startPanel.SetActive(false);
         _coinImage.SetActive(true);
 
-        int additionalChance = 0;
+        bool isWin = _player.HasAdditionalChance(_coinWinChance);
 
-        if (_player.AdditionalChance())
-            additionalChance = 25;
-
-        int randomNumber = Random.Range(0, 125);
-
-        bool isWin = randomNumber + additionalChance >= 65;
-
-        if(isWin)
+        if (isWin)
             _coinAnimator.SetTrigger("Win");
         else
             _coinAnimator.SetTrigger("Lose");
