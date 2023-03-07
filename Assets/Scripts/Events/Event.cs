@@ -6,13 +6,14 @@ public abstract class Event : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
     [SerializeField] private Sprite _eventIcon;
-
     [SerializeField] protected Spawner Spawner;
 
+    [SerializeField] private int _minimalLevel = 1;
     [SerializeField] private float _panelEnableCouldown = 1.0f;
 
     public GameObject Panel => _panel;
     public Sprite EventIcon => _eventIcon;
+    public int MinimalLevel => _minimalLevel;
 
     public event UnityAction<bool> Ended;
 
@@ -42,7 +43,6 @@ public abstract class Event : MonoBehaviour
     public virtual void EndEvent()
     {
         Ended?.Invoke(true);
-        Debug.Log("Event end");
         SetEnableEvent(false);
         SetPanelState(false);
     }

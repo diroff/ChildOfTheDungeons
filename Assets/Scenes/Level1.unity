@@ -1266,6 +1266,7 @@ MonoBehaviour:
   _panel: {fileID: 1636331849}
   _eventIcon: {fileID: 21300000, guid: cee567246a03d9f40b8fa9cdfdf49d43, type: 3}
   Spawner: {fileID: 1957994491}
+  _minimalLevel: 1
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
@@ -1667,6 +1668,7 @@ MonoBehaviour:
   _panel: {fileID: 1368005816}
   _eventIcon: {fileID: 21300000, guid: d79ee9cb1236ab3459427296727c99fd, type: 3}
   Spawner: {fileID: 1957994491}
+  _minimalLevel: 2
   _panelEnableCouldown: 1
   _player: {fileID: 532910443}
   _eventsController: {fileID: 1886117191}
@@ -1810,6 +1812,7 @@ MonoBehaviour:
   _panel: {fileID: 1403963333}
   _eventIcon: {fileID: 0}
   Spawner: {fileID: 1957994491}
+  _minimalLevel: 1
   _panelEnableCouldown: 1
 --- !u!1 &176033351
 GameObject:
@@ -9273,6 +9276,7 @@ MonoBehaviour:
   _panel: {fileID: 231167814}
   _eventIcon: {fileID: 0}
   Spawner: {fileID: 1957994491}
+  _minimalLevel: 1
   _panelEnableCouldown: 1
   _availableEvents:
   - {fileID: 1622029519}
@@ -9282,6 +9286,7 @@ MonoBehaviour:
   - {fileID: 152349598}
   _eventController: {fileID: 1886117191}
   _signTemplate: {fileID: 4789677265668197340, guid: 4a7cd9634f8cee345905f4ed9bf858d6, type: 3}
+  _progressionController: {fileID: 1104878590}
 --- !u!1 &1036183359
 GameObject:
   m_ObjectHideFlags: 0
@@ -11572,6 +11577,7 @@ MonoBehaviour:
   _panel: {fileID: 1636331849}
   _eventIcon: {fileID: 21300000, guid: 4bd9ee77b6ebcaf4b8749c6dd2ef6aca, type: 3}
   Spawner: {fileID: 1957994491}
+  _minimalLevel: 1
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
@@ -13594,6 +13600,7 @@ MonoBehaviour:
   _panel: {fileID: 1480688078}
   _eventIcon: {fileID: 21300000, guid: 03086eea522dee341888295c0153b149, type: 3}
   Spawner: {fileID: 1957994491}
+  _minimalLevel: 1
   _panelEnableCouldown: 1
   _player: {fileID: 532910443}
   _progression: {fileID: 1104878590}
@@ -17317,6 +17324,7 @@ MonoBehaviour:
   _panel: {fileID: 1636331849}
   _eventIcon: {fileID: 21300000, guid: c1d559b30406d364cae6447e0282f66c, type: 3}
   Spawner: {fileID: 1957994491}
+  _minimalLevel: 1
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
@@ -18317,6 +18325,7 @@ MonoBehaviour:
   _panel: {fileID: 1410077755}
   _eventIcon: {fileID: 21300000, guid: 8197f26677d7cab4283a303881df0759, type: 3}
   Spawner: {fileID: 1957994491}
+  _minimalLevel: 1
   _panelEnableCouldown: 1
   _player: {fileID: 532910443}
   _eventsController: {fileID: 1886117191}
@@ -18369,6 +18378,7 @@ MonoBehaviour:
   _panel: {fileID: 775393113034063495}
   _eventIcon: {fileID: 0}
   Spawner: {fileID: 1957994491}
+  _minimalLevel: 1
   _panelEnableCouldown: 0
   _controller: {fileID: 1886117191}
   _player: {fileID: 532910443}

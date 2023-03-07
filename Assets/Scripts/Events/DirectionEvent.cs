@@ -6,7 +6,8 @@ public class DirectionEvent : Event
     [SerializeField] private List<Event> _availableEvents;
     [SerializeField] private EventsController _eventController;
     [SerializeField] private Sign _signTemplate;
-    
+    [SerializeField] private ProgressionController _progressionController;
+
     private int _directionCount;
     private Sign _sign;
 
@@ -35,8 +36,10 @@ public class DirectionEvent : Event
             randomEvent = _availableEvents[Random.Range(0, _availableEvents.Count)];
 
             if(_previousEvent != null)
-                while(randomEvent == _previousEvent)
+            {
+                while(randomEvent == _previousEvent || _progressionController.Player.GetLevel() < randomEvent.MinimalLevel)
                     randomEvent = _availableEvents[Random.Range(0, _availableEvents.Count)];
+            }
 
             _sign.Directions[i].gameObject.SetActive(true);
             _sign.Directions[i].SetIcon(randomEvent.EventIcon);
