@@ -75,7 +75,7 @@ public class Player : Fighter
 
     public override void CalculateMaxHealth()
     {
-        MaxHealth = BaseMaxHealth + _skills.Endurance.CurrentLevel;
+        MaxHealth = BaseMaxHealth + (_skills.Endurance.CurrentLevel * 2);
     }
 
     private bool IsEnoughExperience()
