@@ -4,7 +4,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [Header("Templates")]
-    [SerializeField] private EnemyTemplates _enemyTemplates;
     [SerializeField] private ItemList _itemList;
     [SerializeField] private List<Chest> _chestTemplates;
 
@@ -13,15 +12,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _itemPlace;
     [SerializeField] private GameObject _enemyPlace;
 
-    public void SpawnEnemy(bool isBoss)
+    public void SpawnEnemy(Enemy enemy)
     {
-        Enemy enemy;
-
-        if (isBoss)
-            enemy = _enemyTemplates.TakeEnemy(true);
-        else
-            enemy = _enemyTemplates.TakeEnemy(false);
-
         Instantiate(enemy, _enemyPlace.transform);
     }
 

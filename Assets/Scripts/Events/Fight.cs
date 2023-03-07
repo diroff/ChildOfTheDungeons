@@ -8,6 +8,7 @@ public class Fight : Event
     [SerializeField] private Player _player;
     [SerializeField] private EventsController _eventsController;
     [SerializeField] private FreeItem _freeItemEvent;
+    [SerializeField] protected EnemyTemplates EnemyTemplates;
 
     [Header("Events time")]
     [SerializeField] private float _timeBeforeAttack = 0.5f;
@@ -94,7 +95,7 @@ public class Fight : Event
 
     protected virtual void SpawnEnemy()
     {
-        Spawner.SpawnEnemy(false);
+        Spawner.SpawnEnemy(EnemyTemplates.TakeEnemy());
     }
 
     private void EnemyDead(bool isDie)
