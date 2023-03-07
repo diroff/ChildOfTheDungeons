@@ -19,15 +19,19 @@ public class Fight : Event
     [SerializeField] private float _healingTime = 1.0f;
     [SerializeField] private float _coinFlipTime = 3.0f;
 
-    [Header("Buttons")]
+    [Header("Attack buttons")]
     [SerializeField] private Button _attackButton;
     [SerializeField] private Button _leaveButton;
     [SerializeField] private HealSlot _healButton;
+    [SerializeField] private TextMeshProUGUI _leaveChangeText;
+    [SerializeField] private TextMeshProUGUI _damageText;
 
-    [Header("Coin")]
-    [SerializeField] private GameObject _coinFlipPanel;
+    [Header("Start panel")]
+    [SerializeField] private GameObject _startPanel;
     [SerializeField] private GameObject _coinImage;
     [SerializeField] private Button _coinFlipButton;
+    [SerializeField] private TextMeshProUGUI _leaveChangeStartText;
+    [SerializeField] private TextMeshProUGUI _coinWinChangeText;
 
     [Header("Panels")]
     [SerializeField] private GameObject _attackPanel;
@@ -35,11 +39,11 @@ public class Fight : Event
     [SerializeField] private GameObject _enemyInfoPanel;
 
     [Space]
-    [SerializeField] private TextMeshProUGUI _leaveChangeText;
     [SerializeField] private Animator _coinAnimator;
 
     private Enemy _enemy;
     private int _leaveChange;
+    private int _coinWinChange;
 
     public override void StartEvent()
     {
@@ -60,9 +64,13 @@ public class Fight : Event
 
     public void PlayerStep()
     {
+        _enemyInfoPanel.SetActive(true);
+        _enemyInfoButton.SetActive(false);
         _attackPanel.SetActive(true);
         _healButton.SetButtonState();
         CalculateLeaveChange();
+        _leaveChangeText.text = _leaveChange + "%";
+        _damageText.text = "x" + _player.CalculateTotalDamage();
     }
 
     public void EnemyStep()
@@ -136,8 +144,6 @@ public class Fight : Event
 
         if (_leaveChange > 100)
             _leaveChange = 100;
-
-        _leaveChangeText.text = _leaveChange + "%";
     }
 
     public void CoinFlip()
@@ -149,8 +155,9 @@ public class Fight : Event
     {
         _attackPanel.SetActive(false);
         _coinImage.SetActive(false);
-        _coinFlipPanel.SetActive(true);
-        _coinFlipButton.gameObject.SetActive(true);
+        _startPanel.SetActive(true);
+        CalculateLeaveChange();
+        _leaveChangeStartText.text = _leaveChange + "%";
     }
 
     private IEnumerator AttackEnemyCoroutine()
@@ -181,6 +188,8 @@ public class Fight : Event
         _player.AddExperience(_enemy.CalculateExperienceCost());
         _enemyInfoButton.SetActive(false);
         _enemyInfoPanel.SetActive(false);
+        _attackPanel.SetActive(false);
+
         yield return new WaitForSeconds(_timeFromDead);
 
         if (_enemy.IsLoot())
@@ -238,7 +247,7 @@ public class Fight : Event
 
     private IEnumerator FlipCoinCoroutine()
     {
-        _coinFlipButton.gameObject.SetActive(false);
+        _startPanel.SetActive(false);
         _coinImage.SetActive(true);
 
         int additionalChance = 0;
@@ -257,8 +266,7 @@ public class Fight : Event
 
         yield return new WaitForSeconds(_coinFlipTime);
         _enemyInfoPanel.SetActive(true);
-
-        _coinFlipPanel.SetActive(false);
+        _coinImage.SetActive(false);
 
         if (isWin)
             PlayerStep();
