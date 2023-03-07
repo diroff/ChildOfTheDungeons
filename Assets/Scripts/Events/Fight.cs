@@ -1,13 +1,13 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Fight : Event
 {
     [SerializeField] private Player _player;
-    [SerializeField] private EventsController _eventsController;
     [SerializeField] private FreeItem _freeItemEvent;
+    
+    [SerializeField] protected EventsController EventsController;
     [SerializeField] protected EnemyTemplates EnemyTemplates;
 
     [Header("Events time")]
@@ -46,7 +46,9 @@ public class Fight : Event
         base.EndEvent();
         _enemyInfoButton.SetActive(false);
         _enemyInfoPanel.SetActive(false);
-        UnsubscribeEvents();
+
+        if(_enemy != null)
+            UnsubscribeEvents();
     }
 
     public void PlayerStep()
@@ -86,14 +88,16 @@ public class Fight : Event
         _player.NotLeaved -= PlayerNotLeaved;
     }
 
-    private void CreatingEnemy()
+    protected void CreatingEnemy()
     {
-        SpawnEnemy();
+        if(Spawner.GetEnemy() == null)
+            SpawnEnemy();
+
         _enemy = Spawner.GetEnemy();
         SubscribeEvents();
     }
 
-    protected virtual void SpawnEnemy()
+    private void SpawnEnemy()
     {
         Spawner.SpawnEnemy(EnemyTemplates.TakeEnemy());
     }
@@ -155,15 +159,18 @@ public class Fight : Event
 
         if (_enemy.IsLoot())
         {
-            _eventsController.SetContinue(false);
-            _eventsController.SetEvent(_freeItemEvent);
+            EventsController.SetContinue(false);
+            EventsController.SetEvent(_freeItemEvent);
             _freeItemEvent.SpawnItem(_enemy.LootItem);
 
             EndEvent();
-            _eventsController.StartEvent();
+            EventsController.StartEvent();
         }
         else
+        {
+            EventsController.SetContinue(true);
             EndEvent();
+        }
     }
 
     private IEnumerator PlayerDeadCoroutine()
@@ -185,6 +192,7 @@ public class Fight : Event
 
     private IEnumerator PlayerLeavedCoroutine()
     {
+        EventsController.SetContinue(true);
         _enemyInfoButton.SetActive(false);
         _enemyInfoPanel.SetActive(false);
         SetPanelState(false);
