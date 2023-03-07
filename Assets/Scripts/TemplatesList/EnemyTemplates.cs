@@ -13,14 +13,10 @@ public class EnemyTemplates : MonoBehaviour
     public Enemy LastEnemy => _lastEnemy;
     public List<Enemy> AvailableEnemies => _availableEnemies;
 
-    private void Awake()
-    {
-        UpdateEnemyList(0);
-    }
-
     private void OnEnable()
     {
         _progression.Player.LevelChanged.AddListener(UpdateEnemyList);
+        UpdateEnemyList(_progression.Player.GetLevel());
     }
 
     public void UpdateEnemyList(int level)
@@ -29,7 +25,7 @@ public class EnemyTemplates : MonoBehaviour
 
         foreach (Enemy enemy in _enemyTemplates)
         {
-            if (_progression.Player.GetLevel() == enemy.MinimalLevel + _additionalLevel)
+            if (_progression.Player.GetLevel() + _additionalLevel == enemy.MinimalLevel)
                 _availableEnemies.Add(enemy);
         }
     }
