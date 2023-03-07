@@ -19,6 +19,11 @@ public class EnemyTemplates : MonoBehaviour
         UpdateEnemyList(_progression.Player.GetLevel());
     }
 
+    private void OnDisable()
+    {
+        _progression.Player.LevelChanged.RemoveListener(UpdateEnemyList);
+    }
+
     public void UpdateEnemyList(int level)
     {
         _availableEnemies.Clear();

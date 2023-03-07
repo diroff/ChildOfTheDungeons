@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,16 +24,22 @@ public class Fight : Event
     [SerializeField] private Button _leaveButton;
     [SerializeField] private HealSlot _healButton;
 
-    [Header("Panels")]
+    [Header("Coin")]
     [SerializeField] private GameObject _coinFlipPanel;
     [SerializeField] private GameObject _coinImage;
+    [SerializeField] private Button _coinFlipButton;
+
+    [Header("Panels")]
     [SerializeField] private GameObject _attackPanel;
     [SerializeField] private GameObject _enemyInfoButton;
     [SerializeField] private GameObject _enemyInfoPanel;
-    [SerializeField] private Button _coinFlipButton;
+
+    [Space]
+    [SerializeField] private TextMeshProUGUI _leaveChangeText;
     [SerializeField] private Animator _coinAnimator;
 
     private Enemy _enemy;
+    private int _leaveChange;
 
     public override void StartEvent()
     {
@@ -55,6 +62,7 @@ public class Fight : Event
     {
         _attackPanel.SetActive(true);
         _healButton.SetButtonState();
+        CalculateLeaveChange();
     }
 
     public void EnemyStep()
@@ -70,6 +78,11 @@ public class Fight : Event
     public void Heal()
     {
         StartCoroutine(HealCoroutine());
+    }
+
+    public void Leave()
+    {
+        _player.TryToLeave(_leaveChange);
     }
 
     private void SubscribeEvents() 
@@ -112,6 +125,19 @@ public class Fight : Event
     {
         if (isDie)
             StartCoroutine(PlayerDeadCoroutine());
+    }
+
+    private void CalculateLeaveChange()
+    {
+        _leaveChange = _player.Skills.Agility.CurrentLevel * 10;
+
+        if (_player.CurrentFighterHealth <= _player.MaxFighterHealth / 4)
+            _leaveChange += 30;
+
+        if (_leaveChange > 100)
+            _leaveChange = 100;
+
+        _leaveChangeText.text = _leaveChange + "%";
     }
 
     public void CoinFlip()

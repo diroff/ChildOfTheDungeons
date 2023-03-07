@@ -127,9 +127,9 @@ public class Player : Fighter
         base.Dead();
     }
 
-    public void TryToLeave()
+    public void TryToLeave(int change)
     {
-        if (IsLeaved())
+        if (IsLeaved(change))
             Leave();
         else
             NotLeave();
@@ -160,9 +160,10 @@ public class Player : Fighter
         return (Random.Range(0, 15 + Level) + _skills.Luck.CurrentLevel) >= 15 + Level;
     }
 
-    public bool IsLeaved()
+    public bool IsLeaved(int change)
     {
-        return (Random.Range(0, 10 + Level) + _skills.Agility.CurrentLevel) >= 7 + Level;
+        int totalChange = Random.Range(0, 101 + change);
+        return (totalChange >= 100);
     }
 
     public void UpdateParameters()

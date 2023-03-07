@@ -16,7 +16,9 @@ public abstract class Fighter : MonoBehaviour
     protected float CurrentHealth;
 
     public float BaseFighterDamage => BaseDamage;
-    
+    public float CurrentFighterHealth => CurrentHealth;
+    public float MaxFighterHealth => MaxHealth;
+
     public event UnityAction<bool> Died;
 
     protected virtual void Start()
