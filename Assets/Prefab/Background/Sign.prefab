@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maximumDirectionCount: 3
-  _minimumDirectionCount: 2
+  _minimumDirectionCount: 3
   _directions:
   - {fileID: 4285031460111079573}
   - {fileID: 9169562730044702417}
