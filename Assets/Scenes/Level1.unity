@@ -5217,7 +5217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 546.1844, y: -124.826164}
+  m_AnchoredPosition: {x: 546.1844, y: -124.82616}
   m_SizeDelta: {x: 200, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599531201
@@ -7087,7 +7087,7 @@ RectTransform:
   - {fileID: 1826815948}
   - {fileID: 1007349025}
   m_Father: {fileID: 1131213645}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19322899, y: 0.25285393}
   m_AnchorMax: {x: 0.8143435, y: 0.73956186}
@@ -7279,26 +7279,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1374453079}
-        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
-        m_MethodName: AddLevel
-        m_Mode: 3
+      - m_Target: {fileID: 972732174}
+        m_TargetAssemblyTypeName: Skills, Assembly-CSharp
+        m_MethodName: UpgradeSkill
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1374453079}
+          m_ObjectArgumentAssemblyTypeName: Skill, Assembly-CSharp
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 596402369}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8469,7 +8457,11 @@ MonoBehaviour:
   _agility: {fileID: 1036183361}
   _luck: {fileID: 1077729786}
   _endurance: {fileID: 1888423609}
+  _skillCountForLevel: 2
   SkillPointCountChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  SkillPointOver:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &972732175
@@ -9795,26 +9787,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1077729786}
-        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
-        m_MethodName: AddLevel
-        m_Mode: 3
+      - m_Target: {fileID: 972732174}
+        m_TargetAssemblyTypeName: Skills, Assembly-CSharp
+        m_MethodName: UpgradeSkill
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1077729786}
+          m_ObjectArgumentAssemblyTypeName: Skill, Assembly-CSharp
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 596402369}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9923,6 +9903,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1925739787}
+  - {fileID: 1136397968}
   - {fileID: 780487270}
   m_Father: {fileID: 596402370}
   m_RootOrder: 0
@@ -10045,6 +10026,141 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132930181}
+  m_CullTransparentMesh: 1
+--- !u!1 &1136397967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1136397968}
+  - component: {fileID: 1136397970}
+  - component: {fileID: 1136397969}
+  m_Layer: 5
+  m_Name: SkillPointCountText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1136397968
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136397967}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1131213645}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.3081986, y: 0.731}
+  m_AnchorMax: {x: 0.6956566, y: 0.8165618}
+  m_AnchoredPosition: {x: -4.899994, y: -394.04}
+  m_SizeDelta: {x: -9.799988, y: -4.300003}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1136397969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136397967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "\u041E\u0447\u043A\u043E\u0432: 5"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1136397970
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136397967}
   m_CullTransparentMesh: 1
 --- !u!1 &1152293339
 GameObject:
@@ -10265,6 +10381,7 @@ MonoBehaviour:
   _panel: {fileID: 596402369}
   _levelText: {fileID: 1925739788}
   _player: {fileID: 532910443}
+  _skillPointCount: {fileID: 1136397969}
 --- !u!1 &1154457003
 GameObject:
   m_ObjectHideFlags: 0
@@ -10425,26 +10542,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1036183361}
-        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
-        m_MethodName: AddLevel
-        m_Mode: 3
+      - m_Target: {fileID: 972732174}
+        m_TargetAssemblyTypeName: Skills, Assembly-CSharp
+        m_MethodName: UpgradeSkill
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1036183361}
+          m_ObjectArgumentAssemblyTypeName: Skill, Assembly-CSharp
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 596402369}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11499,7 +11604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32964fad62856c248b0f87f9aae213a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startLevel: 1
+  _startLevel: 9
   _maxLevel: 99
   _description: "\u0421\u0438\u043B\u0430. \u0412\u043B\u0438\u044F\u0435\u0442 \u043D\u0430
     \u0431\u0430\u0437\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u043D \u0438\u0433\u0440\u043E\u043A\u0430."
@@ -16233,26 +16338,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1888423609}
-        m_TargetAssemblyTypeName: Skill, Assembly-CSharp
-        m_MethodName: AddLevel
-        m_Mode: 3
+      - m_Target: {fileID: 972732174}
+        m_TargetAssemblyTypeName: Skills, Assembly-CSharp
+        m_MethodName: UpgradeSkill
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1888423609}
+          m_ObjectArgumentAssemblyTypeName: Skill, Assembly-CSharp
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 596402369}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17331,7 +17424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1046.1843, y: -124.826164}
+  m_AnchoredPosition: {x: 1046.1843, y: -124.82616}
   m_SizeDelta: {x: 200, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5218370751210810299
@@ -17523,7 +17616,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 796.1844, y: -124.826164}
+  m_AnchoredPosition: {x: 796.1843, y: -124.82616}
   m_SizeDelta: {x: 200, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5218370751276373216

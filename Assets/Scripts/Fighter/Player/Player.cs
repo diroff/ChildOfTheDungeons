@@ -95,7 +95,7 @@ public class Player : Fighter
         CalculateTotalDamage();
         HealthChanged(CurrentHealth, MaxHealth);
         FillHealth();
-        _skills.AddSkillPoint(1);
+        _skills.AddSkillPoint(_skills.SkillCountForLevel);
         ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
         LevelChanged?.Invoke(Level);
     }
