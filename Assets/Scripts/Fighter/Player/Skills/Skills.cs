@@ -42,8 +42,8 @@ public class Skills : MonoBehaviour
             return;
         }
 
-        _skillPointCount -= 1;
-        skill.AddLevel(1);
+        if(skill.AddLevel(1))
+            _skillPointCount -= 1;
         
         SkillPointCountChanged?.Invoke(_skillPointCount);
         

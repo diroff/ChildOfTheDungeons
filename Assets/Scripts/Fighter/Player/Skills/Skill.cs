@@ -25,14 +25,14 @@ public class Skill : MonoBehaviour
         ValueChanged?.Invoke(_currentLevel);
     }
 
-    public void AddLevel(int count)
+    public bool AddLevel(int count)
     {
+        if (_currentLevel >= _maxLevel)
+            return false;
+
         _currentLevel += count;
-
-        if (_currentLevel > _maxLevel)
-            _currentLevel = _maxLevel;
-
         ValueChanged?.Invoke(_currentLevel);
+        return true;
     }
 
     public void ChangeLevel(int value)

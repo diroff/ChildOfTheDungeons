@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class LevelUpPanel : MonoBehaviour
 {
+    [SerializeField] private Player _player;
     [SerializeField] private GameObject _panel;
     [SerializeField] private TextMeshProUGUI _levelText;
-    [SerializeField] private Player _player;
     [SerializeField] private TextMeshProUGUI _skillPointCount;
 
     private Skills _skills;
