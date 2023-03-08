@@ -64,8 +64,6 @@ public class Fight : Event
 
     public void PlayerStep()
     {
-        _enemyInfoPanel.SetActive(true);
-        _enemyInfoButton.SetActive(false);
         _attackPanel.SetActive(true);
         _healButton.SetButtonState();
         CalculateLeaveChance();
@@ -167,6 +165,8 @@ public class Fight : Event
         _attackPanel.SetActive(false);
         _coinImage.SetActive(false);
         _startPanel.SetActive(true);
+        _enemyInfoButton.SetActive(false);
+        _enemyInfoPanel.SetActive(true);
 
         CalculateLeaveChance();
         CalculateCoinWinChance();
@@ -201,9 +201,7 @@ public class Fight : Event
     private IEnumerator EnemyDeadCoroutine()
     {
         _player.AddExperience(_enemy.CalculateExperienceCost());
-        _enemyInfoButton.SetActive(false);
-        _enemyInfoPanel.SetActive(false);
-        _attackPanel.SetActive(false);
+        SetPanelState(false);
 
         yield return new WaitForSeconds(_timeFromDead);
 
@@ -225,8 +223,7 @@ public class Fight : Event
 
     private IEnumerator PlayerDeadCoroutine()
     {
-        _enemyInfoButton.SetActive(false);
-        _enemyInfoPanel.SetActive(false);
+        SetPanelState(false);
         yield return new WaitForSeconds(_timeFromDead);
         EndEvent();
     }
@@ -243,8 +240,6 @@ public class Fight : Event
     private IEnumerator PlayerLeavedCoroutine()
     {
         EventsController.SetContinue(true);
-        _enemyInfoButton.SetActive(false);
-        _enemyInfoPanel.SetActive(false);
         SetPanelState(false);
         yield return new WaitForSeconds(_timeBeforeLeave);
         Destroy(_enemy.gameObject);
@@ -253,10 +248,10 @@ public class Fight : Event
 
     private IEnumerator PlayerNotLeavedCoroutine()
     {
-        _enemyInfoButton.SetActive(false);
-        _enemyInfoPanel.SetActive(false);
         _attackPanel.SetActive(false);
+        SetPanelState(false);
         yield return new WaitForSeconds(_timeBeforeLeave);
+        SetPanelState(true);
         EnemyStep();
     }
 
