@@ -122,6 +122,16 @@ public class Player : Fighter
         FighterAnimator.SetTrigger("Run");
     }
 
+    public void TeleportToStartPosition()
+    {
+        FighterAnimator.SetTrigger("StartPosition");
+    }
+
+    public void StartMovement()
+    {
+        FighterAnimator.SetTrigger("StartMovement");
+    }
+
     public override void Dead()
     {
         base.Dead();
