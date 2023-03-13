@@ -97,6 +97,8 @@ public class Fight : Event
     {
         _enemy = enemy;
         _enemyAssigned = true;
+
+
     }
 
     private void SubscribeEvents() 
@@ -127,7 +129,10 @@ public class Fight : Event
     private void SpawnEnemy()
     {
         if (_enemyAssigned)
+        {
             Spawner.SpawnEnemy(_enemy);
+            EnemyTemplates.SetLastEnemy(_enemy);
+        }
         else
             Spawner.SpawnEnemy(EnemyTemplates.TakeEnemy());
     }

@@ -46,9 +46,14 @@ public class EnemyTemplates : MonoBehaviour
                 break;
             enemy = _availableEnemies[GetEnemyNumber()];
         }
-        
-        _lastEnemy = enemy;
+
+        SetLastEnemy(enemy);
         return enemy;
+    }
+
+    public void SetLastEnemy(Enemy enemy)
+    {
+        _lastEnemy = enemy;
     }
 
     private int GetEnemyNumber()
