@@ -4,6 +4,8 @@ using UnityEngine;
 public class FirstEvent : Event
 {
     [SerializeField] private EventsController _eventsController;
+    [SerializeField] private Fight _fightEvent;
+    [SerializeField] private Enemy _nextEnemy;
     [SerializeField] private Player _player;
     [SerializeField] private Animator _doorAnimator;
     [SerializeField] private Animator _playerAnimator;
@@ -27,6 +29,8 @@ public class FirstEvent : Event
         yield return new WaitForSeconds(_doorOpenTime);
         _player.StartMovement();
         yield return new WaitForSeconds(_playerMoveTime);
+        _eventsController.SetNextEvent(_fightEvent);
+        _fightEvent.SetEnemy(_nextEnemy);
         EndEvent();
     }
 }

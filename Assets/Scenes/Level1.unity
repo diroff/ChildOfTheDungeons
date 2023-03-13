@@ -13055,6 +13055,8 @@ MonoBehaviour:
   _minimalLevel: 1
   _panelEnableCouldown: 1
   _eventsController: {fileID: 1886117191}
+  _fightEvent: {fileID: 8148549922209866770}
+  _nextEnemy: {fileID: 1797388749512454538, guid: 985eddd043f639b4781f85d04016ea9d, type: 3}
   _player: {fileID: 532910443}
   _doorAnimator: {fileID: 146418855}
   _playerAnimator: {fileID: 532910447}

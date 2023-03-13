@@ -42,6 +42,7 @@ public class Fight : Event
     [SerializeField] private Animator _coinAnimator;
 
     private Enemy _enemy;
+    private bool _enemyAssigned;
     private int _leaveChance;
     private int _coinWinChance;
 
@@ -54,6 +55,7 @@ public class Fight : Event
 
     public override void EndEvent()
     {
+        _enemyAssigned = false;
         base.EndEvent();
         _enemyInfoButton.SetActive(false);
         _enemyInfoPanel.SetActive(false);
@@ -91,6 +93,12 @@ public class Fight : Event
         _player.TryToLeave(_leaveChance);
     }
 
+    public void SetEnemy(Enemy enemy)
+    {
+        _enemy = enemy;
+        _enemyAssigned = true;
+    }
+
     private void SubscribeEvents() 
     {
         _enemy.Died += EnemyDead;
@@ -107,21 +115,21 @@ public class Fight : Event
         _player.NotLeaved -= PlayerNotLeaved;
     }
 
-    protected void CreatingEnemy(Enemy enemy = null)
+    protected void CreatingEnemy()
     {
         if(Spawner.GetEnemy() == null)
-            SpawnEnemy(enemy);
+            SpawnEnemy();
 
         _enemy = Spawner.GetEnemy();
         SubscribeEvents();
     }
 
-    private void SpawnEnemy(Enemy enemy = null)
+    private void SpawnEnemy()
     {
-        if (enemy == null)
-            Spawner.SpawnEnemy(EnemyTemplates.TakeEnemy());
+        if (_enemyAssigned)
+            Spawner.SpawnEnemy(_enemy);
         else
-            Spawner.SpawnEnemy(enemy);
+            Spawner.SpawnEnemy(EnemyTemplates.TakeEnemy());
     }
 
     private void EnemyDead(bool isDie)
