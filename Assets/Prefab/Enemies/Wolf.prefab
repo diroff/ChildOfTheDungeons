@@ -108,10 +108,10 @@ MonoBehaviour:
   SpriteImage: {fileID: 21300000, guid: 3ca7089101755d54391d1589fc2ebff2, type: 3}
   FighterAnimator: {fileID: 1841012883214973249}
   _baseExperience: 1350
-  _lootList: {fileID: -1271010535415849906}
-  _additionalLootChange: 4
   _minimalLevel: 7
   _isBoss: 0
+  _hasLoot: 1
+  _lootList: {fileID: -1271010535415849906}
   HealthChanged:
     m_PersistentCalls:
       m_Calls: []

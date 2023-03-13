@@ -6,12 +6,13 @@ public class Enemy : Fighter
 {
     [Header("Additional parameters")]
     [SerializeField] private int _baseExperience;
-    [SerializeField] private ItemList _lootList;
-    [SerializeField] private int _additionalLootChange = 0;
     [SerializeField] private int _minimalLevel = 1;
     [SerializeField] private bool _isBoss = false;
 
-    private int lootChange;
+    [Header("Loot")]
+    [SerializeField] private bool _hasLoot = true;
+    [SerializeField] private ItemList _lootList;
+
     private Item _lootItem;
 
     public UnityEvent<float, float> HealthChanged;
@@ -26,7 +27,6 @@ public class Enemy : Fighter
     {
         base.Start();
         UpdateParameters();
-        SetLootChange();
 
         if (IsLoot() || _isBoss)
             SetLootItem();
@@ -83,11 +83,6 @@ public class Enemy : Fighter
 
     public bool IsLoot()
     {
-        return lootChange > 35;
-    }
-
-    private void SetLootChange()
-    {
-        lootChange = Random.Range(0, 100) + _additionalLootChange;
+        return _hasLoot;
     }
 }
