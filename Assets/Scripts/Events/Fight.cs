@@ -107,18 +107,21 @@ public class Fight : Event
         _player.NotLeaved -= PlayerNotLeaved;
     }
 
-    protected void CreatingEnemy()
+    protected void CreatingEnemy(Enemy enemy = null)
     {
         if(Spawner.GetEnemy() == null)
-            SpawnEnemy();
+            SpawnEnemy(enemy);
 
         _enemy = Spawner.GetEnemy();
         SubscribeEvents();
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(Enemy enemy = null)
     {
-        Spawner.SpawnEnemy(EnemyTemplates.TakeEnemy());
+        if (enemy == null)
+            Spawner.SpawnEnemy(EnemyTemplates.TakeEnemy());
+        else
+            Spawner.SpawnEnemy(enemy);
     }
 
     private void EnemyDead(bool isDie)
