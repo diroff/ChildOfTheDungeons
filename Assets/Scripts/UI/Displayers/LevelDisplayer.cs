@@ -24,6 +24,5 @@ public class LevelDisplayer : Displayer
     {
         _currentExperience.text = $"{currentExperience}/{needExperience}";
         _experienceSlider.value = (float)currentExperience / needExperience;
-        Debug.Log(_experienceSlider.value);
     }
 }
