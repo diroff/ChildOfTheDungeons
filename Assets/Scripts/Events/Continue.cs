@@ -22,7 +22,6 @@ public class Continue : Event
     private IEnumerator ContinueCoroutine()
     {
         PlayerRun();
-        RoomController.SpawnRoom(RoomController.DefaultRoom);
         EnableNewEvent();
         _player.Stop();
         RoomController.MoveBackground();
@@ -40,6 +39,7 @@ public class Continue : Event
     {
         _controller.CurrentEvent.EndEvent();
         _controller.SetEvent(0, true);
+        RoomController.SpawnRoom(_controller.CurrentEvent.Room);
         _controller.StartEvent();
     }
 
