@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public abstract class Event : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
     [SerializeField] private Sprite _eventIcon;
+    [SerializeField] protected Player Player;
     [SerializeField] protected RoomController RoomController;
     [SerializeField] protected Room EventRoom;
 
@@ -38,9 +40,13 @@ public abstract class Event : MonoBehaviour
 
     private IEnumerator EnableEvent()
     {
+        Debug.Log("Панелька выключилась");
         SetPanelState(false);
         yield return new WaitForSeconds(_panelEnableCouldown);
+        Debug.Log("Время прошло и панелька включилась");
         SetPanelState(true);
+        Debug.Log("Щас чел должен встать");
+        Player.Stop();
     }
 
     public virtual void StartEvent()

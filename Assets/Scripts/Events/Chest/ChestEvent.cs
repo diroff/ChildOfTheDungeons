@@ -7,7 +7,6 @@ public class ChestEvent : Event
     [SerializeField] private FreeItem _freeItemEvent;
     [SerializeField] private Button _openButton;
     [SerializeField] private SpriteRenderer _keySprite;
-    [SerializeField] private Player _player;
     [SerializeField] protected Chest SpecialChest;
     [SerializeField] protected EventsController EventsController;
 
@@ -44,14 +43,14 @@ public class ChestEvent : Event
     {
         if(_keyType == Key.KeyType.gold)
         {
-            if (_player.Inventory.GoldKeyCount > 0)
+            if (Player.Inventory.GoldKeyCount > 0)
                 _openButton.interactable = true;
             else
                 _openButton.interactable = false;
         }
         else if(_keyType == Key.KeyType.silver)
         {
-            if (_player.Inventory.SilverKeyCount > 0)
+            if (Player.Inventory.SilverKeyCount > 0)
                 _openButton.interactable = true;
             else
                 _openButton.interactable = false;
@@ -81,7 +80,7 @@ public class ChestEvent : Event
         SetPanelState(false);
         _chest.Animator.SetTrigger("Open");
         yield return new WaitForSeconds(_timeBeforeOpen);
-        _player.Inventory.UseKey(_keyType);
+        Player.Inventory.UseKey(_keyType);
         _item = PrepareItem();
         EventsController.SetContinue(false);
         EventsController.SetEvent(_freeItemEvent);
@@ -94,7 +93,7 @@ public class ChestEvent : Event
     private IEnumerator IgnoreChestCoroutine()
     {
         SetPanelState(false);
-        _player.Leave();
+        Player.Leave();
         yield return new WaitForSeconds(_timeBeforeLeave);
         Destroy(_chest.gameObject);
         EventsController.SetContinue(true);

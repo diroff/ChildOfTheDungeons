@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class FreeItem : Event
 {
-    [SerializeField] private Player _player;
     [SerializeField] private ProgressionController _progression;
     [SerializeField] private float _takeCouldown = 1.0f;
 
@@ -51,7 +50,7 @@ public class FreeItem : Event
     {
         SetPanelState(false);
         SetInfoPanelState(false);
-        _player.Leave();
+        Player.Leave();
         yield return new WaitForSeconds(_takeCouldown);
 
         DestroySpawnerObjects();
@@ -63,13 +62,13 @@ public class FreeItem : Event
         switch (_item.GetItemType())
         {
             case Item.TypeOfItems.weapon:
-                _player.UseWeapon(_item.GetComponent<Weapon>());
+                Player.UseWeapon(_item.GetComponent<Weapon>());
                 break;
             case Item.TypeOfItems.armor:
-                _player.AddArmor(_item.GetComponent<Armor>());
+                Player.AddArmor(_item.GetComponent<Armor>());
                 break;
             case Item.TypeOfItems.key:
-                _player.Inventory.AddKey(_item.GetComponent<Key>().TypeOfKey);
+                Player.Inventory.AddKey(_item.GetComponent<Key>().TypeOfKey);
                 break;
         }
     }
@@ -79,7 +78,7 @@ public class FreeItem : Event
         _item.TakeItem();
 
         if (_item.GetItemType() == Item.TypeOfItems.heal)
-            _player.AddHeal();
+            Player.AddHeal();
         else
             UseItem();
 

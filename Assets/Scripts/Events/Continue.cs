@@ -4,7 +4,6 @@ using UnityEngine;
 public class Continue : Event
 {
     [SerializeField] private EventsController _controller;
-    [SerializeField] private Player _player;
 
     [SerializeField] private float _runCouldown = 1.5f;
     [SerializeField] private float _destroyCouldown = 0.5f;
@@ -23,7 +22,6 @@ public class Continue : Event
     {
         PlayerRun();
         EnableNewEvent();
-        _player.Stop();
         RoomController.MoveBackground();
         yield return new WaitForSeconds(_runCouldown);
     }
@@ -46,6 +44,6 @@ public class Continue : Event
     private void PlayerRun()
     {
         SetPanelState(false);
-        _player.Run();
+        Player.Run();
     }
 }

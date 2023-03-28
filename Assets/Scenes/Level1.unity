@@ -1267,6 +1267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1636331849}
   _eventIcon: {fileID: 21300000, guid: cee567246a03d9f40b8fa9cdfdf49d43, type: 3}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 1
@@ -1274,7 +1275,6 @@ MonoBehaviour:
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
   _keySprite: {fileID: 595248921}
-  _player: {fileID: 532910443}
   SpecialChest: {fileID: 0}
   EventsController: {fileID: 1886117191}
   _timeBeforeLeave: 1.5
@@ -1547,11 +1547,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1410077755}
   _eventIcon: {fileID: 21300000, guid: d79ee9cb1236ab3459427296727c99fd, type: 3}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 2
   _panelEnableCouldown: 1
-  _player: {fileID: 532910443}
   _freeItemEvent: {fileID: 1622029519}
   EventsController: {fileID: 1886117191}
   EnemyTemplates: {fileID: 152349599}
@@ -1698,6 +1698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1403963333}
   _eventIcon: {fileID: 0}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 0}
   _minimalLevel: 1
@@ -4081,8 +4082,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1adbfe0382194004f8e58daca1152588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawner: {fileID: 0}
   _player: {fileID: 532910443}
+  _roomController: {fileID: 1121508622}
   _description: {fileID: 4488961}
   _value: {fileID: 859545259}
   _valueSprite: {fileID: 1406478242}
@@ -9196,6 +9197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 231167814}
   _eventIcon: {fileID: 0}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: -5419117064279521559, guid: e614c016c2c2e544f807b3d82faf9a92, type: 3}
   _minimalLevel: 1
@@ -11503,6 +11505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1636331849}
   _eventIcon: {fileID: 21300000, guid: 4bd9ee77b6ebcaf4b8749c6dd2ef6aca, type: 3}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 1
@@ -11510,7 +11513,6 @@ MonoBehaviour:
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
   _keySprite: {fileID: 595248921}
-  _player: {fileID: 532910443}
   SpecialChest: {fileID: 5169373742871476358, guid: e5aa0d8688711904f947a4b981a13db7, type: 3}
   EventsController: {fileID: 1886117191}
   _timeBeforeLeave: 1.5
@@ -12159,6 +12161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1572662610}
   _eventIcon: {fileID: 0}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 7015268086709840673, guid: 3bc0458791dcef846bc8de3da6a3818c, type: 3}
   _minimalLevel: 1
@@ -12166,7 +12169,6 @@ MonoBehaviour:
   _eventsController: {fileID: 1886117191}
   _fightEvent: {fileID: 8148549922209866770}
   _nextEnemy: {fileID: 1797388749512454538, guid: 985eddd043f639b4781f85d04016ea9d, type: 3}
-  _player: {fileID: 532910443}
   _playerAnimator: {fileID: 532910447}
   _playerMoveTime: 2
 --- !u!4 &1413622295
@@ -13735,11 +13737,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1410077755}
   _eventIcon: {fileID: 21300000, guid: 607151961432cdd4aa40cb12fc053646, type: 3}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 1
   _panelEnableCouldown: 1
-  _player: {fileID: 532910443}
   _freeItemEvent: {fileID: 1622029519}
   EventsController: {fileID: 1886117191}
   EnemyTemplates: {fileID: 1609142891}
@@ -13810,11 +13812,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1480688078}
   _eventIcon: {fileID: 21300000, guid: 03086eea522dee341888295c0153b149, type: 3}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 1
   _panelEnableCouldown: 1
-  _player: {fileID: 532910443}
   _progression: {fileID: 1104878590}
   _takeCouldown: 1
   _infoPanel: {fileID: 448577152}
@@ -16535,7 +16537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09128959, y: 0.248368}
   m_AnchorMax: {x: 0.44745967, y: 0.62933475}
-  m_AnchoredPosition: {x: 875.43005, y: -248.03}
+  m_AnchoredPosition: {x: 875.43005, y: -248.03004}
   m_SizeDelta: {x: -14.799988, y: -11.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937293545
@@ -16992,11 +16994,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1410077755}
   _eventIcon: {fileID: 21300000, guid: 96ebd6061b985334bb9d63a32282d840, type: 3}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 2
   _panelEnableCouldown: 1
-  _player: {fileID: 532910443}
   _freeItemEvent: {fileID: 1622029519}
   EventsController: {fileID: 1886117191}
   EnemyTemplates: {fileID: 1963198902}
@@ -18096,6 +18098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1636331849}
   _eventIcon: {fileID: 21300000, guid: c1d559b30406d364cae6447e0282f66c, type: 3}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 1
@@ -18103,7 +18106,6 @@ MonoBehaviour:
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
   _keySprite: {fileID: 595248921}
-  _player: {fileID: 532910443}
   SpecialChest: {fileID: 5169373742871476358, guid: 81f00b7abe72d954393266fb35233993, type: 3}
   EventsController: {fileID: 1886117191}
   _timeBeforeLeave: 1.5
@@ -19104,11 +19106,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1410077755}
   _eventIcon: {fileID: 21300000, guid: 8197f26677d7cab4283a303881df0759, type: 3}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 1
-  _panelEnableCouldown: 1
-  _player: {fileID: 532910443}
+  _panelEnableCouldown: 2
   _freeItemEvent: {fileID: 1622029519}
   EventsController: {fileID: 1886117191}
   EnemyTemplates: {fileID: 8148549922209866772}
@@ -19199,13 +19201,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 775393113034063495}
   _eventIcon: {fileID: 0}
+  Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 0}
   _minimalLevel: 1
   _panelEnableCouldown: 0
   _controller: {fileID: 1886117191}
-  _player: {fileID: 532910443}
-  _runCouldown: 1.5
+  _runCouldown: 1
   _destroyCouldown: 0.5
 --- !u!1001 &9052869410368262495
 PrefabInstance:

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Fight : Event
 {
-    [SerializeField] private Player _player;
     [SerializeField] private FreeItem _freeItemEvent;
     
     [SerializeField] protected EventsController EventsController;
@@ -74,7 +73,7 @@ public class Fight : Event
         _healButton.SetButtonState();
         CalculateLeaveChance();
         _leaveChangeText.text = _leaveChance + "%";
-        _damageText.text = "x" + _player.CalculateTotalDamage();
+        _damageText.text = "x" + Player.CalculateTotalDamage();
     }
 
     public void EnemyStep()
@@ -94,7 +93,7 @@ public class Fight : Event
 
     public void Leave()
     {
-        _player.TryToLeave(_leaveChance);
+        Player.TryToLeave(_leaveChance);
     }
 
     public void SetEnemy(Enemy enemy)
@@ -106,17 +105,17 @@ public class Fight : Event
     private void SubscribeEvents() 
     {
         _enemy.Died += EnemyDead;
-        _player.Died += PlayerDead;
-        _player.Leaved += PlayerLeaved;
-        _player.NotLeaved += PlayerNotLeaved;
+        Player.Died += PlayerDead;
+        Player.Leaved += PlayerLeaved;
+        Player.NotLeaved += PlayerNotLeaved;
     }
 
     private void UnsubscribeEvents()
     {
         _enemy.Died -= EnemyDead;
-        _player.Died -= PlayerDead;
-        _player.Leaved -= PlayerLeaved;
-        _player.NotLeaved -= PlayerNotLeaved;
+        Player.Died -= PlayerDead;
+        Player.Leaved -= PlayerLeaved;
+        Player.NotLeaved -= PlayerNotLeaved;
     }
 
     protected void CreatingEnemy()
@@ -153,9 +152,9 @@ public class Fight : Event
 
     private void CalculateLeaveChance()
     {
-        _leaveChance = _player.Skills.Agility.CurrentLevel * 10;
+        _leaveChance = Player.Skills.Agility.CurrentLevel * 10;
 
-        if (_player.CurrentFighterHealth <= _player.MaxFighterHealth / 4)
+        if (Player.CurrentFighterHealth <= Player.MaxFighterHealth / 4)
             _leaveChance += 30;
 
         if (_leaveChance > 100)
@@ -164,9 +163,9 @@ public class Fight : Event
 
     private void CalculateCoinWinChance()
     {
-        _coinWinChance = _player.Skills.Luck.CurrentLevel * 10;
+        _coinWinChance = Player.Skills.Luck.CurrentLevel * 10;
 
-        if (_player.CurrentFighterHealth <= _player.MaxFighterHealth / 4)
+        if (Player.CurrentFighterHealth <= Player.MaxFighterHealth / 4)
             _coinWinChance += 30;
 
         if (_coinWinChance > 100)
@@ -196,9 +195,9 @@ public class Fight : Event
     private IEnumerator AttackEnemyCoroutine()
     {
         _attackPanel.SetActive(false);
-        _player.Attack();
+        Player.Attack();
         yield return new WaitForSeconds(_timeBeforeAttack);
-        _enemy.TakeDamage(_player.CalculateTotalDamage());
+        _enemy.TakeDamage(Player.CalculateTotalDamage());
         yield return new WaitForSeconds(_timeAfterAttack);
 
         if(!_enemy.Die())
@@ -209,16 +208,16 @@ public class Fight : Event
     {
         _attackPanel.SetActive(false);
         yield return new WaitForSeconds(_timeBeforeAttack);
-        _enemy.TryAttack(_player);
+        _enemy.TryAttack(Player);
         yield return new WaitForSeconds(_timeAfterAttack);
 
-        if(!_player.Die())
+        if(!Player.Die())
             PlayerStep();
     }
 
     private IEnumerator EnemyDeadCoroutine()
     {
-        _player.AddExperience(_enemy.CalculateExperienceCost());
+        Player.AddExperience(_enemy.CalculateExperienceCost());
         SetPanelState(false);
 
         yield return new WaitForSeconds(_timeFromDead);
@@ -249,7 +248,7 @@ public class Fight : Event
     private IEnumerator HealCoroutine()
     {
         _attackPanel.SetActive(false);
-        _player.Heal();
+        Player.Heal();
         yield return new WaitForSeconds(_healingTime);
         _healButton.SetButtonState();
         EnemyStep();
@@ -278,7 +277,7 @@ public class Fight : Event
         _startPanel.SetActive(false);
         _coinImage.SetActive(true);
 
-        bool isWin = _player.HasAdditionalChance(_coinWinChance);
+        bool isWin = Player.HasAdditionalChance(_coinWinChance);
 
         if (isWin)
             _coinAnimator.SetTrigger("Win");
