@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class ItemDescriptionPanel : MonoBehaviour
 {
-    [SerializeField] private Spawner _spawner;
     [SerializeField] private Player _player;
+    [SerializeField] private RoomController _roomController;
 
     [Header("Text Fields")]
     [SerializeField] private TextMeshProUGUI _description;
@@ -20,9 +20,11 @@ public class ItemDescriptionPanel : MonoBehaviour
     [SerializeField] private GameObject _valueObject;
 
     private Item _item;
+    private Spawner _spawner;
 
     private void OnEnable()
     {
+        _spawner = _roomController.GetRoomSpawner();
         _item = _spawner.GetItem();
         _description.text = _item.ItemDescription;
 
