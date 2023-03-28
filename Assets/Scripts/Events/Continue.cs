@@ -21,7 +21,6 @@ public class Continue : Event
 
     private IEnumerator ContinueCoroutine()
     {
-        //ReplaceSpawnerObjects();
         PlayerRun();
         RoomController.SpawnRoom(RoomController.DefaultRoom);
         EnableNewEvent();
@@ -48,17 +47,5 @@ public class Continue : Event
     {
         SetPanelState(false);
         _player.Run();
-    }
-
-    private void ReplaceSpawnerObjects()
-    {
-        if (Spawner.GetEnemy() != null)
-            Spawner.GetEnemy().gameObject.transform.parent = RoomController.GetCurrentRoom().transform;
-
-        if (Spawner.GetSign() != null)
-            Spawner.GetSign().gameObject.transform.parent = RoomController.GetCurrentRoom().transform;
-
-        if (Spawner.GetChest() != null)
-            Spawner.GetChest().gameObject.transform.parent = RoomController.GetCurrentRoom().transform;
     }
 }
