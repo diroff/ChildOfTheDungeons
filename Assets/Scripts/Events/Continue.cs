@@ -21,12 +21,13 @@ public class Continue : Event
 
     private IEnumerator ContinueCoroutine()
     {
+        //ReplaceSpawnerObjects();
         PlayerRun();
-        yield return new WaitForSeconds(_runCouldown);
-
-        DestroySpawnerObjects();
-        yield return new WaitForSeconds(_destroyCouldown);
+        RoomController.SpawnRoom(RoomController.DefaultRoom);
         EnableNewEvent();
+        _player.Stop();
+        RoomController.MoveBackground();
+        yield return new WaitForSeconds(_runCouldown);
     }
 
     public override void EndEvent()
@@ -49,15 +50,15 @@ public class Continue : Event
         _player.Run();
     }
 
-    private void DestroySpawnerObjects()
+    private void ReplaceSpawnerObjects()
     {
         if (Spawner.GetEnemy() != null)
-            Destroy(Spawner.GetEnemy().gameObject);
+            Spawner.GetEnemy().gameObject.transform.parent = RoomController.GetCurrentRoom().transform;
 
         if (Spawner.GetSign() != null)
-            Destroy(Spawner.GetSign().gameObject);
+            Spawner.GetSign().gameObject.transform.parent = RoomController.GetCurrentRoom().transform;
 
         if (Spawner.GetChest() != null)
-            Destroy(Spawner.GetChest().gameObject);
+            Spawner.GetChest().gameObject.transform.parent = RoomController.GetCurrentRoom().transform;
     }
 }

@@ -122,14 +122,9 @@ public class Player : Fighter
         FighterAnimator.SetTrigger("Run");
     }
 
-    public void TeleportToStartPosition()
+    public void Stop()
     {
-        FighterAnimator.SetTrigger("StartPosition");
-    }
-
-    public void StartMovement()
-    {
-        FighterAnimator.SetTrigger("StartMovement");
+        FighterAnimator.SetTrigger("Stop");
     }
 
     public override void Dead()

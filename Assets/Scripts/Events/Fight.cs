@@ -49,6 +49,10 @@ public class Fight : Event
     public override void StartEvent()
     {
         base.StartEvent();
+
+        if (Spawner.gameObject == null)
+            Spawner = RoomController.GetRoomSpawner();
+
         CreatingEnemy();
         StartCoinFlip();
     }
@@ -97,8 +101,6 @@ public class Fight : Event
     {
         _enemy = enemy;
         _enemyAssigned = true;
-
-
     }
 
     private void SubscribeEvents() 

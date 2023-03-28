@@ -3,6 +3,7 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     [SerializeField] private GameObject _door;
+    [SerializeField] private Spawner _spawner;
 
     private Animator _doorAnimator;
 
@@ -21,5 +22,10 @@ public class Room : MonoBehaviour
             _doorAnimator.SetTrigger("Open");
         else
             _doorAnimator.SetTrigger("Close");
+    }
+
+    public Spawner GetRoomSpawner()
+    {
+        return _spawner;
     }
 }

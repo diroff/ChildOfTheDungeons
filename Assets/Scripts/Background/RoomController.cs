@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomContoller : MonoBehaviour
+public class RoomController : MonoBehaviour
 {
     [SerializeField] private GameObject _backgroundObject;
     [Header("Room templates")]
@@ -12,12 +12,15 @@ public class RoomContoller : MonoBehaviour
     [SerializeField] private Transform _startSpawnPoint;
     [SerializeField] private float _zSpacing;
     [SerializeField] private int _maxRoomsCount = 3;
+    [SerializeField] private float _speed = 4f;
+
+    public Room DefaultRoom => _defaultRoom;
+    public Room ForkRoom => _forkRoom;
 
     private List<Room> _currentRooms = new List<Room>();
 
     private float _lastZPoint;
-    private float targetPosition;
-    private float speed = 0.1f;
+    private float _targetPosition;
 
     private void Awake()
     {
@@ -31,14 +34,8 @@ public class RoomContoller : MonoBehaviour
 
     private void Start()
     {
-        _lastZPoint = _startSpawnPoint.position.z + _zSpacing;
-        SpawnStartRooms();
-    }
-
-    private void SpawnStartRooms()
-    {
         _lastZPoint = _zSpacing / 2;
-        targetPosition = transform.position.z;
+        _targetPosition = transform.position.z;
     }
 
     public void SpawnRoom(Room roomTemplate)
@@ -49,7 +46,7 @@ public class RoomContoller : MonoBehaviour
         room.transform.parent = _backgroundObject.transform;
         _currentRooms.Add(room);
 
-        targetPosition = transform.position.z - 10;
+        _targetPosition = transform.position.z - 10;
         RemoveRoom();
     }
 
@@ -64,27 +61,29 @@ public class RoomContoller : MonoBehaviour
     [ContextMenu("Move Background")]
     public void MoveBackground()
     {
-        if (_backgroundObject.transform.position.z > targetPosition)
-            _backgroundObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1 * speed);
+        StartCoroutine(MoveBackgroundCoroutine());
+    }
+
+    public Room GetCurrentRoom()
+    {
+        return _currentRooms[_currentRooms.Count - 1];
+    }
+
+    public Spawner GetRoomSpawner()
+    {
+        return GetCurrentRoom().GetRoomSpawner();
+    }
+
+    private IEnumerator MoveBackgroundCoroutine()
+    {
+        while (_backgroundObject.transform.position.z > _targetPosition)
+        {
+            _backgroundObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1 * _speed * Time.deltaTime);
+            yield return null;
+        }
 
         _lastZPoint = _zSpacing / 2;
-    }
-
-    private void FixedUpdate()
-    {
-        MoveBackground();
-    }
-
-    [ContextMenu("Spawn default room")]
-    private void TestSpawning()
-    {
-        SpawnRoom(_defaultRoom);
-    }
-
-    [ContextMenu("Spawn fork room")]
-    private void SpawnForkRoom()
-    {
-        SpawnRoom(_forkRoom);
+        _targetPosition = transform.position.z - 10;
     }
 
     [ContextMenu("Destroy Room")]

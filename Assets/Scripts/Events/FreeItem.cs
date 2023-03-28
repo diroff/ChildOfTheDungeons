@@ -16,7 +16,11 @@ public class FreeItem : Event
     public override void StartEvent()
     {
         base.StartEvent();
-        if(_item == null)
+
+        if (Spawner.gameObject == null)
+            Spawner = RoomController.GetRoomSpawner();
+
+        if (_item == null)
             SpawnItem();
 
         _infoButton.SetActive(true);
@@ -97,6 +101,7 @@ public class FreeItem : Event
 
     public void SpawnItem(Item item = null)
     {
+        Spawner = RoomController.GetRoomSpawner();
         Spawner.SpawnItem(item);
         _item = Spawner.GetItem();
         _item.Taked.AddListener(IsTaked);
