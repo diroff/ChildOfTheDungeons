@@ -9,6 +9,7 @@ public class ChestEvent : Event
     [SerializeField] private SpriteRenderer _keySprite;
     [SerializeField] protected Chest SpecialChest;
     [SerializeField] protected EventsController EventsController;
+    [SerializeField] protected Continue Continue;
 
     [SerializeField] private float _timeBeforeLeave;
     [SerializeField] private float _timeBeforeOpen;
@@ -66,7 +67,12 @@ public class ChestEvent : Event
 
     public void IgnoreChest()
     {
-        StartCoroutine(IgnoreChestCoroutine());
+        SetPanelState(false);
+        EventsController.SetContinue(true);
+        Player.Leave();
+        EndEvent();
+        Destroy(_chest);
+        Continue.ContinueWay();
     }
 
     public Item PrepareItem()
@@ -88,16 +94,6 @@ public class ChestEvent : Event
 
         EndEvent();
         EventsController.StartEvent();
-    }
-
-    private IEnumerator IgnoreChestCoroutine()
-    {
-        SetPanelState(false);
-        Player.Leave();
-        yield return new WaitForSeconds(_timeBeforeLeave);
-        Destroy(_chest.gameObject);
-        EventsController.SetContinue(true);
-        EndEvent();
     }
 
     public override void EndEvent()

@@ -1277,6 +1277,7 @@ MonoBehaviour:
   _keySprite: {fileID: 595248921}
   SpecialChest: {fileID: 0}
   EventsController: {fileID: 1886117191}
+  Continue: {fileID: 8320838582458532849}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
 --- !u!1 &68695155
@@ -11516,6 +11517,7 @@ MonoBehaviour:
   _keySprite: {fileID: 595248921}
   SpecialChest: {fileID: 5169373742871476358, guid: e5aa0d8688711904f947a4b981a13db7, type: 3}
   EventsController: {fileID: 1886117191}
+  Continue: {fileID: 8320838582458532849}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
   ChestEvent: {fileID: 65925127}
@@ -16541,7 +16543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09128959, y: 0.248368}
   m_AnchorMax: {x: 0.44745967, y: 0.62933475}
-  m_AnchoredPosition: {x: 875.43005, y: -248.03006}
+  m_AnchoredPosition: {x: 875.43005, y: -248.03004}
   m_SizeDelta: {x: -14.799988, y: -11.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937293545
@@ -18113,6 +18115,7 @@ MonoBehaviour:
   _keySprite: {fileID: 595248921}
   SpecialChest: {fileID: 5169373742871476358, guid: 81f00b7abe72d954393266fb35233993, type: 3}
   EventsController: {fileID: 1886117191}
+  Continue: {fileID: 8320838582458532849}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
   ChestEvent: {fileID: 65925127}
