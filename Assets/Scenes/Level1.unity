@@ -1553,6 +1553,7 @@ MonoBehaviour:
   _minimalLevel: 2
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
+  _continue: {fileID: 0}
   EventsController: {fileID: 1886117191}
   EnemyTemplates: {fileID: 152349599}
   _timeBeforeAttack: 0
@@ -10047,7 +10048,7 @@ MonoBehaviour:
   _startSpawnPoint: {fileID: 1121508621}
   _zSpacing: 10
   _maxRoomsCount: 3
-  _speed: 5
+  _speed: 8
 --- !u!1 &1131213644
 GameObject:
   m_ObjectHideFlags: 0
@@ -13743,12 +13744,13 @@ MonoBehaviour:
   _minimalLevel: 1
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
+  _continue: {fileID: 8320838582458532849}
   EventsController: {fileID: 1886117191}
   EnemyTemplates: {fileID: 1609142891}
   _timeBeforeAttack: 0
   _timeAfterAttack: 0.5
   _timeFromDead: 1.5
-  _timeBeforeLeave: 1.5
+  _timeBeforeLeave: 2
   _healingTime: 2
   _coinFlipTime: 3
   _attackButton: {fileID: 599531201}
@@ -16537,7 +16539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09128959, y: 0.248368}
   m_AnchorMax: {x: 0.44745967, y: 0.62933475}
-  m_AnchoredPosition: {x: 875.43005, y: -248.03006}
+  m_AnchoredPosition: {x: 875.43005, y: -248.03004}
   m_SizeDelta: {x: -14.799988, y: -11.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937293545
@@ -17000,12 +17002,13 @@ MonoBehaviour:
   _minimalLevel: 2
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
+  _continue: {fileID: 8320838582458532849}
   EventsController: {fileID: 1886117191}
   EnemyTemplates: {fileID: 1963198902}
   _timeBeforeAttack: 0
   _timeAfterAttack: 0.5
   _timeFromDead: 1.5
-  _timeBeforeLeave: 1.5
+  _timeBeforeLeave: 2
   _healingTime: 2
   _coinFlipTime: 3
   _attackButton: {fileID: 599531201}
@@ -19112,12 +19115,13 @@ MonoBehaviour:
   _minimalLevel: 1
   _panelEnableCouldown: 2
   _freeItemEvent: {fileID: 1622029519}
+  _continue: {fileID: 8320838582458532849}
   EventsController: {fileID: 1886117191}
   EnemyTemplates: {fileID: 8148549922209866772}
   _timeBeforeAttack: 0
   _timeAfterAttack: 0.5
   _timeFromDead: 1.5
-  _timeBeforeLeave: 1.5
+  _timeBeforeLeave: 2
   _healingTime: 2
   _coinFlipTime: 3
   _attackButton: {fileID: 599531201}

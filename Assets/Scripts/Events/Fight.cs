@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Fight : Event
 {
     [SerializeField] private FreeItem _freeItemEvent;
-    
+    [SerializeField] private Continue _continue;
+
     [SerializeField] protected EventsController EventsController;
     [SerializeField] protected EnemyTemplates EnemyTemplates;
 
@@ -258,9 +259,9 @@ public class Fight : Event
     {
         EventsController.SetContinue(true);
         SetPanelState(false);
-        yield return new WaitForSeconds(_timeBeforeLeave);
-        Destroy(_enemy.gameObject);
+        yield return null ;
         EndEvent();
+        _continue.ContinueWay();
     }
 
     private IEnumerator PlayerNotLeavedCoroutine()
