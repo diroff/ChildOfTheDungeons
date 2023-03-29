@@ -79,6 +79,7 @@ public class FreeItem : Event
         EndEvent();
         Destroy(_item);
         _continue.ContinueWay();
+        Player.PlayLeaveAnimation();
 
         _item.TakeItem();
     }

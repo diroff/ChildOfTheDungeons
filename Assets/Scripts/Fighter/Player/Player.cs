@@ -142,6 +142,11 @@ public class Player : Fighter
         NotLeaved?.Invoke();
     }
 
+    public void PlayLeaveAnimation()
+    {
+        FighterAnimator.SetTrigger("Leave");
+    }
+
     public float CalculateTotalDamage()
     {
         if (_weaponSlot.IsSomeWeapon())
