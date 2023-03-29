@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class FreeItem : Event
 {
+    [SerializeField] private EventsController _eventController;
     [SerializeField] private ProgressionController _progression;
+    [SerializeField] private Continue _continue;
+
     [SerializeField] private float _takeCouldown = 1.0f;
 
     [Header("Info Panels")]
@@ -30,11 +33,6 @@ public class FreeItem : Event
         StartCoroutine(AddItemCoroutine());
     }
 
-    public void LeaveItem()
-    {
-        StartCoroutine(LeaveItemCoroutine());
-    }
-
     private IEnumerator AddItemCoroutine()
     {
         SetPanelState(false);
@@ -44,17 +42,6 @@ public class FreeItem : Event
         yield return new WaitForSeconds(_takeCouldown);
         
         TakeItem();
-    }
-
-    private IEnumerator LeaveItemCoroutine()
-    {
-        SetPanelState(false);
-        SetInfoPanelState(false);
-        Player.Leave();
-        yield return new WaitForSeconds(_takeCouldown);
-
-        DestroySpawnerObjects();
-        NotTakeItem();
     }
 
     private void UseItem()
@@ -85,11 +72,15 @@ public class FreeItem : Event
         Destroy(_item.gameObject);
     }
 
-    private void NotTakeItem()
+    public void LeaveItem()
     {
-        _item.TakeItem();
+        _eventController.SetContinue(true);
+        SetPanelState(false);
+        EndEvent();
+        Destroy(_item);
+        _continue.ContinueWay();
 
-        Destroy(_item.gameObject);
+        _item.TakeItem();
     }
 
     private void IsTaked(bool isTaked)
@@ -106,18 +97,16 @@ public class FreeItem : Event
         _item.Taked.AddListener(IsTaked);
     }
 
-    private void DestroySpawnerObjects()
-    {
-        if (Spawner.GetEnemy() != null)
-            Destroy(Spawner.GetEnemy().gameObject);
-
-        if (Spawner.GetChest() != null)
-            Destroy(Spawner.GetChest().gameObject);
-    }
-
     private void SetInfoPanelState(bool isEnable)
     {
         _infoPanel.SetActive(isEnable);
         _infoButton.SetActive(isEnable);
+    }
+
+    public override void EndEvent()
+    {
+        _infoButton.SetActive(false);
+        _infoPanel.SetActive(false);
+        base.EndEvent();
     }
 }

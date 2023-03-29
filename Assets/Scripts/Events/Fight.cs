@@ -255,15 +255,6 @@ public class Fight : Event
         EnemyStep();
     }
 
-    private IEnumerator PlayerLeavedCoroutine()
-    {
-        EventsController.SetContinue(true);
-        SetPanelState(false);
-        yield return null ;
-        EndEvent();
-        _continue.ContinueWay();
-    }
-
     private IEnumerator PlayerNotLeavedCoroutine()
     {
         _attackPanel.SetActive(false);
@@ -297,7 +288,10 @@ public class Fight : Event
 
     private void PlayerLeaved()
     {
-        StartCoroutine(PlayerLeavedCoroutine());
+        EventsController.SetContinue(true);
+        SetPanelState(false);
+        EndEvent();
+        _continue.ContinueWay();
     }
 
     private void PlayerNotLeaved()
