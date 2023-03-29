@@ -18,8 +18,10 @@ public class EventsController : MonoBehaviour
 
     private bool _nextEventSetted = false;
     private bool _needContinue = true;
+    private bool _isDirection = false; 
 
     public Event CurrentEvent => _currentEvent;
+    public bool IsDirection => _isDirection;
 
     private void Start()
     {
@@ -95,5 +97,10 @@ public class EventsController : MonoBehaviour
             _needContinue = true;
             StartEvent();
         }  
+    }
+
+    public void SetDirection(bool isDirection)
+    {
+        _isDirection = isDirection;
     }
 }

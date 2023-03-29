@@ -80,4 +80,18 @@ public class DirectionEvent : Event
             _sign.Directions[i].SetOutlineState(false);
         }
     }
+
+    public void DisableDirectionInteraction()
+    {
+        for (int i = 0; i < _sign.Directions.Count; i++)
+        {
+            _sign.Directions[i].DisableDirection();
+        }
+    }
+
+    public override void EndEvent()
+    {
+        _eventController.SetDirection(true);
+        base.EndEvent();
+    }
 }

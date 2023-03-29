@@ -19207,6 +19207,7 @@ MonoBehaviour:
   _minimalLevel: 1
   _panelEnableCouldown: 0
   _controller: {fileID: 1886117191}
+  _directionEvent: {fileID: 1035679086}
   _runCouldown: 1
 --- !u!1001 &9052869410368262495
 PrefabInstance:

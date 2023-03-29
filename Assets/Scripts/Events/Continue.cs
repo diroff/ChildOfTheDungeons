@@ -4,6 +4,7 @@ using UnityEngine;
 public class Continue : Event
 {
     [SerializeField] private EventsController _controller;
+    [SerializeField] private DirectionEvent _directionEvent;
 
     [SerializeField] private float _runCouldown = 1.5f;
 
@@ -21,6 +22,11 @@ public class Continue : Event
     private IEnumerator ContinueCoroutine()
     {
         SetPanelState(false);
+
+        if (_controller.IsDirection)
+            _directionEvent.DisableDirectionInteraction();
+
+        _controller.SetDirection(false);
         EnableNewEvent();
         RoomController.MoveBackground();
         yield return new WaitForSeconds(_runCouldown);
