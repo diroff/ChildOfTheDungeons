@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public abstract class Event : MonoBehaviour
 {
@@ -40,13 +39,9 @@ public abstract class Event : MonoBehaviour
 
     private IEnumerator EnableEvent()
     {
-        Debug.Log("Панелька выключилась");
         SetPanelState(false);
         yield return new WaitForSeconds(_panelEnableCouldown);
-        Debug.Log("Время прошло и панелька включилась");
         SetPanelState(true);
-        Debug.Log("Щас чел должен встать");
-        Player.Stop();
     }
 
     public virtual void StartEvent()

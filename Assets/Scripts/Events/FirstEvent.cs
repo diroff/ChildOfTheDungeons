@@ -17,12 +17,21 @@ public class FirstEvent : Event
     private IEnumerator OpenDoor()
     {
         SetPanelState(false);
-        RoomController.SpawnRoom(RoomController.DefaultRoom);
-        Player.Run();
-        RoomController.MoveBackground();
+        SpawnRoom();
         yield return new WaitForSeconds(_playerMoveTime);
+        EndEvent();
+    }
+
+    private void SpawnRoom()
+    {
+        RoomController.SpawnRoom(RoomController.DefaultRoom);
+        RoomController.MoveBackground();
+    }
+
+    public override void EndEvent()
+    {
         _eventsController.SetNextEvent(_fightEvent);
         _fightEvent.SetEnemy(_nextEnemy);
-        EndEvent();
+        base.EndEvent();
     }
 }

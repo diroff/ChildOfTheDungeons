@@ -117,16 +117,6 @@ public class Player : Fighter
         _weaponSlot.AddItem(weapon);
     }
 
-    public void Run()
-    {
-        FighterAnimator.SetTrigger("Run");
-    }
-
-    public void Stop()
-    {
-        FighterAnimator.SetTrigger("Stop");
-    }
-
     public override void Dead()
     {
         base.Dead();

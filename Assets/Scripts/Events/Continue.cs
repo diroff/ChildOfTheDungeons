@@ -6,11 +6,11 @@ public class Continue : Event
     [SerializeField] private EventsController _controller;
 
     [SerializeField] private float _runCouldown = 1.5f;
-    [SerializeField] private float _destroyCouldown = 0.5f;
 
     public override void StartEvent()
     {
-        base.StartEvent();
+        SetEnableEvent(true);
+        SetPanelState(true);
     }
 
     public void ContinueWay()
@@ -20,7 +20,7 @@ public class Continue : Event
 
     private IEnumerator ContinueCoroutine()
     {
-        PlayerRun();
+        SetPanelState(false);
         EnableNewEvent();
         RoomController.MoveBackground();
         yield return new WaitForSeconds(_runCouldown);
@@ -39,11 +39,5 @@ public class Continue : Event
         _controller.SetEvent(0, true);
         RoomController.SpawnRoom(_controller.CurrentEvent.Room);
         _controller.StartEvent();
-    }
-
-    private void PlayerRun()
-    {
-        SetPanelState(false);
-        Player.Run();
     }
 }
