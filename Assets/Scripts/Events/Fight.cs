@@ -12,7 +12,6 @@ public class Fight : Event
     [SerializeField] protected EnemyTemplates EnemyTemplates;
 
     [Header("Events time")]
-    [SerializeField] private float _timeBeforeAttack = 0.5f;
     [SerializeField] private float _timeAfterAttack = 0.5f;
     [SerializeField] private float _timeFromDead = 1.5f;
     [SerializeField] private float _timeBeforeLeave = 1.0f;
@@ -49,9 +48,6 @@ public class Fight : Event
     public override void StartEvent()
     {
         base.StartEvent();
-
-        if (Spawner.gameObject == null)
-            Spawner = RoomController.GetRoomSpawner();
 
         CreatingEnemy();
         StartCoinFlip();
@@ -197,7 +193,6 @@ public class Fight : Event
     {
         _attackPanel.SetActive(false);
         Player.Attack();
-        yield return new WaitForSeconds(_timeBeforeAttack);
         _enemy.TakeDamage(Player.CalculateTotalDamage());
         yield return new WaitForSeconds(_timeAfterAttack);
 
@@ -208,7 +203,6 @@ public class Fight : Event
     private IEnumerator AttackPlayer()
     {
         _attackPanel.SetActive(false);
-        yield return new WaitForSeconds(_timeBeforeAttack);
         _enemy.TryAttack(Player);
         yield return new WaitForSeconds(_timeAfterAttack);
 
