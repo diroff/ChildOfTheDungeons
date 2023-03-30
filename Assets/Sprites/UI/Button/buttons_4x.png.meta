@@ -371,6 +371,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: info
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 32
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620daaf4c08f91b49940260e46303e93
+      internalID: -2095882397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -389,6 +410,7 @@ TextureImporter:
       pause: 1558101123
       exit: 941306307
       next: 422696076
+      info: -2095882397
       play: -2115232449
       Button_0: 1380607677
       settings: 570066272

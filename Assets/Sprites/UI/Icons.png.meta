@@ -380,7 +380,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -388,6 +388,48 @@ TextureImporter:
       bones: []
       spriteID: 4e04197022a431549b963c03e30ca102
       internalID: -1262816923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coinTrue
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 25
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d992cd773cd8344bf5d1f28362b49d
+      internalID: 1490801309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coinFalse
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 25
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e00bcbd3193d9741929b3dc08378478
+      internalID: -822135405
       vertices: []
       indices: 
       edges: []
@@ -405,6 +447,7 @@ TextureImporter:
     nameFileIdTable:
       keyGold: 1078925777
       agility: 1118672701
+      coinFalse: -822135405
       luck: 363065568
       power: -395204305
       slot_0: -43758787
@@ -413,6 +456,7 @@ TextureImporter:
       item: 1137461918
       coin: -1299900620
       slot_1: -1469839757
+      coinTrue: 1490801309
       endurance: 1759546837
       protection: -1262816923
   spritePackingTag: 
