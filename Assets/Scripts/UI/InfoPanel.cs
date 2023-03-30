@@ -23,6 +23,7 @@ public class InfoPanel : MonoBehaviour
 
     public void SetInfo(string info)
     {
-        _info.text = info;
+        if(_info != null)
+            _info.text = info;
     }
 }
