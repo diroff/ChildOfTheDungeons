@@ -11,7 +11,7 @@ public class SpecialFight : Fight
 
         EventsController.SetContinue(false);
         EventsController.SetEvent(_mainFight);
-        _mainFight.StartEvent();
         EndEvent();
+        _mainFight.StartEvent();
     }
 }

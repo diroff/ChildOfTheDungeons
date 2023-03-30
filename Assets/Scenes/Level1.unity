@@ -1271,7 +1271,7 @@ MonoBehaviour:
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 1
-  _panelEnableCouldown: 1
+  _panelEnableCouldown: 1.2
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
   _keySprite: {fileID: 595248921}
@@ -1307,8 +1307,7 @@ Transform:
   m_LocalPosition: {x: 2.22, y: 2.52, z: 3.66}
   m_LocalScale: {x: 0.40414998, y: 0.40414998, z: 0.40414998}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2011745564}
+  m_Children: []
   m_Father: {fileID: 532910444}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 72, z: 60}
@@ -11511,7 +11510,7 @@ MonoBehaviour:
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 1
-  _panelEnableCouldown: 1
+  _panelEnableCouldown: 1.2
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
   _keySprite: {fileID: 595248921}
@@ -16543,7 +16542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09128959, y: 0.248368}
   m_AnchorMax: {x: 0.44745967, y: 0.62933475}
-  m_AnchoredPosition: {x: 875.43005, y: -248.03004}
+  m_AnchoredPosition: {x: 875.43005, y: -248.03006}
   m_SizeDelta: {x: -14.799988, y: -11.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937293545
@@ -17563,68 +17562,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7056034146432994888, guid: 3bc0458791dcef846bc8de3da6a3818c, type: 3}
   m_PrefabInstance: {fileID: 2008612674}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2011745563
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 68695156}
-    m_Modifications:
-    - target: {fileID: 5564898964059130529, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_Name
-      value: BigShit
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
---- !u!4 &2011745564 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5564898964059130532, guid: 09a3b3edba1012848a6e8486e04772c0, type: 3}
-  m_PrefabInstance: {fileID: 2011745563}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2032036988
 GameObject:
   m_ObjectHideFlags: 0
@@ -18109,7 +18046,7 @@ MonoBehaviour:
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   _minimalLevel: 1
-  _panelEnableCouldown: 1
+  _panelEnableCouldown: 1.2
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
   _keySprite: {fileID: 595248921}
