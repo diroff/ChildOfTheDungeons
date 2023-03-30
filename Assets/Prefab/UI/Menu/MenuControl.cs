@@ -24,6 +24,11 @@ public class MenuControl : MonoBehaviour
         SceneManager.LoadScene(_gameScene);
     }
 
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void Exit()
     {
         Application.Quit();

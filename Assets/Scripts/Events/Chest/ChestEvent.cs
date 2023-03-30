@@ -6,7 +6,7 @@ public class ChestEvent : Event
 {
     [SerializeField] private FreeItem _freeItemEvent;
     [SerializeField] private Button _openButton;
-    [SerializeField] private SpriteRenderer _keySprite;
+    [SerializeField] private Image _keySprite;
     [SerializeField] protected Chest SpecialChest;
     [SerializeField] protected EventsController EventsController;
     [SerializeField] protected Continue Continue;
@@ -57,7 +57,7 @@ public class ChestEvent : Event
                 _openButton.interactable = false;
         }
 
-        _keySprite.sprite = _chest.KeyHole.RequriedKey.ItemSprite;
+        _keySprite.sprite = _chest.KeyHole.RequriedKey.Icon;
     }
 
     public void OpenChest()

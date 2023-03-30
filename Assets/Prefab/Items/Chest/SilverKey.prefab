@@ -112,6 +112,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _typeOfKey: 0
+  _icon: {fileID: -1936229884, guid: e9393ba95e626e140899b6a8fba2355f, type: 3}
 --- !u!95 &3963218341779899469
 Animator:
   serializedVersion: 5

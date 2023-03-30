@@ -11,7 +11,8 @@ public class Slot : MonoBehaviour
 
     public void UpdateSprite(Sprite sprite)
     {
-        SlotSprite.sprite = sprite;
+        if(SlotSprite != null)
+            SlotSprite.sprite = sprite;
     }
 
     public virtual void ShowDescription()

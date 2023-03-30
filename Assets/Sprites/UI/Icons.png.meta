@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fe07f8c78064fbd41ab81509bc881178
+guid: e9393ba95e626e140899b6a8fba2355f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Button_0
+      name: power
       rect:
         serializedVersion: 2
-        x: 228
-        y: 4
-        width: 89
-        height: 52
+        x: 80
+        y: 40
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dc81f2648864844a82d2ae822b98ca9
-      internalID: 1380607677
+      spriteID: 741853e8129bdce45b3d634e43767ee8
+      internalID: -395204305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: button_1
+      name: agility
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 56
-        height: 56
+        x: 89
+        y: 40
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +176,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad0fb66a3112a3f4eae4fe1c1cbdd5c0
-      internalID: 1808064390
+      spriteID: 664ca77b57d6eb84da58bf71732cb1ec
+      internalID: 1118672701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: play
+      name: luck
       rect:
         serializedVersion: 2
-        x: 420
+        x: 96
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e8bd39023c016489ccd11238f15cf8
+      internalID: 363065568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: endurance
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24cfec5b7a8b0b54a9ca6d302b19a331
+      internalID: 1759546837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: item
+      rect:
+        serializedVersion: 2
+        x: 104
         y: 32
-        width: 24
-        height: 28
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +239,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aeb8fec006c9f494398a0a6cacaf5f2a
-      internalID: -2115232449
+      spriteID: dcfc96bda5c136d4fa4485c464dd1b27
+      internalID: 1137461918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pause
+      name: slot_0
       rect:
         serializedVersion: 2
-        x: 388
+        x: 128
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c48ccdeb0e74d542b6464e84e79fadb
+      internalID: -43758787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slot_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b3f052be5e704c43ada1c4f37c78d5f
+      internalID: -1469839757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyGold
+      rect:
+        serializedVersion: 2
+        x: 88
         y: 32
-        width: 24
-        height: 28
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79eb899ae99bff44895c502c61b3c1fc
-      internalID: 1558101123
+      spriteID: 8eb30dc4bd1942c449fd71536d2fb801
+      internalID: 1078925777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: exit
+      name: keySilver
       rect:
         serializedVersion: 2
-        x: 356
-        y: 32
-        width: 24
-        height: 28
+        x: 88
+        y: 24
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0aad017938515b3408f9fb3a8df84978
-      internalID: 941306307
+      spriteID: e32340aeefa23b1489f638ac4eb72c5e
+      internalID: -1936229884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cancel
+      name: potion
       rect:
         serializedVersion: 2
-        x: 364
-        y: 0
-        width: 20
-        height: 24
+        x: 104
+        y: 24
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +344,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9d4fa7ecd13e9c48ba791573d98a978
-      internalID: 76911867
+      spriteID: 97fb138a04aa4c7489c6d7df6675e826
+      internalID: 1456163459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: apply
+      name: coin
       rect:
         serializedVersion: 2
-        x: 324
-        y: 32
-        width: 24
-        height: 28
+        x: 73
+        y: 33
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,92 +365,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4a2a4f2322cbac49bb516110b3260c7
-      internalID: 1083740024
+      spriteID: a7fa0b3789c73a546a4143870061877d
+      internalID: -1299900620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: next
+      name: protection
       rect:
         serializedVersion: 2
-        x: 452
-        y: 8
-        width: 24
-        height: 20
+        x: 104
+        y: 40
+        width: 8
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6425515d4a42d6946964c5008a493a6c
-      internalID: 422696076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buttons_2
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 4
-        width: 88
-        height: 56
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52c50a2929c52f24bb7c7efc668ec044
-      internalID: -409824998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: buttons_3
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 4
-        width: 56
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89d6c4501b564cd49b8bc61a097f0a16
-      internalID: -2006161332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: settings
-      rect:
-        serializedVersion: 2
-        x: 452
-        y: 32
-        width: 24
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13a6acab5bf088848a0b828206041f0d
-      internalID: 570066272
+      spriteID: 4e04197022a431549b963c03e30ca102
+      internalID: -1262816923
       vertices: []
       indices: 
       edges: []
@@ -382,17 +403,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      apply: 1083740024
-      button_1: 1808064390
-      cancel: 76911867
-      buttons_2: -409824998
-      pause: 1558101123
-      exit: 941306307
-      next: 422696076
-      play: -2115232449
-      Button_0: 1380607677
-      settings: 570066272
-      buttons_3: -2006161332
+      keyGold: 1078925777
+      agility: 1118672701
+      luck: 363065568
+      power: -395204305
+      slot_0: -43758787
+      keySilver: -1936229884
+      potion: 1456163459
+      item: 1137461918
+      coin: -1299900620
+      slot_1: -1469839757
+      endurance: 1759546837
+      protection: -1262816923
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
