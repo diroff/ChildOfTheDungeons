@@ -5,6 +5,7 @@ public class FirstEvent : Event
 {
     [SerializeField] private EventsController _eventsController;
     [SerializeField] private Fight _fightEvent;
+
     [SerializeField] private Enemy _nextEnemy;
     [SerializeField] private Animator _playerAnimator;
     [SerializeField] private float _playerMoveTime;

@@ -9,6 +9,9 @@ public abstract class Event : MonoBehaviour
     [SerializeField] protected Player Player;
     [SerializeField] protected RoomController RoomController;
     [SerializeField] protected Room EventRoom;
+    [Header("Tutorial")]
+    [SerializeField] protected TutorialManager TutorialManager;
+    [SerializeField] protected Tutorial Tutorial;
 
     [SerializeField] private int _minimalLevel = 1;
     [SerializeField] private float _panelEnableCouldown = 1.0f;
@@ -42,6 +45,7 @@ public abstract class Event : MonoBehaviour
         SetPanelState(false);
         yield return new WaitForSeconds(_panelEnableCouldown);
         SetPanelState(true);
+        ShowMessage(true);
     }
 
     public virtual void StartEvent()
@@ -55,10 +59,22 @@ public abstract class Event : MonoBehaviour
         Ended?.Invoke(true);
         SetEnableEvent(false);
         SetPanelState(false);
+        ShowMessage(false);
     }
 
     private void SetSpanwer()
     {
         Spawner = RoomController.GetRoomSpawner();
+    }
+
+    private void ShowMessage(bool enabled)
+    {
+        if (TutorialManager == null)
+            return;
+
+        if (enabled)
+            TutorialManager.AddMessages(Tutorial);
+        else
+            TutorialManager.HideMessage();
     }
 }
