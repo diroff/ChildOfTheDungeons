@@ -59,6 +59,8 @@ public class DirectionEvent : Event
     public void SetDirection(int directionNumber)
     {
         _eventController.SetNextEvent(_currentEvents[directionNumber]);
+        TutorialManager.AddMessages(_currentEvents[directionNumber].DirectionTutorial);
+
         EndEvent();
     }
 

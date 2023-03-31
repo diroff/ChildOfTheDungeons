@@ -1139,6 +1139,7 @@ MonoBehaviour:
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 65925128}
+  AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
   _panelEnableCouldown: 1.2
   _freeItemEvent: {fileID: 1622029519}
@@ -1524,6 +1525,7 @@ GameObject:
   - component: {fileID: 152349600}
   - component: {fileID: 152349599}
   - component: {fileID: 152349601}
+  - component: {fileID: 152349602}
   m_Layer: 0
   m_Name: BossEvent
   m_TagString: Untagged
@@ -1589,6 +1591,7 @@ MonoBehaviour:
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 152349601}
+  AdditionalTutorial: {fileID: 152349602}
   _minimalLevel: 2
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
@@ -1630,6 +1633,23 @@ MonoBehaviour:
   _message:
   - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
   _showOneTime: 1
+--- !u!114 &152349602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152349596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _message:
+  - "\u0422\u0443\u0442 \u0442\u0435\u0431\u044F \u0436\u0434\u0435\u0442 \u0431\u043E\u0441\u0441.
+    \u041F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u044C\u0441\u044F, \u043F\u0440\u0435\u0436\u0434\u0435,
+    \u0447\u0435\u043C \u0438\u0434\u0442\u0438 \u043D\u0430 \u043D\u0435\u0433\u043E."
+  _showOneTime: 0
 --- !u!1 &155817406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,6 +1931,7 @@ MonoBehaviour:
   EventRoom: {fileID: 0}
   TutorialManager: {fileID: 0}
   Tutorial: {fileID: 0}
+  AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
   _panelEnableCouldown: 1
 --- !u!1 &176033351
@@ -9900,6 +9921,7 @@ MonoBehaviour:
   EventRoom: {fileID: -5419117064279521559, guid: e614c016c2c2e544f807b3d82faf9a92, type: 3}
   TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 1035679087}
+  AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
   _panelEnableCouldown: 2
   _availableEvents:
@@ -12530,6 +12552,7 @@ GameObject:
   - component: {fileID: 1352651859}
   - component: {fileID: 1352651860}
   - component: {fileID: 1352651861}
+  - component: {fileID: 1352651862}
   m_Layer: 0
   m_Name: SilverChestEvent
   m_TagString: Untagged
@@ -12571,6 +12594,7 @@ MonoBehaviour:
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 1352651861}
+  AdditionalTutorial: {fileID: 1352651862}
   _minimalLevel: 1
   _panelEnableCouldown: 1.2
   _freeItemEvent: {fileID: 1622029519}
@@ -12597,6 +12621,23 @@ MonoBehaviour:
   _message:
   - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
   _showOneTime: 1
+--- !u!114 &1352651862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352651858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _message:
+  - "\u0417\u0434\u0435\u0441\u044C \u043C\u043E\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438
+    \u0441\u0443\u043D\u0434\u0443\u043A \u0441 \u0431\u0440\u043E\u043D\u0435\u0439
+    \u0438\u043B\u0438 \u043E\u0434\u0435\u0436\u0434\u043E\u0439."
+  _showOneTime: 0
 --- !u!1 &1360533220
 GameObject:
   m_ObjectHideFlags: 0
@@ -13257,6 +13298,7 @@ MonoBehaviour:
   EventRoom: {fileID: 7015268086709840673, guid: 3bc0458791dcef846bc8de3da6a3818c, type: 3}
   TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 1413622296}
+  AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
   _panelEnableCouldown: 1
   _eventsController: {fileID: 1886117191}
@@ -14891,6 +14933,7 @@ GameObject:
   - component: {fileID: 1609142892}
   - component: {fileID: 1609142891}
   - component: {fileID: 1609142893}
+  - component: {fileID: 1609142894}
   m_Layer: 0
   m_Name: DangerFightEvent
   m_TagString: Untagged
@@ -14967,6 +15010,7 @@ MonoBehaviour:
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 1609142893}
+  AdditionalTutorial: {fileID: 1609142894}
   _minimalLevel: 1
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
@@ -15008,6 +15052,22 @@ MonoBehaviour:
   _message:
   - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
   _showOneTime: 1
+--- !u!114 &1609142894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609142889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _message:
+  - "\u0417\u0434\u0435\u0441\u044C \u0436\u0434\u0435\u0442 \u0432\u0440\u0430\u0433
+    \u043F\u043E\u0441\u0438\u043B\u044C\u043D\u0435\u0435, \u0447\u0435\u043C \u0442\u044B."
+  _showOneTime: 0
 --- !u!1 &1611552062
 GameObject:
   m_ObjectHideFlags: 0
@@ -15095,6 +15155,7 @@ GameObject:
   - component: {fileID: 1622029518}
   - component: {fileID: 1622029519}
   - component: {fileID: 1622029520}
+  - component: {fileID: 1622029521}
   m_Layer: 0
   m_Name: FreeItemEvent
   m_TagString: Untagged
@@ -15136,6 +15197,7 @@ MonoBehaviour:
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 1622029520}
+  AdditionalTutorial: {fileID: 1622029521}
   _minimalLevel: 1
   _panelEnableCouldown: 1
   _eventController: {fileID: 1886117191}
@@ -15163,6 +15225,22 @@ MonoBehaviour:
     \u043C\u044B\u0448\u0435\u043B\u043E\u0432\u043A\u0438. \u041F\u0440\u043E\u0441\u0442\u043E
     \u0445\u0432\u0430\u0442\u0430\u0439 \u0435\u0433\u043E \u0438 \u0431\u0435\u0433\u0438!"
   _showOneTime: 1
+--- !u!114 &1622029521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622029517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _message:
+  - "\u0422\u0443\u0442 \u0442\u044B \u0441\u043C\u043E\u0436\u0435\u0448\u044C \u043D\u0430\u0436\u0438\u0442\u044C\u0441\u044F
+    \u0447\u0435\u043C-\u043D\u0438\u0431\u0443\u0434\u044C \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u043C."
+  _showOneTime: 0
 --- !u!1 &1636331849
 GameObject:
   m_ObjectHideFlags: 0
@@ -18157,6 +18235,7 @@ GameObject:
   - component: {fileID: 1963198903}
   - component: {fileID: 1963198902}
   - component: {fileID: 1963198904}
+  - component: {fileID: 1963198905}
   m_Layer: 0
   m_Name: EasyFightEvent
   m_TagString: Untagged
@@ -18233,6 +18312,7 @@ MonoBehaviour:
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 8148549922209866773}
+  AdditionalTutorial: {fileID: 1963198905}
   _minimalLevel: 2
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
@@ -18274,6 +18354,23 @@ MonoBehaviour:
   _message:
   - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
   _showOneTime: 1
+--- !u!114 &1963198905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963198900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _message:
+  - "\u0417\u0434\u0435\u0441\u044C \u043C\u043E\u0436\u043D\u043E \u0432\u0441\u0442\u0440\u0435\u0442\u0438\u0442\u044C
+    \u0432\u0440\u0430\u0433\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0441\u043B\u0430\u0431\u0435\u0435
+    \u0442\u0435\u0431\u044F."
+  _showOneTime: 0
 --- !u!1 &1971386863
 GameObject:
   m_ObjectHideFlags: 0
@@ -19392,6 +19489,7 @@ GameObject:
   - component: {fileID: 2113490853}
   - component: {fileID: 2113490854}
   - component: {fileID: 2113490855}
+  - component: {fileID: 2113490856}
   m_Layer: 0
   m_Name: GoldChestEvent
   m_TagString: Untagged
@@ -19433,6 +19531,7 @@ MonoBehaviour:
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 2113490855}
+  AdditionalTutorial: {fileID: 2113490856}
   _minimalLevel: 1
   _panelEnableCouldown: 1.2
   _freeItemEvent: {fileID: 1622029519}
@@ -19459,6 +19558,23 @@ MonoBehaviour:
   _message:
   - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
   _showOneTime: 1
+--- !u!114 &2113490856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113490852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _message:
+  - "\u0417\u0434\u0435\u0441\u044C \u0442\u0435\u0431\u044F \u0436\u0434\u0435\u0442
+    \u0441\u0443\u043D\u0434\u0443\u043A \u0441 \u043E\u0440\u0443\u0436\u0438\u0435\u043C.
+    \u041E\u0442\u043A\u0440\u043E\u0439 \u0435\u0433\u043E \u0441\u043A\u043E\u0440\u0435\u0435!"
+  _showOneTime: 0
 --- !u!1 &2115490695
 GameObject:
   m_ObjectHideFlags: 0
@@ -19880,10 +19996,10 @@ RectTransform:
   m_Father: {fileID: 27997}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.89543754, y: 0.4172032}
-  m_AnchorMax: {x: 0.99000007, y: 0.57900006}
-  m_AnchoredPosition: {x: 2.24292, y: 1.7000122}
-  m_SizeDelta: {x: 29.04004, y: 23.400024}
+  m_AnchorMin: {x: 0.30452085, y: 0.012}
+  m_AnchorMax: {x: 0.6963959, y: 0.17148149}
+  m_AnchoredPosition: {x: -1.2999878, y: -1.3699951}
+  m_SizeDelta: {x: 173.20001, y: 26.399994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &775393113034063493
 MonoBehaviour:
@@ -20022,7 +20138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105.30011, y: -99.07034}
+  m_AnchoredPosition: {x: 462.80002, y: -99.31999}
   m_SizeDelta: {x: 200, y: 184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &775393114659039811
@@ -20529,6 +20645,7 @@ MonoBehaviour:
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
   TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 8148549922209866773}
+  AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
   _panelEnableCouldown: 2
   _freeItemEvent: {fileID: 1622029519}
@@ -20654,8 +20771,9 @@ MonoBehaviour:
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 0}
-  TutorialManager: {fileID: 0}
+  TutorialManager: {fileID: 1013153942}
   Tutorial: {fileID: 0}
+  AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
   _panelEnableCouldown: 0
   _controller: {fileID: 1886117191}

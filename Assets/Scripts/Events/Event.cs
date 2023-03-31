@@ -12,6 +12,7 @@ public abstract class Event : MonoBehaviour
     [Header("Tutorial")]
     [SerializeField] protected TutorialManager TutorialManager;
     [SerializeField] protected Tutorial Tutorial;
+    [SerializeField] protected DirectionTutorial AdditionalTutorial;
 
     [SerializeField] private int _minimalLevel = 1;
     [SerializeField] private float _panelEnableCouldown = 1.0f;
@@ -22,6 +23,7 @@ public abstract class Event : MonoBehaviour
     public Room Room => EventRoom;
     public Sprite EventIcon => _eventIcon;
     public int MinimalLevel => _minimalLevel;
+    public DirectionTutorial DirectionTutorial => AdditionalTutorial;
 
     public event UnityAction<bool> Ended;
 
@@ -59,7 +61,6 @@ public abstract class Event : MonoBehaviour
         Ended?.Invoke(true);
         SetEnableEvent(false);
         SetPanelState(false);
-        ShowMessage(false);
     }
 
     private void SetSpanwer()
@@ -67,7 +68,7 @@ public abstract class Event : MonoBehaviour
         Spawner = RoomController.GetRoomSpawner();
     }
 
-    private void ShowMessage(bool enabled)
+    protected void ShowMessage(bool enabled)
     {
         if (TutorialManager == null)
             return;

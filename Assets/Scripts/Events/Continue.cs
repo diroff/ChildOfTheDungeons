@@ -26,6 +26,7 @@ public class Continue : Event
         if (_controller.IsDirection)
             _directionEvent.DisableDirectionInteraction();
 
+        ShowMessage(false);
         _controller.SetDirection(false);
         EnableNewEvent();
         RoomController.MoveBackground();
