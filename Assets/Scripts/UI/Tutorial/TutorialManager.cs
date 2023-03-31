@@ -11,11 +11,10 @@ public class TutorialManager : MonoBehaviour
 
     public void AddMessages(Tutorial tutorial)
     {
-        _currentMessages.Clear();
-
         if (tutorial.Message.Length == 0 || tutorial.Viewed)
             return;
 
+        _currentMessages.Clear();
         _tutorialPanel.SetActive(true);
 
         for (int i = 0; i < tutorial.Message.Length; i++)
@@ -42,6 +41,7 @@ public class TutorialManager : MonoBehaviour
 
     public void HideMessage()
     {
+        _currentMessages.Clear();
         _tutorialPanel.SetActive(false);
     }
 }

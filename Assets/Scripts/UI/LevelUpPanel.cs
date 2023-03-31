@@ -7,6 +7,9 @@ public class LevelUpPanel : MonoBehaviour
     [SerializeField] private GameObject _panel;
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private TextMeshProUGUI _skillPointCount;
+    [Header("Dialogue")]
+    [SerializeField] private TutorialManager _tutorialManager;
+    [SerializeField] private Tutorial _tutorial;
 
     private Skills _skills;
 
@@ -29,6 +32,7 @@ public class LevelUpPanel : MonoBehaviour
 
     private void EnablePanel(int currentLevel)
     {
+        _tutorialManager.AddMessages(_tutorial);
         _panel.SetActive(true);
         _levelText.text = $"Уровень {currentLevel}!";
         ShowSkillsCount(_player.Skills.SkillCountForLevel);
