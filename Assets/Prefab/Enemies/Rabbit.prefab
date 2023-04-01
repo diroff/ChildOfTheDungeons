@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Rabbit
-  BaseMaxHealth: 8
+  BaseMaxHealth: 9
   Armor: 0
-  BaseDamage: 8
+  BaseDamage: 6
   Level: 5
   SpriteImage: {fileID: 21300000, guid: 71bc0ea6ebaf35545a18c3d54761df5a, type: 3}
   FighterAnimator: {fileID: 1841012883214973249}

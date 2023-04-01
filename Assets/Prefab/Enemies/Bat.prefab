@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Bat
-  BaseMaxHealth: 6
+  BaseMaxHealth: 4
   Armor: 0
   BaseDamage: 5
   Level: 3

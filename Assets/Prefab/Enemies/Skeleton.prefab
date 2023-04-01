@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Skeleton
-  BaseMaxHealth: 8
+  BaseMaxHealth: 7
   Armor: 0
   BaseDamage: 10
   Level: 8

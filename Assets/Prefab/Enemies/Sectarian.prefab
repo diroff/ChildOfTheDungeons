@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Sectarian
-  BaseMaxHealth: 20
+  BaseMaxHealth: 25
   Armor: 0
   BaseDamage: 13
   Level: 10

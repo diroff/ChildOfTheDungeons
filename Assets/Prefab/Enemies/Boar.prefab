@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Boar
-  BaseMaxHealth: 14
+  BaseMaxHealth: 12
   Armor: 0
   BaseDamage: 7
   Level: 6
