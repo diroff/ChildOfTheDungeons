@@ -57,10 +57,12 @@ public class Fight : Event
 
         CreatingEnemy();
         StartCoinFlip();
+        _attackMinigame.Ended.AddListener(PowerAttack);
     }
 
     public override void EndEvent()
     {
+        _attackMinigame.Ended.RemoveListener(PowerAttack);
         _enemyAssigned = false;
         base.EndEvent();
         _enemyInfoButton.SetActive(false);
@@ -98,8 +100,7 @@ public class Fight : Event
 
     public void PowerAttack()
     {
-        _damage = Player.CalculateTotalDamage() + _attackMinigame.GetGameResult();
-        _attackMinigame.StopSlider();
+        _damage = Player.CalculateTotalDamage() * _attackMinigame.GetGameResult();
         _attackMinigame.gameObject.SetActive(false);
         StartCoroutine(AttackEnemyCoroutine(true));
     }

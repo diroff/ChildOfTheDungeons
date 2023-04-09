@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class AttackMinigame : Minigame
@@ -8,7 +10,22 @@ public class AttackMinigame : Minigame
 
     [SerializeField] private GameObject _attackPanel;
 
+    [Header("Multiply values")]
+    [SerializeField] private float _clearZoneMultiply;
+    [SerializeField] private float _redZoneMultiply;
+    [SerializeField] private float _orangeZoneMultiply;
+    [SerializeField] private float _yellowZoneMultiply;
+    [SerializeField] private float _purpleZoneMultiply;
+    [Header("Multiply values")]
+    [SerializeField] private float _clearZone;
+    [SerializeField] private float _redZone;
+    [SerializeField] private float _orangeZone;
+    [SerializeField] private float _yellowZone;
+    [SerializeField] private float _purpleZone;
+
     private bool _isMoving = false;
+
+    public UnityEvent Ended;
 
     protected override void OnEnable()
     {
@@ -16,35 +33,33 @@ public class AttackMinigame : Minigame
         StartMovingSlider();
     }
 
-    private void Update()
-    {
-        MoveSlider(0);
-    }
-
     public void StartMovingSlider()
     {
         _slider.value = 0;
         _isMoving = true;
         _attackPanel.SetActive(true);
+        StartCoroutine(MoveSlider(0));
     }
 
-    public void MoveSlider(float speedModificator)
+    private IEnumerator MoveSlider(float speedModificator)
     {
-        if (!_isMoving)
-            return;
-
-        if (_slider.value >= 1)
+        while (_isMoving)
         {
-            StopSlider();
-            return;
-        }
+            if (_slider.value >= 1)
+            {
+                StopSlider();
+                break;
+            }
 
-        _slider.value += (_speed + speedModificator) * Time.deltaTime;
+            _slider.value += _speed + speedModificator;
+            yield return new WaitForSeconds(_speed + speedModificator);
+        }
     }
 
     public override float GetGameResult()
     {
-        Result = _slider.value;
+        Result = CalculateDamageModificator();
+        Debug.Log("Multiply:" + Result);
         return base.GetGameResult();
     }
 
@@ -53,5 +68,29 @@ public class AttackMinigame : Minigame
         _attackPanel.SetActive(false);
         _isMoving = false;
         SetPanelState(false);
+        Ended?.Invoke();
+    }
+
+    private float CalculateDamageModificator()
+    {
+        float sliderValue = _slider.value;
+
+        if ((sliderValue >= _clearZone && sliderValue < _redZone) || (sliderValue <= 1 -_clearZone && sliderValue > 1 - _redZone))
+            return _clearZoneMultiply;
+
+        if ((sliderValue >= _redZone && sliderValue < _orangeZone) || (sliderValue <= 1 - _redZone && sliderValue > 1 - _orangeZone))
+            return _redZoneMultiply;
+
+        if ((sliderValue >= _orangeZone && sliderValue < _yellowZone) || (sliderValue <= 1 - _orangeZone && sliderValue > 1 - _yellowZone))
+            return _orangeZoneMultiply;
+
+        if ((sliderValue >= _yellowZone && sliderValue < _purpleZone) || (sliderValue <= 1 - _yellowZone && sliderValue > 1 - _purpleZone))
+            return _yellowZoneMultiply;
+
+        if (sliderValue >= _purpleZone && sliderValue <= 1 - _purpleZone)
+            return _purpleZoneMultiply;
+
+        Debug.Log("Calculation error:" + sliderValue);
+        return 0f;
     }
 }
