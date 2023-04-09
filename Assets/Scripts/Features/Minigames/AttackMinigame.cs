@@ -6,7 +6,15 @@ public class AttackMinigame : Minigame
     [SerializeField] private Slider _slider;
     [SerializeField] private float _speed;
 
+    [SerializeField] private GameObject _attackPanel;
+
     private bool _isMoving = false;
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        StartMovingSlider();
+    }
 
     private void Update()
     {
@@ -15,8 +23,9 @@ public class AttackMinigame : Minigame
 
     public void StartMovingSlider()
     {
-        _isMoving = true;
         _slider.value = 0;
+        _isMoving = true;
+        _attackPanel.SetActive(true);
     }
 
     public void MoveSlider(float speedModificator)
@@ -41,8 +50,8 @@ public class AttackMinigame : Minigame
 
     public void StopSlider()
     {
+        _attackPanel.SetActive(false);
         _isMoving = false;
-        Debug.Log(GetGameResult());
         SetPanelState(false);
     }
 }

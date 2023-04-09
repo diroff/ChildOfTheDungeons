@@ -147,12 +147,12 @@ public class Player : Fighter
         FighterAnimator.SetTrigger("Leave");
     }
 
-    public float CalculateTotalDamage()
+    public float CalculateTotalDamage(float modificator = 1)
     {
         if (_weaponSlot.IsSomeWeapon())
-            return _skills.Power.CurrentLevel + _weaponSlot.Weapon.CalculateDamage();
+            return (_skills.Power.CurrentLevel + _weaponSlot.Weapon.CalculateDamage()) * modificator;
 
-        return _skills.Power.CurrentLevel;
+        return _skills.Power.CurrentLevel * modificator;
     }
 
     public bool HasAdditionalChance(int additionalChance)

@@ -37,11 +37,17 @@ public class Fight : Event
     [SerializeField] private GameObject _enemyInfoButton;
     [SerializeField] private GameObject _enemyInfoPanel;
 
+    [Header("Minigames")]
+    [SerializeField] private AttackMinigame _attackMinigame;
+
     [Space]
     [SerializeField] private Animator _coinAnimator;
 
     private Enemy _enemy;
     private bool _enemyAssigned;
+
+    private float _damage;
+
     private int _leaveChance;
     private int _coinWinChance;
 
@@ -60,17 +66,18 @@ public class Fight : Event
         _enemyInfoButton.SetActive(false);
         _enemyInfoPanel.SetActive(false);
 
-        if(_enemy != null)
+        if (_enemy != null)
             UnsubscribeEvents();
     }
 
     public void PlayerStep()
     {
+        _damage = 0;
         _attackPanel.SetActive(true);
         _healButton.SetButtonState();
         CalculateLeaveChance();
         _leaveChangeText.text = _leaveChance + "%";
-        _damageText.text = "x" + Player.CalculateTotalDamage();
+        _damageText.text = "x" + Player.CalculateTotalDamage(1);
     }
 
     public void EnemyStep()
@@ -80,7 +87,21 @@ public class Fight : Event
 
     public void AttackEnemy()
     {
-        StartCoroutine(AttackEnemyCoroutine());
+        StartCoroutine(AttackEnemyCoroutine(false));
+    }
+
+    public void StartAttackGame()
+    {
+        _attackPanel.SetActive(false);
+        _attackMinigame.gameObject.SetActive(true);
+    }
+
+    public void PowerAttack()
+    {
+        _damage = Player.CalculateTotalDamage() + _attackMinigame.GetGameResult();
+        _attackMinigame.StopSlider();
+        _attackMinigame.gameObject.SetActive(false);
+        StartCoroutine(AttackEnemyCoroutine(true));
     }
 
     public void Heal()
@@ -99,7 +120,8 @@ public class Fight : Event
         _enemyAssigned = true;
     }
 
-    private void SubscribeEvents() 
+
+    private void SubscribeEvents()
     {
         _enemy.Died += EnemyDead;
         Player.Died += PlayerDead;
@@ -117,7 +139,7 @@ public class Fight : Event
 
     protected void CreatingEnemy()
     {
-        if(Spawner.GetEnemy() == null)
+        if (Spawner.GetEnemy() == null)
             SpawnEnemy();
 
         _enemy = Spawner.GetEnemy();
@@ -189,14 +211,18 @@ public class Fight : Event
         _coinWinChangeText.text = _coinWinChance + "%";
     }
 
-    private IEnumerator AttackEnemyCoroutine()
+    private IEnumerator AttackEnemyCoroutine(bool modificatedDamage)
     {
+        if (!modificatedDamage)
+            _damage = Player.CalculateTotalDamage();
+
         _attackPanel.SetActive(false);
         Player.Attack();
-        _enemy.TakeDamage(Player.CalculateTotalDamage());
+
+        _enemy.TakeDamage(_damage);
         yield return new WaitForSeconds(_timeAfterAttack);
 
-        if(!_enemy.Die())
+        if (!_enemy.Die())
             EnemyStep();
     }
 
@@ -206,7 +232,7 @@ public class Fight : Event
         _enemy.TryAttack(Player);
         yield return new WaitForSeconds(_timeAfterAttack);
 
-        if(!Player.Die())
+        if (!Player.Die())
             PlayerStep();
     }
 

@@ -6,7 +6,7 @@ public abstract class Minigame : MonoBehaviour
 
     protected float Result;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         SetPanelState(true);
     }
