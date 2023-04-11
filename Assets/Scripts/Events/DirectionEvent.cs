@@ -67,10 +67,11 @@ public class DirectionEvent : Event
     private void UpdateEventList()
     {
         _events.Clear();
+        int playerLevel = _progressionController.Player.GetLevel();
 
         for (int i = 0; i < _availableEvents.Count; i++)
         {
-            if (_progressionController.Player.GetLevel() >= _availableEvents[i].MinimalLevel)
+            if (playerLevel >= _availableEvents[i].MinimalLevel && playerLevel <= _availableEvents[i].MaximumLevel)
                 _events.Add(_availableEvents[i]);
         }
     }

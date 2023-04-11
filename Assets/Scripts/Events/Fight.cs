@@ -62,7 +62,9 @@ public class Fight : Event
 
     public override void EndEvent()
     {
-        _attackMinigame.Ended.RemoveListener(PowerAttack);
+        if(_attackMinigame != null)
+            _attackMinigame.Ended.RemoveListener(PowerAttack);
+
         _enemyAssigned = false;
         base.EndEvent();
         _enemyInfoButton.SetActive(false);

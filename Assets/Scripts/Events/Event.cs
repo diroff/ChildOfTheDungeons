@@ -15,6 +15,7 @@ public abstract class Event : MonoBehaviour
     [SerializeField] protected DirectionTutorial AdditionalTutorial;
 
     [SerializeField] private int _minimalLevel = 1;
+    [SerializeField] private int _maximumLevel = 10;
     [SerializeField] private float _panelEnableCouldown = 1.0f;
 
     protected Spawner Spawner;
@@ -23,6 +24,7 @@ public abstract class Event : MonoBehaviour
     public Room Room => EventRoom;
     public Sprite EventIcon => _eventIcon;
     public int MinimalLevel => _minimalLevel;
+    public int MaximumLevel => _maximumLevel;
     public DirectionTutorial DirectionTutorial => AdditionalTutorial;
 
     public event UnityAction<bool> Ended;

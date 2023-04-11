@@ -1285,6 +1285,7 @@ MonoBehaviour:
   Tutorial: {fileID: 65925128}
   AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
+  _maximumLevel: 10
   _panelEnableCouldown: 1.2
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
@@ -1737,6 +1738,7 @@ MonoBehaviour:
   Tutorial: {fileID: 152349601}
   AdditionalTutorial: {fileID: 152349602}
   _minimalLevel: 2
+  _maximumLevel: 11
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
   _continue: {fileID: 0}
@@ -1760,7 +1762,7 @@ MonoBehaviour:
   _attackPanel: {fileID: 5218370751606671310}
   _enemyInfoButton: {fileID: 290428373}
   _enemyInfoPanel: {fileID: 356515405}
-  _attackMinigame: {fileID: 0}
+  _attackMinigame: {fileID: 63794811}
   _coinAnimator: {fileID: 1090467333}
   _mainFight: {fileID: 8148549922209866770}
 --- !u!114 &152349601
@@ -2078,6 +2080,7 @@ MonoBehaviour:
   Tutorial: {fileID: 0}
   AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
+  _maximumLevel: 11
   _panelEnableCouldown: 1
 --- !u!1 &176033351
 GameObject:
@@ -6049,7 +6052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u0418\u0433\u0440\u043E\u043A"
-  BaseMaxHealth: 8
+  BaseMaxHealth: 99
   Armor: 0
   BaseDamage: 0
   Level: 1
@@ -6058,7 +6061,7 @@ MonoBehaviour:
   _armorSlots: {fileID: 532910448}
   _weaponSlot: {fileID: 4291863}
   _inventory: {fileID: 532910449}
-  _experienceToNextLevel: 10
+  _experienceToNextLevel: 1
   _skills: {fileID: 972732174}
   ExperienceChanged:
     m_PersistentCalls:
@@ -10721,11 +10724,9 @@ MonoBehaviour:
   Tutorial: {fileID: 1035679087}
   AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
+  _maximumLevel: 10
   _panelEnableCouldown: 2
   _availableEvents:
-  - {fileID: 1622029519}
-  - {fileID: 1352651860}
-  - {fileID: 2113490854}
   - {fileID: 152349600}
   - {fileID: 1963198903}
   - {fileID: 1609142892}
@@ -13676,6 +13677,7 @@ MonoBehaviour:
   Tutorial: {fileID: 1352651861}
   AdditionalTutorial: {fileID: 1352651862}
   _minimalLevel: 1
+  _maximumLevel: 10
   _panelEnableCouldown: 1.2
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
@@ -14381,6 +14383,7 @@ MonoBehaviour:
   Tutorial: {fileID: 1413622296}
   AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
+  _maximumLevel: 10
   _panelEnableCouldown: 1
   _eventsController: {fileID: 1886117191}
   _fightEvent: {fileID: 8148549922209866770}
@@ -16169,6 +16172,7 @@ MonoBehaviour:
   Tutorial: {fileID: 1609142893}
   AdditionalTutorial: {fileID: 1609142894}
   _minimalLevel: 1
+  _maximumLevel: 9
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
   _continue: {fileID: 8320838582458532849}
@@ -16192,7 +16196,7 @@ MonoBehaviour:
   _attackPanel: {fileID: 5218370751606671310}
   _enemyInfoButton: {fileID: 290428373}
   _enemyInfoPanel: {fileID: 356515405}
-  _attackMinigame: {fileID: 0}
+  _attackMinigame: {fileID: 63794811}
   _coinAnimator: {fileID: 1090467333}
   _mainFight: {fileID: 8148549922209866770}
 --- !u!114 &1609142893
@@ -16357,6 +16361,7 @@ MonoBehaviour:
   Tutorial: {fileID: 1622029520}
   AdditionalTutorial: {fileID: 1622029521}
   _minimalLevel: 1
+  _maximumLevel: 11
   _panelEnableCouldown: 1
   _eventController: {fileID: 1886117191}
   _progression: {fileID: 1104878590}
@@ -19739,6 +19744,7 @@ MonoBehaviour:
   Tutorial: {fileID: 8148549922209866773}
   AdditionalTutorial: {fileID: 1963198905}
   _minimalLevel: 2
+  _maximumLevel: 10
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
   _continue: {fileID: 8320838582458532849}
@@ -19762,7 +19768,7 @@ MonoBehaviour:
   _attackPanel: {fileID: 5218370751606671310}
   _enemyInfoButton: {fileID: 290428373}
   _enemyInfoPanel: {fileID: 356515405}
-  _attackMinigame: {fileID: 0}
+  _attackMinigame: {fileID: 63794811}
   _coinAnimator: {fileID: 1090467333}
   _mainFight: {fileID: 8148549922209866770}
 --- !u!114 &1963198904
@@ -20959,6 +20965,7 @@ MonoBehaviour:
   Tutorial: {fileID: 2113490855}
   AdditionalTutorial: {fileID: 2113490856}
   _minimalLevel: 1
+  _maximumLevel: 10
   _panelEnableCouldown: 1.2
   _freeItemEvent: {fileID: 1622029519}
   _openButton: {fileID: 22734858}
@@ -22150,6 +22157,7 @@ MonoBehaviour:
   Tutorial: {fileID: 8148549922209866773}
   AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
+  _maximumLevel: 10
   _panelEnableCouldown: 2
   _freeItemEvent: {fileID: 1622029519}
   _continue: {fileID: 8320838582458532849}
@@ -22279,6 +22287,7 @@ MonoBehaviour:
   Tutorial: {fileID: 0}
   AdditionalTutorial: {fileID: 0}
   _minimalLevel: 1
+  _maximumLevel: 11
   _panelEnableCouldown: 0
   _controller: {fileID: 1886117191}
   _directionEvent: {fileID: 1035679086}

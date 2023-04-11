@@ -28,7 +28,7 @@ public class Enemy : Fighter
         base.Start();
         UpdateParameters();
 
-        if (IsLoot() || _isBoss)
+        if (IsLoot())
             SetLootItem();
     }
 
