@@ -110,7 +110,7 @@ MonoBehaviour:
   _baseExperience: 66666
   _minimalLevel: 10
   _isBoss: 1
-  _hasLoot: 1
+  _hasLoot: 0
   _lootList: {fileID: 5554013129220481992}
   HealthChanged:
     m_PersistentCalls:
