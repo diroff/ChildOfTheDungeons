@@ -39,7 +39,9 @@ public class DirectionEvent : Event
             _sign.Directions[i].SetIcon(randomEvent.EventIcon);
 
             _currentEvents.Add(randomEvent);
-            _events.Remove(randomEvent);
+
+            if(_events.Count > 1)
+                _events.Remove(randomEvent);
         }
     }
 

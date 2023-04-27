@@ -1738,7 +1738,7 @@ MonoBehaviour:
   Tutorial: {fileID: 152349601}
   AdditionalTutorial: {fileID: 152349602}
   _minimalLevel: 2
-  _maximumLevel: 11
+  _maximumLevel: 10
   _panelEnableCouldown: 1
   _freeItemEvent: {fileID: 1622029519}
   _continue: {fileID: 0}
@@ -6109,6 +6109,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &532910448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11135,6 +11136,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1092515189
 GameObject:
   m_ObjectHideFlags: 0
@@ -22118,7 +22120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15460771, y: 0.07700001}
   m_AnchorMax: {x: 0.83500004, y: 0.279}
-  m_AnchoredPosition: {x: 9.161499, y: -87.20001}
+  m_AnchoredPosition: {x: 9.161499, y: -87.19998}
   m_SizeDelta: {x: 289.2, y: 31.800003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &8148549922209866769
