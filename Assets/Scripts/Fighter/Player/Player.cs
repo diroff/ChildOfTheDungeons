@@ -132,7 +132,7 @@ public class Player : Fighter
 
     public void Leave()
     {
-        FighterAnimator.SetTrigger("Leave");
+        PlayLeaveAnimation();
         Leaved?.Invoke();
     }
 
@@ -140,6 +140,11 @@ public class Player : Fighter
     {
         FighterAnimator.SetTrigger("NotLeave");
         NotLeaved?.Invoke();
+    }
+
+    public void Move()
+    {
+        FighterAnimator.SetTrigger("Run"); 
     }
 
     public void PlayLeaveAnimation()

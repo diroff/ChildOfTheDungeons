@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EventsController : MonoBehaviour
@@ -29,7 +30,7 @@ public class EventsController : MonoBehaviour
         StartEvent();
     }
 
-    private int ChooseRandomEvent()
+    private int ChooseEventNumber()
     {
         return Random.Range(0, _eventTypes.Count);
     }
@@ -37,6 +38,7 @@ public class EventsController : MonoBehaviour
     public void SetEvent(int eventNumber, bool isRandom = false)
     {
         int number = 0;
+        int playerLevel = _progression.Player.GetLevel();
 
         if (_nextEventSetted)
         {
@@ -49,14 +51,43 @@ public class EventsController : MonoBehaviour
             number = eventNumber;
         else
         {
-            while (number == _progression.LastEvent)
+            bool canBeUsed = false;
+
+            while (!canBeUsed)
             {
-                number = ChooseRandomEvent();
+                number = ChooseEventNumber();
+
+                if(number != _progression.LastEvent)
+                    canBeUsed = true;
+
+                if (!IsCorrectLevel(_progression.Player.GetLevel(), number))
+                    canBeUsed = false;
+
+                if (GetCountAvailableEvents() <= 1)
+                    canBeUsed = true;
             }
         }
 
         _currentEvent = _eventTypes[number];
         _progression.SetLastEvent(number);
+    }
+
+    private int GetCountAvailableEvents()
+    {
+        int eventsCount = 0;
+
+        for (int i = 0; i < _eventTypes.Count; i++)
+        {
+            if(IsCorrectLevel(_progression.Player.GetLevel(), i))
+                eventsCount++;
+        }
+
+        return eventsCount;
+    }
+
+    private bool IsCorrectLevel(int playerLevel, int numberEvent)
+    {
+        return playerLevel >= _eventTypes[numberEvent].MinimalLevel  && playerLevel < _eventTypes[numberEvent].MaximumLevel;
     }
 
     public void SetEvent(Event newEvent)
