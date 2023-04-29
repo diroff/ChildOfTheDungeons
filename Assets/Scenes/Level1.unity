@@ -6156,7 +6156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u0418\u0433\u0440\u043E\u043A"
-  BaseMaxHealth: 99
+  BaseMaxHealth: 8
   Armor: 0
   BaseDamage: 0
   Level: 1
@@ -6165,7 +6165,7 @@ MonoBehaviour:
   _armorSlots: {fileID: 532910448}
   _weaponSlot: {fileID: 4291863}
   _inventory: {fileID: 532910449}
-  _experienceToNextLevel: 1
+  _experienceToNextLevel: 10
   _skills: {fileID: 972732174}
   ExperienceChanged:
     m_PersistentCalls:
