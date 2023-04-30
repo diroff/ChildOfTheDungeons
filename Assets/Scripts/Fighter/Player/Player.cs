@@ -89,8 +89,10 @@ public class Player : Fighter
             return;
 
         Level++;
+
+        int remainExperience = _currentExperience - _experienceToNextLevel;
         _experienceToNextLevel = (int)((_baseExperience * Level) * (Mathf.Pow(2, Level)));
-        _currentExperience = 0;
+        _currentExperience = remainExperience;
         CalculateMaxHealth();
         CalculateTotalDamage();
         HealthChanged(CurrentHealth, MaxHealth);

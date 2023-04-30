@@ -101,8 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Assasin Set
   Description: "\u041A\u043E\u0441\u0442\u044E\u043C \u0441 \u043A\u0430\u043F\u044E\u0448\u043E\u043D\u043E\u043C.
-    \u0414\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u0442\u044C \u043D\u0435\u0437\u0430\u043C\u0435\u0442\u043D\u044B\u0439
-    \u0438\u043B\u0438 \u043D\u0435\u0442."
+    \u0414\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u0442\u044C \u043D\u0435\u0437\u0430\u043C\u0435\u0442\u043D\u044B\u0439."
   Value: 30
   Consumable: 0
   ItemAnimator: {fileID: 7209744020205144440}
@@ -133,6 +132,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4559350264032327771
 MonoBehaviour:
   m_ObjectHideFlags: 0
