@@ -2084,6 +2084,8 @@ MonoBehaviour:
   _minimalLevel: 1
   _maximumLevel: 11
   _panelEnableCouldown: 1
+  _progressionController: {fileID: 1104878590}
+  _highscoreStorageService: {fileID: 1495481008}
 --- !u!1 &176033351
 GameObject:
   m_ObjectHideFlags: 0
@@ -6168,6 +6170,9 @@ MonoBehaviour:
   _experienceToNextLevel: 10
   _skills: {fileID: 972732174}
   ExperienceChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  ExperienceAdded:
     m_PersistentCalls:
       m_Calls: []
   LevelChanged:
@@ -14903,7 +14908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.4165039, y: -51.029037}
+  m_AnchoredPosition: {x: -0.4165039, y: -51.029022}
   m_SizeDelta: {x: -3.4, y: 127.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1486470126
@@ -22679,7 +22684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15460771, y: 0.07700001}
   m_AnchorMax: {x: 0.83500004, y: 0.279}
-  m_AnchoredPosition: {x: 9.161499, y: -87.2}
+  m_AnchoredPosition: {x: 9.161499, y: -87.19998}
   m_SizeDelta: {x: 289.2, y: 31.800003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &8148549922209866769

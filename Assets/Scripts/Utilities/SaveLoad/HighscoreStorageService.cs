@@ -2,34 +2,36 @@ using UnityEngine;
 
 public class HighscoreStorageService : MonoBehaviour
 {
-    private const string _key = "Score";
+    public const string Key = "Score";
+
+    public SaveData CurrentData;
+
     private IStorageService _storageService;
 
-    private void Start()
+    private void OnEnable()
     {
         _storageService = new JsonToFileStorageService();
     }
 
-    private void Update()
+    public void SaveScore(SaveData saveData)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        _storageService.Save(Key, saveData);
+        Debug.Log("Saved!");
+    }
+
+    public void LoadScore()
+    {
+        _storageService.Load<SaveData>(Key, data =>
         {
-            SaveData data = new SaveData();
+            CurrentData = data;
+            Debug.Log($"Loaded. Name value: {CurrentData.NameValue} + Score value: {CurrentData.ScoreValue}");
+        });
+    }
 
-            data.ScoreValue = 15;
-            data.NameValue = "Porosb";
-
-            _storageService.Save(_key, data);
-            Debug.Log("Saved!");
-        }
-
-        if(Input.GetKey(KeyCode.Return))
-        {
-            _storageService.Load<SaveData>(_key, data =>
-            {
-                Debug.Log($"Loaded. Name value: {data.NameValue} +. Score value: {data.ScoreValue}");
-            });
-        }
+    public SaveData GetData()
+    {
+        LoadScore();
+        return CurrentData;
     }
 }
 

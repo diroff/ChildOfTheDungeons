@@ -380,7 +380,7 @@ TextureImporter:
         width: 24
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -388,6 +388,27 @@ TextureImporter:
       bones: []
       spriteID: 620daaf4c08f91b49940260e46303e93
       internalID: -2095882397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cup
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 2
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec64139fe8df1044b2fe90726d1b502
+      internalID: 2064822463
       vertices: []
       indices: 
       edges: []
@@ -403,18 +424,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Button_0: 1380607677
       apply: 1083740024
       button_1: 1808064390
-      cancel: 76911867
       buttons_2: -409824998
-      pause: 1558101123
-      exit: 941306307
-      next: 422696076
-      info: -2095882397
-      play: -2115232449
-      Button_0: 1380607677
-      settings: 570066272
       buttons_3: -2006161332
+      cancel: 76911867
+      cup: 2064822463
+      exit: 941306307
+      info: -2095882397
+      next: 422696076
+      pause: 1558101123
+      play: -2115232449
+      settings: 570066272
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

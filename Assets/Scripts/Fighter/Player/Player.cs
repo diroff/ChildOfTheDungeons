@@ -24,6 +24,7 @@ public class Player : Fighter
     public event UnityAction NotLeaved;
     public event UnityAction<float, float> HealthChanged;
     public UnityEvent<int, int> ExperienceChanged;
+    public UnityEvent<int> ExperienceAdded;
     public UnityEvent<int> LevelChanged;
 
     protected override void Start()
@@ -69,6 +70,7 @@ public class Player : Fighter
     public void AddExperience(int countExperience)
     {
         _currentExperience += countExperience;
+        ExperienceAdded?.Invoke(countExperience);
         ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
         LevelUp();
     }
