@@ -1280,6 +1280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1636331849}
   _eventIcon: {fileID: 21300000, guid: cee567246a03d9f40b8fa9cdfdf49d43, type: 3}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
@@ -1733,6 +1734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1410077755}
   _eventIcon: {fileID: -1679283616, guid: e9393ba95e626e140899b6a8fba2355f, type: 3}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
@@ -2075,6 +2077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1403963333}
   _eventIcon: {fileID: 0}
+  _canBeEnded: 0
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 0}
@@ -6158,7 +6161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u0418\u0433\u0440\u043E\u043A"
-  BaseMaxHealth: 8
+  BaseMaxHealth: 1
   Armor: 0
   BaseDamage: 0
   Level: 1
@@ -7392,6 +7395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 405244369}
   _eventIcon: {fileID: 21300000, guid: 40badda3d49ab01418f20911f2658023, type: 3}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 3ef6da1f008b99c4a83ec3f7f59a8741, type: 3}
@@ -10924,6 +10928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 231167814}
   _eventIcon: {fileID: 0}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: -5419117064279521559, guid: e614c016c2c2e544f807b3d82faf9a92, type: 3}
@@ -13958,6 +13963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1636331849}
   _eventIcon: {fileID: -1750280436, guid: e9393ba95e626e140899b6a8fba2355f, type: 3}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
@@ -14664,6 +14670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1572662610}
   _eventIcon: {fileID: 0}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 7015268086709840673, guid: 3bc0458791dcef846bc8de3da6a3818c, type: 3}
@@ -14873,6 +14880,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444298553}
   m_CullTransparentMesh: 1
+--- !u!1 &1477967896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477967898}
+  - component: {fileID: 1477967897}
+  m_Layer: 0
+  m_Name: TimeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1477967897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477967896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd10f53291df4c438bb377d9c38f6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1477967898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477967896}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.480655, y: 0.003203839, z: 49.322937}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1480688078
 GameObject:
   m_ObjectHideFlags: 0
@@ -16497,6 +16548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1410077755}
   _eventIcon: {fileID: -590435708, guid: e9393ba95e626e140899b6a8fba2355f, type: 3}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
@@ -16686,6 +16738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1480688078}
   _eventIcon: {fileID: 1137461918, guid: e9393ba95e626e140899b6a8fba2355f, type: 3}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
@@ -20303,6 +20356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1410077755}
   _eventIcon: {fileID: 2069027981, guid: e9393ba95e626e140899b6a8fba2355f, type: 3}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
@@ -21524,6 +21578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1636331849}
   _eventIcon: {fileID: -1163900208, guid: e9393ba95e626e140899b6a8fba2355f, type: 3}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
@@ -22716,6 +22771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 1410077755}
   _eventIcon: {fileID: -1905049788, guid: e9393ba95e626e140899b6a8fba2355f, type: 3}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
@@ -22846,6 +22902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _panel: {fileID: 775393113034063495}
   _eventIcon: {fileID: 0}
+  _canBeEnded: 1
   Player: {fileID: 532910443}
   RoomController: {fileID: 1121508622}
   EventRoom: {fileID: 0}

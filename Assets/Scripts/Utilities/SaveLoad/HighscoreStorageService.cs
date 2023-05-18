@@ -15,8 +15,22 @@ public class HighscoreStorageService : MonoBehaviour
 
     public void SaveScore(SaveData saveData)
     {
-        _storageService.Save(Key, saveData);
-        Debug.Log("Saved!");
+        bool canBeSaved = true;
+
+        _storageService.Load<SaveData>(Key, data =>
+        {
+            if (saveData.ScoreValue <= data.ScoreValue)
+            {
+                Debug.Log($"Your score:{saveData.ScoreValue} <= {data.ScoreValue}");
+                canBeSaved = false;
+            }
+        });
+
+        if (canBeSaved)
+        {
+            Debug.Log("Saved!");
+            _storageService.Save(Key, saveData);
+        }
     }
 
     public void LoadScore()
