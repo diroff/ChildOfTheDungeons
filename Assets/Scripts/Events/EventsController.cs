@@ -37,7 +37,6 @@ public class EventsController : MonoBehaviour
     public void SetEvent(int eventNumber, bool isRandom = false)
     {
         int number = 0;
-        int playerLevel = _progression.Player.GetLevel();
 
         if (_nextEventSetted)
         {
@@ -119,13 +118,15 @@ public class EventsController : MonoBehaviour
 
             if (_player.Die())
                 _currentEvent = _gameOver;
+
             else if (_needContinue)
                 _currentEvent = _continue;
+
             else
                 return;
 
             _needContinue = true;
-            StartEvent();
+            _currentEvent.StartEvent();
         }  
     }
 

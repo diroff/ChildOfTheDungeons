@@ -6,6 +6,7 @@ public abstract class Event : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
     [SerializeField] private Sprite _eventIcon;
+
     [SerializeField] protected Player Player;
     [SerializeField] protected RoomController RoomController;
     [SerializeField] protected Room EventRoom;
