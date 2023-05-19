@@ -7,6 +7,9 @@ public class GameOver : Event
 
     public override void StartEvent()
     {
+        if (gameObject.activeSelf)
+            return;
+        
         base.StartEvent();
 
         SaveData data = new SaveData();
