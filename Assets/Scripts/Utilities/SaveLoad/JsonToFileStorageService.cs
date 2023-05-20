@@ -22,6 +22,14 @@ public class JsonToFileStorageService : IStorageService
     {
         string path = BuildPath(key);
 
+        if(!File.Exists(path))
+        {
+            Debug.Log("File is not available!");
+            T shit = default(T);
+            callback.Invoke(shit);
+            return;
+        }
+
         using (var fileStream = new StreamReader(path)) 
         {
             var json = fileStream.ReadToEnd();
@@ -31,7 +39,7 @@ public class JsonToFileStorageService : IStorageService
         }
     }
 
-    private string BuildPath(string key)
+    public string BuildPath(string key)
     {
         return Path.Combine(Application.persistentDataPath, key);
     }

@@ -8,9 +8,15 @@ public class HighscoreStorageService : MonoBehaviour
 
     private IStorageService _storageService;
 
-    private void OnEnable()
+    private void Awake()
     {
         _storageService = new JsonToFileStorageService();
+
+        _storageService.Load<SaveData>(Key, data =>
+        {
+            if (data == default)
+                FirstSave();
+        });
     }
 
     public void SaveScore(SaveData saveData)
@@ -27,13 +33,19 @@ public class HighscoreStorageService : MonoBehaviour
             _storageService.Save(Key, saveData);
     }
 
+    private void FirstSave()
+    {
+        SaveData saveData = new SaveData();
+
+        saveData.NameValue = "Empty";
+        saveData.ScoreValue = 0;
+
+        _storageService.Save(Key, saveData);
+    }
+
     public void LoadScore()
     {
-        _storageService.Load<SaveData>(Key, data =>
-        {
-            CurrentData = data;
-            Debug.Log($"Loaded. Name value: {CurrentData.NameValue} + Score value: {CurrentData.ScoreValue}");
-        });
+        _storageService.Load<SaveData>(Key, data => { CurrentData = data; });
     }
 
     public SaveData GetData()
