@@ -24,9 +24,7 @@ public class JsonToFileStorageService : IStorageService
 
         if(!File.Exists(path))
         {
-            Debug.Log("File is not available!");
-            T shit = default(T);
-            callback.Invoke(shit);
+            callback.Invoke(default);
             return;
         }
 
