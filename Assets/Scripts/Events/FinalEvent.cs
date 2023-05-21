@@ -7,6 +7,10 @@ public class FinalEvent : Event
     [SerializeField] private float _endGameTime;
     [SerializeField] private Animator _blackScreen;
 
+    [SerializeField] private ProgressionController _progressionController;
+    [SerializeField] private HighscoreStorageService _highscoreStorageService;
+    [SerializeField] private MenuControl _menuControl;
+
     public void FinishGame()
     {
         StartCoroutine(Exit());
@@ -20,6 +24,13 @@ public class FinalEvent : Event
         yield return new WaitForSeconds(_walkAnimationTime);
         _blackScreen.SetTrigger("On");
         yield return new WaitForSeconds(_endGameTime);
-        Debug.Log("Game over!");
+
+        SaveData data = new SaveData();
+
+        data.NameValue = "Player";
+        data.ScoreValue = _progressionController.CurrentPoints;
+
+        _highscoreStorageService.SaveScore(data);
+        _menuControl.LoadLevel();
     }
 }

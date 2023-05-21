@@ -7403,6 +7403,9 @@ MonoBehaviour:
   _walkAnimationTime: 0.1
   _endGameTime: 2
   _blackScreen: {fileID: 1672726488}
+  _progressionController: {fileID: 1104878590}
+  _highscoreStorageService: {fileID: 1495481008}
+  _menuControl: {fileID: 1687250269}
 --- !u!114 &634289598
 MonoBehaviour:
   m_ObjectHideFlags: 0
