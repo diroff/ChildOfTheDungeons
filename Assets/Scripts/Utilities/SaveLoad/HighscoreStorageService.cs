@@ -1,18 +1,21 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class HighscoreStorageService : MonoBehaviour
 {
     public const string Key = "Score";
 
-    public SaveData CurrentData;
+    public int SavesCount { get; private set; } = 5;
 
+    private Scores _scores;
     private IStorageService _storageService;
 
     private void Awake()
     {
         _storageService = new JsonToFileStorageService();
 
-        _storageService.Load<SaveData>(Key, data =>
+        _storageService.Load<Scores>(Key, data =>
         {
             if (data == default)
                 FirstSave();
@@ -21,37 +24,53 @@ public class HighscoreStorageService : MonoBehaviour
 
     public void SaveScore(SaveData saveData)
     {
-        bool canBeSaved = true;
-
-        _storageService.Load<SaveData>(Key, data =>
+        _storageService.Load<Scores>(Key, data =>
         {
-            if (saveData.ScoreValue <= data.ScoreValue)
-                canBeSaved = false;
+            if (data == default)
+                FirstSave();
         });
 
-        if (canBeSaved)
-            _storageService.Save(Key, saveData);
+        Scores scores = new Scores();
+
+        _storageService.Load<Scores>(Key, data =>
+        {
+            data.Saves.Add(saveData);
+            var newData = data.Saves.OrderByDescending(m => m.ScoreValue).ToList();
+            data.Saves = newData;
+            data.Saves.RemoveAt(SavesCount);
+            scores = data;
+        });
+
+        _storageService.Save(Key, scores);
     }
 
     private void FirstSave()
     {
+        Scores scores = new Scores();
+        scores.Saves = new List<SaveData>();
+
         SaveData saveData = new SaveData();
 
         saveData.NameValue = "Empty";
         saveData.ScoreValue = 0;
 
-        _storageService.Save(Key, saveData);
+        for (int i = 0; i < SavesCount; i++)
+        {
+            scores.Saves.Add(saveData);
+        }
+
+        _storageService.Save(Key, scores);
     }
 
     public void LoadScore()
     {
-        _storageService.Load<SaveData>(Key, data => { CurrentData = data; });
+        _storageService.Load<Scores>(Key, data => { _scores = data; });
     }
 
-    public SaveData GetData()
+    public Scores GetData()
     {
         LoadScore();
-        return CurrentData;
+        return _scores;
     }
 }
 
@@ -59,4 +78,9 @@ public class SaveData
 {
     public int ScoreValue { get; set; }
     public string NameValue { get; set; }
+}
+
+public class Scores
+{
+    public List<SaveData> Saves;
 }

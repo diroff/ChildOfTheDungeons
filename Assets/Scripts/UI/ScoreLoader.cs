@@ -1,15 +1,23 @@
-using TMPro;
 using UnityEngine;
 
 public class ScoreLoader : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _scoreField;
+    [SerializeField] private Score _scorePrefab;
+    [SerializeField] private GameObject _scorePlacement;
     [SerializeField] private HighscoreStorageService _scoreService;
 
     private void Start()
     {
-        SaveData data = _scoreService.GetData();
+        Scores scores = _scoreService.GetData();
 
-        _scoreField.text = "1. " + data.NameValue + ": " + data.ScoreValue;
+        for (int i = 0; i < _scoreService.SavesCount; i++)
+        {
+            var scoreField = Instantiate(_scorePrefab, _scorePlacement.transform);
+            var score = scores.Saves[i];
+            scoreField.SetScore($"{i + 1}. {score.NameValue}: {score.ScoreValue}");
+
+            if (score.ScoreValue == 0)
+                scoreField.HideRecord();
+        }
     }
 }

@@ -59,7 +59,6 @@ public class AttackMinigame : Minigame
     public override float GetGameResult()
     {
         Result = CalculateDamageModificator();
-        Debug.Log("Multiply:" + Result);
         return base.GetGameResult();
     }
 
