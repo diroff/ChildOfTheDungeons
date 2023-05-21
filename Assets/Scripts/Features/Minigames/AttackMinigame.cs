@@ -51,8 +51,8 @@ public class AttackMinigame : Minigame
                 break;
             }
 
-            _slider.value += _speed + speedModificator;
-            yield return new WaitForSeconds(_speed + speedModificator);
+            _slider.value += _speed * Time.deltaTime + speedModificator;
+            yield return new WaitForSeconds(_speed * Time.deltaTime + speedModificator);
         }
     }
 

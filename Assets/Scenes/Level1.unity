@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GamePanel: {fileID: 843299428}
   _slider: {fileID: 353258668}
-  _speed: 0.004
+  _speed: 0.5
   _attackPanel: {fileID: 508637626}
   _clearZoneMultiply: 0
   _redZoneMultiply: 0.5
@@ -21122,7 +21122,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -177.74}
+  m_AnchoredPosition: {x: 0, y: -177.73999}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2089325739
