@@ -2086,6 +2086,7 @@ MonoBehaviour:
   _panelEnableCouldown: 1
   _progressionController: {fileID: 1104878590}
   _highscoreStorageService: {fileID: 1495481008}
+  _currentUserStorageService: {fileID: 1495481010}
 --- !u!1 &176033351
 GameObject:
   m_ObjectHideFlags: 0
@@ -7405,6 +7406,7 @@ MonoBehaviour:
   _blackScreen: {fileID: 1672726488}
   _progressionController: {fileID: 1104878590}
   _highscoreStorageService: {fileID: 1495481008}
+  _currentUserStorageService: {fileID: 1495481010}
   _menuControl: {fileID: 1687250269}
 --- !u!114 &634289598
 MonoBehaviour:
@@ -15031,8 +15033,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1495481009}
   - component: {fileID: 1495481008}
+  - component: {fileID: 1495481010}
   m_Layer: 0
-  m_Name: ScoreData
+  m_Name: DataLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15065,6 +15068,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1495481010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495481007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610231700ce1a3b4dbdaf86b08e32e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1499343789
 GameObject:
   m_ObjectHideFlags: 0

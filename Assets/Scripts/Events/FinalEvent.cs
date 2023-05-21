@@ -9,6 +9,7 @@ public class FinalEvent : Event
 
     [SerializeField] private ProgressionController _progressionController;
     [SerializeField] private HighscoreStorageService _highscoreStorageService;
+    [SerializeField] private CurrentUserStorageService _currentUserStorageService;
     [SerializeField] private MenuControl _menuControl;
 
     public void FinishGame()
@@ -27,7 +28,7 @@ public class FinalEvent : Event
 
         SaveData data = new SaveData();
 
-        data.NameValue = "Player";
+        data.NameValue = _currentUserStorageService.GetData().Name;
         data.ScoreValue = _progressionController.CurrentPoints;
 
         _highscoreStorageService.SaveScore(data);
