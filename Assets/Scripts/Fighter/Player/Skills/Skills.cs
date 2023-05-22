@@ -13,6 +13,7 @@ public class Skills : MonoBehaviour
     [SerializeField] private int _skillCountForLevel = 1;
 
     private int _skillPointCount = 0;
+    private Skill _currentSkill;
 
     public UnityEvent<int> SkillPointCountChanged;
     public UnityEvent<bool> SkillPointOver;
@@ -34,7 +35,7 @@ public class Skills : MonoBehaviour
         SkillPointCountChanged?.Invoke(_skillPointCount);
     }
 
-    public void UpgradeSkill(Skill skill)
+    public void UpgradeSkill()
     {
         if (_skillPointCount <= 0)
         {
@@ -42,12 +43,16 @@ public class Skills : MonoBehaviour
             return;
         }
 
-        if(skill.AddLevel(1))
+        if(_currentSkill.AddLevel(1))
             _skillPointCount -= 1;
         
         SkillPointCountChanged?.Invoke(_skillPointCount);
-        
         SkillPointOver?.Invoke(IsEnoughPoints());
+    }
+
+    public void SetActiveSkill(Skill skill)
+    {
+        _currentSkill = skill;
     }
 
     private bool IsEnoughPoints()
