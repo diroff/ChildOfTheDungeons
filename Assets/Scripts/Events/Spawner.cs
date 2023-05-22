@@ -12,6 +12,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject _itemPlace;
     [SerializeField] private GameObject _enemyPlace;
 
+    [SerializeField] private Animator _graveAnimator;
+
     public void SpawnEnemy(Enemy enemy)
     {
         Instantiate(enemy, _enemyPlace.transform);
@@ -36,6 +38,11 @@ public class Spawner : MonoBehaviour
     public void SpawnSign(Sign sign)
     {
         Instantiate(sign, _enemyPlace.transform);
+    }
+
+    public void PullOutGrave()
+    {
+        _graveAnimator.SetTrigger("Pull");
     }
 
     public int NumberOfRandomChest()

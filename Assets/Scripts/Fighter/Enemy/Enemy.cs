@@ -13,6 +13,9 @@ public class Enemy : Fighter
     [SerializeField] private bool _hasLoot = true;
     [SerializeField] private ItemList _lootList;
 
+    protected Sprite StartSprite;
+    protected SpriteRenderer SpriteRenderer;
+
     private Item _lootItem;
 
     public UnityEvent<float, float> HealthChanged;
@@ -27,6 +30,9 @@ public class Enemy : Fighter
     {
         base.Start();
         UpdateParameters();
+
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        StartSprite = SpriteRenderer.sprite;
 
         if (IsLoot())
             SetLootItem();
@@ -64,6 +70,11 @@ public class Enemy : Fighter
         HealthChanged.Invoke(CurrentHealth, MaxHealth);
         LevelChanged.Invoke(Level);
         DamageChanged.Invoke(CalculateTotalDamage());
+    }
+
+    public void SetStartSprite()
+    {
+        SpriteRenderer.sprite = StartSprite;
     }
 
     public override void SetLevel(int currentLevel)

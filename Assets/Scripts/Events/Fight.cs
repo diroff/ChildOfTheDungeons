@@ -243,6 +243,7 @@ public class Fight : Event
     {
         Player.AddExperience(_enemy.CalculateExperienceCost());
         SetPanelState(false);
+        Spawner.PullOutGrave();
 
         yield return new WaitForSeconds(_timeFromDead);
 
