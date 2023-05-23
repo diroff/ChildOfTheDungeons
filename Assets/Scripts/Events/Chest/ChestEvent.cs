@@ -11,6 +11,7 @@ public class ChestEvent : Event
     [SerializeField] protected EventsController EventsController;
     [SerializeField] protected Continue Continue;
 
+    [Header("Coroutine time")]
     [SerializeField] private float _timeBeforeLeave;
     [SerializeField] private float _timeBeforeOpen;
 

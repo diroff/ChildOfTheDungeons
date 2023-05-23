@@ -6,17 +6,22 @@ public abstract class Event : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
     [SerializeField] private Sprite _eventIcon;
-
     [SerializeField] protected Player Player;
+    [Space]
+
+    [Header("Rooms")]
     [SerializeField] protected RoomController RoomController;
     [SerializeField] protected Room EventRoom;
+
     [Header("Tutorial")]
     [SerializeField] protected TutorialManager TutorialManager;
     [SerializeField] protected Tutorial Tutorial;
     [SerializeField] protected DirectionTutorial AdditionalTutorial;
+    [Space]
 
     [SerializeField] private int _minimalLevel = 1;
     [SerializeField] private int _maximumLevel = 10;
+
     [SerializeField] private float _panelEnableCouldown = 1.0f;
 
     protected Spawner Spawner;

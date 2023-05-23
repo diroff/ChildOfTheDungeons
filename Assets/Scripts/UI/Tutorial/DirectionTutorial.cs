@@ -1,3 +1,1 @@
-using UnityEngine;
-
-public class DirectionTutorial : Tutorial {}
+public class DirectionTutorial : Tutorial { }

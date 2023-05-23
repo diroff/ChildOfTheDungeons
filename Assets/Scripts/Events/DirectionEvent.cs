@@ -4,8 +4,10 @@ using UnityEngine;
 public class DirectionEvent : Event
 {
     [SerializeField] private List<Event> _availableEvents;
-    [SerializeField] private EventsController _eventController;
     [SerializeField] private Sign _signTemplate;
+
+    [Header("Controllers")]
+    [SerializeField] private EventsController _eventController;
     [SerializeField] private ProgressionController _progressionController;
 
     private List<Event> _events = new List<Event>();

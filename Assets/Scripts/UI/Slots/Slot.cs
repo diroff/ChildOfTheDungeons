@@ -11,7 +11,7 @@ public class Slot : MonoBehaviour
 
     public void UpdateSprite(Sprite sprite)
     {
-        if(SlotSprite != null)
+        if (SlotSprite != null)
             SlotSprite.sprite = sprite;
     }
 
@@ -20,7 +20,7 @@ public class Slot : MonoBehaviour
         if (!SlotIsFilled())
             return;
 
-        if(InfoPanel.gameObject.activeSelf)
+        if (InfoPanel.gameObject.activeSelf)
             InfoPanel.gameObject.SetActive(false);
 
         InfoPanel.ShowInfo(true);

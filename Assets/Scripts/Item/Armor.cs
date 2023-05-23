@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class Armor : Item
 {
     [SerializeField] private int _health;
-
     [SerializeField] private TypeArmor _typeArmor;
 
     public event UnityAction<float> ProtectionChanged;

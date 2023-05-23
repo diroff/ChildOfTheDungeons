@@ -11,7 +11,7 @@ public class Fight : Event
     [SerializeField] protected EventsController EventsController;
     [SerializeField] protected EnemyTemplates EnemyTemplates;
 
-    [Header("Events time")]
+    [Header("Coroutine time")]
     [SerializeField] private float _timeAfterAttack = 0.5f;
     [SerializeField] private float _timeFromDead = 1.5f;
     [SerializeField] private float _timeBeforeLeave = 1.0f;

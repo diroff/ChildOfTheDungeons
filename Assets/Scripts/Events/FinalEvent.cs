@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class FinalEvent : Event
 {
+    [Header("Coroutine time")]
     [SerializeField] private float _walkAnimationTime;
     [SerializeField] private float _endGameTime;
+    [Space]
+
     [SerializeField] private Animator _blackScreen;
 
+    [Header("Services")]
     [SerializeField] private ProgressionController _progressionController;
     [SerializeField] private HighscoreStorageService _highscoreStorageService;
     [SerializeField] private CurrentUserStorageService _currentUserStorageService;

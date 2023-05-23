@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class ItemDescriptionSlot : Slot
 {
     protected Item Item;
@@ -20,5 +16,5 @@ public class ItemDescriptionSlot : Slot
 
         if (Item != null)
             InfoPanel.SetInfo(Item.ItemDescription);
-    }     
+    }
 }

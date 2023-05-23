@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class ArmorSlot : ItemDescriptionSlot
 {
     private Armor _armor;
@@ -14,7 +12,7 @@ public class ArmorSlot : ItemDescriptionSlot
     {
         base.ShowDescription();
 
-        if(SlotIsFilled())
+        if (SlotIsFilled())
             InfoPanel.SetInfo(_armor.ItemDescription, _armor.CalculateProtection(), true);
     }
 }

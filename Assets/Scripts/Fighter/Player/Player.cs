@@ -7,8 +7,8 @@ public class Player : Fighter
     [SerializeField] private ArmorSlots _armorSlots;
     [SerializeField] private WeaponSlot _weaponSlot;
     [SerializeField] private Inventory _inventory;
-
     [Space]
+
     [SerializeField] private int _experienceToNextLevel = 10;
     [SerializeField] private Skills _skills;
 

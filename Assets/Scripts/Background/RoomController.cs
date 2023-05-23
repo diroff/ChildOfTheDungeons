@@ -5,10 +5,12 @@ using UnityEngine;
 public class RoomController : MonoBehaviour
 {
     [SerializeField] private GameObject _backgroundObject;
+
     [Header("Room templates")]
     [SerializeField] private Room _defaultRoom;
     [SerializeField] private Room _forkRoom;
     [Space]
+
     [SerializeField] private Transform _startSpawnPoint;
     [SerializeField] private float _zSpacing;
     [SerializeField] private int _maxRoomsCount = 3;
@@ -58,7 +60,6 @@ public class RoomController : MonoBehaviour
         return spawnPoint;
     }
 
-    [ContextMenu("Move Background")]
     public void MoveBackground()
     {
         StartCoroutine(MoveBackgroundCoroutine());
@@ -86,7 +87,6 @@ public class RoomController : MonoBehaviour
         _targetPosition = transform.position.z - 10;
     }
 
-    [ContextMenu("Destroy Room")]
     private void RemoveRoom()
     {
         if (_currentRooms.Count <= _maxRoomsCount)

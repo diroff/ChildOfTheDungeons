@@ -22,13 +22,13 @@ public class JsonToFileStorageService : IStorageService
     {
         string path = BuildPath(key);
 
-        if(!File.Exists(path))
+        if (!File.Exists(path))
         {
             callback.Invoke(default);
             return;
         }
 
-        using (var fileStream = new StreamReader(path)) 
+        using (var fileStream = new StreamReader(path))
         {
             var json = fileStream.ReadToEnd();
             var data = JsonConvert.DeserializeObject<T>(json);

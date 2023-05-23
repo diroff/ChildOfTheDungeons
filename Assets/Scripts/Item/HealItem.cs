@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class HealItem : Item
 {
     protected override void OnEnable()

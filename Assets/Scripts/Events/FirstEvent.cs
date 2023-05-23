@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class FirstEvent : Event
 {
+    [Header("Events")]
     [SerializeField] private EventsController _eventsController;
     [SerializeField] private Fight _fightEvent;
+    [Space]
 
     [SerializeField] private Enemy _nextEnemy;
     [SerializeField] private Animator _playerAnimator;

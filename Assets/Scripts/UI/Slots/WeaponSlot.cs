@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponSlot : ItemDescriptionSlot
 {
     [SerializeField] private Transform _weaponHand;
-    
+
     private Weapon _weapon;
 
     public Weapon Weapon => _weapon;
@@ -24,7 +22,7 @@ public class WeaponSlot : ItemDescriptionSlot
     public override void ShowDescription()
     {
         base.ShowDescription();
-        if(SlotIsFilled())
+        if (SlotIsFilled())
             InfoPanel.SetInfo(_weapon.ItemDescription, _weapon.CalculateDamage(), false);
     }
 

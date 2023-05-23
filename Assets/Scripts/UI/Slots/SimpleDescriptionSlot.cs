@@ -5,7 +5,6 @@ public class SimpleDescriptionSlot : Slot
     [TextArea(1, 2)]
     [SerializeField] private string _information;
 
-
     private void OnEnable()
     {
         IsFilled = true;

@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class AttackMinigame : Minigame
 {
     [SerializeField] private Slider _slider;
-    [SerializeField] private float _speed;
-
     [SerializeField] private GameObject _attackPanel;
+    [Space]
+
+    [SerializeField] private float _speed;
 
     [Header("Multiply values")]
     [SerializeField] private float _clearZoneMultiply;
@@ -89,7 +90,6 @@ public class AttackMinigame : Minigame
         if (sliderValue >= _purpleZone && sliderValue <= 1 - _purpleZone)
             return _purpleZoneMultiply;
 
-        Debug.Log("Calculation error:" + sliderValue);
         return 0f;
     }
 }

@@ -5,6 +5,7 @@ public class Continue : Event
 {
     [SerializeField] private EventsController _controller;
     [SerializeField] private DirectionEvent _directionEvent;
+    [Space]
 
     [SerializeField] private float _runCouldown = 1.5f;
 

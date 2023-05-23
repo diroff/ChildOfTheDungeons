@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,11 +5,11 @@ using UnityEngine.UI;
 public class EnemyParameters : MonoBehaviour
 {
     [SerializeField] private RoomController _roomController;
+    [SerializeField] private Slider _healthSlider;
+
     [Header("Text Fields")]
     [SerializeField] private TextMeshProUGUI _healthText;
     [SerializeField] private TextMeshProUGUI _damageText;
-    [Space]
-    [SerializeField] private Slider _healthSlider;
 
     private Spawner _spawner;
     private Enemy _enemy;

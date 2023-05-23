@@ -9,6 +9,7 @@ public class LevelUpPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private TextMeshProUGUI _skillPointCount;
     [SerializeField] private Button _upgradeButton;
+
     [Header("Dialogue")]
     [SerializeField] private TutorialManager _tutorialManager;
     [SerializeField] private Tutorial _tutorial;
@@ -39,7 +40,7 @@ public class LevelUpPanel : MonoBehaviour
         _skills.SetActiveSkill(skill);
         CheckSkillAvailable();
 
-        if(skill != null)
+        if (skill != null)
             _tutorialManager.AddMessages(_currentSkill.Tutorial);
     }
 
