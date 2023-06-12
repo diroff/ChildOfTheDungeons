@@ -108,7 +108,7 @@ MonoBehaviour:
   Level: 4
   SpriteImage: {fileID: 21300000, guid: b307c8ed544ea484aaccf4f09d6117d0, type: 3}
   FighterAnimator: {fileID: -2936939981061309367}
-  _baseExperience: 79
+  _baseExperience: 89
   _minimalLevel: 4
   _isBoss: 1
   _hasLoot: 1
