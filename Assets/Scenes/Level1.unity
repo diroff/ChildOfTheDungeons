@@ -1050,8 +1050,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GamePanel: {fileID: 843299428}
   _slider: {fileID: 353258668}
-  _speed: 0.5
   _attackPanel: {fileID: 508637626}
+  _speed: 0.5
   _clearZoneMultiply: 0
   _redZoneMultiply: 0.5
   _orangeZoneMultiply: 0.8
@@ -4549,9 +4549,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _roomController: {fileID: 1121508622}
+  _healthSlider: {fileID: 539830746}
   _healthText: {fileID: 2134993321}
   _damageText: {fileID: 248726914}
-  _healthSlider: {fileID: 539830746}
 --- !u!114 &356515412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10990,8 +10990,8 @@ MonoBehaviour:
   - {fileID: 2113490854}
   - {fileID: 1622029519}
   - {fileID: 634289597}
-  _eventController: {fileID: 1886117191}
   _signTemplate: {fileID: 4789677265668197340, guid: 4a7cd9634f8cee345905f4ed9bf858d6, type: 3}
+  _eventController: {fileID: 1886117191}
   _progressionController: {fileID: 1104878590}
 --- !u!114 &1035679087
 MonoBehaviour:
@@ -18924,6 +18924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 532910443}
+  _progression: {fileID: 1104878590}
   _eventTypes:
   - {fileID: 1035679086}
   - {fileID: 8148549922209866770}
@@ -18931,7 +18932,6 @@ MonoBehaviour:
   _continue: {fileID: 8320838582458532849}
   _gameOver: {fileID: 169853898}
   _startEvent: {fileID: 1413622294}
-  _progression: {fileID: 1104878590}
 --- !u!4 &1886117192
 Transform:
   m_ObjectHideFlags: 0
