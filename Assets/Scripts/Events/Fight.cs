@@ -282,6 +282,7 @@ public class Fight : Event
     private IEnumerator PlayerNotLeavedCoroutine()
     {
         _attackPanel.SetActive(false);
+        _startPanel.SetActive(false);
         SetPanelState(false);
         yield return new WaitForSeconds(_timeBeforeLeave);
         SetPanelState(true);
