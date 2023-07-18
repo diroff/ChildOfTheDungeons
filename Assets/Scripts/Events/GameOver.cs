@@ -5,6 +5,7 @@ public class GameOver : Event
     [SerializeField] private ProgressionController _progressionController;
     [SerializeField] private HighscoreStorageService _highscoreStorageService;
     [SerializeField] private CurrentUserStorageService _currentUserStorageService;
+    [SerializeField] private ProgressSaveLoader _progressSaveLoader;
 
     public override void StartEvent()
     {
@@ -19,6 +20,7 @@ public class GameOver : Event
         data.ScoreValue = _progressionController.CurrentPoints;
 
         _highscoreStorageService.SaveScore(data);
+        _progressSaveLoader.Save();
     }
 
     public override void EndEvent()

@@ -60,6 +60,9 @@ public class LevelUpPanel : MonoBehaviour
 
     private void EnablePanel(int currentLevel)
     {
+        if (_player.Skills.SkillPointCount <= 0)
+            return;
+
         _tutorialManager.AddMessages(_tutorial);
         _panel.SetActive(true);
         _levelText.text = $"Уровень {currentLevel}!";

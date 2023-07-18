@@ -3,6 +3,7 @@ using UnityEngine;
 public class ProgressionController : MonoBehaviour
 {
     [SerializeField] private Player _player;
+    [SerializeField] private ProgressSaveLoader _progressSaveLoader;
 
     public int CurrentPoints { get; private set; }
 
@@ -12,6 +13,18 @@ public class ProgressionController : MonoBehaviour
     public Player Player => _player;
     public int LastEvent => _lastEvent;
     public Item LastItem => _lastItem;
+
+    private void Start()
+    {
+        var data = _progressSaveLoader.GetData();
+
+        Player.SetLevel(data.Level);
+        Player.Skills.Power.ChangeLevel(data.Power);
+        Player.Skills.Agility.ChangeLevel(data.Agility);
+        Player.Skills.Endurance.ChangeLevel(data.Endurance);
+        Player.Skills.Luck.ChangeLevel(data.Luck);
+        Player.UpdateParameters();
+    }
 
     private void OnEnable()
     {

@@ -93,13 +93,30 @@ public class Player : Fighter
         Level++;
 
         int remainExperience = _currentExperience - _experienceToNextLevel;
-        _experienceToNextLevel = (int)((_baseExperience * Level) * (Mathf.Pow(2, Level)));
         _currentExperience = remainExperience;
+        _skills.AddSkillPoint(_skills.SkillCountForLevel);
+
+        SetLevelStats();
+    }
+
+    public override void SetLevel(int currentLevel)
+    {
+        base.SetLevel(currentLevel);
+        _experienceToNextLevel = (int)((_baseExperience * Level) * (Mathf.Pow(2, Level)));
+        SetLevelStats();
+    }
+
+    private void SetLevelStats()
+    {
+        _experienceToNextLevel = (int)((_baseExperience * Level) * (Mathf.Pow(2, Level)));
+
+        if (Level == 1)
+            _experienceToNextLevel = 10;
+
         CalculateMaxHealth();
         CalculateTotalDamage();
         HealthChanged(CurrentHealth, MaxHealth);
         FillHealth();
-        _skills.AddSkillPoint(_skills.SkillCountForLevel);
         ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
         LevelChanged?.Invoke(Level);
     }

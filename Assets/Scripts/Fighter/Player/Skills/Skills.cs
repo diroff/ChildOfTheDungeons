@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,6 +17,7 @@ public class Skills : MonoBehaviour
     public UnityEvent<int> SkillPointCountChanged;
     public UnityEvent<bool> SkillPointOver;
     public int SkillCountForLevel => _skillCountForLevel;
+    public int SkillPointCount => _skillPointCount;
 
     public Skill Power => _power;
     public Skill Agility => _agility;
@@ -58,5 +58,13 @@ public class Skills : MonoBehaviour
     private bool IsEnoughPoints()
     {
         return _skillPointCount > 0;
+    }
+
+    public void SetSkillsLevel(Skills skills)
+    {
+        _power.ChangeLevel(skills.Power.CurrentLevel);
+        _agility.ChangeLevel(skills.Agility.CurrentLevel);
+        _luck.ChangeLevel(skills.Luck.CurrentLevel);
+        _endurance.ChangeLevel(skills.Endurance.CurrentLevel);
     }
 }
