@@ -2087,6 +2087,7 @@ MonoBehaviour:
   _progressionController: {fileID: 1104878590}
   _highscoreStorageService: {fileID: 1495481008}
   _currentUserStorageService: {fileID: 1495481010}
+  _progressSaveLoader: {fileID: 1495481011}
 --- !u!1 &176033351
 GameObject:
   m_ObjectHideFlags: 0
@@ -11558,6 +11559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 532910443}
+  _progressSaveLoader: {fileID: 1495481011}
 --- !u!4 &1104878591
 Transform:
   m_ObjectHideFlags: 0
@@ -14882,6 +14884,7 @@ GameObject:
   - component: {fileID: 1495481009}
   - component: {fileID: 1495481008}
   - component: {fileID: 1495481010}
+  - component: {fileID: 1495481011}
   m_Layer: 0
   m_Name: DataLoader
   m_TagString: Untagged
@@ -14928,6 +14931,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610231700ce1a3b4dbdaf86b08e32e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1495481011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495481007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c41ac13bf70394aa4299d69037aab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _progressionController: {fileID: 1104878590}
 --- !u!1 &1499343789
 GameObject:
   m_ObjectHideFlags: 0
