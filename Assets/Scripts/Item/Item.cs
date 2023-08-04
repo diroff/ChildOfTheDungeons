@@ -59,4 +59,9 @@ public abstract class Item : MonoBehaviour
     {
         return ItemType;
     }
+
+    public void HideItem()
+    {
+        SpriteRenderer.enabled = false;
+    }
 }

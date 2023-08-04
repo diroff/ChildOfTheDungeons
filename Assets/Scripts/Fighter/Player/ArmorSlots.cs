@@ -44,19 +44,31 @@ public class ArmorSlots : MonoBehaviour
 
     private void AddHelm(Armor armor)
     {
-        _helm = armor;
+        if (_helm != null)
+            Destroy(_helm.gameObject);
+
+        _helm = Instantiate(armor);
         _helmSlot.AddItem(_helm);
+        _helm.HideItem();
     }
 
     private void AddCostume(Armor armor)
     {
-        _costume = armor;
+        if(_costume != null)
+            Destroy(_costume.gameObject);
+
+        _costume = Instantiate(armor);
         _costumeSlot.AddItem(_costume);
+        _costume.HideItem();
     }
 
     private void AddShoes(Armor armor)
     {
-        _shoes = armor;
+        if (_shoes != null)
+            Destroy(_shoes.gameObject);
+
+        _shoes = Instantiate(armor);
         _shoesSlot.AddItem(_shoes);
+        _shoes.HideItem();
     }
 }
