@@ -19,10 +19,14 @@ public class ProgressionController : MonoBehaviour
         var data = _progressSaveLoader.GetData();
 
         Player.SetLevel(data.Level);
-        Player.Skills.Power.ChangeLevel(data.Power);
-        Player.Skills.Agility.ChangeLevel(data.Agility);
-        Player.Skills.Endurance.ChangeLevel(data.Endurance);
-        Player.Skills.Luck.ChangeLevel(data.Luck);
+        Player.Skills.Power.ChangeLevel(data.SkillsData.Power);
+        Player.Skills.Agility.ChangeLevel(data.SkillsData.Agility);
+        Player.Skills.Endurance.ChangeLevel(data.SkillsData.Endurance);
+        Player.Skills.Luck.ChangeLevel(data.SkillsData.Luck);
+
+        if (data.HasWeapon)
+            Player.UseWeapon(Resources.Load<Weapon>("Prefab/Items/Weapons/" + data.WeaponData.ID));
+
         Player.UpdateParameters();
     }
 

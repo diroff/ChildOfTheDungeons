@@ -17,6 +17,7 @@ public abstract class Item : MonoBehaviour
     protected SpriteRenderer SpriteRenderer;
     protected TypeOfItems ItemType = TypeOfItems.heal;
 
+    public string ItemName => Name;
     public float ItemValue => Value;
     public bool IsConsumable => Consumable;
     public Sprite ItemSprite => Sprite;
