@@ -37,6 +37,12 @@ public class ProgressSaveLoader : MonoBehaviour
         data.SkillsData.Luck = _progressionController.Player.Skills.Luck.CurrentLevel;
         data.SkillsData.Endurance = _progressionController.Player.Skills.Endurance.CurrentLevel;
 
+        data.InventoryData = new InventoryData();
+
+        data.InventoryData.GoldKeys = _progressionController.Player.Inventory.GoldKeyCount;
+        data.InventoryData.SilverKeys = _progressionController.Player.Inventory.SilverKeyCount;
+        data.InventoryData.Potions = _progressionController.Player.Inventory.PotionCount;
+
         if (_progressionController.Player.WeaponSlot.IsSomeWeapon())
         {
             data.WeaponData = new WeaponData();
@@ -90,6 +96,7 @@ public class ProgressData
     public SkillsData SkillsData;
     public WeaponData WeaponData;
     public ArmorData ArmorData;
+    public InventoryData InventoryData;
 
     public bool HasWeapon = false;
     public bool HasCostume = false;
@@ -115,4 +122,11 @@ public class ArmorData
     public string CostumeID;
     public string HelmID;
     public string ShoesID;
+}
+
+public class InventoryData
+{
+    public int GoldKeys;
+    public int SilverKeys;
+    public int Potions;
 }

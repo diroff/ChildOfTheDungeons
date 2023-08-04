@@ -3,9 +3,9 @@ using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private int _silverKeyCount = 1;
-    [SerializeField] private int _goldKeyCount = 1;
-    [SerializeField] private int _potionCount = 1;
+    [SerializeField] private int _silverKeyCount;
+    [SerializeField] private int _goldKeyCount;
+    [SerializeField] private int _potionCount;
 
     public event UnityAction<int> SilverKeyChanged;
     public event UnityAction<int> GoldKeyChanged;
@@ -22,37 +22,37 @@ public class Inventory : MonoBehaviour
         PotionCountChanged?.Invoke(_potionCount);
     }
 
-    public void AddKey(Key.KeyType _keyType)
+    public void AddKey(Key.KeyType _keyType, int count = 1)
     {
         if (_keyType == Key.KeyType.silver)
-            _silverKeyCount++;
+            _silverKeyCount += count;
         else if (_keyType == Key.KeyType.gold)
-            _goldKeyCount++;
+            _goldKeyCount += count;
 
         SilverKeyChanged?.Invoke(_silverKeyCount);
         GoldKeyChanged?.Invoke(_goldKeyCount);
     }
 
-    public void UseKey(Key.KeyType _keyType)
+    public void UseKey(Key.KeyType _keyType, int count = 1)
     {
         if (_keyType == Key.KeyType.silver)
-            _silverKeyCount--;
+            _silverKeyCount -= count;
         else if (_keyType == Key.KeyType.gold)
-            _goldKeyCount--;
+            _goldKeyCount -= count;
 
         SilverKeyChanged?.Invoke(_silverKeyCount);
         GoldKeyChanged?.Invoke(_goldKeyCount);
     }
 
-    public void SpendPotion()
+    public void SpendPotion(int count = 1)
     {
-        _potionCount--;
+        _potionCount -= count;
         PotionCountChanged?.Invoke(_potionCount);
     }
 
-    public void AddPotion()
+    public void AddPotion(int count = 1)
     {
-        _potionCount++;
+        _potionCount += count;
         PotionCountChanged?.Invoke(_potionCount);
     }
 

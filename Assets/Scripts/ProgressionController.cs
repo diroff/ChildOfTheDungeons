@@ -26,6 +26,10 @@ public class ProgressionController : MonoBehaviour
         Player.Skills.Endurance.ChangeLevel(data.SkillsData.Endurance);
         Player.Skills.Luck.ChangeLevel(data.SkillsData.Luck);
 
+        Player.Inventory.AddKey(Key.KeyType.silver, data.InventoryData.SilverKeys);
+        Player.Inventory.AddKey(Key.KeyType.gold, data.InventoryData.GoldKeys);
+        Player.Inventory.AddPotion(data.InventoryData.Potions);
+
         if (data.HasWeapon)
             Player.UseWeapon(Resources.Load<Weapon>(_itemResourcesPath + "Weapons/" + data.WeaponData.WeaponID));
 
