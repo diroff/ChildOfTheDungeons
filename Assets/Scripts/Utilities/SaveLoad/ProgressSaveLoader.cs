@@ -42,7 +42,27 @@ public class ProgressSaveLoader : MonoBehaviour
             data.WeaponData = new WeaponData();
             data.HasWeapon = true;
 
-            data.WeaponData.ID = _progressionController.Player.WeaponSlot.Weapon.ItemName;
+            data.WeaponData.WeaponID = _progressionController.Player.WeaponSlot.Weapon.ItemName;
+        }
+        
+        data.ArmorData = new ArmorData();
+
+        if(_progressionController.Player.ArmorSlots.Costume != null)
+        {
+            data.ArmorData.CostumeID = _progressionController.Player.ArmorSlots.Costume.ItemName;
+            data.HasCostume = true;
+        }
+
+        if (_progressionController.Player.ArmorSlots.Helm != null)
+        {
+            data.ArmorData.HelmID = _progressionController.Player.ArmorSlots.Helm.ItemName;
+            data.HasHelm = true;
+        }
+
+        if (_progressionController.Player.ArmorSlots.Shoes != null)
+        {
+            data.ArmorData.ShoesID = _progressionController.Player.ArmorSlots.Shoes.ItemName;
+            data.HasShoes = true;
         }
 
         _storageService.Save(Key, data);
@@ -66,9 +86,15 @@ public class ProgressSaveLoader : MonoBehaviour
 public class ProgressData
 {
     public int Level;
+
     public SkillsData SkillsData;
     public WeaponData WeaponData;
+    public ArmorData ArmorData;
+
     public bool HasWeapon = false;
+    public bool HasCostume = false;
+    public bool HasHelm = false;
+    public bool HasShoes = false;
 }
 
 public class SkillsData
@@ -81,5 +107,12 @@ public class SkillsData
 
 public class WeaponData
 {
-    public string ID;
+    public string WeaponID;
+}
+
+public class ArmorData
+{
+    public string CostumeID;
+    public string HelmID;
+    public string ShoesID;
 }

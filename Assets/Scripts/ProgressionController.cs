@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ProgressionController : MonoBehaviour
 {
+    private const string _itemResourcesPath = "Prefab/Items/";
+
     [SerializeField] private Player _player;
     [SerializeField] private ProgressSaveLoader _progressSaveLoader;
 
@@ -25,7 +27,16 @@ public class ProgressionController : MonoBehaviour
         Player.Skills.Luck.ChangeLevel(data.SkillsData.Luck);
 
         if (data.HasWeapon)
-            Player.UseWeapon(Resources.Load<Weapon>("Prefab/Items/Weapons/" + data.WeaponData.ID));
+            Player.UseWeapon(Resources.Load<Weapon>(_itemResourcesPath + "Weapons/" + data.WeaponData.WeaponID));
+
+        if (data.HasCostume)
+            Player.AddArmor(Resources.Load<Armor>(_itemResourcesPath + "Armor/Costume/" + data.ArmorData.CostumeID));
+
+        if (data.HasHelm)
+            Player.AddArmor(Resources.Load<Armor>(_itemResourcesPath + "Armor/Helm/" + data.ArmorData.HelmID));
+
+        if (data.HasShoes)
+            Player.AddArmor(Resources.Load<Armor>(_itemResourcesPath + "Armor/Shoes/" + data.ArmorData.ShoesID));
 
         Player.UpdateParameters();
     }
