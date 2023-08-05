@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FreeItem : Event
 {
-    [SerializeField] private EventsController _eventController;
+    [SerializeField] protected EventsController EventsController;
     [SerializeField] private ProgressionController _progression;
     [SerializeField] private Continue _continue;
 
@@ -12,6 +12,9 @@ public class FreeItem : Event
     [Header("Info Panels")]
     [SerializeField] private GameObject _infoPanel;
     [SerializeField] private GameObject _infoButton;
+
+    [Header("Special item")]
+    [SerializeField] protected Item SpecialItem;
 
     private Item _item;
 
@@ -22,10 +25,18 @@ public class FreeItem : Event
         if (Spawner.gameObject == null)
             Spawner = RoomController.GetRoomSpawner();
 
+        if (SpecialItem != null)
+            SpawnItem(SpecialItem);
+
         if (_item == null)
             SpawnItem();
 
         _infoButton.SetActive(true);
+    }
+
+    public void SetItem(Item item)
+    {
+        SpecialItem = item;
     }
 
     public void AddItem()
@@ -74,7 +85,7 @@ public class FreeItem : Event
 
     public void LeaveItem()
     {
-        _eventController.SetContinue(true);
+        EventsController.SetContinue(true);
         SetPanelState(false);
         EndEvent();
         Destroy(_item);
@@ -108,6 +119,7 @@ public class FreeItem : Event
     {
         _infoButton.SetActive(false);
         _infoPanel.SetActive(false);
+        SpecialItem = null;
         base.EndEvent();
     }
 }
