@@ -43,6 +43,10 @@ public class Fight : Event
     [Space]
     [SerializeField] private Animator _coinAnimator;
 
+    [Header("Special enemy")]
+    [SerializeField] private Enemy _choosenEnemy;
+    [SerializeField] private bool _isEnemyChoosen;
+
     private Enemy _enemy;
     private bool _enemyAssigned;
 
@@ -151,6 +155,12 @@ public class Fight : Event
 
     private void SpawnEnemy()
     {
+        if (_isEnemyChoosen)
+        {
+            Spawner.SpawnEnemy(_choosenEnemy);
+            return;
+        }
+
         if (_enemyAssigned)
         {
             Spawner.SpawnEnemy(_enemy);

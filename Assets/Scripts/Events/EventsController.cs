@@ -24,6 +24,9 @@ public class EventsController : MonoBehaviour
 
     private void Start()
     {
+        if (_startEvent == null)
+            return;
+
         _currentEvent = _startEvent;
         StartEvent();
     }

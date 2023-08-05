@@ -6,6 +6,8 @@ public class Continue : Event
     [SerializeField] private EventsController _controller;
     [SerializeField] private DirectionEvent _directionEvent;
     [Space]
+    [SerializeField] private bool _useLevelSettings;
+    [SerializeField] private Level _level;
 
     [SerializeField] private float _runCouldown = 1.5f;
 
@@ -44,7 +46,12 @@ public class Continue : Event
     private void EnableNewEvent()
     {
         _controller.CurrentEvent.EndEvent();
-        _controller.SetEvent(0, true);
+
+        if(_useLevelSettings)
+            _level.SetNextEvent();
+        else
+            _controller.SetEvent(0, true);
+
         RoomController.SpawnRoom(_controller.CurrentEvent.Room);
         _controller.StartEvent();
     }
