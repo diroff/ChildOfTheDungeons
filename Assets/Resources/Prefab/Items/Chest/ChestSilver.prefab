@@ -141,6 +141,7 @@ MonoBehaviour:
   - {fileID: 6766192260602316794, guid: d5ec0cfe4f755404ea2e93775c94634b, type: 3}
   - {fileID: 6766192260602316794, guid: 6bc4f17d5d7155f439dbe61af14de111, type: 3}
   _progression: {fileID: 0}
+  _additionalItemLevel: 0
 --- !u!1 &4970068108430658034
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +265,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &-1522706621206088148
 MonoBehaviour:
   m_ObjectHideFlags: 0

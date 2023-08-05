@@ -12,6 +12,10 @@ public class SpecialChest : ChestEvent
         EventsController.SetContinue(false);
         EventsController.SetEvent(ChestEvent);
         ChestEvent.SetChest(Chest);
+
+        if (_hasSpecialLoot)
+            ChestEvent.SetSpecialLoot(_specialLoot);
+
         ChestEvent.StartEvent();
         EndEvent();
     }

@@ -16,14 +16,20 @@ public class Chest : MonoBehaviour
         ChooseItem();
     }
 
-    private void ChooseItem()
+    public void ChooseItem()
     {
-        _item = _keyhole.ChooseRandomItem();
+        if(_item == null)
+            _item = _keyhole.ChooseRandomItem();
     }
 
     public void TryOpen()
     {
         _keyhole.Open();
+    }
+
+    public void SetItem(Item item)
+    {
+        _item = item;
     }
 
     public Item PullItem()

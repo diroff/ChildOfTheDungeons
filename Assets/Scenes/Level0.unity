@@ -1264,7 +1264,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &65925127
 MonoBehaviour:
@@ -1297,6 +1297,8 @@ MonoBehaviour:
   Continue: {fileID: 8320838582458532849}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
+  _hasSpecialLoot: 0
+  _specialLoot: {fileID: 0}
 --- !u!114 &65925128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1693,7 +1695,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &152349599
 MonoBehaviour:
@@ -2061,7 +2063,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &169853898
 MonoBehaviour:
@@ -7513,7 +7515,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &634289597
 MonoBehaviour:
@@ -10008,6 +10010,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869347694}
   m_CullTransparentMesh: 1
+--- !u!1 &889843341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889843342}
+  - component: {fileID: 889843345}
+  - component: {fileID: 889843344}
+  - component: {fileID: 889843343}
+  m_Layer: 0
+  m_Name: SilverChest_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &889843342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889843341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1886117192}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &889843343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889843341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _message:
+  - "\u0417\u0434\u0435\u0441\u044C \u043C\u043E\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438
+    \u0441\u0443\u043D\u0434\u0443\u043A \u0441 \u0431\u0440\u043E\u043D\u0435\u0439
+    \u0438\u043B\u0438 \u043E\u0434\u0435\u0436\u0434\u043E\u0439."
+  _showOneTime: 0
+--- !u!114 &889843344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889843341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _message:
+  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _showOneTime: 1
+--- !u!114 &889843345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889843341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8901bc880b3bae449b4eb6ef73e03117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panel: {fileID: 1636331849}
+  _eventIcon: {fileID: -1750280436, guid: e9393ba95e626e140899b6a8fba2355f, type: 3}
+  Player: {fileID: 532910443}
+  RoomController: {fileID: 1121508622}
+  EventRoom: {fileID: 668924954280004324, guid: 24fdd96e8150e9f46914daace5e96805, type: 3}
+  TutorialManager: {fileID: 1013153942}
+  Tutorial: {fileID: 889843344}
+  AdditionalTutorial: {fileID: 889843343}
+  _minimalLevel: 1
+  _maximumLevel: 10
+  _panelEnableCouldown: 1.2
+  _freeItemEvent: {fileID: 1622029519}
+  _openButton: {fileID: 22734858}
+  _keySprite: {fileID: 1362420078}
+  SpecialChest: {fileID: 5169373742871476358, guid: e5aa0d8688711904f947a4b981a13db7, type: 3}
+  EventsController: {fileID: 1886117191}
+  Continue: {fileID: 8320838582458532849}
+  _timeBeforeLeave: 1.5
+  _timeBeforeOpen: 1
+  _hasSpecialLoot: 1
+  _specialLoot: {fileID: 6766192260602316794, guid: e8360af6df1602f4fa86d1391715dc66, type: 3}
+  ChestEvent: {fileID: 65925127}
 --- !u!1 &910573359
 GameObject:
   m_ObjectHideFlags: 0
@@ -11058,7 +11160,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1035679086
 MonoBehaviour:
@@ -13828,7 +13930,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1352651860
 MonoBehaviour:
@@ -13861,6 +13963,8 @@ MonoBehaviour:
   Continue: {fileID: 8320838582458532849}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
+  _hasSpecialLoot: 0
+  _specialLoot: {fileID: 0}
   ChestEvent: {fileID: 65925127}
 --- !u!114 &1352651861
 MonoBehaviour:
@@ -14595,7 +14699,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1413622296
 MonoBehaviour:
@@ -16581,7 +16685,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1609142891
 MonoBehaviour:
@@ -16807,7 +16911,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1622029519
 MonoBehaviour:
@@ -19324,6 +19428,7 @@ Transform:
   - {fileID: 910573360}
   - {fileID: 1607255606}
   - {fileID: 1957525018}
+  - {fileID: 889843342}
   - {fileID: 1963198901}
   - {fileID: 1609142890}
   - {fileID: 152349597}
@@ -20545,7 +20650,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1963198902
 MonoBehaviour:
@@ -21071,12 +21176,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelEvents:
   - {fileID: 8320838582458532849}
+  - {fileID: 889843345}
+  - {fileID: 1352651860}
   - {fileID: 1281233815}
-  - {fileID: 1622029519}
   - {fileID: 910573362}
-  - {fileID: 1352651860}
+  - {fileID: 1622029519}
   - {fileID: 1607255608}
-  - {fileID: 1352651860}
   - {fileID: 2113490854}
   - {fileID: 1957525020}
   - {fileID: 634289597}
@@ -21792,7 +21897,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2113490854
 MonoBehaviour:
@@ -21825,6 +21930,8 @@ MonoBehaviour:
   Continue: {fileID: 8320838582458532849}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
+  _hasSpecialLoot: 0
+  _specialLoot: {fileID: 0}
   ChestEvent: {fileID: 65925127}
 --- !u!114 &2113490855
 MonoBehaviour:
@@ -22337,7 +22444,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &775393113034063492
 RectTransform:

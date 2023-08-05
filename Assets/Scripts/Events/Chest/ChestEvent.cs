@@ -15,6 +15,10 @@ public class ChestEvent : Event
     [SerializeField] private float _timeBeforeLeave;
     [SerializeField] private float _timeBeforeOpen;
 
+    [Header("Special loot")]
+    [SerializeField] protected bool _hasSpecialLoot;
+    [SerializeField] protected Item _specialLoot;
+
     private Chest _chest;
     private Item _item;
     private Key.KeyType _keyType;
@@ -24,6 +28,12 @@ public class ChestEvent : Event
         base.StartEvent();
         SpawnChest(_chest);
         _chest = Spawner.GetChest();
+
+        if (_hasSpecialLoot)
+            _chest.SetItem(_specialLoot);
+        else
+            _chest.ChooseItem();
+
         _keyType = _chest.KeyHole.RequriedKey.TypeOfKey;
         SetOpenButtonState();
     }
@@ -39,6 +49,12 @@ public class ChestEvent : Event
     public void SetChest(Chest newChest)
     {
         _chest = newChest;
+    }
+
+    public void SetSpecialLoot(Item item)
+    {
+        _hasSpecialLoot = true;
+        _specialLoot = item;
     }
 
     private void SetOpenButtonState()
@@ -88,6 +104,7 @@ public class ChestEvent : Event
         _chest.Animator.SetTrigger("Open");
         yield return new WaitForSeconds(_timeBeforeOpen);
         Player.Inventory.UseKey(_keyType);
+
         _item = PrepareItem();
         EventsController.SetContinue(false);
         EventsController.SetEvent(_freeItemEvent);
@@ -99,6 +116,7 @@ public class ChestEvent : Event
 
     public override void EndEvent()
     {
+        _hasSpecialLoot = false;
         base.EndEvent();
     }
 }
