@@ -1297,6 +1297,8 @@ MonoBehaviour:
   Continue: {fileID: 8320838582458532849}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
+  _hasSpecialLoot: 0
+  _specialLoot: {fileID: 0}
 --- !u!114 &65925128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1766,6 +1768,8 @@ MonoBehaviour:
   _enemyInfoPanel: {fileID: 356515405}
   _attackMinigame: {fileID: 63794811}
   _coinAnimator: {fileID: 1090467333}
+  _choosenEnemy: {fileID: 0}
+  _isEnemyChoosen: 0
   _mainFight: {fileID: 8148549922209866770}
 --- !u!114 &152349601
 MonoBehaviour:
@@ -13664,6 +13668,8 @@ MonoBehaviour:
   Continue: {fileID: 8320838582458532849}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
+  _hasSpecialLoot: 0
+  _specialLoot: {fileID: 0}
   ChestEvent: {fileID: 65925127}
 --- !u!114 &1352651861
 MonoBehaviour:
@@ -16308,6 +16314,8 @@ MonoBehaviour:
   _enemyInfoPanel: {fileID: 356515405}
   _attackMinigame: {fileID: 63794811}
   _coinAnimator: {fileID: 1090467333}
+  _choosenEnemy: {fileID: 0}
+  _isEnemyChoosen: 0
   _mainFight: {fileID: 8148549922209866770}
 --- !u!114 &1609142893
 MonoBehaviour:
@@ -16473,12 +16481,13 @@ MonoBehaviour:
   _minimalLevel: 1
   _maximumLevel: 11
   _panelEnableCouldown: 1
-  _eventController: {fileID: 1886117191}
+  EventsController: {fileID: 1886117191}
   _progression: {fileID: 1104878590}
   _continue: {fileID: 8320838582458532849}
   _takeCouldown: 1
   _infoPanel: {fileID: 448577152}
   _infoButton: {fileID: 318519605}
+  SpecialItem: {fileID: 0}
 --- !u!114 &1622029520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20168,6 +20177,8 @@ MonoBehaviour:
   _enemyInfoPanel: {fileID: 356515405}
   _attackMinigame: {fileID: 63794811}
   _coinAnimator: {fileID: 1090467333}
+  _choosenEnemy: {fileID: 0}
+  _isEnemyChoosen: 0
   _mainFight: {fileID: 8148549922209866770}
 --- !u!114 &1963198904
 MonoBehaviour:
@@ -21372,6 +21383,8 @@ MonoBehaviour:
   Continue: {fileID: 8320838582458532849}
   _timeBeforeLeave: 1.5
   _timeBeforeOpen: 1
+  _hasSpecialLoot: 0
+  _specialLoot: {fileID: 0}
   ChestEvent: {fileID: 65925127}
 --- !u!114 &2113490855
 MonoBehaviour:
@@ -22580,6 +22593,8 @@ MonoBehaviour:
   _enemyInfoPanel: {fileID: 356515405}
   _attackMinigame: {fileID: 63794811}
   _coinAnimator: {fileID: 1090467333}
+  _choosenEnemy: {fileID: 0}
+  _isEnemyChoosen: 0
 --- !u!1 &8148549922209866771
 GameObject:
   m_ObjectHideFlags: 0
@@ -22688,6 +22703,8 @@ MonoBehaviour:
   _panelEnableCouldown: 0
   _controller: {fileID: 1886117191}
   _directionEvent: {fileID: 1035679086}
+  _useLevelSettings: 0
+  _level: {fileID: 0}
   _runCouldown: 1
 --- !u!1001 &9052869410368262495
 PrefabInstance:
