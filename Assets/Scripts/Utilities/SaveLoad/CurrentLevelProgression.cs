@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CurrentLevelProgression : MonoBehaviour
 {
@@ -11,12 +10,6 @@ public class CurrentLevelProgression : MonoBehaviour
     private void Awake()
     {
         _storageService = new JsonToFileStorageService();
-
-        _storageService.Load<LevelProgression>(Key, data =>
-        {
-            if (data == default)
-                Save(SceneManager.GetActiveScene().name);
-        });
     }
 
     [ContextMenu("Save current level")]

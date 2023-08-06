@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 271057703}
   - component: {fileID: 271057702}
   - component: {fileID: 271057701}
+  - component: {fileID: 271057704}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -408,9 +409,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 527576907}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: LoadLevel
+      - m_Target: {fileID: 271057704}
+        m_TargetAssemblyTypeName: LevelLoaderComponent, Assembly-CSharp
+        m_MethodName: LoadLastLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -458,6 +459,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271057699}
   m_CullTransparentMesh: 1
+--- !u!114 &271057704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271057699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c65548a58d0a54b82ee6e4d059faeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: 
+  _levelProgression: {fileID: 527576908}
+  _defaultLevelName: Level0
 --- !u!1 &370758186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1062,7 @@ GameObject:
   - component: {fileID: 527576906}
   - component: {fileID: 527576905}
   - component: {fileID: 527576907}
+  - component: {fileID: 527576908}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -1131,6 +1148,18 @@ MonoBehaviour:
   - {fileID: 1619788644}
   _startPanel: {fileID: 1935404176}
   _gameScene: Level1
+--- !u!114 &527576908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527576903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8dbd06cd660bb48a82deca6db873c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &636219671
 GameObject:
   m_ObjectHideFlags: 0
