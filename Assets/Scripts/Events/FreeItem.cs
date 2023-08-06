@@ -89,8 +89,6 @@ public class FreeItem : Event
         SetPanelState(false);
         EndEvent();
         Destroy(_item);
-        _continue.ContinueWay();
-        Player.PlayLeaveAnimation();
 
         _item.TakeItem();
     }
