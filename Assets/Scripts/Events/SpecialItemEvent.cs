@@ -8,8 +8,9 @@ public class SpecialItemEvent : FreeItem
     {
         EventsController.SetContinue(false);
         EventsController.SetEvent(_freeItemEvent);
+
         _freeItemEvent.SetItem(SpecialItem);
-        _freeItemEvent.StartEvent();
         EndEvent();
+       _freeItemEvent.StartEvent();
     }
 }
