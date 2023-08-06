@@ -10,6 +10,7 @@ public class Enemy : Fighter
     [SerializeField] private bool _isBoss = false;
 
     [Header("Loot")]
+    [SerializeField] private int _coins;
     [SerializeField] private bool _hasLoot = true;
     [SerializeField] private ItemList _lootList;
 
@@ -18,13 +19,14 @@ public class Enemy : Fighter
 
     private Item _lootItem;
 
-    public UnityEvent<float, float> HealthChanged;
-    public UnityEvent<int> LevelChanged;
-    public UnityEvent<float> DamageChanged;
-
     public Item LootItem => _lootItem;
     public int MinimalLevel => _minimalLevel;
     public bool IsBoss => _isBoss;
+    public int Coins => _coins;
+
+    public UnityEvent<float, float> HealthChanged;
+    public UnityEvent<int> LevelChanged;
+    public UnityEvent<float> DamageChanged;
 
     protected override void Start()
     {

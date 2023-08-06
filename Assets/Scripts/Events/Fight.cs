@@ -252,6 +252,7 @@ public class Fight : Event
     private IEnumerator EnemyDeadCoroutine()
     {
         Player.AddExperience(_enemy.CalculateExperienceCost());
+        Player.AddCoins(_enemy.Coins);
         SetPanelState(false);
         Spawner.PullOutGrave();
 

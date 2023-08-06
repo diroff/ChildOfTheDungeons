@@ -14,15 +14,20 @@ public class Player : Fighter
 
     private int _baseExperience;
     private int _currentExperience = 0;
+    private int _coins = 0;
 
     public Inventory Inventory => _inventory;
     public WeaponSlot WeaponSlot => _weaponSlot;
     public ArmorSlots ArmorSlots => _armorSlots;
     public Skills Skills => _skills;
 
+    public int Coins => _coins;
+
     public event UnityAction Leaved;
     public event UnityAction NotLeaved;
     public event UnityAction<float, float> HealthChanged;
+    public event UnityAction<int> CoinsCountChanged;
+
     public UnityEvent<int, int> ExperienceChanged;
     public UnityEvent<int> ExperienceAdded;
     public UnityEvent<int> LevelChanged;
@@ -36,6 +41,7 @@ public class Player : Fighter
         Armor = _armorSlots.CalculateArmor();
         HealthChanged(CurrentHealth, MaxHealth);
         ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
+        CoinsCountChanged?.Invoke(_coins);
     }
 
     public override void TakeDamage(float damage)
@@ -73,6 +79,21 @@ public class Player : Fighter
         ExperienceAdded?.Invoke(countExperience);
         ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
         LevelUp();
+    }
+
+    public void AddCoins(int count)
+    {
+        _coins += count;
+
+        CoinsCountChanged?.Invoke(_coins);
+    }
+
+    public void SpendCoins(int count)
+    {
+        if(_coins >= count)
+            _coins -= count;
+
+        CoinsCountChanged?.Invoke(_coins);
     }
 
     public override void CalculateMaxHealth()

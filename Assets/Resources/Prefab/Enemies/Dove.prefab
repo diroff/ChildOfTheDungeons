@@ -111,6 +111,7 @@ MonoBehaviour:
   _baseExperience: 15
   _minimalLevel: 2
   _isBoss: 0
+  _coins: 4
   _hasLoot: 1
   _lootList: {fileID: 1708536581391180363}
   HealthChanged:
