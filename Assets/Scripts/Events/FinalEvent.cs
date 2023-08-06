@@ -10,11 +10,13 @@ public class FinalEvent : Event
 
     [SerializeField] private Animator _blackScreen;
 
+    [SerializeField] private LevelOverPanel _levelOverPanel;
+
     [Header("Services")]
     [SerializeField] private ProgressionController _progressionController;
     [SerializeField] private HighscoreStorageService _highscoreStorageService;
     [SerializeField] private CurrentUserStorageService _currentUserStorageService;
-    [SerializeField] private MenuControl _menuControl;
+    [SerializeField] private ProgressSaveLoader _progressSaveLoader;
 
     public void FinishGame()
     {
@@ -23,6 +25,7 @@ public class FinalEvent : Event
 
     private IEnumerator Exit()
     {
+        _progressSaveLoader.Save();
         _blackScreen.gameObject.SetActive(true);
         SetPanelState(false);
         Player.Move();
@@ -30,12 +33,13 @@ public class FinalEvent : Event
         _blackScreen.SetTrigger("On");
         yield return new WaitForSeconds(_endGameTime);
 
-        SaveData data = new SaveData();
+        _levelOverPanel.gameObject.SetActive(true);
+
+/*      SaveData data = new SaveData();
 
         data.NameValue = _currentUserStorageService.GetData().Name;
         data.ScoreValue = _progressionController.CurrentPoints;
 
-        _highscoreStorageService.SaveScore(data);
-        _menuControl.LoadLevel();
+        _highscoreStorageService.SaveScore(data);*/
     }
 }

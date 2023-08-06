@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoaderComponent : MonoBehaviour
 {
+    [SerializeField] private string _sceneName;
+
+    public string SceneName => _sceneName;
+
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -11,5 +15,10 @@ public class LevelLoaderComponent : MonoBehaviour
     public void LoadLevel(string name)
     {
         SceneManager.LoadScene(name);
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene(SceneName);
     }
 }

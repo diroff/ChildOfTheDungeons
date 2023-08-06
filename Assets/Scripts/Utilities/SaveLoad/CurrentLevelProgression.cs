@@ -1,0 +1,50 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class CurrentLevelProgression : MonoBehaviour
+{
+    public const string Key = "LevelProgression";
+
+    private IStorageService _storageService;
+    private LevelProgression _levelData;
+
+    private void Awake()
+    {
+        _storageService = new JsonToFileStorageService();
+
+        _storageService.Load<LevelProgression>(Key, data =>
+        {
+            if (data == default)
+                Save(SceneManager.GetActiveScene().name);
+        });
+    }
+
+    [ContextMenu("Save current level")]
+    public void Save(string sceneName)
+    {
+        LevelProgression data = new LevelProgression();
+
+        data.LevelName = sceneName;
+
+        _storageService.Save(Key, data);
+    }
+
+    public void Load()
+    {
+        _storageService.Load<LevelProgression>(Key, data =>
+        {
+            _levelData = data;
+        });
+    }
+
+    public LevelProgression GetData()
+    {
+        Load();
+        return _levelData;
+    }
+}
+
+public class LevelProgression
+{
+    public string LevelName;
+}
