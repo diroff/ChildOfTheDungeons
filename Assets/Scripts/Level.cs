@@ -6,6 +6,9 @@ public class Level : MonoBehaviour
     [SerializeField] private List<Event> _levelEvents;
     [SerializeField] private EventsController _eventsController;
 
+    [SerializeField] private Tutorial _firstTutorial;
+    [SerializeField] private TutorialManager _tutorialManager;
+
     private Queue<Event> _eventsQueue;
 
     private void Awake()
@@ -21,6 +24,15 @@ public class Level : MonoBehaviour
     private void Start()
     {
         SetNextEvent();
+        ShowLevelTutorial();
+    }
+
+    private void ShowLevelTutorial()
+    {
+        if (_firstTutorial == null)
+            return;
+
+        _tutorialManager.AddMessages(_firstTutorial);
     }
 
     public void SetNextEvent()

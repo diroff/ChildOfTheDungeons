@@ -186,9 +186,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Bat
-  BaseMaxHealth: 4
+  BaseMaxHealth: 7
   Armor: 0
-  BaseDamage: 5
+  BaseDamage: 4
   Level: 3
   SpriteImage: {fileID: 21300000, guid: c3bc1ff2cb4004f4e84b211390e5a68c, type: 3}
   FighterAnimator: {fileID: 1841012883214973249}
