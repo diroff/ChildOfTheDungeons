@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
-    [SerializeField] protected SpriteRenderer SlotSprite;
+    [SerializeField] protected Image SlotSprite;
     [SerializeField] protected InfoPanel InfoPanel;
 
     protected bool IsFilled = false;
