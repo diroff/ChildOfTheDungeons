@@ -14,7 +14,7 @@ public class ScoreLoader : MonoBehaviour
         {
             var scoreField = Instantiate(_scorePrefab, _scorePlacement.transform);
             var score = scores.Saves[i];
-            scoreField.SetScore($"{i + 1}. {score.NameValue}: {score.ScoreValue}");
+            scoreField.SetScore($"{i + 1}. {score.ScoreValue}");
 
             if (score.ScoreValue == 0)
                 scoreField.HideRecord();

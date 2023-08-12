@@ -4,8 +4,7 @@ public class GameOver : Event
 {
     [SerializeField] private ProgressionController _progressionController;
     [SerializeField] private HighscoreStorageService _highscoreStorageService;
-    [SerializeField] private CurrentUserStorageService _currentUserStorageService;
-    [SerializeField] private ProgressSaveLoader _progressSaveLoader;
+    //[SerializeField] private ProgressSaveLoader _progressSaveLoader;
 
     public override void StartEvent()
     {
@@ -14,13 +13,12 @@ public class GameOver : Event
         
         base.StartEvent();
 
-        /*SaveData data = new SaveData();
+        SaveData data = new SaveData();
 
-        data.NameValue = _currentUserStorageService.GetData().Name;
         data.ScoreValue = _progressionController.CurrentPoints;
 
         _highscoreStorageService.SaveScore(data);
-        _progressSaveLoader.Save();*/
+        //_progressSaveLoader.Save();
     }
 
     public override void EndEvent()

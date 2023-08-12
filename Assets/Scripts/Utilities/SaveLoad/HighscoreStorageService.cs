@@ -50,8 +50,6 @@ public class HighscoreStorageService : MonoBehaviour
         scores.Saves = new List<SaveData>();
 
         SaveData saveData = new SaveData();
-
-        saveData.NameValue = "Empty";
         saveData.ScoreValue = 0;
 
         for (int i = 0; i < SavesCount; i++)
@@ -77,7 +75,6 @@ public class HighscoreStorageService : MonoBehaviour
 public class SaveData
 {
     public int ScoreValue { get; set; }
-    public string NameValue { get; set; }
 }
 
 public class Scores
