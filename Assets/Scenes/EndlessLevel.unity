@@ -2130,8 +2130,6 @@ MonoBehaviour:
   _panelEnableCouldown: 1
   _progressionController: {fileID: 1104878590}
   _highscoreStorageService: {fileID: 1495481008}
-  _currentUserStorageService: {fileID: 1495481010}
-  _progressSaveLoader: {fileID: 1495481011}
 --- !u!1 &176033351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3758,6 +3756,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300575373}
   m_CullTransparentMesh: 1
+--- !u!1001 &305456648
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7981855
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.063217446
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.3612454
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013228, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316200291615013230, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+      propertyPath: m_Name
+      value: Yandex
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
 --- !u!1 &308929059
 GameObject:
   m_ObjectHideFlags: 0
@@ -7627,7 +7682,6 @@ MonoBehaviour:
   _progressionController: {fileID: 1104878590}
   _highscoreStorageService: {fileID: 1495481008}
   _currentUserStorageService: {fileID: 1495481010}
-  _progressSaveLoader: {fileID: 0}
 --- !u!114 &634289598
 MonoBehaviour:
   m_ObjectHideFlags: 0

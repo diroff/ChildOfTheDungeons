@@ -11,6 +11,9 @@ public class Player : Fighter
 
     [SerializeField] private int _experienceToNextLevel = 10;
     [SerializeField] private Skills _skills;
+    [Space]
+
+    [SerializeField] private Yandex _yandex;
 
     private int _baseExperience;
     private int _currentExperience = 0;
@@ -118,6 +121,7 @@ public class Player : Fighter
         _skills.AddSkillPoint(_skills.SkillCountForLevel);
 
         SetLevelStats();
+        _yandex.Rate();
     }
 
     public override void SetLevel(int currentLevel)
