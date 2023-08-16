@@ -12,16 +12,23 @@ mergeInto(LibraryManager.library, {
 
   RateGame: function () {
     ysdk.feedback.canReview()
-        .then(({ value, reason }) => {
-            if (value) {
-                ysdk.feedback.requestReview()
-                    .then(({ feedbackSent }) => {
-                        console.log(feedbackSent);
-                    })
-            } else {
-                console.log(reason)
-            }
-          })
+    .then(({ value, reason }) => {
+      if (value) {
+        ysdk.feedback.requestReview()
+        .then(({ feedbackSent }) => {
+          console.log(feedbackSent);
+        })
+      } else {
+        console.log(reason)
+      }
+    })
   },
+
+  SetLeaderboardScore: function (value) {
+    ysdk.getLeaderboards()
+    .then(lb => {
+      lb.setLeaderboardScore('Score', value);
+    });
+  }, 
 
 });

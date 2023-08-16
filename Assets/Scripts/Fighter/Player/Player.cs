@@ -17,6 +17,7 @@ public class Player : Fighter
 
     private int _baseExperience;
     private int _currentExperience = 0;
+    private int _currentScore = 0;
     private int _coins = 0;
 
     public Inventory Inventory => _inventory;
@@ -24,6 +25,7 @@ public class Player : Fighter
     public ArmorSlots ArmorSlots => _armorSlots;
     public Skills Skills => _skills;
 
+    public int CurrentScore => _currentScore;
     public int Coins => _coins;
 
     public event UnityAction Leaved;
@@ -79,6 +81,7 @@ public class Player : Fighter
     public void AddExperience(int countExperience)
     {
         _currentExperience += countExperience;
+        _currentScore += countExperience;
         ExperienceAdded?.Invoke(countExperience);
         ExperienceChanged?.Invoke(_currentExperience, _experienceToNextLevel);
         LevelUp();

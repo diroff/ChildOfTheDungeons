@@ -16,6 +16,9 @@ public class Yandex : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void RateGame();
 
+    [DllImport("__Internal")]
+    private static extern void SetLeaderboardScore(int value);
+
     [SerializeField] private TextMeshProUGUI _nameText;
     [SerializeField] private RawImage _playerImage;
 
@@ -27,6 +30,11 @@ public class Yandex : MonoBehaviour
     public void Rate()
     {
         RateGame();
+    }
+
+    public void SetLeaderboard(int value)
+    {
+        SetLeaderboardScore(value);
     }
 
     public void SetName(string name)

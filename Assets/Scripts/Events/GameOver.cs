@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameOver : Event
 {
+    [SerializeField] private Yandex _yandex;
     [SerializeField] private ProgressionController _progressionController;
     [SerializeField] private HighscoreStorageService _highscoreStorageService;
     //[SerializeField] private ProgressSaveLoader _progressSaveLoader;
@@ -12,6 +13,8 @@ public class GameOver : Event
             return;
         
         base.StartEvent();
+
+        _yandex.SetLeaderboard(_progressionController.Player.CurrentScore);
 
         /*SaveData data = new SaveData();
 
