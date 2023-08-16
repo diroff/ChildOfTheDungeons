@@ -14,7 +14,7 @@ public class GameOver : Event
         
         base.StartEvent();
 
-#if UNITY_WEBGL
+#if UNITY_WEBGL && !UNITY_EDITOR
         _yandex.SetLeaderboard(_progressionController.Player.CurrentScore);
         _yandex.ShowAdvertisement();
 #endif

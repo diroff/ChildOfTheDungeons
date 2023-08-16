@@ -19,7 +19,7 @@ public class FirstEvent : Event
     {
         base.StartEvent();
 
-#if UNITY_WEBGL
+#if UNITY_WEBGL && !UNITY_EDITOR
         _yandex.ShowAdvertisement();
 #endif
     }

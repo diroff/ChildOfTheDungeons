@@ -125,7 +125,7 @@ public class Player : Fighter
 
         SetLevelStats();
 
-#if UNITY_WEBGL
+#if UNITY_WEBGL && !UNITY_EDITOR
         _yandex.Rate();
         _yandex.ShowAdvertisement();
 #endif

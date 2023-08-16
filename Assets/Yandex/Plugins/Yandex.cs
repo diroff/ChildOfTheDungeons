@@ -42,7 +42,9 @@ public class Yandex : MonoBehaviour
 
     public void ShowAdvertisement()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
         ShowAdv();
+#endif
     }
 
     public void SetName(string name)
