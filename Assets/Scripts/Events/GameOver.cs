@@ -14,8 +14,10 @@ public class GameOver : Event
         
         base.StartEvent();
 
+#if UNITY_WEBGL
         _yandex.SetLeaderboard(_progressionController.Player.CurrentScore);
-
+        _yandex.ShowAdvertisement();
+#endif
         /*SaveData data = new SaveData();
 
         data.ScoreValue = _progressionController.CurrentPoints;

@@ -19,6 +19,9 @@ public class Yandex : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void SetLeaderboardScore(int value);
 
+    [DllImport("__Internal")]
+    private static extern void ShowAdv();
+
     [SerializeField] private TextMeshProUGUI _nameText;
     [SerializeField] private RawImage _playerImage;
 
@@ -35,6 +38,11 @@ public class Yandex : MonoBehaviour
     public void SetLeaderboard(int value)
     {
         SetLeaderboardScore(value);
+    }
+
+    public void ShowAdvertisement()
+    {
+        ShowAdv();
     }
 
     public void SetName(string name)

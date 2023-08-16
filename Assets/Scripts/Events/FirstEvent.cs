@@ -11,6 +11,18 @@ public class FirstEvent : Event
     [SerializeField] private Enemy _nextEnemy;
     [SerializeField] private Animator _playerAnimator;
     [SerializeField] private float _playerMoveTime;
+    [Space]
+
+    [SerializeField] private Yandex _yandex;
+
+    public override void StartEvent()
+    {
+        base.StartEvent();
+
+#if UNITY_WEBGL
+        _yandex.ShowAdvertisement();
+#endif
+    }
 
     public void Open()
     {

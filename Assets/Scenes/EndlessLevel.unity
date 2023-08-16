@@ -2128,6 +2128,7 @@ MonoBehaviour:
   _minimalLevel: 1
   _maximumLevel: 11
   _panelEnableCouldown: 1
+  _yandex: {fileID: 305456649}
   _progressionController: {fileID: 1104878590}
   _highscoreStorageService: {fileID: 1495481008}
 --- !u!1 &176033351
@@ -3813,6 +3814,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+--- !u!114 &305456649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3316200291615013231, guid: f19ba68e8be447c48b4ba52e39bb5679, type: 3}
+  m_PrefabInstance: {fileID: 305456648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3951830312b8b1b4aaba75420317ac75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &308929059
 GameObject:
   m_ObjectHideFlags: 0
@@ -14607,6 +14619,7 @@ MonoBehaviour:
   _nextEnemy: {fileID: 1797388749512454538, guid: 985eddd043f639b4781f85d04016ea9d, type: 3}
   _playerAnimator: {fileID: 532910447}
   _playerMoveTime: 2
+  _yandex: {fileID: 305456649}
 --- !u!4 &1413622295
 Transform:
   m_ObjectHideFlags: 0

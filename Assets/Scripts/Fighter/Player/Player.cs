@@ -124,7 +124,11 @@ public class Player : Fighter
         _skills.AddSkillPoint(_skills.SkillCountForLevel);
 
         SetLevelStats();
+
+#if UNITY_WEBGL
         _yandex.Rate();
+        _yandex.ShowAdvertisement();
+#endif
     }
 
     public override void SetLevel(int currentLevel)
