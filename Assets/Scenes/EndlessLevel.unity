@@ -6443,6 +6443,7 @@ MonoBehaviour:
   _inventory: {fileID: 532910449}
   _experienceToNextLevel: 10
   _skills: {fileID: 972732174}
+  _yandex: {fileID: 0}
   ExperienceChanged:
     m_PersistentCalls:
       m_Calls: []
