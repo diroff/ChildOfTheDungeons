@@ -19186,6 +19186,8 @@ MonoBehaviour:
   _continue: {fileID: 8320838582458532849}
   _gameOver: {fileID: 169853898}
   _startEvent: {fileID: 1413622294}
+  _yandex: {fileID: 305456649}
+  _roomCountBeforeAdv: 10
 --- !u!4 &1886117192
 Transform:
   m_ObjectHideFlags: 0

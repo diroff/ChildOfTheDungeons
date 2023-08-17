@@ -12,6 +12,12 @@ public class EventsController : MonoBehaviour
     [SerializeField] private Event _gameOver;
     [SerializeField] private Event _startEvent;
 
+    [Header("Advertisement")]
+    [SerializeField] private Yandex _yandex;
+    [SerializeField] private int _roomCountBeforeAdv = 10;
+
+    private int _completeRoomCount = 0;
+
     private Event _currentEvent;
     private Event _nextEvent;
 
@@ -110,6 +116,14 @@ public class EventsController : MonoBehaviour
     {
         _currentEvent.StartEvent();
         _currentEvent.Ended += EndCurrentEvent;
+
+        _completeRoomCount++;
+
+        if(_completeRoomCount >= _roomCountBeforeAdv)
+        {
+            _completeRoomCount = 0;
+            _yandex.ShowAdvertisement();
+        }
     }
 
     public void EndCurrentEvent(bool ended)
