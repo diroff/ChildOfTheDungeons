@@ -9,12 +9,12 @@ public class LevelOverPanel : MonoBehaviour
 
     private string _nextLevelName;
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         _levelTextField.text = "Уровень пройден!";
         _nextLevelName = _levelLoaderComponent.SceneName;
         _currentLevelProgression.Save(_nextLevelName);
-    }
+    }*/
 
     public void OpenNextLevel()
     {

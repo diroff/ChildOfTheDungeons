@@ -33,7 +33,7 @@ public class FinalEvent : Event
         _blackScreen.SetTrigger("On");
         yield return new WaitForSeconds(_endGameTime);
 
-        //_levelOverPanel.gameObject.SetActive(true);
+        _levelOverPanel.gameObject.SetActive(true);
         
         SaveData data = new SaveData();
         data.ScoreValue = _progressionController.CurrentPoints;
