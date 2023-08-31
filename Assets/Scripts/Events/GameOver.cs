@@ -16,7 +16,6 @@ public class GameOver : Event
 
 #if UNITY_WEBGL && !UNITY_EDITOR
         _yandex.SetLeaderboard(_progressionController.Player.CurrentScore);
-        _yandex.ShowAdvertisement();
 #endif
         /*SaveData data = new SaveData();
 

@@ -127,7 +127,9 @@ public class Player : Fighter
 
 #if UNITY_WEBGL && !UNITY_EDITOR
         _yandex.Rate();
-        _yandex.ShowAdvertisement();
+        
+        if(Level % 3 == 0)
+            _yandex.ShowAdvertisement();
 #endif
     }
 

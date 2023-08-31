@@ -122,7 +122,6 @@ public class EventsController : MonoBehaviour
         if(_completeRoomCount >= _roomCountBeforeAdv)
         {
             _completeRoomCount = 0;
-            _yandex.ShowAdvertisement();
         }
     }
 

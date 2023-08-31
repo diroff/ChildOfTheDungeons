@@ -7,6 +7,7 @@ public class MenuControl : MonoBehaviour
     [SerializeField] private List<GameObject> _panels;
     [SerializeField] private GameObject _startPanel;
     [SerializeField] private string _gameScene;
+    [SerializeField] private Yandex _yandex;
 
     private GameObject _currentPanel;
     private GameObject _previousPanel;
@@ -17,6 +18,11 @@ public class MenuControl : MonoBehaviour
 
         ClosePanels();
         _currentPanel.gameObject.SetActive(true);
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+        if(_yandex != null )
+            _yandex.ShowAdvertisement();
+#endif
     }
 
     public void LoadLevel()

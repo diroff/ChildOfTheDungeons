@@ -4650,7 +4650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5266464, y: 0}
   m_AnchorMax: {x: 1, y: 0.47358105}
-  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344297588
@@ -6670,7 +6670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14536116, y: 0.07248682}
   m_AnchorMax: {x: 0.47300002, y: 0.21300001}
-  m_AnchoredPosition: {x: -0.32995605, y: -0.2000122}
+  m_AnchoredPosition: {x: -0.32995605, y: -0.20007324}
   m_SizeDelta: {x: -0.21000671, y: -0.41999817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &525227507
@@ -10169,7 +10169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.009128334, y: 0.018169338}
   m_AnchorMax: {x: 0.38112834, y: 1}
-  m_AnchoredPosition: {x: 2.500001, y: 0}
+  m_AnchoredPosition: {x: 2.5, y: 0}
   m_SizeDelta: {x: -5.000002, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824118201
@@ -18836,6 +18836,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 305456649}
+        m_TargetAssemblyTypeName: Yandex, Assembly-CSharp
+        m_MethodName: ShowAdvertisement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1687250269}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
         m_MethodName: ReloadScene
@@ -22002,7 +22014,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.9337708, y: 0.50100005}
   m_AnchorMax: {x: 0.9825209, y: 0.588}
-  m_AnchoredPosition: {x: -0.16003418, y: -0.23999023}
+  m_AnchoredPosition: {x: -0.16015625, y: -0.23999023}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2089325739

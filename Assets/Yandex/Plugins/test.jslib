@@ -24,6 +24,10 @@ mergeInto(LibraryManager.library, {
     })
   },
 
+  AuthPlayer: function () {
+    auth();
+  }, 
+
   SetLeaderboardScore: function (value) {
     ysdk.getLeaderboards()
     .then(lb => {
@@ -31,7 +35,7 @@ mergeInto(LibraryManager.library, {
     });
   }, 
 
-  ShowAdv: function () {
+  ShowAdv: function (){
     ysdk.adv.showFullscreenAdv({
     callbacks: {
         onClose: function(wasShown) {

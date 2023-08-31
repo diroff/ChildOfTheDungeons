@@ -18,10 +18,6 @@ public class FirstEvent : Event
     public override void StartEvent()
     {
         base.StartEvent();
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-        _yandex.ShowAdvertisement();
-#endif
     }
 
     public void Open()
