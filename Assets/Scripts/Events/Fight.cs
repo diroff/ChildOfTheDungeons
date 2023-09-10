@@ -29,6 +29,7 @@ public class Fight : Event
     [SerializeField] private GameObject _startPanel;
     [SerializeField] private GameObject _coinImage;
     [SerializeField] private Button _coinFlipButton;
+    [SerializeField] private HealSlot _healStartButton;
     [SerializeField] private TextMeshProUGUI _leaveChangeStartText;
     [SerializeField] private TextMeshProUGUI _coinWinChangeText;
 
@@ -83,9 +84,13 @@ public class Fight : Event
         _damage = 0;
         _attackPanel.SetActive(true);
         _healButton.SetButtonState();
+        _healStartButton.SetButtonState();
         CalculateLeaveChance();
         _leaveChangeText.text = _leaveChance + "%";
         _damageText.text = "x" + Player.CalculateTotalDamage(1);
+
+        _leaveChance += Player.LeaveCarma;
+        _coinWinChance += Player.LuckyCarma;
     }
 
     public void EnemyStep()
@@ -114,6 +119,11 @@ public class Fight : Event
     public void Heal()
     {
         StartCoroutine(HealCoroutine());
+    }
+
+    public void StartHeal()
+    {
+        StartCoroutine(StartHealCoroutine());
     }
 
     public void Leave()
@@ -220,8 +230,13 @@ public class Fight : Event
         CalculateLeaveChance();
         CalculateCoinWinChance();
 
+        _healStartButton.SetButtonState();
+
         _leaveChangeStartText.text = _leaveChance + "%";
         _coinWinChangeText.text = _coinWinChance + "%";
+
+        _leaveChance += (Player.LeaveCarma * 5);
+        _coinWinChance += (Player.LuckyCarma * 5);
     }
 
     private IEnumerator AttackEnemyCoroutine(bool modificatedDamage)
@@ -287,6 +302,19 @@ public class Fight : Event
         Player.Heal();
         yield return new WaitForSeconds(_healingTime);
         _healButton.SetButtonState();
+        _healStartButton.SetButtonState();
+        EnemyStep();
+    }
+
+    private IEnumerator StartHealCoroutine()
+    {
+        _startPanel.SetActive(false);
+        _coinImage.SetActive(false);
+
+        Player.Heal();
+        yield return new WaitForSeconds(_healingTime);
+        _healButton.SetButtonState();
+        _healStartButton.SetButtonState();
         EnemyStep();
     }
 
@@ -317,9 +345,15 @@ public class Fight : Event
         _coinImage.SetActive(false);
 
         if (isWin)
+        {
             PlayerStep();
+            Player.ResetLuckyKarma();
+        }
         else
+        {
             EnemyStep();
+            Player.AddLuckyKarma(1);
+        }
     }
 
     private void PlayerLeaved()

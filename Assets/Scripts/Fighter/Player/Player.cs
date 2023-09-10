@@ -20,6 +20,9 @@ public class Player : Fighter
     private int _currentScore = 0;
     private int _coins = 0;
 
+    private int _luckyCarma = 0;
+    private int _leaveCarma = 0;
+
     public Inventory Inventory => _inventory;
     public WeaponSlot WeaponSlot => _weaponSlot;
     public ArmorSlots ArmorSlots => _armorSlots;
@@ -27,6 +30,8 @@ public class Player : Fighter
 
     public int CurrentScore => _currentScore;
     public int Coins => _coins;
+    public int LuckyCarma => _luckyCarma;
+    public int LeaveCarma => _leaveCarma;
 
     public event UnityAction Leaved;
     public event UnityAction NotLeaved;
@@ -187,12 +192,14 @@ public class Player : Fighter
 
     public void Leave()
     {
+        ResetLeaveKarma();
         PlayLeaveAnimation();
         Leaved?.Invoke();
     }
 
     public void NotLeave()
     {
+        AddLeaveKarma(1);
         FighterAnimator.SetTrigger("NotLeave");
         NotLeaved?.Invoke();
     }
@@ -205,6 +212,26 @@ public class Player : Fighter
     public void PlayLeaveAnimation()
     {
         FighterAnimator.SetTrigger("Leave");
+    }
+
+    public void AddLuckyKarma(int count)
+    {
+        _luckyCarma += count;
+    }
+
+    public void AddLeaveKarma(int count)
+    {
+        _leaveCarma += count;
+    }
+
+    public void ResetLuckyKarma()
+    {
+        _luckyCarma = 0;
+    }
+
+    public void ResetLeaveKarma()
+    {
+        _leaveCarma = 0;
     }
 
     public float CalculateTotalDamage(float modificator = 1)
