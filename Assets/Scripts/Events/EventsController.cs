@@ -30,10 +30,11 @@ public class EventsController : MonoBehaviour
 
     private void Start()
     {
-        if (_startEvent == null)
-            return;
+        if (_startEvent != null)
+            _currentEvent = _startEvent;
+        else
+            _currentEvent = _continue;
 
-        _currentEvent = _startEvent;
         StartEvent();
     }
 
