@@ -184,10 +184,10 @@ public class Fight : Event
 
     private void CalculateLeaveChance()
     {
-        _leaveChance = Player.Skills.Agility.CurrentLevel * 10;
+        _leaveChance = 45 + Player.Skills.Agility.CurrentLevel * 5;
 
         if (Player.CurrentFighterHealth <= Player.MaxFighterHealth / 4)
-            _leaveChance += 30;
+            _leaveChance += 20;
 
         if (_leaveChance > 100)
             _leaveChance = 100;
@@ -195,10 +195,10 @@ public class Fight : Event
 
     private void CalculateCoinWinChance()
     {
-        _coinWinChance = Player.Skills.Luck.CurrentLevel * 10;
+        _coinWinChance = 45 + Player.Skills.Luck.CurrentLevel * 5;
 
         if (Player.CurrentFighterHealth <= Player.MaxFighterHealth / 4)
-            _coinWinChance += 30;
+            _coinWinChance += 20;
 
         if (_coinWinChance > 100)
             _coinWinChance = 100;
