@@ -23,6 +23,8 @@ public class Player : Fighter
     private int _luckyCarma = 0;
     private int _leaveCarma = 0;
 
+    private bool _wasDied = false;
+
     public Inventory Inventory => _inventory;
     public WeaponSlot WeaponSlot => _weaponSlot;
     public ArmorSlots ArmorSlots => _armorSlots;
@@ -32,6 +34,8 @@ public class Player : Fighter
     public int Coins => _coins;
     public int LuckyCarma => _luckyCarma;
     public int LeaveCarma => _leaveCarma;
+
+    public bool WasDied => _wasDied;
 
     public event UnityAction Leaved;
     public event UnityAction NotLeaved;
@@ -129,13 +133,6 @@ public class Player : Fighter
         _skills.AddSkillPoint(_skills.SkillCountForLevel);
 
         SetLevelStats();
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-        _yandex.Rate();
-        
-        if(Level % 3 == 0)
-            _yandex.ShowAdvertisement();
-#endif
     }
 
     public override void SetLevel(int currentLevel)
@@ -160,7 +157,7 @@ public class Player : Fighter
         LevelChanged?.Invoke(Level);
     }
 
-    private void FillHealth()
+    public void FillHealth()
     {
         CurrentHealth = MaxHealth;
         HealthChanged(CurrentHealth, MaxHealth);
@@ -180,6 +177,11 @@ public class Player : Fighter
     public override void Dead()
     {
         base.Dead();
+    }
+
+    public void SetDie()
+    {
+        _wasDied = true;
     }
 
     public void TryToLeave(int change)
@@ -212,6 +214,11 @@ public class Player : Fighter
     public void PlayLeaveAnimation()
     {
         FighterAnimator.SetTrigger("Leave");
+    }
+
+    public void SetRespawnAnimation()
+    {
+        FighterAnimator.SetBool("Dead", false);
     }
 
     public void AddLuckyKarma(int count)

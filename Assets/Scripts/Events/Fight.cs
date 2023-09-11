@@ -37,6 +37,7 @@ public class Fight : Event
     [SerializeField] private GameObject _attackPanel;
     [SerializeField] private GameObject _enemyInfoButton;
     [SerializeField] private GameObject _enemyInfoPanel;
+    [SerializeField] private GameObject _rewardPanel;
 
     [Header("Minigames")]
     [SerializeField] private AttackMinigame _attackMinigame;
@@ -188,8 +189,27 @@ public class Fight : Event
 
     private void PlayerDead(bool isDie)
     {
-        if (isDie)
-            StartCoroutine(PlayerDeadCoroutine());
+        if (!isDie)
+            return;
+        
+        StartCoroutine(PlayerDeadCoroutine());    
+    }
+
+    public void WatchReward()
+    {
+        Player.FillHealth();
+        SetPanelState(true);
+        Player.SetDie();
+        Player.SetRespawnAnimation();
+        _rewardPanel.SetActive(false);
+        PlayerStep();
+    }
+
+    public void IgnoreReward()
+    {
+        Player.SetDie();
+        _rewardPanel.SetActive(false);
+        EndEvent();
     }
 
     private void CalculateLeaveChance()
@@ -293,7 +313,11 @@ public class Fight : Event
     {
         SetPanelState(false);
         yield return new WaitForSeconds(_timeFromDead);
-        EndEvent();
+
+        if(!Player.WasDied)
+            _rewardPanel.SetActive(true);
+        else
+            EndEvent();
     }
 
     private IEnumerator HealCoroutine()
