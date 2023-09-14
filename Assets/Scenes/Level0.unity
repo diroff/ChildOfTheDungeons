@@ -2903,7 +2903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39079887, y: 0.17600001}
   m_AnchorMax: {x: 0.6092012, y: 0.48200002}
-  m_AnchoredPosition: {x: 0, y: 0.40006256}
+  m_AnchoredPosition: {x: 0, y: 0.4000702}
   m_SizeDelta: {x: -3, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213493959
@@ -7195,7 +7195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "\u0418\u0433\u0440\u043E\u043A"
-  BaseMaxHealth: 1
+  BaseMaxHealth: 8
   Armor: 0
   BaseDamage: 0
   Level: 1
@@ -8524,6 +8524,7 @@ MonoBehaviour:
   _progressionController: {fileID: 1104878590}
   _highscoreStorageService: {fileID: 798586122}
   _currentUserStorageService: {fileID: 798586121}
+  _progressSaveLoader: {fileID: 798586120}
 --- !u!114 &634289598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8879,7 +8880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.19000001}
   m_AnchorMax: {x: 0.73700005, y: 0.7}
-  m_AnchoredPosition: {x: -0.49000168, y: 0.5}
+  m_AnchoredPosition: {x: -0.4900055, y: 0.5}
   m_SizeDelta: {x: -0.9699998, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665516166
@@ -24023,13 +24024,8 @@ MonoBehaviour:
   - {fileID: 1413622294}
   - {fileID: 1280222826}
   - {fileID: 857823648}
-  - {fileID: 1561367623}
-  - {fileID: 787888193}
-  - {fileID: 1838042008}
-  - {fileID: 1452107523}
-  - {fileID: 1131809909}
-  - {fileID: 634289597}
   _eventsController: {fileID: 1886117191}
+  _finalRoom: {fileID: 634289597}
   _firstTutorial: {fileID: 0}
   _tutorialManager: {fileID: 1013153942}
 --- !u!4 &2065796292

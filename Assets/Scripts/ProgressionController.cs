@@ -18,7 +18,7 @@ public class ProgressionController : MonoBehaviour
 
     private void Start()
     {
-        /*var data = _progressSaveLoader.GetData();
+        var data = _progressSaveLoader.GetData();
 
         Player.SetLevel(data.Level);
         Player.AddCoins(data.Coins);
@@ -44,7 +44,7 @@ public class ProgressionController : MonoBehaviour
         if (data.HasShoes)
             Player.AddArmor(Resources.Load<Armor>(_itemResourcesPath + "Armor/Shoes/" + data.ArmorData.ShoesID));
 
-        Player.UpdateParameters();*/
+        Player.UpdateParameters();
     }
 
     private void OnEnable()
