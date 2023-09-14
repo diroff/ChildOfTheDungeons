@@ -5,6 +5,7 @@ public class Level : MonoBehaviour
 {
     [SerializeField] private List<Event> _levelEvents;
     [SerializeField] private EventsController _eventsController;
+    [SerializeField] private FinalEvent _finalRoom;
 
     [SerializeField] private Tutorial _firstTutorial;
     [SerializeField] private TutorialManager _tutorialManager;
@@ -19,6 +20,8 @@ public class Level : MonoBehaviour
         {
             _eventsQueue.Enqueue(levelEvent);
         }
+
+        _eventsQueue.Enqueue(_finalRoom);
     }
 
     private void Start()
@@ -38,7 +41,6 @@ public class Level : MonoBehaviour
     public void SetNextEvent()
     {
         var nextEvent = _eventsQueue.Dequeue();
-
-        _eventsController.SetEvent(nextEvent); 
+        _eventsController.SetEvent(nextEvent);
     }
 }
