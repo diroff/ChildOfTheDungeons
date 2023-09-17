@@ -13,10 +13,9 @@ public class FinalEvent : Event
     [SerializeField] private LevelOverPanel _levelOverPanel;
 
     [Header("Services")]
-    [SerializeField] private ProgressionController _progressionController;
     [SerializeField] private HighscoreStorageService _highscoreStorageService;
-    [SerializeField] private CurrentUserStorageService _currentUserStorageService;
     [SerializeField] private ProgressSaveLoader _progressSaveLoader;
+    [SerializeField] private LevelCompleteCount _levelCompleteCount;
 
     public void FinishGame()
     {
@@ -26,6 +25,7 @@ public class FinalEvent : Event
     private IEnumerator Exit()
     {
         _progressSaveLoader.Save();
+        _levelCompleteCount.SaveCompleteLevel();
         _blackScreen.gameObject.SetActive(true);
         SetPanelState(false);
         Player.Move();

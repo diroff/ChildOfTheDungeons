@@ -8521,10 +8521,9 @@ MonoBehaviour:
   _endGameTime: 2
   _blackScreen: {fileID: 1672726488}
   _levelOverPanel: {fileID: 527911335}
-  _progressionController: {fileID: 1104878590}
   _highscoreStorageService: {fileID: 798586122}
-  _currentUserStorageService: {fileID: 798586121}
   _progressSaveLoader: {fileID: 798586120}
+  _levelCompleteCount: {fileID: 798586124}
 --- !u!114 &634289598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10484,6 +10483,7 @@ GameObject:
   - component: {fileID: 798586121}
   - component: {fileID: 798586120}
   - component: {fileID: 798586119}
+  - component: {fileID: 798586124}
   m_Layer: 0
   m_Name: DataLoader
   m_TagString: Untagged
@@ -10555,6 +10555,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &798586124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798586118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec395e28e8127b748b1b0ddcdb5d1544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &805221864
 GameObject:
   m_ObjectHideFlags: 0
