@@ -28,6 +28,7 @@ public class ProgressSaveLoader : MonoBehaviour
 
         data.Level = _progressionController.Player.GetLevel();
         data.Coins = _progressionController.Player.Coins;
+        data.Experience = _progressionController.Player.CurrentExperience;
 
         data.SkillsData.Power = _progressionController.Player.Skills.Power.CurrentLevel;
         data.SkillsData.Agility = _progressionController.Player.Skills.Agility.CurrentLevel;
@@ -89,6 +90,7 @@ public class ProgressSaveLoader : MonoBehaviour
 public class ProgressData
 {
     public int Level;
+    public int Experience;
     public int Coins;
 
     public SkillsData SkillsData;

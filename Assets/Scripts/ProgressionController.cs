@@ -21,6 +21,7 @@ public class ProgressionController : MonoBehaviour
         var data = _progressSaveLoader.GetData();
 
         Player.SetLevel(data.Level);
+        Player.AddExperience(data.Experience);
         Player.AddCoins(data.Coins);
 
         Player.Skills.Power.ChangeLevel(data.SkillsData.Power);

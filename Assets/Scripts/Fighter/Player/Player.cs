@@ -32,6 +32,7 @@ public class Player : Fighter
 
     public int CurrentScore => _currentScore;
     public int Coins => _coins;
+    public int CurrentExperience => _currentExperience;
     public int LuckyCarma => _luckyCarma;
     public int LeaveCarma => _leaveCarma;
 
