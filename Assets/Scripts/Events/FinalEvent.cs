@@ -9,13 +9,13 @@ public class FinalEvent : Event
     [Space]
 
     [SerializeField] private Animator _blackScreen;
-
     [SerializeField] private LevelOverPanel _levelOverPanel;
 
     [Header("Services")]
     [SerializeField] private HighscoreStorageService _highscoreStorageService;
     [SerializeField] private ProgressSaveLoader _progressSaveLoader;
     [SerializeField] private LevelCompleteCount _levelCompleteCount;
+    [SerializeField] private Yandex _yandex;
 
     public void FinishGame()
     {
@@ -29,15 +29,15 @@ public class FinalEvent : Event
         _blackScreen.gameObject.SetActive(true);
         SetPanelState(false);
         Player.Move();
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+            _yandex.SetLeaderboard(_levelCompleteCount.GetData().Count);
+#endif
+        Debug.Log("Leaderboard was setted with value " + _levelCompleteCount.GetData().Count);
         yield return new WaitForSeconds(_walkAnimationTime);
         _blackScreen.SetTrigger("On");
         yield return new WaitForSeconds(_endGameTime);
 
         _levelOverPanel.gameObject.SetActive(true);
-        
-        SaveData data = new SaveData();
-        data.ScoreValue++;
-
-        _highscoreStorageService.SaveScore(data);
     }
 }
