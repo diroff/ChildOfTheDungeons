@@ -13,13 +13,6 @@ public class GameOver : Event
             return;
         
         base.StartEvent();
-
-        /*SaveData data = new SaveData();
-
-        data.ScoreValue = _progressionController.CurrentPoints;
-
-        _highscoreStorageService.SaveScore(data);*/
-        //_progressSaveLoader.Save();
     }
 
     public override void EndEvent()
