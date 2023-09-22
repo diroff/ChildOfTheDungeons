@@ -5,9 +5,12 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     [SerializeField] private GameObject _tutorialPanel;
+    [SerializeField] private GameObject _backgroundBlockPanel;
+    [SerializeField] private TimeController _timeController;
     [SerializeField] private TextMeshProUGUI _textField;
 
-    private Queue<string> _currentMessages = new Queue<string>();
+    private Queue<TutorialData> _currentMessages = new Queue<TutorialData>();
+    private TutorialData _currentTutorialMessage;
 
     public void AddMessages(Tutorial tutorial)
     {
@@ -26,22 +29,36 @@ public class TutorialManager : MonoBehaviour
             tutorial.ViewMessage();
 
         ShowMessage();
+        _backgroundBlockPanel.SetActive(true);
     }
 
     public void ShowMessage()
     {
+        if (_currentTutorialMessage != null)
+        {
+            _currentTutorialMessage.DoEndAction();
+
+            if (_currentTutorialMessage.NeedPause)
+                _timeController.StopTime();
+        }
+
         if (_currentMessages.Count <= 0)
         {
+            _currentTutorialMessage = null;
             HideMessage();
             return;
         }
 
-        _textField.text = _currentMessages.Dequeue();
+        _currentTutorialMessage = _currentMessages.Dequeue();
+        _textField.text = _currentTutorialMessage.Message;
+        _currentTutorialMessage.DoStartAction();
     }
 
     public void HideMessage()
     {
         _currentMessages.Clear();
+        _backgroundBlockPanel.SetActive(false);
         _tutorialPanel.SetActive(false);
+        _timeController.StartTime();
     }
 }

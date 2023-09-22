@@ -236,14 +236,16 @@ RectTransform:
   - {fileID: 1807478960}
   - {fileID: 512413487}
   - {fileID: 448577153}
+  - {fileID: 1108701024}
+  - {fileID: 241598265}
   - {fileID: 1154006790}
   - {fileID: 401587190}
-  - {fileID: 1108701024}
   - {fileID: 1687250268}
   - {fileID: 405244370}
   - {fileID: 1672726485}
   - {fileID: 527911334}
   - {fileID: 552039570}
+  - {fileID: 881896314}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1394,7 +1396,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &65925127
 MonoBehaviour:
@@ -1441,22 +1443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041E\u0433\u043E, \u0442\u044B \u043D\u0430\u0448\u0435\u043B \u0441\u0443\u043D\u0434\u0443\u043A!
-    \u0414\u0430\u0432\u0430\u0439 \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0435\u043C
-    \u0435\u0433\u043E \u043E\u0442\u043A\u0440\u044B\u0442\u044C."
-  - "\u0411\u0443\u0434\u044C \u0432\u043D\u0438\u043C\u0430\u0442\u0435\u043B\u0435\u043D:
-    \u0443 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0441\u0443\u043D\u0434\u0443\u043A\u0430
-    \u0441\u0432\u043E\u0439 \u0442\u0438\u043F \u0441\u043A\u0432\u0430\u0436\u0438\u043D\u044B."
-  - "\u0422\u0430\u043A, \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \u0437\u043E\u043B\u043E\u0442\u044B\u043C
-    \u043A\u043B\u044E\u0447\u043E\u043C \u0442\u044B \u0441\u043C\u043E\u0436\u0435\u0448\u044C
-    \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u044F\u0449\u0438\u043A \u0441 \u043E\u0440\u0443\u0436\u0438\u0435\u043C..."
-  - "\u0410 \u0441\u0435\u0440\u0435\u0431\u0440\u044F\u043D\u044B\u0439 \u043E\u0442\u043A\u0440\u043E\u0435\u0442
-    \u044F\u0449\u0438\u043A \u0441 \u0431\u0440\u043E\u043D\u0435\u0439."
-  - "\u041E\u043F\u044F\u0442\u044C \u0436\u0435, \u043D\u0438\u043A\u0442\u043E
-    \u043D\u0435 \u0437\u0430\u043F\u0440\u0435\u0449\u0430\u0435\u0442 \u0442\u0435\u0431\u0435
-    \u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0435\u0433\u043E. \u0421\u043E\u0432\u0441\u0435\u043C.
-    \u041F\u0443\u0442\u0438 \u043D\u0430\u0437\u0430\u0434 \u043D\u0435\u0442!"
+  _messages: []
   _showOneTime: 1
 --- !u!1 &68695155
 GameObject:
@@ -1729,8 +1716,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.08800001, y: 0.0764835}
   m_AnchorMax: {x: 0.90200007, y: 0.919}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
+  m_AnchoredPosition: {x: 0, y: 10}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &136580326
 MonoBehaviour:
@@ -1782,15 +1769,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 60
   m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 40
+  m_fontSizeMax: 60
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1865,7 +1852,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &152349599
 MonoBehaviour:
@@ -1955,8 +1942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 1
 --- !u!114 &152349602
 MonoBehaviour:
@@ -1970,10 +1956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0422\u0443\u0442 \u0442\u0435\u0431\u044F \u0436\u0434\u0435\u0442 \u0431\u043E\u0441\u0441.
-    \u041F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u044C\u0441\u044F, \u043F\u0440\u0435\u0436\u0434\u0435,
-    \u0447\u0435\u043C \u0438\u0434\u0442\u0438 \u043D\u0430 \u043D\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 0
 --- !u!1 &155817406
 GameObject:
@@ -2235,7 +2218,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &169853898
 MonoBehaviour:
@@ -2743,6 +2726,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 136580325}
+  - {fileID: 1907013612}
   m_Father: {fileID: 401587190}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2903,7 +2887,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.39079887, y: 0.17600001}
   m_AnchorMax: {x: 0.6092012, y: 0.48200002}
-  m_AnchoredPosition: {x: 0, y: 0.4000702}
+  m_AnchoredPosition: {x: 0, y: 0.40008545}
   m_SizeDelta: {x: -3, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213493959
@@ -3067,10 +3051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0417\u0434\u0435\u0441\u044C \u043C\u043E\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438
-    \u0441\u0443\u043D\u0434\u0443\u043A \u0441 \u0431\u0440\u043E\u043D\u0435\u0439
-    \u0438\u043B\u0438 \u043E\u0434\u0435\u0436\u0434\u043E\u0439."
+  _messages: []
   _showOneTime: 0
 --- !u!114 &227021943
 MonoBehaviour:
@@ -3084,8 +3065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 1
 --- !u!114 &227021944
 MonoBehaviour:
@@ -3195,6 +3175,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &241598264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 241598265}
+  - component: {fileID: 241598267}
+  - component: {fileID: 241598266}
+  m_Layer: 0
+  m_Name: BackgroundBlockerLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &241598265
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241598264}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 27997}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &241598266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241598264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 0.34901962}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &241598267
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241598264}
+  m_CullTransparentMesh: 1
 --- !u!1 &248726912
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,12 +5570,12 @@ RectTransform:
   m_Children:
   - {fileID: 209696206}
   m_Father: {fileID: 27997}
-  m_RootOrder: 22
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.18381253, y: 0.70500004}
-  m_AnchorMax: {x: 0.3354792, y: 0.97333324}
-  m_AnchoredPosition: {x: 0, y: -0.019897461}
-  m_SizeDelta: {x: -1.5, y: -1.6499939}
+  m_AnchorMin: {x: 0.34752083, y: 0.23600002}
+  m_AnchorMax: {x: 0.652, y: 0.7695441}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &401587191
 MonoBehaviour:
@@ -5541,7 +5597,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4aa8b71f1e79c084393177c2ca0f4545, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5648,7 +5704,7 @@ RectTransform:
   m_Children:
   - {fileID: 1851200334}
   m_Father: {fileID: 27997}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -6120,6 +6176,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &488570864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488570866}
+  - component: {fileID: 488570865}
+  m_Layer: 0
+  m_Name: Started
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &488570865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488570864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01e96f2de6bbc47aba2aac02844ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _debugMessage: Started!
+--- !u!4 &488570866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488570864}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497876819
 GameObject:
   m_ObjectHideFlags: 0
@@ -7024,7 +7125,7 @@ RectTransform:
   - {fileID: 1400563469}
   - {fileID: 288542807}
   m_Father: {fileID: 27997}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3304792, y: 0.2}
   m_AnchorMax: {x: 0.6696251, y: 0.800889}
@@ -7299,9 +7400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - 
-  - 
+  _messages: []
   _showOneTime: 1
 --- !u!1 &535995721
 GameObject:
@@ -7638,7 +7737,7 @@ RectTransform:
   - {fileID: 1947640389}
   - {fileID: 522768400}
   m_Father: {fileID: 27997}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8537,10 +8636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041E\u0442\u043B\u0438\u0447\u043D\u0430\u044F \u0440\u0430\u0431\u043E\u0442\u0430!
-    \u0423\u0432\u0438\u0434\u0438\u043C\u0441\u044F \u043D\u0430 \u0442\u043E\u0439
-    \u0441\u0442\u043E\u0440\u043E\u043D\u0435."
+  _messages: []
   _showOneTime: 1
 --- !u!114 &634289599
 MonoBehaviour:
@@ -8554,8 +8650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u042D\u0442\u043E...\u0432\u044B\u0445\u043E\u0434?"
+  _messages: []
   _showOneTime: 1
 --- !u!1 &637210832
 GameObject:
@@ -10433,9 +10528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0422\u0443\u0442 \u0442\u044B \u0441\u043C\u043E\u0436\u0435\u0448\u044C \u043D\u0430\u0436\u0438\u0442\u044C\u0441\u044F
-    \u0447\u0435\u043C-\u043D\u0438\u0431\u0443\u0434\u044C \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u043C."
+  _messages: []
   _showOneTime: 0
 --- !u!114 &787888195
 MonoBehaviour:
@@ -10449,12 +10542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041E\u0433\u043E, \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439
-    \u043F\u0440\u0435\u0434\u043C\u0435\u0442!"
-  - "\u041D\u0435 \u0434\u0443\u043C\u0430\u0439, \u043D\u0438\u043A\u0430\u043A\u043E\u0439
-    \u043C\u044B\u0448\u0435\u043B\u043E\u0432\u043A\u0438. \u041F\u0440\u043E\u0441\u0442\u043E
-    \u0445\u0432\u0430\u0442\u0430\u0439 \u0435\u0433\u043E \u0438 \u0431\u0435\u0433\u0438!"
+  _messages: []
   _showOneTime: 1
 --- !u!4 &787888196
 Transform:
@@ -10833,7 +10921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.009128334, y: 0.018169338}
   m_AnchorMax: {x: 0.38112834, y: 1}
-  m_AnchoredPosition: {x: 2.5000324, y: 0}
+  m_AnchoredPosition: {x: 2.5000477, y: 0}
   m_SizeDelta: {x: -5.000002, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824118201
@@ -11199,8 +11287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 1
 --- !u!114 &857823648
 MonoBehaviour:
@@ -11501,6 +11588,104 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869347694}
+  m_CullTransparentMesh: 1
+--- !u!1 &881896313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 881896314}
+  - component: {fileID: 881896317}
+  - component: {fileID: 881896316}
+  - component: {fileID: 881896315}
+  m_Layer: 5
+  m_Name: Outline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &881896314
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881896313}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 27997}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &881896315
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881896313}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58736de7a374b9b4ea9e0db1fed2704e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &881896316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881896313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 32f95f01f8c24974aacf763f6a747c43, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &881896317
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881896313}
   m_CullTransparentMesh: 1
 --- !u!1 &954767171
 GameObject:
@@ -12318,6 +12503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tutorialPanel: {fileID: 401587189}
+  _backgroundBlockPanel: {fileID: 241598264}
+  _timeController: {fileID: 1477967897}
   _textField: {fileID: 136580326}
 --- !u!4 &1013153943
 Transform:
@@ -12494,7 +12681,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1035679086
 MonoBehaviour:
@@ -12542,21 +12729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041E\u0443, \u0442\u044B \u0434\u043E\u0431\u0440\u0430\u043B\u0441\u044F
-    \u0434\u043E \u0441\u0442\u0440\u0430\u043D\u043D\u043E\u0433\u043E \u0443\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044F?"
-  - "\u041D\u0430 \u0441\u0430\u043C\u043E\u043C \u0434\u0435\u043B\u0435 \u044D\u0442\u043E
-    \u043D\u0435 \u0443\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044C, \u0430 \u0441\u043A\u043E\u0440\u0435\u0435...\u0448\u0442\u0443\u0440\u0432\u0430\u043B?"
-  - "\u0422\u044B \u043C\u043E\u0436\u0435\u0448\u044C \u0432\u044B\u0431\u0440\u0430\u0442\u044C
-    \u043F\u0443\u0442\u044C, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0431\u0443\u0434\u0435\u0442
-    \u0436\u0434\u0430\u0442\u044C \u0442\u0435\u0431\u044F \u0432 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0439
-    \u043A\u043E\u043C\u043D\u0430\u0442\u0435."
-  - "\u0411\u0443\u0434\u044C \u043E\u0441\u0442\u043E\u0440\u043E\u0436\u0435\u043D,
-    \u0448\u0442\u0443\u0440\u0432\u0430\u043B \u0441\u0442\u0430\u0440\u044B\u0439
-    \u0438 \u0438\u043D\u043E\u0433\u0434\u0430 \u043C\u043E\u0436\u0435\u0442 \u043F\u043E\u0434\u0432\u043E\u0434\u0438\u0442\u044C..."
-  - "\u0418 \u0434\u0430, \u044F \u0432\u0441\u0435\u0433\u0434\u0430 \u0433\u043E\u0442\u043E\u0432
-    \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u0430\u0442\u044C: \u043A\u0430\u043A\u043E\u0439
-    \u043F\u0443\u0442\u044C \u0437\u0430 \u0447\u0442\u043E \u043E\u0442\u0432\u0435\u0447\u0430\u0435\u0442."
+  _messages: []
   _showOneTime: 1
 --- !u!1 &1036183359
 GameObject:
@@ -12637,11 +12810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041B\u043E\u0432\u043A\u043E\u0441\u0442\u044C. \u0414\u0430\u0435\u0442 10
-    \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445
-    \u043F\u0440\u043E\u0446\u0435\u043D\u0442\u043E\u0432 \u043A \u0448\u0430\u043D\u0441\u0443
-    \u043D\u0430 \u043F\u043E\u0431\u0435\u0433."
+  _messages: []
   _showOneTime: 0
 --- !u!1 &1077729784
 GameObject:
@@ -12721,10 +12890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0423\u0434\u0430\u0447\u0430. \u0414\u0430\u0435\u0442 10 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445
-    \u043F\u0440\u043E\u0446\u0435\u043D\u0442\u043E\u0432 \u043A \u043F\u043E\u0431\u0435\u0434\u0435
-    \u0432 \u043C\u043E\u043D\u0435\u0442\u043A\u0443."
+  _messages: []
   _showOneTime: 0
 --- !u!1 &1090467330
 GameObject:
@@ -13197,7 +13363,7 @@ GameObject:
   - component: {fileID: 1108701026}
   - component: {fileID: 1108701025}
   m_Layer: 0
-  m_Name: BackgroundBlocker
+  m_Name: BackgroundBlockerDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13216,7 +13382,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 27997}
-  m_RootOrder: 23
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13823,8 +13989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 1
 --- !u!4 &1131809911
 Transform:
@@ -14288,7 +14453,7 @@ RectTransform:
   m_Children:
   - {fileID: 596402370}
   m_Father: {fileID: 27997}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -14326,22 +14491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041E\u0433\u043E, \u0442\u044B \u0442\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u043E
-    \u043F\u043E\u0432\u0437\u0440\u043E\u0441\u043B\u0435\u043B! \u0421\u0435\u0439\u0447\u0430\u0441
-    \u0440\u0430\u0441\u0441\u043A\u0430\u0436\u0443 \u043F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435."
-  - "\u0421 \u043A\u0430\u0436\u0434\u044B\u043C \u043D\u043E\u0432\u044B\u043C \u0443\u0440\u043E\u0432\u043D\u0435\u043C
-    \u0432\u0437\u0440\u043E\u0441\u043B\u0435\u043D\u0438\u044F \u0442\u044B \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0448\u044C
-    \u043F\u0430\u0440\u0443 \u043E\u0447\u043A\u043E\u0432."
-  - "\u0422\u044B \u043C\u043E\u0436\u0435\u0448\u044C \u043F\u043E\u0442\u0440\u0430\u0442\u0438\u0442\u044C
-    \u0438\u0445 \u043D\u0430 \u043F\u0440\u043E\u043A\u0430\u0447\u043A\u0443 \u043E\u0434\u043D\u043E\u0433\u043E
-    \u0438\u0437 \u043D\u0430\u0432\u044B\u043A\u043E\u0432."
-  - "\u0412\u044B\u0431\u0435\u0440\u0438 \u043D\u0430\u0432\u044B\u043A, \u043A\u043E\u0442\u043E\u0440\u044B\u0439
-    \u0445\u043E\u0447\u0435\u0448\u044C \u043F\u0440\u043E\u043A\u0430\u0447\u0430\u0442\u044C
-    \u0438 \u043D\u0430\u0436\u043C\u0438 \u0433\u0430\u043B\u043E\u0447\u043A\u0443."
-  - "\u0412\u044B\u0431\u0440\u0430\u0432 \u043D\u0430\u0432\u044B\u043A, \u0442\u044B
-    \u0441\u043C\u043E\u0436\u0435\u0448\u044C \u0442\u0430\u043A\u0436\u0435 \u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u0442\u044C\u0441\u044F
-    \u0441 \u043D\u0438\u043C."
+  _messages: []
   _showOneTime: 1
 --- !u!1 &1154457003
 GameObject:
@@ -14691,6 +14841,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161217959}
   m_CullTransparentMesh: 1
+--- !u!1 &1179442242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1179442244}
+  - component: {fileID: 1179442243}
+  m_Layer: 0
+  m_Name: Outline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1179442243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179442242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f863be1dba5074f43a7429a469314a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outline: {fileID: 881896316}
+--- !u!4 &1179442244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179442242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1183756614
 GameObject:
   m_ObjectHideFlags: 0
@@ -14726,7 +14921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.009128334, y: 0.018169338}
   m_AnchorMax: {x: 0.38112834, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: 0}
+  m_AnchoredPosition: {x: 2.4999695, y: 0}
   m_SizeDelta: {x: -5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1183756616
@@ -15060,9 +15255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0422\u0443\u0442 \u0442\u044B \u0441\u043C\u043E\u0436\u0435\u0448\u044C \u043D\u0430\u0436\u0438\u0442\u044C\u0441\u044F
-    \u0447\u0435\u043C-\u043D\u0438\u0431\u0443\u0434\u044C \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u043C."
+  _messages: []
   _showOneTime: 0
 --- !u!114 &1280222825
 MonoBehaviour:
@@ -15076,12 +15269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041E\u0433\u043E, \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439
-    \u043F\u0440\u0435\u0434\u043C\u0435\u0442!"
-  - "\u041D\u0435 \u0434\u0443\u043C\u0430\u0439, \u043D\u0438\u043A\u0430\u043A\u043E\u0439
-    \u043C\u044B\u0448\u0435\u043B\u043E\u0432\u043A\u0438. \u041F\u0440\u043E\u0441\u0442\u043E
-    \u0445\u0432\u0430\u0442\u0430\u0439 \u0435\u0433\u043E \u0438 \u0431\u0435\u0433\u0438!"
+  _messages: []
   _showOneTime: 1
 --- !u!114 &1280222826
 MonoBehaviour:
@@ -15637,7 +15825,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1352651860
 MonoBehaviour:
@@ -15685,8 +15873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 1
 --- !u!114 &1352651862
 MonoBehaviour:
@@ -15700,10 +15887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0417\u0434\u0435\u0441\u044C \u043C\u043E\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438
-    \u0441\u0443\u043D\u0434\u0443\u043A \u0441 \u0431\u0440\u043E\u043D\u0435\u0439
-    \u0438\u043B\u0438 \u043E\u0434\u0435\u0436\u0434\u043E\u0439."
+  _messages: []
   _showOneTime: 0
 --- !u!1 &1360533220
 GameObject:
@@ -15993,9 +16177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0421\u0438\u043B\u0430. \u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-    \u0443\u0440\u043E\u043D \u0438\u0433\u0440\u043E\u043A\u0430 \u043D\u0430 1."
+  _messages: []
   _showOneTime: 0
 --- !u!1 &1387995093
 GameObject:
@@ -16676,7 +16858,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1413622296
 MonoBehaviour:
@@ -16690,12 +16872,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C
-    \u0432 \u0438\u0433\u0440\u0443, \u043F\u0443\u0442\u043D\u0438\u043A!\n*\u041A\u043B\u0438\u043A\u043D\u0438,
-    \u0447\u0442\u043E\u0431\u044B \u0437\u0430\u043A\u0440\u044B\u0442\u044C \u043E\u043A\u043D\u043E*"
-  - "\u0417\u0430 \u044D\u0442\u043E\u0439 \u0442\u0430\u0439\u043D\u043E\u0439 \u043A\u043E\u043C\u043D\u0430\u0442\u043E\u0439
-    \u043D\u0430\u0447\u043D\u0435\u0442\u0441\u044F \u0442\u0432\u043E\u0435 \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435."
+  _messages:
+  - Message: "\u0412\u0441\u0435\u043C \u043F\u0440\u0438\u0432\u0435\u0442, \u0434\u0430\u0440\u043E\u0432\u0430
+      \u0432\u0430\u0449\u0435 \u043A\u043B\u0430\u0441\u0441. \u0422\u044B\u043A\u0430\u0439
+      \u043D\u0430 \u043E\u043A\u043E\u0448\u043A\u043E, \u0447\u0442\u043E\u0431\u044B
+      \u043F\u0435\u0440\u0435\u0439\u0442\u0438 \u043A \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0439
+      \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0435."
+    NeedPause: 0
+    OnStartMessage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1179442243}
+          m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+          m_MethodName: SetOutline
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1907013612}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    OnEndMessage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1179442243}
+          m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+          m_MethodName: DisableOutline
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Message: "\u0421\u043C\u0430\u0440\u0438, \u0442\u044B\u043A\u0430\u0439 \u0441\u044E\u0434\u0430,
+      \u0447\u0442\u043E\u0431\u044B \u0445\u043E\u0434\u0438\u0442\u044C."
+    NeedPause: 0
+    OnStartMessage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1179442243}
+          m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+          m_MethodName: SetOutline
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 585096898}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    OnEndMessage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1179442243}
+          m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+          m_MethodName: DisableOutline
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Message: "\u0412\u043E\u0442 \u0438 \u0432\u0441\u043E. \u0427\u043E \u0441\u043C\u043E\u0442\u0440\u0438\u0448\u044C
+      - \u0438\u0434\u0438!!!"
+    NeedPause: 0
+    OnStartMessage:
+      m_PersistentCalls:
+        m_Calls: []
+    OnEndMessage:
+      m_PersistentCalls:
+        m_Calls: []
   _showOneTime: 1
 --- !u!1 &1416099626
 GameObject:
@@ -17091,8 +17346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 1
 --- !u!4 &1452107525
 Transform:
@@ -17108,6 +17362,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1886117192}
   m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1459565173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1459565175}
+  - component: {fileID: 1459565174}
+  m_Layer: 0
+  m_Name: Ended
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1459565174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459565173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01e96f2de6bbc47aba2aac02844ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _debugMessage: Ended!
+--- !u!4 &1459565175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459565173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1477967896
 GameObject:
@@ -17752,9 +18051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0422\u0443\u0442 \u0442\u044B \u0441\u043C\u043E\u0436\u0435\u0448\u044C \u043D\u0430\u0436\u0438\u0442\u044C\u0441\u044F
-    \u0447\u0435\u043C-\u043D\u0438\u0431\u0443\u0434\u044C \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u043C."
+  _messages: []
   _showOneTime: 0
 --- !u!114 &1561367625
 MonoBehaviour:
@@ -17768,12 +18065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041E\u0433\u043E, \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439
-    \u043F\u0440\u0435\u0434\u043C\u0435\u0442!"
-  - "\u041D\u0435 \u0434\u0443\u043C\u0430\u0439, \u043D\u0438\u043A\u0430\u043A\u043E\u0439
-    \u043C\u044B\u0448\u0435\u043B\u043E\u0432\u043A\u0438. \u041F\u0440\u043E\u0441\u0442\u043E
-    \u0445\u0432\u0430\u0442\u0430\u0439 \u0435\u0433\u043E \u0438 \u0431\u0435\u0433\u0438!"
+  _messages: []
   _showOneTime: 1
 --- !u!4 &1561367626
 Transform:
@@ -18783,7 +19075,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1609142891
 MonoBehaviour:
@@ -18884,8 +19176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 1
 --- !u!114 &1609142894
 MonoBehaviour:
@@ -18899,9 +19190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0417\u0434\u0435\u0441\u044C \u0436\u0434\u0435\u0442 \u0432\u0440\u0430\u0433
-    \u043F\u043E\u0441\u0438\u043B\u044C\u043D\u0435\u0435, \u0447\u0435\u043C \u0442\u044B."
+  _messages: []
   _showOneTime: 0
 --- !u!1 &1611552062
 GameObject:
@@ -19011,7 +19300,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1622029519
 MonoBehaviour:
@@ -19055,12 +19344,115 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041E\u0433\u043E, \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439
-    \u043F\u0440\u0435\u0434\u043C\u0435\u0442!"
-  - "\u041D\u0435 \u0434\u0443\u043C\u0430\u0439, \u043D\u0438\u043A\u0430\u043A\u043E\u0439
-    \u043C\u044B\u0448\u0435\u043B\u043E\u0432\u043A\u0438. \u041F\u0440\u043E\u0441\u0442\u043E
-    \u0445\u0432\u0430\u0442\u0430\u0439 \u0435\u0433\u043E \u0438 \u0431\u0435\u0433\u0438!"
+  _messages:
+  - Message: "\u041E\u0431\u0430\u043B\u0434\u0435\u0442\u044C, \u0445\u0430\u043B\u044F\u0432\u0430!!!"
+    NeedPause: 0
+    OnStartMessage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1179442243}
+          m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+          m_MethodName: SetOutline
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1907013612}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    OnEndMessage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1179442243}
+          m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+          m_MethodName: DisableOutline
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Message: "\u0415\u0441\u043B\u0438 \u0445\u043E\u0447\u0435\u0448\u044C \u0435\u0433\u043E,
+      \u0442\u043E \u043D\u0430\u0436\u043C\u0438 \u0441\u044E\u0434\u0430, \u0447\u0442\u043E\u0431\u044B
+      \u043F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C!"
+    NeedPause: 0
+    OnStartMessage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1179442243}
+          m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+          m_MethodName: SetOutline
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 65404705}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    OnEndMessage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1179442243}
+          m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+          m_MethodName: DisableOutline
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Message: "\u0410 \u0435\u0441\u043B\u0438 \u043D\u0435 \u0445\u043E\u0447\u0435\u0448\u044C,
+      \u0442\u043E \u0441\u044E\u0434\u0430 (\u043B\u043E\u0445 \u0437\u043E\u0447\u0435\u043C
+      \u0442\u044B \u044D\u0442\u043E \u0434\u0435\u043B\u0430\u0435\u0448\u044C)"
+    NeedPause: 0
+    OnStartMessage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1179442243}
+          m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+          m_MethodName: SetOutline
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 176033352}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    OnEndMessage:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1179442243}
+          m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+          m_MethodName: DisableOutline
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Message: "\u0412\u0441\u0435, \u043C\u043E\u0436\u0435\u0448\u044C \u0438\u0434\u0442\u0438."
+    NeedPause: 0
+    OnStartMessage:
+      m_PersistentCalls:
+        m_Calls: []
+    OnEndMessage:
+      m_PersistentCalls:
+        m_Calls: []
   _showOneTime: 1
 --- !u!114 &1622029521
 MonoBehaviour:
@@ -19074,9 +19466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0422\u0443\u0442 \u0442\u044B \u0441\u043C\u043E\u0436\u0435\u0448\u044C \u043D\u0430\u0436\u0438\u0442\u044C\u0441\u044F
-    \u0447\u0435\u043C-\u043D\u0438\u0431\u0443\u0434\u044C \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u043C."
+  _messages: []
   _showOneTime: 0
 --- !u!1 &1636331849
 GameObject:
@@ -19289,7 +19679,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 27997}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -19524,7 +19914,7 @@ RectTransform:
   m_Children:
   - {fileID: 1903867910}
   m_Father: {fileID: 27997}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19547,7 +19937,7 @@ MonoBehaviour:
   - {fileID: 1903867909}
   _startPanel: {fileID: 1903867909}
   _gameScene: MainMenu
-  _yandex: {fileID: 0}
+  _yandex: {fileID: 305456649}
 --- !u!114 &1687250270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21045,8 +21435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 1
 --- !u!4 &1838042010
 Transform:
@@ -21851,18 +22240,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1413622295}
   - {fileID: 8148549922209866769}
+  - {fileID: 1622029518}
+  - {fileID: 65925126}
   - {fileID: 1963198901}
   - {fileID: 1609142890}
   - {fileID: 152349597}
   - {fileID: 174787584695185587}
   - {fileID: 169853897}
-  - {fileID: 1622029518}
   - {fileID: 1035679085}
-  - {fileID: 65925126}
   - {fileID: 1352651859}
   - {fileID: 2113490853}
-  - {fileID: 1413622295}
   - {fileID: 634289596}
   - {fileID: 857823646}
   - {fileID: 1838042010}
@@ -21953,10 +22342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0412\u044B\u043D\u043E\u0441\u043B\u0438\u0432\u043E\u0441\u0442\u044C. \u0414\u0430\u0435\u0442
-    2 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
-    \u0435\u0434\u0438\u043D\u0438\u0446\u044B \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u044F."
+  _messages: []
   _showOneTime: 0
 --- !u!1 &1896948331
 GameObject:
@@ -22216,6 +22602,42 @@ MonoBehaviour:
   m_Spacing: {x: 20, y: 20}
   m_Constraint: 1
   m_ConstraintCount: 1
+--- !u!1 &1907013611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907013612}
+  m_Layer: 0
+  m_Name: OutlinePlace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1907013612
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907013611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209696206}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.41484228, y: 0.09352915}
+  m_AnchorMax: {x: 0.5854471, y: 0.26700002}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1925739786
 GameObject:
   m_ObjectHideFlags: 0
@@ -23061,7 +23483,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1963198902
 MonoBehaviour:
@@ -23162,8 +23584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 1
 --- !u!114 &1963198905
 MonoBehaviour:
@@ -23177,10 +23598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0417\u0434\u0435\u0441\u044C \u043C\u043E\u0436\u043D\u043E \u0432\u0441\u0442\u0440\u0435\u0442\u0438\u0442\u044C
-    \u0432\u0440\u0430\u0433\u0430, \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u0441\u043B\u0430\u0431\u0435\u0435
-    \u0442\u0435\u0431\u044F."
+  _messages: []
   _showOneTime: 0
 --- !u!1 &1971386863
 GameObject:
@@ -24509,7 +24927,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2113490854
 MonoBehaviour:
@@ -24557,8 +24975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u041D\u0435\u0442, \u043D\u0438\u0447\u0435\u0433\u043E."
+  _messages: []
   _showOneTime: 1
 --- !u!114 &2113490856
 MonoBehaviour:
@@ -24572,10 +24989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a732f6d7b7590fc49a31a68b64ab6314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0417\u0434\u0435\u0441\u044C \u0442\u0435\u0431\u044F \u0436\u0434\u0435\u0442
-    \u0441\u0443\u043D\u0434\u0443\u043A \u0441 \u043E\u0440\u0443\u0436\u0438\u0435\u043C.
-    \u041E\u0442\u043A\u0440\u043E\u0439 \u0435\u0433\u043E \u0441\u043A\u043E\u0440\u0435\u0435!"
+  _messages: []
   _showOneTime: 0
 --- !u!1 &2115490695
 GameObject:
@@ -25056,7 +25470,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &775393113034063492
 RectTransform:
@@ -25703,7 +26117,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1886117192}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8148549922209866770
 MonoBehaviour:
@@ -25822,22 +26236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1696028b2987cef4e8a2ad9fe053f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message:
-  - "\u0427\u0442\u043E \u0436\u0435 \u044D\u0442\u043E \u0442\u0430\u043A\u043E\u0435?
-    \u0422\u044B \u0432\u0441\u0442\u0440\u0435\u0442\u0438\u043B \u0432\u0440\u0430\u0433\u0430!"
-  - "\u0412\u043D\u0443\u0442\u0440\u0438 \u044D\u0442\u043E\u0433\u043E \u043F\u043E\u0434\u0437\u0435\u043C\u0435\u043B\u044C\u044F
-    \u043E\u0441\u043E\u0431\u044B\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u0430
-    \u0441\u0440\u0430\u0436\u0435\u043D\u0438\u0439..."
-  - "\u0414\u043B\u044F \u043D\u0430\u0447\u0430\u043B\u0430 \u0442\u044B \u0434\u043E\u043B\u0436\u0435\u043D
-    \u043F\u043E\u0434\u0431\u0440\u043E\u0441\u0438\u0442\u044C \u043C\u043E\u043D\u0435\u0442\u043A\u0443..."
-  - "\u0415\u0441\u043B\u0438 \u043F\u043E\u0431\u0435\u0434\u0438\u0448\u044C, \u0441\u043C\u043E\u0436\u0435\u0448\u044C
-    \u0430\u0442\u0430\u043A\u043E\u0432\u0430\u0442\u044C \u043F\u0435\u0440\u0432\u044B\u043C."
-  - "\u041D\u0435 \u0437\u0430\u0431\u044B\u0432\u0430\u0439, \u0447\u0442\u043E
-    \u0430\u0442\u0430\u043A\u043E\u0432\u0430\u0442\u044C \u043C\u043E\u0436\u043D\u043E
-    \u0442\u043E\u043B\u044C\u043A\u043E \u043F\u043E \u043E\u0447\u0435\u0440\u0435\u0434\u0438."
-  - "\u0418 \u043D\u0430\u043A\u043E\u043D\u0435\u0446...\u043D\u0438\u043A\u0442\u043E
-    \u043D\u0435 \u0437\u0430\u043F\u0440\u0435\u0449\u0430\u0435\u0442 \u0442\u0435\u0431\u0435
-    \u0441\u0431\u0435\u0436\u0430\u0442\u044C. \u0415\u0441\u043B\u0438 \u0441\u043C\u043E\u0436\u0435\u0448\u044C."
+  _messages: []
   _showOneTime: 1
 --- !u!114 &8320838582458532849
 MonoBehaviour:

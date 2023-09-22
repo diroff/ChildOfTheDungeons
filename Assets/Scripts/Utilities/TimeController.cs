@@ -7,4 +7,14 @@ public class TimeController : MonoBehaviour
         if (Time.timeScale != 1)
             Time.timeScale = 1;
     }
+
+    public void StopTime()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void StartTime()
+    {
+        Time.timeScale = 1;
+    }
 }
